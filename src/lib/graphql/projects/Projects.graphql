@@ -1,0 +1,10 @@
+query Projects {
+  projects {
+    data {
+      attributes {
+        title
+        slug
+      }
+    }
+  }
+}

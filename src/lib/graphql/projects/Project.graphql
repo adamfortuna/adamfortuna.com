@@ -1,0 +1,10 @@
+query Project($slug:String!) {
+  projects(filters:{slug: {eq: $slug} }) {
+    data {
+      attributes {
+        title
+        slug
+      }
+    }
+  }
+}
