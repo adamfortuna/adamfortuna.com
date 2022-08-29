@@ -1,5 +1,6 @@
-import Head from 'next/head'
 import { GetStaticPropsContext, NextPage } from 'next'
+import Link from "next/link";
+
 import {
   Project, 
   ProjectsQuery, 
@@ -9,9 +10,8 @@ import {
 } from "@/lib/graphql/output";
 
 import { initializeApollo } from "@/lib/apolloClient";
-import { Footer } from '@/components/tailwind/Footer'
-import { Header } from '@/components/tailwind/Header'
 import { Container } from "@/components/tailwind/Container";
+import { ProjectIcon } from "@/components/projects/ProjectIcon"
 
 export interface ProjectProps {
   project: Project
@@ -19,24 +19,21 @@ export interface ProjectProps {
 
 const Projects: NextPage<ProjectProps> = ({project}) => {
   return (
-    <>
-      <Head>
-        <title>👋 Hey hey! I'm Adam.</title>
-        <meta
-          name="description"
-          content="Hey hey! I'm a Adam Fortuna. I create stuff online for fun."
-        />
-      </Head>
-      <Header />
-      <main>
-        <Container>
-          <div>
-            {project.title}
-          </div>
-        </Container>
-      </main>
-      <Footer />
-    </>
+    <main>
+      <Container>
+        <div>
+          <p>
+            <Link href="/projects">
+              <a className="text-gray-500 text-sm tracking-tight hover:underline">← Projects</a>
+            </Link>
+          </p>
+          <h1 className="font-black text-4xl">{project.title}</h1>
+          <ProjectIcon icon={project.icon} width={32} height={32} />
+
+          <p>{project.description}</p>
+        </div>
+      </Container>
+    </main>
   )
 }
 

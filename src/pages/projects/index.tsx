@@ -1,12 +1,10 @@
-import Head from 'next/head'
 import { GetStaticPropsContext, NextPage } from 'next'
 
-import { ProjectsQuery, ProjectsDocument, Project } from "@/lib/graphql/output";
-import { initializeApollo } from "@/lib/apolloClient";
-import { Container } from "@/components/tailwind/Container";
-import { ProjectCard } from "@/components/projects/ProjectCard";
-import { Footer } from '@/components/tailwind/Footer'
-import { Header } from '@/components/tailwind/Header'
+import { initializeApollo } from '@/lib/apolloClient'
+import { ProjectsQuery, ProjectsDocument, Project } from '@/lib/graphql/output'
+
+import { ProjectCard } from '@/components/projects/ProjectCard'
+import { Container } from '@/components/tailwind/Container'
 
 
 export interface ProjectProps {
@@ -15,25 +13,14 @@ export interface ProjectProps {
 
 const Projects: NextPage<ProjectProps> = ({projects}) => {
   return (
-    <>
-      <Head>
-        <title>👋 Hey hey! I'm Adam.</title>
-        <meta
-          name="description"
-          content="Hey hey! I'm a Adam Fortuna. I create stuff online for fun."
-        />
-      </Head>
-      <Header />
-      <main>
-        <Container className="my-8">
-          <h1 className="font-black text-3xl">Projects</h1>
-          { projects.map((project) =>
-            <ProjectCard project={project} />
-          )}
-        </Container>
-      </main>
-      <Footer />
-    </>
+    <main>
+      <Container className="my-8">
+        <h1 className="font-black text-3xl">Projects</h1>
+        { projects.map((project) =>
+          <ProjectCard project={project} />
+        )}
+      </Container>
+    </main>
   )
 }
 

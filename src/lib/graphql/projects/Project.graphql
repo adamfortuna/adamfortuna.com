@@ -4,6 +4,16 @@ query Project($slug:String!) {
       attributes {
         title
         slug
+        description
+
+        icon {
+					data {
+            attributes {
+              url
+              caption
+            }
+          }
+        }
       }
     }
   }

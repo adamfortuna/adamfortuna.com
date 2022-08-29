@@ -1,31 +1,36 @@
-import Head from 'next/head'
-import { NextPage } from 'next'
+import { GetStaticPropsContext, NextPage } from 'next'
 
-import { Footer } from '@/components/tailwind/Footer'
-import { Header } from '@/components/tailwind/Header'
-import { Hero } from '@/components/marketing/Hero'
-import { Projects } from '@/components/projects/Projects'
+import { ProjectsQuery, ProjectsDocument, Project } from "@/lib/graphql/output";
+import { initializeApollo } from "@/lib/apolloClient";
 
+import { FeaturedProjects } from "@/components/projects/FeaturedProjects";
 
-const Home: NextPage = () => {
+export interface Props {
+  projects: Project[];
+}
+
+const Home: NextPage<Props> = ({projects}) => {
   return (
-    <>
-      <Head>
-        <title>👋 Hey hey! I'm Adam.</title>
-        <meta
-          name="description"
-          content="Hey hey! I'm a Adam Fortuna. I create stuff online for fun."
-        />
-      </Head>
-      <Header />
-      <main>
-        <Projects />
-      </main>
-      <Footer />
-    </>
+    <main>
+      <FeaturedProjects projects={projects} />
+    </main>
   )
 }
 
 export default Home
 
 
+export async function getStaticProps({ params }: GetStaticPropsContext) {
+  const apolloClient = initializeApollo();
+
+  const { data } = await apolloClient.query<ProjectsQuery>({
+    query: ProjectsDocument,
+  });
+
+  const projects = data?.projects?.data.map(projectData => projectData.attributes);
+
+  return {
+    props: { projects: projects || [] },
+    revalidate: 1
+  }
+}

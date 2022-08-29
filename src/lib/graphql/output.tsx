@@ -644,6 +644,7 @@ export type Project = {
   __typename?: 'Project';
   active?: Maybe<Scalars['Boolean']>;
   createdAt?: Maybe<Scalars['DateTime']>;
+  description?: Maybe<Scalars['String']>;
   how_going?: Maybe<Scalars['String']>;
   how_started?: Maybe<Scalars['String']>;
   icon?: Maybe<UploadFileEntityResponse>;
@@ -694,6 +695,7 @@ export type ProjectFiltersInput = {
   active?: InputMaybe<BooleanFilterInput>;
   and?: InputMaybe<Array<InputMaybe<ProjectFiltersInput>>>;
   createdAt?: InputMaybe<DateTimeFilterInput>;
+  description?: InputMaybe<StringFilterInput>;
   how_going?: InputMaybe<StringFilterInput>;
   how_started?: InputMaybe<StringFilterInput>;
   id?: InputMaybe<IdFilterInput>;
@@ -710,6 +712,7 @@ export type ProjectFiltersInput = {
 
 export type ProjectInput = {
   active?: InputMaybe<Scalars['Boolean']>;
+  description?: InputMaybe<Scalars['String']>;
   how_going?: InputMaybe<Scalars['String']>;
   how_started?: InputMaybe<Scalars['String']>;
   icon?: InputMaybe<Scalars['ID']>;
@@ -1345,12 +1348,12 @@ export type ProjectQueryVariables = Exact<{
 }>;
 
 
-export type ProjectQuery = { __typename?: 'Query', projects?: { __typename?: 'ProjectEntityResponseCollection', data: Array<{ __typename?: 'ProjectEntity', attributes?: { __typename?: 'Project', title: string, slug: string } | null }> } | null };
+export type ProjectQuery = { __typename?: 'Query', projects?: { __typename?: 'ProjectEntityResponseCollection', data: Array<{ __typename?: 'ProjectEntity', attributes?: { __typename?: 'Project', title: string, slug: string, description?: string | null, icon?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string, caption?: string | null } | null } | null } | null } | null }> } | null };
 
 export type ProjectsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type ProjectsQuery = { __typename?: 'Query', projects?: { __typename?: 'ProjectEntityResponseCollection', data: Array<{ __typename?: 'ProjectEntity', attributes?: { __typename?: 'Project', title: string, slug: string } | null }> } | null };
+export type ProjectsQuery = { __typename?: 'Query', projects?: { __typename?: 'ProjectEntityResponseCollection', data: Array<{ __typename?: 'ProjectEntity', attributes?: { __typename?: 'Project', title: string, slug: string, description?: string | null } | null }> } | null };
 
 
 export const ProjectDocument = gql`
@@ -1360,6 +1363,15 @@ export const ProjectDocument = gql`
       attributes {
         title
         slug
+        description
+        icon {
+          data {
+            attributes {
+              url
+              caption
+            }
+          }
+        }
       }
     }
   }
@@ -1400,6 +1412,7 @@ export const ProjectsDocument = gql`
       attributes {
         title
         slug
+        description
       }
     }
   }

@@ -3,10 +3,13 @@ import React from 'react'
 import { AppProps } from 'next/app'
 
 import '@/styles/tailwind.css'
+import { Layout } from '@/components/layout/Layout'
 
 const App = ({ Component, pageProps }: AppProps) => {  
   return (
-    <Component {...pageProps} />
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
   )
 }
 
