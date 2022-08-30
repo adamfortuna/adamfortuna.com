@@ -1,23 +1,17 @@
 import { GetStaticPropsContext, NextPage } from 'next'
-import Link from "next/link";
+import Link from 'next/link'
 
-import {
-  Project, 
-  ProjectsQuery, 
-  ProjectsDocument, 
-  ProjectQuery, 
-  ProjectDocument
-} from "@/lib/graphql/output";
+import { Project, ProjectsQuery, ProjectsDocument, ProjectQuery, ProjectDocument } from '@/lib/graphql/output'
 
-import { initializeApollo } from "@/lib/apolloClient";
-import { Container } from "@/components/tailwind/Container";
-import { ProjectIcon } from "@/components/projects/ProjectIcon"
+import { initializeApollo } from '@/lib/apolloClient'
+import { ProjectIcon } from '@/components/projects/ProjectIcon'
+import { Container } from '@/components/layout/Container'
 
 export interface ProjectProps {
   project: Project
 }
 
-const Projects: NextPage<ProjectProps> = ({project}) => {
+const Projects: NextPage<ProjectProps> = ({ project }) => {
   return (
     <main>
       <Container>
@@ -40,32 +34,32 @@ const Projects: NextPage<ProjectProps> = ({project}) => {
 export default Projects
 
 export async function getStaticPaths() {
-  const apolloClient = initializeApollo();
+  const apolloClient = initializeApollo()
 
   const { data } = await apolloClient.query<ProjectsQuery>({
-    query: ProjectsDocument
-  });
+    query: ProjectsDocument,
+  })
 
   return {
     paths: data.projects?.data.map((p) => ({
       params: {
-        slug: p.attributes?.slug
-      }
+        slug: p.attributes?.slug,
+      },
     })),
-    fallback: false
+    fallback: false,
   }
 }
 
 export async function getStaticProps({ params }: GetStaticPropsContext) {
-  const apolloClient = initializeApollo();
+  const apolloClient = initializeApollo()
 
   const { data } = await apolloClient.query<ProjectQuery>({
     query: ProjectDocument,
-    variables: { slug: params?.slug }
-  });
+    variables: { slug: params?.slug },
+  })
 
   return {
     props: { project: data.projects?.data[0].attributes },
-    revalidate: 1
+    revalidate: 1,
   }
 }

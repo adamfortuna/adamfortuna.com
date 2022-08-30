@@ -1,9 +1,9 @@
 import Link from 'next/link'
 
-import { Container } from '@/components/tailwind/Container'
-import { NavLink } from '@/components/tailwind/NavLink'
+import { Container } from '@/components/layout/Container'
+import { NavLink } from '@/components/layout/NavLink'
 
-export function Header() {
+export const Header = () => {
   return (
     <header className="py-10">
       <Container>
@@ -12,7 +12,9 @@ export function Header() {
             <Link href="/">
               <a aria-label="Home" className="group">
                 <span className="hidden md:group-hover:block absolute -left-6">👋</span>
-                <span>Adam <span className="hidden sm:inline-block">Fortuna</span></span>
+                <span>
+                  Adam <span className="hidden sm:inline-block">Fortuna</span>
+                </span>
               </a>
             </Link>
           </div>

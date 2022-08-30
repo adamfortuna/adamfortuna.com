@@ -1,21 +1,17 @@
-import Link from "next/link";
+import Link from 'next/link'
 
-import { Project } from "@/lib/graphql/output";
+import { Project } from '@/lib/graphql/output'
 
 export interface ProjectCardProps {
-  project: Project;
+  project: Project
 }
 
-export function ProjectCard({project}:ProjectCardProps) {
+export const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
     <div>
       <Link href={`/projects/${project.slug}`} passHref>
-        <a className="underline hover:no-underline">
-          {project.slug}
-        </a>
+        <a className="underline hover:no-underline">{project.slug}</a>
       </Link>
     </div>
   )
 }
-
-
