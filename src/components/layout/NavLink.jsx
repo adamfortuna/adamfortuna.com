@@ -3,7 +3,7 @@ import Link from 'next/link'
 export const NavLink = ({ href, children }) => {
   return (
     <Link href={href}>
-      <a className="inline-block rounded-lg py-1 px-2 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900">
+      <a className="rounded py-2 px-3 text-base text-slate-400 hover:bg-slate-800 hover:text-white space-x-2 flex items-center font-semibold">
         {children}
       </a>
     </Link>
