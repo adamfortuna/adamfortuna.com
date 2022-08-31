@@ -1429,7 +1429,7 @@ export type ProjectsQueryVariables = Exact<{
 }>;
 
 
-export type ProjectsQuery = { __typename?: 'Query', projects?: { __typename?: 'ProjectEntityResponseCollection', data: Array<{ __typename?: 'ProjectEntity', attributes?: { __typename?: 'Project', title: string, slug: string, description?: string | null, priority: number, size: Enum_Project_Size, url?: string | null, years_active?: string | null, state: Enum_Project_State, state_description?: string | null, date_ended?: any | null, featured: boolean, icon?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string, caption?: string | null } | null } | null } | null, parent_project?: { __typename?: 'ProjectEntityResponse', data?: { __typename?: 'ProjectEntity', attributes?: { __typename?: 'Project', title: string, slug: string } | null } | null } | null, poster?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string, caption?: string | null } | null } | null } | null } | null }> } | null };
+export type ProjectsQuery = { __typename?: 'Query', projects?: { __typename?: 'ProjectEntityResponseCollection', data: Array<{ __typename?: 'ProjectEntity', attributes?: { __typename?: 'Project', title: string, slug: string, description?: string | null, priority: number, size: Enum_Project_Size, url?: string | null, years_active?: string | null, state: Enum_Project_State, state_description?: string | null, date_ended?: any | null, featured: boolean, icon?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string, caption?: string | null } | null } | null } | null, parent_project?: { __typename?: 'ProjectEntityResponse', data?: { __typename?: 'ProjectEntity', attributes?: { __typename?: 'Project', title: string, slug: string } | null } | null } | null, poster?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string, caption?: string | null } | null } | null } | null, technologies?: { __typename?: 'TechnologyRelationResponseCollection', data: Array<{ __typename?: 'TechnologyEntity', attributes?: { __typename?: 'Technology', slug: string, technology: string } | null }> } | null } | null }> } | null };
 
 
 export const ProjectDocument = gql`
@@ -1519,6 +1519,14 @@ export const ProjectsDocument = gql`
             attributes {
               url
               caption
+            }
+          }
+        }
+        technologies {
+          data {
+            attributes {
+              slug
+              technology
             }
           }
         }

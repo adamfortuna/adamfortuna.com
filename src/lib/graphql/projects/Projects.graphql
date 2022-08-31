@@ -42,6 +42,15 @@ query Projects($filters: ProjectFiltersInput, $sort: [String]) {
             }
           }
         }
+
+        technologies {
+          data {
+            attributes {
+              slug
+              technology
+            }
+          }
+        }
       }
     }
   }

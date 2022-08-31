@@ -6,9 +6,11 @@ import { faStar } from '@fortawesome/pro-solid-svg-icons'
 
 import { initializeApollo } from '@/lib/apolloClient'
 import { ProjectsQuery, ProjectsDocument, Project } from '@/lib/graphql/output'
+import { ProjectIcon } from '@/components/projects/ProjectIcon'
 
-import { ProjectStateTag } from '@/components/projects/ProjectStateTag'
 import { Container } from '@/components/layout/Container'
+import { ProjectStateTag } from '@/components/projects/ProjectStateTag'
+import { TechnologyTags } from '@/components/technologies/TechnologyTags'
 
 export interface ProjectProps {
   projects: Project[]
@@ -19,27 +21,36 @@ const Projects: NextPage<ProjectProps> = ({ projects }) => {
     <main>
       <Container className="my-8">
         <h1 className="font-black text-3xl">Projects</h1>
+        <p>Here are all the noteworthy things I've worked on.</p>
+
         <table className="bg-white">
           <thead>
             <tr>
               <th />
-              <th>Active</th>
+              <th>Year</th>
               <th>Project</th>
               <th>Made At</th>
               <th>Status</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="gap-4">
             {projects.map((project) => (
               <tr key={`project-${project.slug}`}>
                 <td>{project.featured && <FontAwesomeIcon icon={faStar} className="text-yellow-400" />}</td>
                 <td>{project.years_active}</td>
-                <td>
-                  <Link href={`/projects/${project.slug}`} passHref>
-                    <a className="underline hover:no-underline font-bold">{project.title}</a>
-                  </Link>
+                <td className="flex items-center">
+                  <div>
+                    <ProjectIcon icon={project.icon} />
+                  </div>
+                  <div>
+                    <Link href={`/projects/${project.slug}`} passHref>
+                      <a className="underline hover:no-underline font-bold">{project.title}</a>
+                    </Link>
 
-                  <p>{project.description}</p>
+                    <p>{project.description}</p>
+
+                    <TechnologyTags technologies={project.technologies?.data || []} />
+                  </div>
                 </td>
                 <td>
                   {project.parent_project?.data?.attributes?.title && (
