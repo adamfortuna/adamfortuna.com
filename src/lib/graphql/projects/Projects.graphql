@@ -1,10 +1,33 @@
-query Projects {
-  projects {
+query Projects($filters: ProjectFiltersInput, $sort: [String]) {
+  projects(filters: $filters, sort: $sort) {
     data {
       attributes {
         title
         slug
         description
+        priority
+        size
+        description
+        url
+        years_active
+
+        icon {
+          data {
+            attributes {
+              url
+              caption
+            }
+          }
+        }
+
+        poster {
+          data {
+            attributes {
+              url
+              caption
+            }
+          }
+        }
       }
     }
   }

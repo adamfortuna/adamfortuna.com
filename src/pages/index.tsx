@@ -3,16 +3,21 @@ import { NextPage } from 'next'
 import { ProjectsQuery, ProjectsDocument, Project } from '@/lib/graphql/output'
 import { initializeApollo } from '@/lib/apolloClient'
 
-import { FeaturedProjects } from '@/components/projects/FeaturedProjects'
+import { ActiveProjects } from '@/components/projects/ActiveProjects'
+// import { FeaturedProjects } from '@/components/projects/FeaturedProjects'
+import { Hero } from '@/components/marketing/Hero'
 
 export interface Props {
-  projects: Project[]
+  activeProjects: Project[]
+  featuredProjects: Project[]
 }
 
-const Home: NextPage<Props> = ({ projects }) => {
+const Home: NextPage<Props> = ({ activeProjects }) => {
   return (
     <main>
-      <FeaturedProjects projects={projects} />
+      <Hero />
+      <ActiveProjects projects={activeProjects} />
+      {/* <FeaturedProjects projects={featuredProjects} /> */}
     </main>
   )
 }
@@ -24,12 +29,19 @@ export async function getStaticProps() {
 
   const { data } = await apolloClient.query<ProjectsQuery>({
     query: ProjectsDocument,
+    variables: {
+      filters: { active: { eq: true } },
+      sort: ['priority:desc'],
+    },
   })
 
-  const projects = data.projects?.data.map((projectData) => projectData.attributes)
+  const projects = data.projects?.data.map((projectData) => projectData.attributes) || []
 
   return {
-    props: { projects: projects || [] },
+    props: {
+      activeProjects: projects,
+      // featuredProjects: projects
+    },
     revalidate: 1,
   }
 }

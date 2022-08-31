@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.list-comma {
+  display: inline;
+  list-style: none;
+}
+.list-comma li {
+  display: inline;
+}
+.list-comma li:after {
+  content: ", ";
+}
+.list-comma li:last-child:after {
+  content: "";
+}
+
+.list-bullet {
+  display: inline;
+  list-style: none;
+}
+.list-bullet li {
+  display: inline;
+}
+.list-bullet li:after {
+  content: " • ";
+}
+.list-bullet li:last-child:after {
+  content: "";
+}

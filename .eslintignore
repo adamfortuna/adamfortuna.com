@@ -1,7 +1,9 @@
-node_modules
+.eslintignore
+node*modules
 out
 *.css
-.*.js
+.\_.js
 *.graphql
 src/lib/graphql/output.tsx
-*.png
+_.png
+*.svg
