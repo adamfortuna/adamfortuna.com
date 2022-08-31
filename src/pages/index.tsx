@@ -32,7 +32,7 @@ export default Home
 export async function getStaticProps() {
   const apolloClient = initializeApollo()
 
-  const { data:activeData } = await apolloClient.query<ProjectsQuery>({
+  const { data: activeData } = await apolloClient.query<ProjectsQuery>({
     query: ProjectsDocument,
     variables: {
       filters: { active: { eq: true } },
@@ -41,7 +41,7 @@ export async function getStaticProps() {
   })
   const activeProjects = activeData.projects?.data.map((projectData) => projectData.attributes) || []
 
-  const { data:featuredData } = await apolloClient.query<ProjectsQuery>({
+  const { data: featuredData } = await apolloClient.query<ProjectsQuery>({
     query: ProjectsDocument,
     variables: {
       filters: { active: { eq: false }, featured: { eq: true } },
@@ -53,7 +53,7 @@ export async function getStaticProps() {
   return {
     props: {
       activeProjects,
-      featuredProjects
+      featuredProjects,
     },
     revalidate: 1,
   }

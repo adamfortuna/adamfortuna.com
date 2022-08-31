@@ -11,7 +11,7 @@ export interface ProjectCardProps {
 export const ProjectCard = ({ project, left }: ProjectCardProps) => {
   return (
     <div>
-      <p className="space-x-2 list-bullet">
+      <p className={`space-x-2 list-bullet ${left ? '' : 'flex-row-reverse'}`}>
         <Link href={`/projects/${project.slug}`} passHref>
           <a className="underline hover:no-underline">{project.title}</a>
         </Link>

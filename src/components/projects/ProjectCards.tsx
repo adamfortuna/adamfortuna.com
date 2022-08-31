@@ -13,7 +13,7 @@ export const ProjectCards = ({ projects, className, children }: ProjectCardsProp
     <Container className={`${className}`}>
       {children}
       {projects.map((project, index) => (
-        <ProjectCard project={project} key={`project-cards-${project.slug}`} left={index%2} />
+        <ProjectCard project={project} key={`project-cards-${project.slug}`} left={index % 2} />
       ))}
     </Container>
   )
