@@ -15,7 +15,7 @@ export const InteractiveMountain = () => {
   }, [])
 
   return (
-    <div className="absolute w-screen h-screen -mt-[150px]" ref={ref}>
+    <div className="absolute w-screen h-screen overflow-hidden" ref={ref}>
       {loaded && <MountainController q={q} />}
       <Mountains className="h-screen overflow-hidden xl:h-auto xl:bg-cover" />
       <AnimalControls />

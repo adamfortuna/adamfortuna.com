@@ -5,9 +5,10 @@ import { Project } from '@/lib/graphql/output'
 
 export interface ProjectCardProps {
   project: Project
+  left: boolean
 }
 
-export const ProjectCard = ({ project }: ProjectCardProps) => {
+export const ProjectCard = ({ project, left }: ProjectCardProps) => {
   return (
     <div>
       <p className="space-x-2 list-bullet">

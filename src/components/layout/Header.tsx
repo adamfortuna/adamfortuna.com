@@ -5,7 +5,7 @@ import { Container } from './Container'
 
 export const Header = () => {
   return (
-    <header className="relative z-10">
+    <header className="absolute top-0 inset-x-0">
       <Container className="py-6">
         <nav className="relative z-50 flex justify-between">
           <div className="flex items-center md:gap-x-12 justify-between text-black">

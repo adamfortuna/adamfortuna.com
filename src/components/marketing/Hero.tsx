@@ -3,7 +3,7 @@ import { InteractiveMountain } from '@/components/fun/InteractiveMountain'
 
 export const Hero = () => {
   return (
-    <div className="relative">
+    <div className="relative h-screen">
       <InteractiveMountain />
       <Container className="relative z-10 pt-20 pb-16 lg:pt-32 text-black">
         <p className="font-display text-3xl font-medium tracking-tight sm:text-7xl relative space-x-4">
