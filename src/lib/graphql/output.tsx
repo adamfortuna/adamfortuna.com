@@ -200,6 +200,15 @@ export enum Enum_Project_Size {
   Sm = 'sm'
 }
 
+export enum Enum_Project_State {
+  Development = 'development',
+  Idea = 'idea',
+  Left = 'left',
+  Live = 'live',
+  Retired = 'retired',
+  Transferred = 'transferred'
+}
+
 export type FileInfoInput = {
   alternativeText?: InputMaybe<Scalars['String']>;
   caption?: InputMaybe<Scalars['String']>;
@@ -679,15 +688,20 @@ export type Project = {
   date_started?: Maybe<Scalars['Date']>;
   description?: Maybe<Scalars['String']>;
   employed?: Maybe<Scalars['Boolean']>;
+  featured: Scalars['Boolean'];
   how_going?: Maybe<Scalars['String']>;
   how_started?: Maybe<Scalars['String']>;
   icon?: Maybe<UploadFileEntityResponse>;
+  parent_project?: Maybe<ProjectEntityResponse>;
   poster?: Maybe<UploadFileEntityResponse>;
   posts?: Maybe<PostRelationResponseCollection>;
   priority: Scalars['Int'];
   publishedAt?: Maybe<Scalars['DateTime']>;
+  role?: Maybe<Scalars['String']>;
   size: Enum_Project_Size;
   slug: Scalars['String'];
+  state: Enum_Project_State;
+  state_description?: Maybe<Scalars['String']>;
   technologies?: Maybe<TechnologyRelationResponseCollection>;
   title: Scalars['String'];
   updatedAt?: Maybe<Scalars['DateTime']>;
@@ -736,16 +750,21 @@ export type ProjectFiltersInput = {
   date_started?: InputMaybe<DateFilterInput>;
   description?: InputMaybe<StringFilterInput>;
   employed?: InputMaybe<BooleanFilterInput>;
+  featured?: InputMaybe<BooleanFilterInput>;
   how_going?: InputMaybe<StringFilterInput>;
   how_started?: InputMaybe<StringFilterInput>;
   id?: InputMaybe<IdFilterInput>;
   not?: InputMaybe<ProjectFiltersInput>;
   or?: InputMaybe<Array<InputMaybe<ProjectFiltersInput>>>;
+  parent_project?: InputMaybe<ProjectFiltersInput>;
   posts?: InputMaybe<PostFiltersInput>;
   priority?: InputMaybe<IntFilterInput>;
   publishedAt?: InputMaybe<DateTimeFilterInput>;
+  role?: InputMaybe<StringFilterInput>;
   size?: InputMaybe<StringFilterInput>;
   slug?: InputMaybe<StringFilterInput>;
+  state?: InputMaybe<StringFilterInput>;
+  state_description?: InputMaybe<StringFilterInput>;
   technologies?: InputMaybe<TechnologyFiltersInput>;
   title?: InputMaybe<StringFilterInput>;
   updatedAt?: InputMaybe<DateTimeFilterInput>;
@@ -759,15 +778,20 @@ export type ProjectInput = {
   date_started?: InputMaybe<Scalars['Date']>;
   description?: InputMaybe<Scalars['String']>;
   employed?: InputMaybe<Scalars['Boolean']>;
+  featured?: InputMaybe<Scalars['Boolean']>;
   how_going?: InputMaybe<Scalars['String']>;
   how_started?: InputMaybe<Scalars['String']>;
   icon?: InputMaybe<Scalars['ID']>;
+  parent_project?: InputMaybe<Scalars['ID']>;
   poster?: InputMaybe<Scalars['ID']>;
   posts?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   priority?: InputMaybe<Scalars['Int']>;
   publishedAt?: InputMaybe<Scalars['DateTime']>;
+  role?: InputMaybe<Scalars['String']>;
   size?: InputMaybe<Enum_Project_Size>;
   slug?: InputMaybe<Scalars['String']>;
+  state?: InputMaybe<Enum_Project_State>;
+  state_description?: InputMaybe<Scalars['String']>;
   technologies?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   title?: InputMaybe<Scalars['String']>;
   url?: InputMaybe<Scalars['String']>;
@@ -1405,7 +1429,7 @@ export type ProjectsQueryVariables = Exact<{
 }>;
 
 
-export type ProjectsQuery = { __typename?: 'Query', projects?: { __typename?: 'ProjectEntityResponseCollection', data: Array<{ __typename?: 'ProjectEntity', attributes?: { __typename?: 'Project', title: string, slug: string, description?: string | null, priority: number, size: Enum_Project_Size, url?: string | null, years_active?: string | null, icon?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string, caption?: string | null } | null } | null } | null, poster?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string, caption?: string | null } | null } | null } | null } | null }> } | null };
+export type ProjectsQuery = { __typename?: 'Query', projects?: { __typename?: 'ProjectEntityResponseCollection', data: Array<{ __typename?: 'ProjectEntity', attributes?: { __typename?: 'Project', title: string, slug: string, description?: string | null, priority: number, size: Enum_Project_Size, url?: string | null, years_active?: string | null, state: Enum_Project_State, state_description?: string | null, date_ended?: any | null, featured: boolean, icon?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string, caption?: string | null } | null } | null } | null, parent_project?: { __typename?: 'ProjectEntityResponse', data?: { __typename?: 'ProjectEntity', attributes?: { __typename?: 'Project', title: string, slug: string } | null } | null } | null, poster?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string, caption?: string | null } | null } | null } | null } | null }> } | null };
 
 
 export const ProjectDocument = gql`
@@ -1459,7 +1483,7 @@ export type ProjectLazyQueryHookResult = ReturnType<typeof useProjectLazyQuery>;
 export type ProjectQueryResult = Apollo.QueryResult<ProjectQuery, ProjectQueryVariables>;
 export const ProjectsDocument = gql`
     query Projects($filters: ProjectFiltersInput, $sort: [String]) {
-  projects(filters: $filters, sort: $sort) {
+  projects(filters: $filters, sort: $sort, pagination: {pageSize: 100}) {
     data {
       attributes {
         title
@@ -1470,11 +1494,23 @@ export const ProjectsDocument = gql`
         description
         url
         years_active
+        state
+        state_description
+        date_ended
+        featured
         icon {
           data {
             attributes {
               url
               caption
+            }
+          }
+        }
+        parent_project {
+          data {
+            attributes {
+              title
+              slug
             }
           }
         }

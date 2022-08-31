@@ -1,9 +1,14 @@
-/* eslint-disable sonarjs/no-duplicate-string */
+/* eslint-disable sonarjs/no-duplicate-string, import/no-extraneous-dependencies */
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      fontFamily: {
+        handwriting: ['Pacifico', 'cursive'],
+        sans: ['Quicksand', ...defaultTheme.fontFamily.sans],
+      },
       keyframes: {
         wave: {
           '0%': { transform: 'rotate(0.0deg)' },

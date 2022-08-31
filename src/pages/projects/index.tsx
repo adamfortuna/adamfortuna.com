@@ -1,9 +1,13 @@
 import { NextPage } from 'next'
+import Link from 'next/link'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStar } from '@fortawesome/pro-solid-svg-icons'
 
 import { initializeApollo } from '@/lib/apolloClient'
 import { ProjectsQuery, ProjectsDocument, Project } from '@/lib/graphql/output'
 
-import { ProjectCard } from '@/components/projects/ProjectCard'
+import { ProjectStateTag } from '@/components/projects/ProjectStateTag'
 import { Container } from '@/components/layout/Container'
 
 export interface ProjectProps {
@@ -15,9 +19,42 @@ const Projects: NextPage<ProjectProps> = ({ projects }) => {
     <main>
       <Container className="my-8">
         <h1 className="font-black text-3xl">Projects</h1>
-        {projects.map((project) => (
-          <ProjectCard project={project} />
-        ))}
+        <table className="bg-white">
+          <thead>
+            <tr>
+              <th />
+              <th>Active</th>
+              <th>Project</th>
+              <th>Made At</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {projects.map((project) => (
+              <tr key={`project-${project.slug}`}>
+                <td>{project.featured && <FontAwesomeIcon icon={faStar} className="text-yellow-400" />}</td>
+                <td>{project.years_active}</td>
+                <td>
+                  <Link href={`/projects/${project.slug}`} passHref>
+                    <a className="underline hover:no-underline font-bold">{project.title}</a>
+                  </Link>
+
+                  <p>{project.description}</p>
+                </td>
+                <td>
+                  {project.parent_project?.data?.attributes?.title && (
+                    <Link href={`/projects/${project.parent_project.data.attributes.slug}`} passHref>
+                      <a className="underline hover:no-underline">{project.parent_project.data.attributes.title}</a>
+                    </Link>
+                  )}
+                </td>
+                <td>
+                  <ProjectStateTag state={project.state}>{project.state_description}</ProjectStateTag>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </Container>
     </main>
   )
@@ -30,6 +67,9 @@ export async function getStaticProps() {
 
   const { data } = await apolloClient.query<ProjectsQuery>({
     query: ProjectsDocument,
+    variables: {
+      sort: ['date_ended:desc', 'priority:desc'],
+    },
   })
 
   return {

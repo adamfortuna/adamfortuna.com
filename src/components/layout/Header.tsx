@@ -1,4 +1,4 @@
-import { faHammer, faMountain, faPencil } from '@fortawesome/pro-solid-svg-icons'
+import { faHammer, faMountain, faPencil } from '@fortawesome/pro-regular-svg-icons'
 
 import { NavLink } from '@/components/layout/NavLink'
 import { Container } from './Container'
