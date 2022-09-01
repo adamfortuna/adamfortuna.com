@@ -60,6 +60,6 @@ export async function getStaticProps({ params }: GetStaticPropsContext) {
 
   return {
     props: { project: data.projects?.data[0].attributes },
-    revalidate: 1,
+    revalidate: 60*60,
   }
 }
