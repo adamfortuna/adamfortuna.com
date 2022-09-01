@@ -13,7 +13,7 @@ export interface ProjectProps {
 
 const Projects: NextPage<ProjectProps> = ({ project }) => {
   return (
-    <main>
+    <main className="mt-[100px]">
       <Container>
         <div>
           <p>

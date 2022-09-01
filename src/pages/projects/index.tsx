@@ -18,7 +18,7 @@ export interface ProjectProps {
 
 const Projects: NextPage<ProjectProps> = ({ projects }) => {
   return (
-    <main>
+    <main className="mt-[100px]">
       <Container className="my-8">
         <h1 className="font-black text-3xl">Projects</h1>
         <p>Here are all the noteworthy things I've worked on.</p>
