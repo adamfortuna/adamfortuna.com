@@ -22,6 +22,7 @@ export interface AnimalType {
   count: number
   animating: boolean
   animatable: boolean
+  weight: number
 }
 
 export const Animals = [

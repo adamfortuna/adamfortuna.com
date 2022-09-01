@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars, react-hooks/exhaustive-deps */
 import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 import { gsap } from 'gsap'
+import filter from 'lodash/filter'
 import findIndex from 'lodash/findIndex'
 import sortBy from 'lodash/sortBy'
 
@@ -109,21 +110,52 @@ export const MountainProvider = ({ children }: any) => {
     // timeline.timeScale(50)
   }
 
-  useEffect(() => {
-    startBackgroundAnimations()
-  })
-
   const animateAnimal = (animal: AnimalType) => {
-    setTimeout(() => {
-      setAnimals((currentAnimals) => {
-        const newAnimals = [...currentAnimals]
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        setAnimals((currentAnimals) => {
+          const newAnimals = [...currentAnimals]
 
-        const index = findIndex(newAnimals, (a) => a.name === animal.name)
-        newAnimals[index].animating = false
+          const index = findIndex(newAnimals, (a) => a.name === animal.name)
+          newAnimals[index].animating = false
 
-        return newAnimals
-      })
-    }, 5000)
+          resolve(newAnimals[index])
+          return newAnimals
+        })
+      }, 5000 + Math.random() * 5000)
+    })
+  }
+
+  const animatingRandomAnimal = () => {
+    const randomAnimalName = ['Squirrel', 'Bird', 'Deer'][Math.floor(Math.random() * 3)]
+
+    setAnimals((currentAnimals) => {
+      const currentlyAnimating = filter(currentAnimals, (a) => a.animating)
+      if (currentlyAnimating.length >= 1) {
+        return currentAnimals
+      }
+
+      const newAnimals = [...currentAnimals]
+      const index = findIndex(currentAnimals, (a) => a.name === randomAnimalName)
+      if (!newAnimals[index].animating) {
+        newAnimals[index].count += 1
+        newAnimals[index].animating = true
+
+        animateAnimal(newAnimals[index])
+          .then(() => {
+            animatingRandomAnimal()
+          })
+          .catch(() => {
+            animatingRandomAnimal()
+          })
+
+        const sortedAnimals = sortBy(newAnimals, (a) => a.count * -1) as AnimalType[]
+
+        setMaxCount(sortedAnimals[0].count)
+        return sortedAnimals
+      }
+      return newAnimals
+    })
   }
 
   const triggerAnimal = (animal: AnimalType) => {
@@ -140,8 +172,13 @@ export const MountainProvider = ({ children }: any) => {
       return sortedAnimals
     })
 
-    animateAnimal(animal)
+    return animateAnimal(animal)
   }
+
+  useEffect(() => {
+    startBackgroundAnimations()
+    animatingRandomAnimal()
+  })
 
   const state = useMemo(() => {
     return {
