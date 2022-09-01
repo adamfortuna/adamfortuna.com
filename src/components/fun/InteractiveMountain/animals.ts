@@ -12,39 +12,57 @@ import {
   faDeer as faDeerSolid,
   faDragon as faDragonSolid,
   faSquirrel as faSquirrelSolid,
+  faTree as faTreeSolid,
 } from '@fortawesome/pro-solid-svg-icons'
 
 export interface AnimalType {
   name: string
   icon: LightIconDefinition
-  hoverIcon?: SolidIconDefinition
+  solidIcon: SolidIconDefinition
+  count: number
+  animating: boolean
+  animatable: boolean
 }
 
-const Animals = [
+export const Animals = [
   {
     name: 'Tree',
     icon: faTree,
+    solidIcon: faTreeSolid,
+    count: 14,
+    animating: false,
+    animatable: false,
   },
   {
     name: 'Squirrel',
     icon: faSquirrel,
-    hoverIcon: faSquirrelSolid,
+    solidIcon: faSquirrelSolid,
+    count: 0,
+    animating: false,
+    animatable: true,
   },
   {
     name: 'Bird',
     icon: faCrow,
-    hoverIcon: faCrowSolid,
+    solidIcon: faCrowSolid,
+    count: 0,
+    animating: false,
+    animatable: true,
   },
   {
     name: 'Deer',
     icon: faDeer,
-    hoverIcon: faDeerSolid,
+    solidIcon: faDeerSolid,
+    count: 0,
+    animating: false,
+    animatable: true,
   },
   {
     name: 'Dragon',
     icon: faDragon,
-    hoverIcon: faDragonSolid,
+    solidIcon: faDragonSolid,
+    count: 0,
+    animating: false,
+    animatable: true,
   },
 ] as AnimalType[]
-
-export default Animals

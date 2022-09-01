@@ -1,12 +1,17 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import { createContext, useContext, useEffect, useMemo } from 'react'
+/* eslint-disable @typescript-eslint/no-unused-vars, react-hooks/exhaustive-deps */
+import { createContext, useContext, useEffect, useMemo, useState } from 'react'
+import { gsap } from 'gsap'
+import findIndex from 'lodash/findIndex'
+import sortBy from 'lodash/sortBy'
+
 import { useSelector } from '@/hooks/useSelector'
 import { useWindowSize } from '@/hooks/useWindowSize'
-import { gsap } from 'gsap'
-import { AnimalType } from './animals'
+import { Animals, AnimalType } from './animals'
 
 export const MountainContext = createContext({
   triggerAnimal: (animal: AnimalType) => {},
+  animals: Animals,
+  maxCount: 14,
 })
 
 export const useMountain = () => {
@@ -17,6 +22,8 @@ export const MountainProvider = ({ children }: any) => {
   const { q, ref } = useSelector()
   const [width] = useWindowSize()
   const timeline = gsap.timeline().addLabel('start')
+  const [animals, setAnimals] = useState(Animals)
+  const [maxCount, setMaxCount] = useState(14)
 
   const clouds = () => {
     timeline.to(
@@ -106,13 +113,43 @@ export const MountainProvider = ({ children }: any) => {
     startBackgroundAnimations()
   })
 
+  const animateAnimal = (animal: AnimalType) => {
+    setTimeout(() => {
+      setAnimals((currentAnimals) => {
+        const newAnimals = [...currentAnimals]
+
+        const index = findIndex(newAnimals, (a) => a.name === animal.name)
+        newAnimals[index].animating = false
+
+        return newAnimals
+      })
+    }, 5000)
+  }
+
+  const triggerAnimal = (animal: AnimalType) => {
+    setAnimals((currentAnimals) => {
+      const newAnimals = [...currentAnimals]
+
+      const index = findIndex(newAnimals, (a) => a.name === animal.name)
+      newAnimals[index].count += 1
+      newAnimals[index].animating = true
+
+      const sortedAnimals = sortBy(newAnimals, (a) => a.count * -1) as AnimalType[]
+
+      setMaxCount(sortedAnimals[0].count)
+      return sortedAnimals
+    })
+
+    animateAnimal(animal)
+  }
+
   const state = useMemo(() => {
     return {
-      triggerAnimal: (animal: AnimalType) => {
-        // alert(`clicked on ${animal.name}`)
-      },
+      triggerAnimal,
+      animals,
+      maxCount,
     }
-  }, [])
+  }, [animals, maxCount])
 
   return (
     <MountainContext.Provider value={state}>

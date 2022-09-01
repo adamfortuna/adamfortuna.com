@@ -16,7 +16,7 @@ export const Hero = () => {
         </p>
         <p className="mt-4 max-w-xl text-2xl leading-10 ">
           I love <span className="font-bold">enlivening experiences</span>,{' '}
-          <span className="font-bold">elevating data</span> and{' '}
+          <span className="font-bold">quantifying data</span> and{' '}
           <span className="font-bold">making playful websites</span>.
         </p>
       </Container>
