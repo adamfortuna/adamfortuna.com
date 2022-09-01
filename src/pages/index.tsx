@@ -55,6 +55,6 @@ export async function getStaticProps() {
       activeProjects,
       featuredProjects,
     },
-    revalidate: 60*60,
+    revalidate: 60 * 60,
   }
 }

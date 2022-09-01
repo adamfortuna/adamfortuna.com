@@ -85,6 +85,6 @@ export async function getStaticProps() {
 
   return {
     props: { projects: data.projects?.data.map((projectData) => projectData.attributes) },
-    revalidate: 60*60,
+    revalidate: 60 * 60,
   }
 }
