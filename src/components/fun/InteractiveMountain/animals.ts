@@ -4,7 +4,7 @@ import {
   faDeer,
   faDragon,
   faSquirrel,
-  faTree,
+  faMountain,
 } from '@fortawesome/pro-regular-svg-icons'
 import {
   IconDefinition as SolidIconDefinition,
@@ -12,7 +12,7 @@ import {
   faDeer as faDeerSolid,
   faDragon as faDragonSolid,
   faSquirrel as faSquirrelSolid,
-  faTree as faTreeSolid,
+  faMountain as faMountainSolid,
 } from '@fortawesome/pro-solid-svg-icons'
 
 export interface AnimalType {
@@ -27,10 +27,10 @@ export interface AnimalType {
 
 export const Animals = [
   {
-    name: 'Tree',
-    icon: faTree,
-    solidIcon: faTreeSolid,
-    count: 14,
+    name: 'Mountain',
+    icon: faMountain,
+    solidIcon: faMountainSolid,
+    count: 3,
     animating: false,
     animatable: false,
   },

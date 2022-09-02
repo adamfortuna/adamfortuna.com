@@ -7,7 +7,8 @@ module.exports = {
     extend: {
       fontFamily: {
         handwriting: ['Pacifico', 'cursive'],
-        sans: ['Quicksand', ...defaultTheme.fontFamily.sans],
+        // sans: ['Noto Sans', ...defaultTheme.fontFamily.sans],
+        header: ['Quicksand', ...defaultTheme.fontFamily.sans],
       },
       keyframes: {
         wave: {
@@ -26,5 +27,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }

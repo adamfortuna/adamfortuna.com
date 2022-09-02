@@ -2,9 +2,11 @@ import { NextPage } from 'next'
 
 import { ProjectsQuery, ProjectsDocument, Project } from '@/lib/graphql/output'
 import { initializeApollo } from '@/lib/apolloClient'
+import getPlaceholders from '@/lib/getPlaceholders'
 
 import { ProjectCards } from '@/components/projects/ProjectCards'
 import { Hero } from '@/components/marketing/Hero'
+import { AboutHero, imagePlaceholders } from '@/components/marketing/AboutHero'
 
 export interface Props {
   activeProjects: Project[]
@@ -13,8 +15,10 @@ export interface Props {
 
 const Home: NextPage<Props> = ({ activeProjects, featuredProjects }) => {
   return (
-    <main className="space-y-8">
+    <main>
       <Hero />
+
+      <AboutHero />
 
       <ProjectCards className="max-w-3xl" projects={activeProjects}>
         <h2>Active Projects</h2>
@@ -52,6 +56,7 @@ export async function getStaticProps() {
 
   return {
     props: {
+      imagePlaceholders: await getPlaceholders(imagePlaceholders),
       activeProjects,
       featuredProjects,
     },

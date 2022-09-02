@@ -10,11 +10,11 @@ export const Hero = () => {
           <span className="font-handwriting">Hey hey!</span>
           <span className="animate-waving-hand inline-block">👋</span>
         </p>
-        <p className="mt-10 max-w-xl text-2xl leading-10 ">
-          Welcome! I'm <span className="font-bold">Adam Fortuna,</span> a product-focused, full-stack web developer
-          living in Salt Lake City, UT.
+        <p className="mt-10 max-w-xl text-2xl leading-10 font-header">
+          Welcome! I'm <span className="font-bold">Adam Fortuna,</span> a full-stack product developer living in Salt
+          Lake City, UT.
         </p>
-        <p className="mt-4 max-w-xl text-2xl leading-10 ">
+        <p className="mt-4 max-w-xl text-2xl leading-10 font-header">
           I love <span className="font-bold">enlivening experiences</span>,{' '}
           <span className="font-bold">quantifying data</span> and{' '}
           <span className="font-bold">making playful websites</span>.
