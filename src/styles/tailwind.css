@@ -29,3 +29,16 @@
 .list-bullet li:last-child:after {
   content: "";
 }
+
+.unblur {
+  animation: unblur 0.3s linear;
+}
+
+@keyframes unblur {
+  from {
+    filter: blur(20px);
+  }
+  to {
+    filter: blur(0);
+  }
+}
