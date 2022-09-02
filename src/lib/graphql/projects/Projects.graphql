@@ -19,7 +19,7 @@ query Projects($filters: ProjectFiltersInput, $sort: [String]) {
         icon {
           data {
             attributes {
-              url
+              hash
               caption
             }
           }
@@ -37,7 +37,7 @@ query Projects($filters: ProjectFiltersInput, $sort: [String]) {
         poster {
           data {
             attributes {
-              url
+              hash
               caption
             }
           }

@@ -1,17 +1,18 @@
 import { createContext, useContext } from 'react'
 
-interface ImageContextType {
+export interface ImageType {
   image: string
   blurDataURL: string
 }
 
-const initialContext: Record<string, ImageContextType> = {}
+export interface ImageContextType {
+  [name: string]: ImageType
+}
+const initialContext: ImageContextType = {}
 export const ImageContext = createContext(initialContext)
 
-export const ImagePlaceholderContext = () => {
-  return useContext(ImageContext)
-}
-
 export const useImagePlaceholder = (image: string) => {
-  return useContext(ImageContext)[image]
+  const imageContext = useContext(ImageContext)
+  const keys = Object.keys(imageContext)
+  return keys.indexOf(image) === -1 ? null : imageContext[image].blurDataURL
 }

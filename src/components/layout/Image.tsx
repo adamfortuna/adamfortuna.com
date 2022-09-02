@@ -5,7 +5,7 @@ import { useImagePlaceholder } from '@/hooks/useImagePlaceholder'
 
 export const Image = (props: ImageProps) => {
   const { src } = props
-  const { blurDataURL } = useImagePlaceholder(src as string)
+  const blurDataURL = useImagePlaceholder(src as string)
   const [loaded, setLoaded] = useState(false)
 
   if (blurDataURL) {

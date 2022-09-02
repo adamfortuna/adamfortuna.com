@@ -1,6 +1,8 @@
 import { getPlaiceholder } from 'plaiceholder'
 import keyBy from 'lodash/keyBy'
 
+import { ImageType, ImageContextType } from '@/hooks/useImagePlaceholder'
+
 const getPlaceholders = async (images: string[]) => {
   const imageBlurData = await Promise.all(
     images.map(async (image) => {
@@ -14,11 +16,11 @@ const getPlaceholders = async (images: string[]) => {
       return {
         image,
         blurDataURL: base64,
-      }
+      } as ImageType
     }),
   )
 
-  return keyBy(imageBlurData, 'image')
+  return keyBy(imageBlurData, 'image') as ImageContextType
 }
 
 export default getPlaceholders

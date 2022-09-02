@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-no-useless-fragment */
-import Image from 'next/image'
+import { Image } from '@/components/layout/Image'
 import { Maybe, UploadFileEntityResponse } from '@/lib/graphql/output'
 
 export interface ProjectIconProps {
@@ -15,5 +15,5 @@ export const ProjectIcon = ({ icon, width = 64, height = 64 }: ProjectIconProps)
     return <></>
   }
 
-  return <Image src={parsedIcon.url} className="rounded-full" height={height} width={width} />
+  return <Image src={parsedIcon.hash} className="rounded-full" height={height} width={width} />
 }
