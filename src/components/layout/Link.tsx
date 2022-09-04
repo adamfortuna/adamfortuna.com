@@ -39,9 +39,10 @@ export type LinkProps = {
   size?: LinkThemeProps['size']
   className?: string
   href: string
+  target?: string
 }
 
-export const Link = React.forwardRef<HTMLLinkElement, React.PropsWithChildren<LinkProps>>(
+export const Link = React.forwardRef<HTMLAnchorElement, React.PropsWithChildren<LinkProps>>(
   ({ variant = 'default', size = 'md', className = '', href, ...props }, ref) => {
     const newClassName = clsx(linkTheme.variant[variant], linkTheme.size[size], className)
 
