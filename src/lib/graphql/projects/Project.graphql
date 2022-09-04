@@ -14,6 +14,34 @@ query Project($slug:String!) {
             }
           }
         }
+        parent_project {
+          data {
+            attributes {
+              title
+              slug
+            }
+          }
+        }
+
+        poster {
+          data {
+            attributes {
+              hash
+              caption
+              width
+              height
+            }
+          }
+        }
+
+        technologies {
+          data {
+            attributes {
+              slug
+              technology
+            }
+          }
+        }
       }
     }
   }

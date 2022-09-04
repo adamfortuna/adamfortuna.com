@@ -6,12 +6,8 @@ import { ImageType, ImageContextType } from '@/hooks/useImagePlaceholder'
 const getPlaceholders = async (images: string[]) => {
   const imageBlurData = await Promise.all(
     images.map(async (image) => {
-      const { base64 } = await getPlaiceholder(
-        `https://res.cloudinary.com/dsx6cqi6e/image/upload/w_32/thumbnail_${image}`,
-        {
-          size: 4,
-        },
-      )
+      const imageURL = `https://res.cloudinary.com/dsx6cqi6e/image/upload/w_32/thumbnail_${image}`
+      const { base64 } = await getPlaiceholder(imageURL, { size: 4 })
 
       return {
         image,

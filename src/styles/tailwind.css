@@ -31,12 +31,12 @@
 }
 
 .unblur {
-  animation: unblur 0.3s linear;
+  /* animation: unblur 0.1s ease-in-out; */
 }
 
 @keyframes unblur {
   from {
-    filter: blur(20px);
+    filter: blur(10px);
   }
   to {
     filter: blur(0);

@@ -1,21 +1,44 @@
 import { GetStaticPropsContext, NextPage } from 'next'
 import Link from 'next/link'
+import { AnimatePresence, motion } from 'framer-motion'
+import { useImagePlaceholder } from '@/hooks/useImagePlaceholder'
 
 import { Project, ProjectsQuery, ProjectsDocument, ProjectQuery, ProjectDocument } from '@/lib/graphql/output'
-
 import { initializeApollo } from '@/lib/apolloClient'
+import getPlaceholders from '@/lib/getPlaceholders'
 import { ProjectIcon } from '@/components/projects/ProjectIcon'
 import { Container } from '@/components/layout/Container'
+import { Image } from '@/components/layout/Image'
 
 export interface ProjectProps {
   project: Project
 }
 
 const Projects: NextPage<ProjectProps> = ({ project }) => {
+  const blurDataURL = useImagePlaceholder(project.poster?.data?.attributes?.hash as string)
+
   return (
-    <main className="mt-[100px]">
-      <Container>
-        <div>
+    <AnimatePresence>
+      <main>
+        {project.poster?.data?.attributes ? (
+          <div className="bg-cover" style={{ backgroundImage: `url(${blurDataURL})` }}>
+            <Container className="pt-[100px] relative">
+              <motion.div
+                className={`w-full h-[${project.poster.data.attributes.height}]`}
+                layoutId={`${project.slug}-poster`}
+              >
+                <Image
+                  width={project.poster.data.attributes.width as number}
+                  height={project.poster.data.attributes.height as number}
+                  src={project.poster.data.attributes.hash as string}
+                />
+              </motion.div>
+            </Container>
+          </div>
+        ) : (
+          <div className="mt-[100px]" />
+        )}
+        <Container className="relative">
           <p>
             <Link href="/projects">
               <a className="text-gray-500 text-sm tracking-tight hover:underline">← Projects</a>
@@ -25,9 +48,9 @@ const Projects: NextPage<ProjectProps> = ({ project }) => {
           <ProjectIcon icon={project.icon} width={32} height={32} />
 
           <p>{project.description}</p>
-        </div>
-      </Container>
-    </main>
+        </Container>
+      </main>
+    </AnimatePresence>
   )
 }
 
@@ -58,8 +81,14 @@ export async function getStaticProps({ params }: GetStaticPropsContext) {
     variables: { slug: params?.slug },
   })
 
+  const project = data.projects?.data[0].attributes
+  const imagePlaceholders = [project?.poster?.data?.attributes?.hash].filter((n) => n) as string[]
+
   return {
-    props: { project: data.projects?.data[0].attributes },
+    props: {
+      project: data.projects?.data[0].attributes,
+      imagePlaceholders: await getPlaceholders(imagePlaceholders),
+    },
     revalidate: 60 * 60,
   }
 }
