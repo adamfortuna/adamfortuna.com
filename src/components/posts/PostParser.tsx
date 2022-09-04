@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-props-no-spreading */
-
 import React from 'react'
 import HtmlToReact, { Parser as HtmlToReactParser } from 'html-to-react'
 import { Link } from '@/components/layout/Link'
