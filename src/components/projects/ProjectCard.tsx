@@ -17,25 +17,17 @@ export interface ProjectCardProps {
 export const ProjectCard = ({ classsName = '', project }: ProjectCardProps) => {
   return (
     <AnimatePresence>
-      <div className="flex justify-center">
-        <div
-          className={clsx(
-            classsName,
-            'md:max-w-5xl',
-            'flex md:flex-row -space-x-48',
-            'border border-gray-50',
-            // left ? "md:flex-row-reverse" : ""
-          )}
-        >
+      <div className="group flex justify-center">
+        <div className={clsx(classsName, 'md:max-w-5xl', 'flex md:flex-row -space-x-48', 'border border-gray-50')}>
           {project.poster?.data?.attributes ? (
             <motion.div className="flex-none" layoutId={`${project.slug}-poster`}>
-              <Link href={`/projects/${project.slug}`} variant="none" className="hover:saturate-200">
+              <Link href={`/projects/${project.slug}`} variant="none" className="group-hover:saturate-200">
                 <Image
                   width={600}
                   className="rounded"
                   height={
-                    ((project.poster.data.attributes.height as Number) * 600) /
-                    (project.poster.data.attributes.width as Number)
+                    ((project.poster.data.attributes.height as number) * 600) /
+                    (project.poster.data.attributes.width as number)
                   }
                   src={project.poster.data.attributes.hash as string}
                 />
@@ -45,7 +37,7 @@ export const ProjectCard = ({ classsName = '', project }: ProjectCardProps) => {
             <div />
           )}
 
-          <div className="w-[500px] self-end mb-16 flex flex-col justify-start p-4 bg-white rounded z-10 shadow">
+          <div className="w-[500px] self-end mb-16 flex flex-col justify-start p-4 bg-white group-hover:bg-sky-50 rounded z-10 shadow">
             <div className="flex items-center space-x-2">
               <ProjectIcon icon={project.icon} width={32} height={32} />
 

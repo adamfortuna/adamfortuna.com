@@ -16,8 +16,8 @@ export const ProjectCards = ({ projects, className, children }: ProjectCardsProp
         {children}
 
         <div className="mx-auto space-y-24">
-          {projects.map((project, index) => (
-            <ProjectCard key={`project-cards-${project.slug}`} left={index % 2 === 0} project={project} />
+          {projects.map((project) => (
+            <ProjectCard key={`project-cards-${project.slug}`} project={project} />
           ))}
         </div>
 
