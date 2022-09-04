@@ -1,13 +1,15 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 import { TechnologyEntity } from '@/lib/graphql/output'
 import sortBy from 'lodash/sortBy'
+import { Link, LinkThemeProps } from '@/components/layout/Link'
 
 export interface TechnologyTagsProps {
-  technologies: TechnologyEntity[]
+  technologies?: TechnologyEntity[]
+  size?: LinkThemeProps['size']
 }
 
-export const TechnologyTags = ({ technologies }: TechnologyTagsProps) => {
-  if (technologies.length === 0) {
+export const TechnologyTags = ({ technologies, size = 'sm' }: TechnologyTagsProps) => {
+  if (!technologies) {
     return <></>
   }
 
@@ -16,7 +18,11 @@ export const TechnologyTags = ({ technologies }: TechnologyTagsProps) => {
   return (
     <ul className="inline text-xs font-semibold space-x-1">
       {sortedTechnologies.map((technology) => (
-        <li className="inline bg-gray-200 px-1 py-0.5 rounded-sm">{technology.attributes?.technology}</li>
+        <li className="inline" key={technology.attributes?.slug}>
+          <Link href={`/technologies/${technology.attributes?.slug}`} variant="tag" size={size}>
+            {technology.attributes?.technology}
+          </Link>
+        </li>
       ))}
     </ul>
   )

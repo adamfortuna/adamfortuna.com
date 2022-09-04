@@ -1,28 +1,28 @@
-import { Project } from '@/lib/graphql/output'
+import { Post } from '@/lib/graphql/output'
 import { Container } from '@/components/layout/Container'
 import { Link } from '@/components/layout/Link'
-import { ProjectCard } from './ProjectCard'
+import { PostCard } from './PostCard'
 
 export interface ProjectCardsProps {
-  projects: Project[]
+  posts: Post[]
   className?: string
   children: any
 }
 
-export const ProjectCards = ({ projects, className, children }: ProjectCardsProps) => {
+export const PostCards = ({ posts, className, children }: ProjectCardsProps) => {
   return (
     <div className={`${className}`}>
       <Container className="">
         {children}
 
         <div className="mx-auto space-y-24">
-          {projects.map((project, index) => (
-            <ProjectCard key={`project-cards-${project.slug}`} left={index % 2 === 0} project={project} />
+          {posts.map((post) => (
+            <PostCard key={post.slug} post={post} />
           ))}
         </div>
 
         <p className="mt-8 border-t border-sky-200 text-center py-12">
-          <Link href="/projects">See all Projects</Link>
+          <Link href="/articles">See all Articles</Link>
         </p>
       </Container>
     </div>

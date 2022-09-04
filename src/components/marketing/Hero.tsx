@@ -1,5 +1,8 @@
 import { Container } from '@/components/layout/Container'
 import { InteractiveMountain } from '@/components/fun/InteractiveMountain'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { Link } from '@/components/layout/Link'
 
 export const Hero = () => {
   return (
@@ -18,6 +21,14 @@ export const Hero = () => {
           I love <span className="font-bold">enlivening experiences</span>,{' '}
           <span className="font-bold">quantifying data</span> and{' '}
           <span className="font-bold">making playful websites</span>.
+          <span className="ml-4 space-x-2">
+            <Link href="https://twitter.com/adamfortuna" className="group">
+              <FontAwesomeIcon icon={faTwitter} className="h-6 w-6 text-sky-800 group-hover:text-black" />
+            </Link>
+            <Link href="https://github.com/adamfortuna" className="group">
+              <FontAwesomeIcon icon={faGithub} className="h-6 w-6 text-sky-800 group-hover:text-black" />
+            </Link>
+          </span>
         </p>
       </Container>
     </div>

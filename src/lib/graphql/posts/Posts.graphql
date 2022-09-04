@@ -1,0 +1,11 @@
+query Posts($filters: PostFiltersInput, $sort: [String]) {
+  posts(filters: $filters, sort:$sort, pagination:{pageSize:100}) {
+    data {
+      attributes {
+        title
+        slug
+        date_published
+      }
+    }
+  }
+}

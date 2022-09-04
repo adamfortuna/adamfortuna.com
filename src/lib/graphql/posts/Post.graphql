@@ -1,0 +1,11 @@
+query Post($slug:String!) {
+  posts(filters:{slug: {eq: $slug} }) {
+    data {
+      attributes {
+        title
+        slug
+        content
+      }
+    }
+  }
+}

@@ -42,25 +42,25 @@ const QuestionButton = ({ question, active, setActiveQuestion }: QuestionButtonT
         onClick={() => setActiveQuestion(question)}
         className={clsx(
           'group flex items-center justify-between w-full px-4 py-2 rounded',
-          active ? 'bg-green-300' : 'hover:bg-green-200',
+          active ? 'bg-sky-200' : 'hover:bg-sky-300',
         )}
       >
         <div className="flex space-x-2 items-center">
-          <FontAwesomeIcon icon={question.icon} className="text-green-800 text-2xl" />
+          <FontAwesomeIcon icon={question.icon} className="text-sky-800 text-2xl" />
           <span dangerouslySetInnerHTML={{ __html: question.question }} />
         </div>
 
         <FontAwesomeIcon
           icon={faChevronRight}
           className={clsx(
-            'hidden md:inline-block text-green-600',
+            'hidden md:inline-block text-sky-600',
             active ? 'inline-block' : 'hidden md:group-hover:inline-block',
           )}
         />
         <FontAwesomeIcon
           icon={faChevronDown}
           className={clsx(
-            'md:hidden-block text-green-600',
+            'md:hidden-block text-sky-600',
             active ? 'inline-block md:hidden' : 'hidden group-hover:inline-block md:group-hover:hidden',
           )}
         />
@@ -157,29 +157,14 @@ const SkillsQuestionComponent = () => {
         </p>
         <p>
           The tools I reach for the most are
-          <Link href="/technologies/ruby-on-rails" className="text-bold ml-1">
-            Ruby on Rails
-          </Link>
-          ,
-          <Link href="/technologies/next-js" className="text-bold ml-1">
-            Next.js
-          </Link>
-          ,
-          <Link href="/technologies/tailwind-css" className="text-bold ml-1">
-            Tailwind.css
-          </Link>{' '}
+          <Link href="/technologies/ruby-on-rails">Ruby on Rails</Link>,
+          <Link href="/technologies/next-js">Next.js</Link>,<Link href="/technologies/tailwind-css">Tailwind.css</Link>{' '}
           and
-          <Link href="/technologies/graphql" className="text-bold ml-1">
-            GraphQL
-          </Link>
-          .
+          <Link href="/technologies/graphql">GraphQL</Link>.
         </p>
         <p>
           I'm currently having a lot of fun learning web animations with
-          <Link href="/technologies/greensock" className="text-bold ml-1">
-            GreenSock
-          </Link>
-          .
+          <Link href="/technologies/greensock">GreenSock</Link>.
         </p>
       </motion.div>
     </div>
@@ -233,11 +218,11 @@ export const AboutHero = () => {
   const [activeQuestion, setActiveQuestion] = useState(questions[0])
   return (
     <div>
-      <div className="h-screen flex items-center bg-">
+      <div className="h-screen flex items-center">
         <Container className="w-full">
           <div className="flex relative mx-auto flex-col md:flex-row">
-            <div className="bg-green-50 p-4 shadow-lg rounded-lg mt-12 w-full md:w-[500px] md:rounded-r-none">
-              <h2 className="font-bold text-3xl text-green-800">Let's Chat!</h2>
+            <div className="bg-sky-50 p-4 shadow-lg rounded-lg mt-12 w-full md:w-[500px] md:rounded-r-none">
+              <h2 className="font-bold text-3xl text-sky-800">Let's Chat!</h2>
               <div className="space-y-4 mt-6">
                 {questions.map((question) => (
                   <div key={question.question}>
