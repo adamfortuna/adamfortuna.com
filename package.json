@@ -34,6 +34,7 @@
     "framer-motion": "^7.2.1",
     "graphql": "^16.6.0",
     "gsap": "^3.11.0",
+    "html-to-react": "^1.5.0",
     "lodash": "^4.17.21",
     "next": "^12.2.3",
     "plaiceholder": "^2.5.0",

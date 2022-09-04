@@ -5,6 +5,7 @@ import { Post, PostsQuery, PostsDocument, PostQuery, PostDocument } from '@/lib/
 
 import { initializeApollo } from '@/lib/apolloClient'
 import { Container } from '@/components/layout/Container'
+import { PostContent } from '@/components/posts/PostContent'
 
 export interface ArticleProps {
   post: Post
@@ -15,7 +16,7 @@ const ArticlePage: NextPage<ArticleProps> = ({ post }) => {
     <div className="mt-[100px]">
       <Container className="">
         <h1 className="font-black text-4xl">{post.title}</h1>
-        <article className="prose" dangerouslySetInnerHTML={{ __html: post.content || '' }} />
+        <PostContent post={post} />
       </Container>
     </div>
   )
