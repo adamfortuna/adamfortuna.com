@@ -39,6 +39,8 @@ query Projects($filters: ProjectFiltersInput, $sort: [String]) {
             attributes {
               hash
               caption
+              height
+              width
             }
           }
         }

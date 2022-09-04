@@ -16,9 +16,9 @@ export const TechnologyTags = ({ technologies, size = 'sm' }: TechnologyTagsProp
   const sortedTechnologies = sortBy(technologies, (t) => t.attributes?.technology)
 
   return (
-    <ul className="inline text-xs font-semibold space-x-1">
+    <ul className="flex flex-wrap font-semibold">
       {sortedTechnologies.map((technology) => (
-        <li className="inline" key={technology.attributes?.slug}>
+        <li className="mr-2" key={technology.attributes?.slug}>
           <Link href={`/technologies/${technology.attributes?.slug}`} variant="tag" size={size}>
             {technology.attributes?.technology}
           </Link>

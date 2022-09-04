@@ -11,11 +11,10 @@ import { ProjectIcon } from '@/components/projects/ProjectIcon'
 
 export interface ProjectCardProps {
   project: Project
-  left: boolean
   classsName?: string
 }
 
-export const ProjectCard = ({ classsName = '', project, left }: ProjectCardProps) => {
+export const ProjectCard = ({ classsName = '', project }: ProjectCardProps) => {
   return (
     <AnimatePresence>
       <div className="flex justify-center">
@@ -23,20 +22,30 @@ export const ProjectCard = ({ classsName = '', project, left }: ProjectCardProps
           className={clsx(
             classsName,
             'md:max-w-5xl',
-            'flex flex-col md:flex-row  rounded-lg bg-white shadow-lg',
-            'flex md:flex-row space-x-8',
+            'flex md:flex-row -space-x-48',
             'border border-gray-50',
             // left ? "md:flex-row-reverse" : ""
           )}
         >
-          <motion.div
-            className="w-full h-96 md:w-48 md:h-auto rounded-t-lg md:rounded-none md:rounded-l-lg relative overflow-hidden"
-            layoutId={`${project.slug}-poster`}
-          >
-            <Image className="object-cover" layout="fill" src={project.poster?.data?.attributes?.hash as string} />
-          </motion.div>
+          {project.poster?.data?.attributes ? (
+            <motion.div className="flex-none" layoutId={`${project.slug}-poster`}>
+              <Link href={`/projects/${project.slug}`} variant="none" className="hover:saturate-200">
+                <Image
+                  width={600}
+                  className="rounded"
+                  height={
+                    ((project.poster.data.attributes.height as Number) * 600) /
+                    (project.poster.data.attributes.width as Number)
+                  }
+                  src={project.poster.data.attributes.hash as string}
+                />
+              </Link>
+            </motion.div>
+          ) : (
+            <div />
+          )}
 
-          <div className="flex flex-col justify-start py-4 px-2">
+          <div className="w-[500px] self-end mb-16 flex flex-col justify-start p-4 bg-white rounded z-10 shadow">
             <div className="flex items-center space-x-2">
               <ProjectIcon icon={project.icon} width={32} height={32} />
 
@@ -51,19 +60,17 @@ export const ProjectCard = ({ classsName = '', project, left }: ProjectCardProps
             </div>
             <p>{project.description}</p>
             {project.technologies?.data && (
-              <p>
-                <TechnologyTags technologies={project.technologies.data} />
+              <p className="mt-4">
+                <TechnologyTags technologies={project.technologies.data} size="xs" />
               </p>
             )}
-            <p>
-              <ProjectStateTag state={project.state}>{project.state_description}</ProjectStateTag>
-            </p>
-            <p className={`space-x-2 list-bullet ${left ? '' : 'flex-row-reverse'}`}>
+            <p className="mt-4 space-x-2 list-bullet">
               {project.url && (
                 <Link href={project.url} variant="info">
                   {extractPath(project.url)}
                 </Link>
-              )}
+              )}{' '}
+              <ProjectStateTag state={project.state}>{project.state_description}</ProjectStateTag>
             </p>
           </div>
         </div>
