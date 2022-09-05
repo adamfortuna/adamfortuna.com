@@ -39,7 +39,7 @@ export const ProjectCard = ({ classsName = '', project }: ProjectCardProps) => {
 
           <div className="w-[500px] self-end mb-16 flex flex-col justify-start p-4 bg-white group-hover:bg-sky-50 rounded z-10 shadow">
             <div className="flex items-center space-x-2">
-              <ProjectIcon icon={project.icon} width={32} height={32} />
+              <ProjectIcon icon={project.icon} size={32} />
 
               <div className="space-x-4">
                 <Link href={`/projects/${project.slug}`} size="xl">

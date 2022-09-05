@@ -45,7 +45,7 @@ const Projects: NextPage<ProjectProps> = ({ project }) => {
             </Link>
           </p>
           <h1 className="font-black text-4xl">{project.title}</h1>
-          <ProjectIcon icon={project.icon} width={32} height={32} />
+          <ProjectIcon icon={project.icon} size={32} />
 
           <p>{project.description}</p>
         </Container>
