@@ -15,6 +15,7 @@ query Projects($filters: ProjectFiltersInput, $sort: [String]) {
         date_ended
         featured
         category
+        has_profile
         
 
         icon {
@@ -22,6 +23,7 @@ query Projects($filters: ProjectFiltersInput, $sort: [String]) {
             attributes {
               hash
               caption
+              ext
             }
           }
         }

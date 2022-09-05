@@ -6,12 +6,14 @@ query Project($slug:String!) {
         slug
         description
         category
+        has_profile
 
         icon {
 					data {
             attributes {
               url
               caption
+              ext
             }
           }
         }
