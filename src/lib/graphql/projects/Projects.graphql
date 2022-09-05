@@ -14,6 +14,7 @@ query Projects($filters: ProjectFiltersInput, $sort: [String]) {
         state_description
         date_ended
         featured
+        category
         
 
         icon {

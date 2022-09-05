@@ -9,6 +9,7 @@ import {
 
 export interface ProjectStateTagProps {
   state: 'idea' | 'development' | 'live' | 'retired' | 'transferred' | 'left'
+  className?: string
   children: any
 }
 
@@ -39,9 +40,9 @@ const iconClassMap = {
   transferred: '',
 }
 
-export const ProjectStateTag = ({ state, children }: ProjectStateTagProps) => {
+export const ProjectStateTag = ({ state, className = '', children }: ProjectStateTagProps) => {
   return (
-    <span className={`px-1 py-0.5 rounded font-semibold ${classMap[state]}`}>
+    <span className={`px-1 py-0.5 rounded font-semibold ${className} ${classMap[state]}`}>
       <FontAwesomeIcon icon={iconMap[state]} className={`hidden sm:inline-block mr-2 ${iconClassMap[state]}`} />
       {children}
     </span>

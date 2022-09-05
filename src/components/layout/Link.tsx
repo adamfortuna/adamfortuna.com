@@ -5,7 +5,7 @@ import clsx from 'clsx'
 
 export type LinkThemeProps = {
   variant: 'default' | 'none' | 'header' | 'info' | 'tag'
-  size: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+  size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'
 }
 
 type LinkTheme = {
@@ -21,16 +21,17 @@ export const linkTheme: LinkTheme = {
   variant: {
     default: 'shadow-link',
     none: '',
-    header: 'shadow-link text-2xl',
+    header: 'shadow-link',
     info: 'link text-slate-400 text-sm hover:underline',
-    tag: 'bg-gray-200 px-1 py-0.5 rounded-sm hover:bg-gray-300 hover:text-black',
+    tag: 'bg-sky-100 px-1 py-0.5 rounded-sm hover:bg-gray-300 hover:text-black',
   },
   size: {
-    xs: 'text-sm',
-    sm: 'text-base',
-    md: 'text-lg',
-    lg: 'text-xl',
-    xl: 'text-2xl',
+    xs: 'text-xs',
+    sm: 'text-sm',
+    md: 'text-md',
+    lg: 'text-lg',
+    xl: 'text-xl',
+    '2xl': 'text-2xl',
   },
 }
 

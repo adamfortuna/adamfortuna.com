@@ -102,6 +102,27 @@ export type BooleanFilterInput = {
   startsWith?: InputMaybe<Scalars['Boolean']>;
 };
 
+export type ComponentSharedLink = {
+  __typename?: 'ComponentSharedLink';
+  id: Scalars['ID'];
+  title?: Maybe<Scalars['String']>;
+  url: Scalars['String'];
+};
+
+export type ComponentSharedLinkFiltersInput = {
+  and?: InputMaybe<Array<InputMaybe<ComponentSharedLinkFiltersInput>>>;
+  not?: InputMaybe<ComponentSharedLinkFiltersInput>;
+  or?: InputMaybe<Array<InputMaybe<ComponentSharedLinkFiltersInput>>>;
+  title?: InputMaybe<StringFilterInput>;
+  url?: InputMaybe<StringFilterInput>;
+};
+
+export type ComponentSharedLinkInput = {
+  id?: InputMaybe<Scalars['ID']>;
+  title?: InputMaybe<Scalars['String']>;
+  url?: InputMaybe<Scalars['String']>;
+};
+
 export type ComponentSharedMetaSocial = {
   __typename?: 'ComponentSharedMetaSocial';
   description: Scalars['String'];
@@ -194,6 +215,15 @@ export enum Enum_Componentsharedmetasocial_Socialnetwork {
   Twitter = 'Twitter'
 }
 
+export enum Enum_Project_Category {
+  App = 'app',
+  Course = 'course',
+  Experience = 'experience',
+  Job = 'job',
+  Library = 'library',
+  Template = 'template'
+}
+
 export enum Enum_Project_Size {
   Lg = 'lg',
   Md = 'md',
@@ -239,7 +269,7 @@ export type FloatFilterInput = {
   startsWith?: InputMaybe<Scalars['Float']>;
 };
 
-export type GenericMorph = Author | ComponentSharedMetaSocial | ComponentSharedSeo | I18NLocale | Post | Project | Technology | UploadFile | UploadFolder | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser;
+export type GenericMorph = Author | ComponentSharedLink | ComponentSharedMetaSocial | ComponentSharedSeo | I18NLocale | Post | Project | Technology | UploadFile | UploadFolder | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser;
 
 export type I18NLocale = {
   __typename?: 'I18NLocale';
@@ -595,6 +625,7 @@ export type PaginationArg = {
 export type Post = {
   __typename?: 'Post';
   authors?: Maybe<AuthorRelationResponseCollection>;
+  canonical_url?: Maybe<Scalars['String']>;
   content?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['DateTime']>;
   date_published?: Maybe<Scalars['DateTime']>;
@@ -645,6 +676,7 @@ export type PostEntityResponseCollection = {
 export type PostFiltersInput = {
   and?: InputMaybe<Array<InputMaybe<PostFiltersInput>>>;
   authors?: InputMaybe<AuthorFiltersInput>;
+  canonical_url?: InputMaybe<StringFilterInput>;
   content?: InputMaybe<StringFilterInput>;
   createdAt?: InputMaybe<DateTimeFilterInput>;
   date_published?: InputMaybe<DateTimeFilterInput>;
@@ -663,6 +695,7 @@ export type PostFiltersInput = {
 
 export type PostInput = {
   authors?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  canonical_url?: InputMaybe<Scalars['String']>;
   content?: InputMaybe<Scalars['String']>;
   date_published?: InputMaybe<Scalars['DateTime']>;
   date_updated?: InputMaybe<Scalars['DateTime']>;
@@ -683,6 +716,7 @@ export type PostRelationResponseCollection = {
 export type Project = {
   __typename?: 'Project';
   active?: Maybe<Scalars['Boolean']>;
+  category?: Maybe<Enum_Project_Category>;
   createdAt?: Maybe<Scalars['DateTime']>;
   date_ended?: Maybe<Scalars['Date']>;
   date_started?: Maybe<Scalars['Date']>;
@@ -692,6 +726,7 @@ export type Project = {
   how_going?: Maybe<Scalars['String']>;
   how_started?: Maybe<Scalars['String']>;
   icon?: Maybe<UploadFileEntityResponse>;
+  link?: Maybe<Array<Maybe<ComponentSharedLink>>>;
   parent_project?: Maybe<ProjectEntityResponse>;
   poster?: Maybe<UploadFileEntityResponse>;
   posts?: Maybe<PostRelationResponseCollection>;
@@ -707,6 +742,13 @@ export type Project = {
   updatedAt?: Maybe<Scalars['DateTime']>;
   url?: Maybe<Scalars['String']>;
   years_active?: Maybe<Scalars['String']>;
+};
+
+
+export type ProjectLinkArgs = {
+  filters?: InputMaybe<ComponentSharedLinkFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
 };
 
 
@@ -745,6 +787,7 @@ export type ProjectEntityResponseCollection = {
 export type ProjectFiltersInput = {
   active?: InputMaybe<BooleanFilterInput>;
   and?: InputMaybe<Array<InputMaybe<ProjectFiltersInput>>>;
+  category?: InputMaybe<StringFilterInput>;
   createdAt?: InputMaybe<DateTimeFilterInput>;
   date_ended?: InputMaybe<DateFilterInput>;
   date_started?: InputMaybe<DateFilterInput>;
@@ -754,6 +797,7 @@ export type ProjectFiltersInput = {
   how_going?: InputMaybe<StringFilterInput>;
   how_started?: InputMaybe<StringFilterInput>;
   id?: InputMaybe<IdFilterInput>;
+  link?: InputMaybe<ComponentSharedLinkFiltersInput>;
   not?: InputMaybe<ProjectFiltersInput>;
   or?: InputMaybe<Array<InputMaybe<ProjectFiltersInput>>>;
   parent_project?: InputMaybe<ProjectFiltersInput>;
@@ -774,6 +818,7 @@ export type ProjectFiltersInput = {
 
 export type ProjectInput = {
   active?: InputMaybe<Scalars['Boolean']>;
+  category?: InputMaybe<Enum_Project_Category>;
   date_ended?: InputMaybe<Scalars['Date']>;
   date_started?: InputMaybe<Scalars['Date']>;
   description?: InputMaybe<Scalars['String']>;
@@ -782,6 +827,7 @@ export type ProjectInput = {
   how_going?: InputMaybe<Scalars['String']>;
   how_started?: InputMaybe<Scalars['String']>;
   icon?: InputMaybe<Scalars['ID']>;
+  link?: InputMaybe<Array<InputMaybe<ComponentSharedLinkInput>>>;
   parent_project?: InputMaybe<Scalars['ID']>;
   poster?: InputMaybe<Scalars['ID']>;
   posts?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -1436,7 +1482,7 @@ export type ProjectQueryVariables = Exact<{
 }>;
 
 
-export type ProjectQuery = { __typename?: 'Query', projects?: { __typename?: 'ProjectEntityResponseCollection', data: Array<{ __typename?: 'ProjectEntity', attributes?: { __typename?: 'Project', title: string, slug: string, description?: string | null, icon?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string, caption?: string | null } | null } | null } | null, parent_project?: { __typename?: 'ProjectEntityResponse', data?: { __typename?: 'ProjectEntity', attributes?: { __typename?: 'Project', title: string, slug: string } | null } | null } | null, poster?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', hash: string, caption?: string | null, width?: number | null, height?: number | null } | null } | null } | null, technologies?: { __typename?: 'TechnologyRelationResponseCollection', data: Array<{ __typename?: 'TechnologyEntity', attributes?: { __typename?: 'Technology', slug: string, technology: string } | null }> } | null } | null }> } | null };
+export type ProjectQuery = { __typename?: 'Query', projects?: { __typename?: 'ProjectEntityResponseCollection', data: Array<{ __typename?: 'ProjectEntity', attributes?: { __typename?: 'Project', title: string, slug: string, description?: string | null, category?: Enum_Project_Category | null, icon?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string, caption?: string | null } | null } | null } | null, parent_project?: { __typename?: 'ProjectEntityResponse', data?: { __typename?: 'ProjectEntity', attributes?: { __typename?: 'Project', title: string, slug: string } | null } | null } | null, poster?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', hash: string, caption?: string | null, width?: number | null, height?: number | null } | null } | null } | null, technologies?: { __typename?: 'TechnologyRelationResponseCollection', data: Array<{ __typename?: 'TechnologyEntity', attributes?: { __typename?: 'Technology', slug: string, technology: string } | null }> } | null } | null }> } | null };
 
 export type ProjectsQueryVariables = Exact<{
   filters?: InputMaybe<ProjectFiltersInput>;
@@ -1444,7 +1490,7 @@ export type ProjectsQueryVariables = Exact<{
 }>;
 
 
-export type ProjectsQuery = { __typename?: 'Query', projects?: { __typename?: 'ProjectEntityResponseCollection', data: Array<{ __typename?: 'ProjectEntity', attributes?: { __typename?: 'Project', title: string, slug: string, description?: string | null, priority: number, size: Enum_Project_Size, url?: string | null, years_active?: string | null, state: Enum_Project_State, state_description?: string | null, date_ended?: any | null, featured: boolean, icon?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', hash: string, caption?: string | null } | null } | null } | null, parent_project?: { __typename?: 'ProjectEntityResponse', data?: { __typename?: 'ProjectEntity', attributes?: { __typename?: 'Project', title: string, slug: string } | null } | null } | null, poster?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', hash: string, caption?: string | null, height?: number | null, width?: number | null } | null } | null } | null, technologies?: { __typename?: 'TechnologyRelationResponseCollection', data: Array<{ __typename?: 'TechnologyEntity', attributes?: { __typename?: 'Technology', slug: string, technology: string } | null }> } | null } | null }> } | null };
+export type ProjectsQuery = { __typename?: 'Query', projects?: { __typename?: 'ProjectEntityResponseCollection', data: Array<{ __typename?: 'ProjectEntity', attributes?: { __typename?: 'Project', title: string, slug: string, description?: string | null, priority: number, size: Enum_Project_Size, url?: string | null, years_active?: string | null, state: Enum_Project_State, state_description?: string | null, date_ended?: any | null, featured: boolean, category?: Enum_Project_Category | null, icon?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', hash: string, caption?: string | null } | null } | null } | null, parent_project?: { __typename?: 'ProjectEntityResponse', data?: { __typename?: 'ProjectEntity', attributes?: { __typename?: 'Project', title: string, slug: string } | null } | null } | null, poster?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', hash: string, caption?: string | null, height?: number | null, width?: number | null } | null } | null } | null, technologies?: { __typename?: 'TechnologyRelationResponseCollection', data: Array<{ __typename?: 'TechnologyEntity', attributes?: { __typename?: 'Technology', slug: string, technology: string } | null }> } | null } | null }> } | null };
 
 
 export const PostDocument = gql`
@@ -1538,6 +1584,7 @@ export const ProjectDocument = gql`
         title
         slug
         description
+        category
         icon {
           data {
             attributes {
@@ -1622,6 +1669,7 @@ export const ProjectsDocument = gql`
         state_description
         date_ended
         featured
+        category
         icon {
           data {
             attributes {

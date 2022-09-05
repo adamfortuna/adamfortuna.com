@@ -5,6 +5,7 @@ query Project($slug:String!) {
         title
         slug
         description
+        category
 
         icon {
 					data {
