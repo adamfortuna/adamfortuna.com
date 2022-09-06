@@ -15,7 +15,7 @@ export const Header = () => {
               </span>
 
               <span className="font-bold text-2xl font-handwriting">
-                Adam <span className="hidden sm:inline-block">Fortuna</span>
+                Adam <span className="hidden md:inline-block">Fortuna</span>
               </span>
             </NavLink>
           </div>

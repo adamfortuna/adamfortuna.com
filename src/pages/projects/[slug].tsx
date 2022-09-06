@@ -62,8 +62,8 @@ export async function getStaticPaths() {
   const { data } = await apolloClient.query<ProjectsQuery>({
     query: ProjectsDocument,
     variables: {
-      filters: { has_profile: { eq: true }}
-    }
+      filters: { has_profile: { eq: true } },
+    },
   })
 
   return {
@@ -82,7 +82,7 @@ export async function getStaticProps({ params }: GetStaticPropsContext) {
   const { data } = await apolloClient.query<ProjectQuery>({
     query: ProjectDocument,
     variables: {
-      slug: params?.slug
+      slug: params?.slug,
     },
   })
 

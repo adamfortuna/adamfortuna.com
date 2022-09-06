@@ -1,7 +1,34 @@
 export interface ProjectCategoryProps {
-  category: string
+  category: 'app' | 'job' | 'course' | 'library' | 'experience' | 'template'
+}
+
+const CateogryMap = {
+  app: {
+    name: 'App',
+    icon: 'A',
+  },
+  job: {
+    name: 'Job',
+    icon: 'A',
+  },
+  course: {
+    name: 'Course',
+    icon: 'A',
+  },
+  library: {
+    name: 'Library',
+    icon: 'A',
+  },
+  experience: {
+    name: 'Experience',
+    icon: 'A',
+  },
+  template: {
+    name: 'Template',
+    icon: 'A',
+  },
 }
 
 export const ProjectCategory = ({ category }: ProjectCategoryProps) => {
-  return <span className="px-1 py-0.5 rounded font-semibold">{category}</span>
+  return <span>{CateogryMap[category].name}</span>
 }
