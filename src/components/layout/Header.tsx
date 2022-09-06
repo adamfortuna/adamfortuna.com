@@ -6,7 +6,7 @@ import { Container } from './Container'
 export const Header = () => {
   return (
     <header className="absolute top-0 inset-x-0">
-      <Container className="py-6">
+      <Container className="py-2 md:py-6">
         <nav className="relative z-50 flex justify-between">
           <div className="flex items-center md:gap-x-12 justify-between text-black">
             <NavLink href="/">
@@ -15,11 +15,11 @@ export const Header = () => {
               </span>
 
               <span className="font-bold text-2xl font-handwriting">
-                Adam <span className="hidden md:inline-block">Fortuna</span>
+                A<span className="hidden md:inline-block">dam Fortuna</span>
               </span>
             </NavLink>
           </div>
-          <div className="flex gap-x-2 md:gap-x-6">
+          <div className="flex md:gap-x-6 items-end md:items-center">
             <NavLink href="/about">About</NavLink>
             <NavLink href="/projects" icon={faHammer}>
               <span>Projects</span>

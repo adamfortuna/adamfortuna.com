@@ -2,14 +2,14 @@
 import { NextPage } from 'next'
 
 import { initializeApollo } from '@/lib/apolloClient'
-import { ProjectsQuery, ProjectsDocument, Project } from '@/lib/graphql/output'
+import { ProjectsQuery, ProjectsDocument, Project, ComponentSharedLinkInput } from '@/lib/graphql/output'
 import { ProjectIcon } from '@/components/projects/ProjectIcon'
 import { ProjectCategory } from '@/components/projects/ProjectCategory'
 
 import { Container } from '@/components/layout/Container'
-import { Link } from '@/components/layout/Link'
 import { ProjectStateTag } from '@/components/projects/ProjectStateTag'
 import { TechnologyTags } from '@/components/technologies/TechnologyTags'
+import { ProjectLinks } from '@/components/projects/ProjectLinks'
 import clsx from 'clsx'
 
 export interface ProjectProps {
@@ -20,7 +20,8 @@ const ProductTimelineIcon = ({ project }: { project: Project }) => {
   return (
     <span
       className={clsx(
-        'drop-shadow-xl flex absolute justify-center items-center rounded-full ring-1 ring-gray-400 bg-white',
+        'drop-shadow-xl flex absolute justify-center items-center rounded-full bg-white ring-4',
+        project.employed ? 'ring-green-400' : 'ring-blue-400',
         project.size === 'lg' ? '-left-8 w-16 h-16' : '',
         project.size === 'md' ? '-left-6 w-12 h-12' : '',
         project.size === 'sm' ? '-left-4 w-8 h-8' : '',
@@ -32,58 +33,48 @@ const ProductTimelineIcon = ({ project }: { project: Project }) => {
 }
 const ProjectTimeline = ({ project }: { project: Project }) => {
   return (
-    <li className="mb-10 ml-6">
-      {project.has_profile ? (
-        <Link href={`/projects/${project.slug}`} variant="none">
-          <ProductTimelineIcon project={project} />
-        </Link>
-      ) : (
-        <ProductTimelineIcon project={project} />
-      )}
+    <li className="mb-16 ml-8">
+      <ProductTimelineIcon project={project} />
       <div className="ml-4 flex flex-col">
         <p className="leading-7">
-          {project.has_profile ? (
-            <Link
-              href={`/projects/${project.slug}`}
-              variant="header"
-              size={project.size === 'lg' ? '2xl' : project.size === 'md' ? 'xl' : 'lg'}
-              className="mr-4"
-            >
-              {project.title}
-            </Link>
-          ) : (
-            <span
-              className={`mr-4 ${project.size === 'lg' ? 'text-2xl' : project.size === 'md' ? 'text-xl' : 'text-lg'}`}
-            >
-              {project.title}
-            </span>
-          )}
+          <span
+            className={`mr-4 ${project.size === 'lg' ? 'text-2xl' : project.size === 'md' ? 'text-xl' : 'text-lg'}`}
+          >
+            {project.title}
+          </span>
           <ProjectStateTag state={project.state} className="inline-block text-sm">
             {project.state_description}
           </ProjectStateTag>
         </p>
         <time className="block mt-1 mb-2 text-sm font-normal leading-none text-gray-500">
           <b>Active:</b> {project.years_active}, <ProjectCategory category={project.category || 'app'} />
-          {project.employed && <span>, Employed</span>}
         </time>
         <p className="mb-2 text-base font-normal text-gray-600">{project.description}</p>
         <TechnologyTags technologies={project.technologies?.data || []} size="xs" />
+        <div className="mt-2">
+          <ProjectLinks links={project.links as ComponentSharedLinkInput[]} size="sm" />
+        </div>
       </div>
     </li>
   )
 }
 const Projects: NextPage<ProjectProps> = ({ projects }) => {
   return (
-    <main className="mt-[100px]">
+    <main className="mt-[80px] md:mt-[100px]">
       <Container className="my-8 max-w-2xl">
         <h1 className="font-black text-3xl text-black">Projects</h1>
-        <p>Here are all the noteworthy things I've worked on.</p>
+        <p>
+          Here are all the noteworthy things I've worked on. Many were{' '}
+          <span className="font-bold bg-blue-200 text-blue-900 px-1 py-0.5 rounded">solo projects</span>, while a bunch
+          were on a <span className="font-bold bg-green-200 text-green-900 px-1 py-0.5 rounded">team</span> - some
+          employed.
+        </p>
 
         <ol className="ml-8 md:ml-0 mt-12 relative border-l border-gray-400">
           {projects.map((project, index) => (
             <>
               {index === 0 && (
-                <li className="mb-10 relative ml-10 lg:ml-0">
+                <li className="mb-10 relative ml-12 lg:ml-0">
                   <span className="md:ml-0 lg:absolute lg:-left-[150px] w-24 h-24 text-black font-black text-2xl lg:text-right">
                     Now
                     <span className="text-sm font-semibold text-gray-400 block">
@@ -96,7 +87,7 @@ const Projects: NextPage<ProjectProps> = ({ projects }) => {
               {index > 0 &&
                 project.date_ended &&
                 project.date_ended.split('-')[0] !== projects[index - 1]?.date_ended?.split('-')[0] && (
-                  <li className="mt-24 lg:mt-0 mb-4 relative ml-10 lg:ml-0">
+                  <li className="mt-24 lg:mt-0 mb-4 relative ml-12 lg:ml-0">
                     <span className="md:ml-0 lg:absolute lg:-left-[150px] w-24 h-24 text-black font-black text-2xl lg:text-right">
                       {project.date_ended.split('-')[0]}
                       <span className="text-sm font-semibold text-gray-400 block">

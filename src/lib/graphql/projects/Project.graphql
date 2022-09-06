@@ -6,7 +6,6 @@ query Project($slug:String!) {
         slug
         description
         category
-        has_profile
         employed
 
         icon {

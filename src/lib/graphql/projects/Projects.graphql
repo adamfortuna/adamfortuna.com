@@ -15,9 +15,13 @@ query Projects($filters: ProjectFiltersInput, $sort: [String]) {
         date_ended
         featured
         category
-        has_profile
         employed
         
+        links {
+          url
+          title
+          category
+        }
 
         icon {
           data {

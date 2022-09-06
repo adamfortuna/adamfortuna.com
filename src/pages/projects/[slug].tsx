@@ -61,9 +61,6 @@ export async function getStaticPaths() {
 
   const { data } = await apolloClient.query<ProjectsQuery>({
     query: ProjectsDocument,
-    variables: {
-      filters: { has_profile: { eq: true } },
-    },
   })
 
   return {
