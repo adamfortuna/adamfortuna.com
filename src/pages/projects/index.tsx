@@ -46,9 +46,16 @@ const ProjectTimeline = ({ project }: { project: Project }) => {
             {project.state_description}
           </ProjectStateTag>
         </p>
-        <time className="block mt-1 mb-2 text-sm font-normal leading-none text-gray-500">
-          <b>Active:</b> {project.years_active}, <ProjectCategory category={project.category || 'app'} />
-        </time>
+        <div className="block mt-1 mb-2 text-sm font-normal leading-none text-gray-500">
+          <ul className="list-comma">
+            <li><b>Active:</b> {project.years_active}</li>
+            <li><ProjectCategory category={project.category || 'app'} /></li>
+            {project.employed && (
+              <span><b>Role:</b> {project.role}</span>
+            )}
+          </ul>
+          
+        </div>
         <p className="mb-2 text-base font-normal text-gray-600">{project.description}</p>
         <TechnologyTags technologies={project.technologies?.data || []} size="xs" />
         <div className="mt-2">

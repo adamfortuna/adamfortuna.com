@@ -16,6 +16,7 @@ query Projects($filters: ProjectFiltersInput, $sort: [String]) {
         featured
         category
         employed
+        role
         
         links {
           url

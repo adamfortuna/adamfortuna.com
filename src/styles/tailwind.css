@@ -2,32 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-.list-comma {
+.list-comma, .list-bullet, .list-bar {
   display: inline;
   list-style: none;
 }
-.list-comma li {
+.list-comma li, .list-bullet li, .list-bar li {
   display: inline;
+}
+.list-comma li:last-child:after, 
+.list-bullet li:last-child:after, 
+.list-bar li:last-child:after {
+  content: "";
 }
 .list-comma li:after {
   content: ", ";
 }
-.list-comma li:last-child:after {
-  content: "";
-}
-
-.list-bullet {
-  display: inline;
-  list-style: none;
-}
-.list-bullet li {
-  display: inline;
-}
 .list-bullet li:after {
   content: " • ";
 }
-.list-bullet li:last-child:after {
-  content: "";
+.list-bar li:after {
+  content: " | ";
 }
 
 .unblur {
