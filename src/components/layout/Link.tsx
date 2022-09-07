@@ -75,27 +75,25 @@ export type LinkProps = {
 }
 
 export const Link = React.forwardRef<HTMLAnchorElement, React.PropsWithChildren<LinkProps>>(
-  ({ variant = 'default', size = 'md', className = '', showExternal=true, href, ...props }, ref) => {
-    const newClassName = clsx(linkTheme.variant[variant], linkTheme.size[size], variantSizes[variant][size], className),
-          externalLink = href.indexOf('http') === 0
+  ({ variant = 'default', size = 'md', className = '', showExternal = true, href, ...props }, ref) => {
+    const newClassName = clsx(linkTheme.variant[variant], linkTheme.size[size], variantSizes[variant][size], className)
+    const externalLink = href.indexOf('http') === 0
 
-    if(externalLink) {
-      if(showExternal) {
+    if (externalLink) {
+      if (showExternal) {
         return (
           <a ref={ref} href={href} className={newClassName} {...props}>
             {props.children}
             <FontAwesomeIcon icon={faSquareUpRight} className="ml-2 hidden sm:inline-block text-blue-600" />
           </a>
         )
-      } else {
-        return <a ref={ref} href={href} className={newClassName} {...props} />
       }
-    } else {
-      return (
-        <NextLink ref={ref} href={href} passHref>
-          <a className={newClassName} {...props} />
-        </NextLink>
-      )
+      return <a ref={ref} href={href} className={newClassName} {...props} />
     }
+    return (
+      <NextLink ref={ref} href={href} passHref>
+        <a className={newClassName} {...props} />
+      </NextLink>
+    )
   },
 )

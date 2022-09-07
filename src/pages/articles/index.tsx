@@ -16,7 +16,8 @@ const ArticlesPage: NextPage<ArticleProps> = ({ posts }) => {
       <Container className="my-8 max-w-2xl">
         <h1 className="font-black text-3xl text-black">Articles</h1>
         <p>
-          Here are a bunch of articles I've written on various blogs and platforms over the years. I prefer writing to speaking.
+          Here are a bunch of articles I've written on various blogs and platforms over the years. I prefer writing to
+          speaking.
         </p>
 
         <ol className="ml-8 md:ml-0 mt-12 relative border-l border-gray-400">

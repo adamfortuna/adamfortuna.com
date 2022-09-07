@@ -30,5 +30,9 @@ const CateogryMap = {
 }
 
 export const ProjectCategory = ({ category }: ProjectCategoryProps) => {
-  return <span><b>Category:</b> {CateogryMap[category].name}</span>
+  return (
+    <span>
+      <b>Category:</b> {CateogryMap[category].name}
+    </span>
+  )
 }

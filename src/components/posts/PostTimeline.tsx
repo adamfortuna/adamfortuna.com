@@ -1,9 +1,10 @@
+/* eslint-disable no-nested-ternary */
 import clsx from 'clsx'
 
 import { Post } from '@/lib/graphql/output'
 import { ProjectIcon } from '@/components/projects/ProjectIcon'
 import { TechnologyTags } from '@/components/technologies/TechnologyTags'
-import { Link } from "../layout/Link"
+import { Link } from '../layout/Link'
 
 const PostTimelineIcon = ({ post }: { post: Post }) => {
   return (
@@ -15,18 +16,25 @@ const PostTimelineIcon = ({ post }: { post: Post }) => {
         post.size === 'sm' ? '-left-4 w-8 h-8' : '',
       )}
     >
-      <ProjectIcon icon={post.project?.data?.attributes?.icon} size={post.size === 'lg' ? 64 : post.size === 'md' ? 48 : 32} />
+      <ProjectIcon
+        icon={post.project?.data?.attributes?.icon}
+        size={post.size === 'lg' ? 64 : post.size === 'md' ? 48 : 32}
+      />
     </span>
   )
 }
 
 const postSize = {
-  "lg": 16,
-  "md": 12,
-  "sm": 8
+  lg: 16,
+  md: 12,
+  sm: 8,
 }
 export const PostTimeline = ({ post }: { post: Post }) => {
-  const date = new Date(post.date_published).toLocaleDateString('en-us', { year:"numeric", month: "long", day: "numeric"})
+  const date = new Date(post.date_published).toLocaleDateString('en-us', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  })
 
   return (
     <li className={`mb-${postSize[post.size]} ml-8`}>
@@ -34,9 +42,7 @@ export const PostTimeline = ({ post }: { post: Post }) => {
       <div className="ml-4 flex flex-col">
         <p className="leading-7">
           <Link href={post.canonical_url ? post.canonical_url : `/articles/${post.slug}`} variant="header" size="lg">
-            <span
-              className={`${post.size === 'lg' ? 'text-2xl' : post.size === 'md' ? 'text-xl' : 'text-lg'}`}
-            >
+            <span className={`${post.size === 'lg' ? 'text-2xl' : post.size === 'md' ? 'text-xl' : 'text-lg'}`}>
               {post.title}
             </span>
           </Link>
@@ -46,12 +52,10 @@ export const PostTimeline = ({ post }: { post: Post }) => {
             <li>{date}</li>
           </ul>
         </div>
-        { post.size === "lg" && 
-          <p className="mb-2 text-base font-normal text-gray-600">{post.excerpt}</p>
-        }
-        { (post.size === "lg" || post.size === "md") && 
+        {post.size === 'lg' && <p className="mb-2 text-base font-normal text-gray-600">{post.excerpt}</p>}
+        {(post.size === 'lg' || post.size === 'md') && (
           <TechnologyTags technologies={post.technologies?.data || []} size="xs" />
-        }
+        )}
       </div>
     </li>
   )
