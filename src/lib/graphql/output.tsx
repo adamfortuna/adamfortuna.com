@@ -226,6 +226,12 @@ export enum Enum_Componentsharedmetasocial_Socialnetwork {
   Twitter = 'Twitter'
 }
 
+export enum Enum_Post_Size {
+  Lg = 'lg',
+  Md = 'md',
+  Sm = 'sm'
+}
+
 export enum Enum_Project_Category {
   App = 'app',
   Course = 'course',
@@ -645,6 +651,7 @@ export type Post = {
   poster?: Maybe<UploadFileEntityResponse>;
   project?: Maybe<ProjectEntityResponse>;
   publishedAt?: Maybe<Scalars['DateTime']>;
+  size: Enum_Post_Size;
   slug: Scalars['String'];
   technologies?: Maybe<TechnologyRelationResponseCollection>;
   title: Scalars['String'];
@@ -698,6 +705,7 @@ export type PostFiltersInput = {
   or?: InputMaybe<Array<InputMaybe<PostFiltersInput>>>;
   project?: InputMaybe<ProjectFiltersInput>;
   publishedAt?: InputMaybe<DateTimeFilterInput>;
+  size?: InputMaybe<StringFilterInput>;
   slug?: InputMaybe<StringFilterInput>;
   technologies?: InputMaybe<TechnologyFiltersInput>;
   title?: InputMaybe<StringFilterInput>;
@@ -714,6 +722,7 @@ export type PostInput = {
   poster?: InputMaybe<Scalars['ID']>;
   project?: InputMaybe<Scalars['ID']>;
   publishedAt?: InputMaybe<Scalars['DateTime']>;
+  size?: InputMaybe<Enum_Post_Size>;
   slug?: InputMaybe<Scalars['String']>;
   technologies?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   title?: InputMaybe<Scalars['String']>;
@@ -1486,7 +1495,7 @@ export type PostsQueryVariables = Exact<{
 }>;
 
 
-export type PostsQuery = { __typename?: 'Query', posts?: { __typename?: 'PostEntityResponseCollection', data: Array<{ __typename?: 'PostEntity', attributes?: { __typename?: 'Post', title: string, slug: string, date_published?: any | null } | null }> } | null };
+export type PostsQuery = { __typename?: 'Query', posts?: { __typename?: 'PostEntityResponseCollection', data: Array<{ __typename?: 'PostEntity', attributes?: { __typename?: 'Post', title: string, slug: string, date_published?: any | null, excerpt?: string | null, size: Enum_Post_Size, canonical_url?: string | null, technologies?: { __typename?: 'TechnologyRelationResponseCollection', data: Array<{ __typename?: 'TechnologyEntity', attributes?: { __typename?: 'Technology', slug: string, technology: string } | null }> } | null, project?: { __typename?: 'ProjectEntityResponse', data?: { __typename?: 'ProjectEntity', attributes?: { __typename?: 'Project', title: string, icon?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', hash: string, caption?: string | null, ext?: string | null } | null } | null } | null } | null } | null } | null } | null }> } | null };
 
 export type ProjectQueryVariables = Exact<{
   slug: Scalars['String'];
@@ -1553,6 +1562,33 @@ export const PostsDocument = gql`
         title
         slug
         date_published
+        excerpt
+        size
+        canonical_url
+        technologies {
+          data {
+            attributes {
+              slug
+              technology
+            }
+          }
+        }
+        project {
+          data {
+            attributes {
+              title
+              icon {
+                data {
+                  attributes {
+                    hash
+                    caption
+                    ext
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

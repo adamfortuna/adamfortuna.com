@@ -5,6 +5,37 @@ query Posts($filters: PostFiltersInput, $sort: [String]) {
         title
         slug
         date_published
+        excerpt
+        size
+        canonical_url
+
+        technologies {
+          data {
+            attributes {
+              slug
+              technology
+            }
+          }
+        }
+
+        project {
+          data {
+            attributes {
+              
+              title
+              icon {
+                data {
+                  attributes {
+                    hash
+                    caption
+                    ext
+                  }
+                }
+              }
+
+            }
+          }
+        }
       }
     }
   }

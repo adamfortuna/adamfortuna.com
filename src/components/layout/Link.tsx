@@ -2,6 +2,8 @@
 import React from 'react'
 import NextLink from 'next/link'
 import clsx from 'clsx'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSquareUpRight } from '@fortawesome/pro-regular-svg-icons'
 
 export type LinkThemeProps = {
   variant: 'default' | 'none' | 'header' | 'info' | 'tag' | 'button'
@@ -69,18 +71,31 @@ export type LinkProps = {
   className?: string
   href: string
   target?: string
+  showExternal?: boolean
 }
 
 export const Link = React.forwardRef<HTMLAnchorElement, React.PropsWithChildren<LinkProps>>(
-  ({ variant = 'default', size = 'md', className = '', href, ...props }, ref) => {
-    const newClassName = clsx(linkTheme.variant[variant], linkTheme.size[size], variantSizes[variant][size], className)
+  ({ variant = 'default', size = 'md', className = '', showExternal=true, href, ...props }, ref) => {
+    const newClassName = clsx(linkTheme.variant[variant], linkTheme.size[size], variantSizes[variant][size], className),
+          externalLink = href.indexOf('http') === 0
 
-    return href.indexOf('http') === 0 ? (
-      <a ref={ref} href={href} className={newClassName} {...props} />
-    ) : (
-      <NextLink ref={ref} href={href} passHref>
-        <a className={newClassName} {...props} />
-      </NextLink>
-    )
+    if(externalLink) {
+      if(showExternal) {
+        return (
+          <a ref={ref} href={href} className={newClassName} {...props}>
+            {props.children}
+            <FontAwesomeIcon icon={faSquareUpRight} className="ml-2 hidden sm:inline-block text-blue-600" />
+          </a>
+        )
+      } else {
+        return <a ref={ref} href={href} className={newClassName} {...props} />
+      }
+    } else {
+      return (
+        <NextLink ref={ref} href={href} passHref>
+          <a className={newClassName} {...props} />
+        </NextLink>
+      )
+    }
   },
 )
