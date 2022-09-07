@@ -1,6 +1,7 @@
 /* eslint-disable no-nested-ternary */
 import clsx from 'clsx'
 
+import { extractPath } from '@/lib/extractPath'
 import { Post } from '@/lib/graphql/output'
 import { ProjectIcon } from '@/components/projects/ProjectIcon'
 import { TechnologyTags } from '@/components/technologies/TechnologyTags'
@@ -50,6 +51,7 @@ export const PostTimeline = ({ post }: { post: Post }) => {
         <div className="block mt-1 mb-2 text-sm font-normal leading-none text-gray-500">
           <ul className="list-comma">
             <li>{date}</li>
+            {post.canonical_url && <li>{extractPath(post.canonical_url)}</li>}
           </ul>
         </div>
         {post.size === 'lg' && <p className="mb-2 text-base font-normal text-gray-600">{post.excerpt}</p>}

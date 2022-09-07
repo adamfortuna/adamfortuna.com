@@ -15,7 +15,7 @@ const ArticlePage: NextPage<ArticleProps> = ({ post }) => {
   return (
     <div className="mt-[100px]">
       <Container className="">
-        <h1 className="font-black text-4xl">{post.title}</h1>
+        <h1 className="text-center font-serif font-bold text-4xl mb-4">{post.title}</h1>
         <PostContent post={post} />
       </Container>
     </div>

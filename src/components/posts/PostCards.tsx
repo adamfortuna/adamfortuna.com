@@ -15,7 +15,7 @@ export const PostCards = ({ posts, className, children }: ProjectCardsProps) => 
       <Container className="">
         {children}
 
-        <div className="mx-auto space-y-24">
+        <div className="mx-auto space-y-2">
           {posts.map((post) => (
             <PostCard key={post.slug} post={post} />
           ))}

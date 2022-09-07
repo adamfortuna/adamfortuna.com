@@ -9,7 +9,7 @@ export interface PostContentProps {
 
 export const PostContent = ({ post }: PostContentProps) => {
   return (
-    <article className="prose">
+    <article className="prose mx-auto">
       <PostParser html={post.content as string} />
     </article>
   )
