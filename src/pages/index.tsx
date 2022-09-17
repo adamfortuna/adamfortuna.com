@@ -49,7 +49,7 @@ const Home: NextPage<Props> = ({ activeProjects, featuredProjects, recentPosts }
 
 export default Home
 
-export async function getStaticProps() {
+async function indexProps() {
   const apolloClient = initializeApollo()
 
   // Active Projects
@@ -82,12 +82,16 @@ export async function getStaticProps() {
   const recentPosts = recentPostsData.posts?.data.map((postData) => postData.attributes)
 
   return {
-    props: {
-      imagePlaceholders: await getPlaceholders(imagePlaceholders),
-      activeProjects,
-      featuredProjects,
-      recentPosts,
-    },
+    imagePlaceholders: await getPlaceholders(imagePlaceholders),
+    activeProjects,
+    featuredProjects,
+    recentPosts,
+  }
+}
+
+export async function getStaticProps() {
+  return {
+    props: await indexProps(),
     revalidate: 60 * 60,
   }
 }

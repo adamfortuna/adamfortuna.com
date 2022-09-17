@@ -27,6 +27,10 @@ const CateogryMap = {
     name: 'Template',
     icon: 'A',
   },
+  blog: {
+    name: 'Blog',
+    icon: 'A',
+  },
 }
 
 export const ProjectCategory = ({ category }: ProjectCategoryProps) => {

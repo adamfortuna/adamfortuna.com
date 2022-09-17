@@ -1,5 +1,7 @@
-import { faHammer, faMountain, faPencil } from '@fortawesome/pro-regular-svg-icons'
+import { faHammer, faPencil } from '@fortawesome/pro-regular-svg-icons'
+// import { faHammer, faMountain, faPencil } from '@fortawesome/pro-regular-svg-icons'
 
+import Af from '@/images/af.svg'
 import { NavLink } from '@/components/layout/NavLink'
 import { Container } from './Container'
 
@@ -14,9 +16,9 @@ export const Header = () => {
                 👋
               </span>
 
-              <span className="font-bold text-2xl font-handwriting">
-                A<span className="hidden md:inline-block">dam Fortuna</span>
-              </span>
+              <Af className="w-10 h-8 text-sky-800 group-hover:text-white md:hidden" />
+
+              <span className="font-bold text-2xl font-handwriting hidden md:inline-block">Adam Fortuna</span>
             </NavLink>
           </div>
           <div className="flex md:gap-x-6 items-end md:items-center">
@@ -27,9 +29,9 @@ export const Header = () => {
             <NavLink href="/articles" icon={faPencil}>
               <span>Articles</span>
             </NavLink>
-            <NavLink href="/adventures" icon={faMountain}>
+            {/* <NavLink href="/adventures" icon={faMountain}>
               <span>Adventures</span>
-            </NavLink>
+            </NavLink> */}
           </div>
         </nav>
       </Container>

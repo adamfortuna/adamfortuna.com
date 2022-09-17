@@ -1,117 +1,77 @@
 /* eslint-disable no-nested-ternary */
+import { useState } from 'react'
 import { NextPage } from 'next'
+import sortBy from 'lodash/sortBy'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheck } from '@fortawesome/pro-regular-svg-icons'
 
 import { initializeApollo } from '@/lib/apolloClient'
-import { ProjectsQuery, ProjectsDocument, Project, ComponentSharedLinkInput } from '@/lib/graphql/output'
-import { ProjectIcon } from '@/components/projects/ProjectIcon'
-import { ProjectCategory } from '@/components/projects/ProjectCategory'
+import { ProjectsQuery, ProjectsDocument, Project } from '@/lib/graphql/output'
 
 import { Container } from '@/components/layout/Container'
-import { ProjectStateTag } from '@/components/projects/ProjectStateTag'
-import { TechnologyTags } from '@/components/technologies/TechnologyTags'
-import { ProjectLinks } from '@/components/projects/ProjectLinks'
-import clsx from 'clsx'
+import { ProjectsTimeline } from '@/components/projects/ProjectsTimeline'
 
 export interface ProjectProps {
   projects: Project[]
 }
 
-const ProductTimelineIcon = ({ project }: { project: Project }) => {
-  return (
-    <span
-      className={clsx(
-        'drop-shadow-xl flex absolute justify-center items-center rounded-full bg-white ring-4',
-        project.employed ? 'ring-green-400' : 'ring-blue-400',
-        project.size === 'lg' ? '-left-8 w-16 h-16' : '',
-        project.size === 'md' ? '-left-6 w-12 h-12' : '',
-        project.size === 'sm' ? '-left-4 w-8 h-8' : '',
-      )}
-    >
-      <ProjectIcon icon={project.icon} size={project.size === 'lg' ? 64 : project.size === 'md' ? 48 : 32} />
-    </span>
-  )
-}
-const ProjectTimeline = ({ project }: { project: Project }) => {
-  return (
-    <li className="mb-16 ml-8">
-      <ProductTimelineIcon project={project} />
-      <div className="ml-4 flex flex-col">
-        <p className="leading-7">
-          <span
-            className={`mr-4 ${project.size === 'lg' ? 'text-2xl' : project.size === 'md' ? 'text-xl' : 'text-lg'}`}
-          >
-            {project.title}
-          </span>
-          <ProjectStateTag state={project.state} className="inline-block text-sm">
-            {project.state_description}
-          </ProjectStateTag>
-        </p>
-        <div className="block mt-1 mb-2 text-sm font-normal leading-none text-gray-500">
-          <ul className="list-comma">
-            <li>
-              <b>Active:</b> {project.years_active}
-            </li>
-            <li>
-              <ProjectCategory category={project.category || 'app'} />
-            </li>
-            {project.employed && (
-              <span>
-                <b>Role:</b> {project.role}
-              </span>
-            )}
-          </ul>
-        </div>
-        <p className="mb-2 text-base font-normal text-gray-600">{project.description}</p>
-        <TechnologyTags technologies={project.technologies?.data || []} size="xs" />
-        <div className="mt-2">
-          <ProjectLinks links={project.links as ComponentSharedLinkInput[]} size="sm" />
-        </div>
-      </div>
-    </li>
-  )
-}
 const Projects: NextPage<ProjectProps> = ({ projects }) => {
+  const [sortedProjects, setSortedProjects] = useState(projects)
+  const [sortedBy, setSortedBy] = useState<'date_started' | 'date_ended'>('date_ended')
+
+  const setSortBy = (sortByField: 'date_started' | 'date_ended') => {
+    setSortedBy(sortByField)
+    setSortedProjects(sortBy(projects, [sortByField, 'priority']).reverse())
+  }
+
   return (
     <main className="mt-[80px] md:mt-[100px]">
-      <Container className="my-8 max-w-2xl">
-        <h1 className="font-black text-3xl text-black">Projects</h1>
-        <p>
-          Here are all the noteworthy things I've worked on. Many were{' '}
-          <span className="font-bold bg-blue-200 text-blue-900 px-1 py-0.5 rounded">solo projects</span>, while a bunch
-          were on a <span className="font-bold bg-green-200 text-green-900 px-1 py-0.5 rounded">team</span> - some
-          employed.
-        </p>
+      <Container className="my-8 max-w-3xl">
+        <div className="prose">
+          <h1>Projects</h1>
+          <p>
+            Here are all the noteworthy things I've worked on. Many were{' '}
+            <span className="font-bold bg-blue-200 text-blue-900 px-1 py-0.5 rounded">solo projects</span>, while a
+            bunch were on a <span className="font-bold bg-green-200 text-green-900 px-1 py-0.5 rounded">team</span> -
+            some employed.
+          </p>
+          <p>
+            Scroll down to the bottom to see the most embaressing projects I made in high school. 🙈 We all have to
+            start somewhere!
+          </p>
+          <p>
+            Icon size indicates how "important" I thought that project is/was in my life at the time and how involved I
+            was.
+          </p>
+        </div>
 
-        <ol className="ml-8 md:ml-0 mt-12 relative border-l border-gray-400">
-          {projects.map((project, index) => (
-            <>
-              {index === 0 && (
-                <li className="mb-10 relative ml-12 lg:ml-0">
-                  <span className="md:ml-0 lg:absolute lg:-left-[150px] w-24 h-24 text-black font-black text-2xl lg:text-right">
-                    Now
-                    <span className="text-sm font-semibold text-gray-400 block">
-                      {Number(new Date().getFullYear()) - 1982} years old
-                    </span>
-                  </span>
-                </li>
-              )}
+        <div className="flex justify-end items-center space-x-2 mt-8">
+          <span className="text-xs font-semibold">Sort reverse by</span>
 
-              {index > 0 &&
-                project.date_ended &&
-                project.date_ended.split('-')[0] !== projects[index - 1]?.date_ended?.split('-')[0] && (
-                  <li className="mt-24 lg:mt-0 mb-4 relative ml-12 lg:ml-0">
-                    <span className="md:ml-0 lg:absolute lg:-left-[150px] w-24 h-24 text-black font-black text-2xl lg:text-right">
-                      {project.date_ended.split('-')[0]}
-                      <span className="text-sm font-semibold text-gray-400 block">
-                        {Number(project.date_ended.split('-')[0]) - 1982} years old
-                      </span>
-                    </span>
-                  </li>
-                )}
-              <ProjectTimeline key={project.slug} project={project} />
-            </>
-          ))}
-        </ol>
+          <span className="isolate inline-flex rounded-md shadow-sm">
+            <button
+              type="button"
+              onClick={() => setSortBy('date_started')}
+              className={`space-x-1 relative inline-flex items-center rounded-l-md border border-gray-300 bg-white px-2 py-1 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 ${
+                sortedBy === 'date_started' ? ' bg-white' : 'hover:bg-gray-50 bg-white'
+              }`}
+            >
+              {sortedBy === 'date_started' && <FontAwesomeIcon icon={faCheck} className="h-4 w-4 text-green-500" />}
+              <span>Project start date</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => setSortBy('date_ended')}
+              className={`space-x-1 relative -ml-px inline-flex items-center rounded-r-md border border-gray-300 bg-white px-2 py-1 text-sm font-medium text-gray-700  focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 ${
+                sortedBy === 'date_ended' ? ' bg-white' : 'hover:bg-gray-50 bg-white'
+              }`}
+            >
+              {sortedBy === 'date_ended' && <FontAwesomeIcon icon={faCheck} className="h-4 w-4 text-green-500" />}
+              <span>Project end date</span>
+            </button>
+          </span>
+        </div>
+        <ProjectsTimeline projects={sortedProjects} sortField={sortedBy} />
       </Container>
     </main>
   )

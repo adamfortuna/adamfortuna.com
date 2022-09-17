@@ -22,10 +22,10 @@ export const Hero = () => {
           <span className="font-bold">quantifying data</span> and{' '}
           <span className="font-bold">making playful websites</span>.
           <span className="ml-4 space-x-2">
-            <Link href="https://twitter.com/adamfortuna" className="group">
+            <Link href="https://twitter.com/adamfortuna" className="group" showExternal={false}>
               <FontAwesomeIcon icon={faTwitter} className="h-6 w-6 text-sky-800 group-hover:text-black" />
             </Link>
-            <Link href="https://github.com/adamfortuna" className="group">
+            <Link href="https://github.com/adamfortuna" className="group" showExternal={false}>
               <FontAwesomeIcon icon={faGithub} className="h-6 w-6 text-sky-800 group-hover:text-black" />
             </Link>
           </span>

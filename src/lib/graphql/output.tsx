@@ -234,6 +234,7 @@ export enum Enum_Post_Size {
 
 export enum Enum_Project_Category {
   App = 'app',
+  Blog = 'blog',
   Course = 'course',
   Experience = 'experience',
   Job = 'job',
@@ -753,6 +754,7 @@ export type Project = {
   priority: Scalars['Int'];
   publishedAt?: Maybe<Scalars['DateTime']>;
   role?: Maybe<Scalars['String']>;
+  salary?: Maybe<Scalars['String']>;
   size: Enum_Project_Size;
   slug: Scalars['String'];
   state: Enum_Project_State;
@@ -825,6 +827,7 @@ export type ProjectFiltersInput = {
   priority?: InputMaybe<IntFilterInput>;
   publishedAt?: InputMaybe<DateTimeFilterInput>;
   role?: InputMaybe<StringFilterInput>;
+  salary?: InputMaybe<StringFilterInput>;
   size?: InputMaybe<StringFilterInput>;
   slug?: InputMaybe<StringFilterInput>;
   state?: InputMaybe<StringFilterInput>;
@@ -854,6 +857,7 @@ export type ProjectInput = {
   priority?: InputMaybe<Scalars['Int']>;
   publishedAt?: InputMaybe<Scalars['DateTime']>;
   role?: InputMaybe<Scalars['String']>;
+  salary?: InputMaybe<Scalars['String']>;
   size?: InputMaybe<Enum_Project_Size>;
   slug?: InputMaybe<Scalars['String']>;
   state?: InputMaybe<Enum_Project_State>;
@@ -1510,7 +1514,7 @@ export type ProjectsQueryVariables = Exact<{
 }>;
 
 
-export type ProjectsQuery = { __typename?: 'Query', projects?: { __typename?: 'ProjectEntityResponseCollection', data: Array<{ __typename?: 'ProjectEntity', attributes?: { __typename?: 'Project', title: string, slug: string, description?: string | null, priority: number, size: Enum_Project_Size, url?: string | null, years_active?: string | null, state: Enum_Project_State, state_description?: string | null, date_ended?: any | null, featured: boolean, category?: Enum_Project_Category | null, employed?: boolean | null, role?: string | null, links?: Array<{ __typename?: 'ComponentSharedLink', url: string, title?: string | null, category: Enum_Componentsharedlink_Category } | null> | null, icon?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', hash: string, caption?: string | null, ext?: string | null } | null } | null } | null, parent_project?: { __typename?: 'ProjectEntityResponse', data?: { __typename?: 'ProjectEntity', attributes?: { __typename?: 'Project', title: string, slug: string } | null } | null } | null, poster?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', hash: string, caption?: string | null, height?: number | null, width?: number | null } | null } | null } | null, technologies?: { __typename?: 'TechnologyRelationResponseCollection', data: Array<{ __typename?: 'TechnologyEntity', attributes?: { __typename?: 'Technology', slug: string, technology: string } | null }> } | null } | null }> } | null };
+export type ProjectsQuery = { __typename?: 'Query', projects?: { __typename?: 'ProjectEntityResponseCollection', data: Array<{ __typename?: 'ProjectEntity', attributes?: { __typename?: 'Project', title: string, slug: string, description?: string | null, priority: number, size: Enum_Project_Size, years_active?: string | null, state: Enum_Project_State, state_description?: string | null, date_started?: any | null, date_ended?: any | null, featured: boolean, category?: Enum_Project_Category | null, employed?: boolean | null, role?: string | null, salary?: string | null, links?: Array<{ __typename?: 'ComponentSharedLink', url: string, title?: string | null, category: Enum_Componentsharedlink_Category } | null> | null, icon?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', hash: string, caption?: string | null, ext?: string | null } | null } | null } | null, parent_project?: { __typename?: 'ProjectEntityResponse', data?: { __typename?: 'ProjectEntity', attributes?: { __typename?: 'Project', title: string, slug: string } | null } | null } | null, poster?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', hash: string, caption?: string | null, height?: number | null, width?: number | null } | null } | null } | null, technologies?: { __typename?: 'TechnologyRelationResponseCollection', data: Array<{ __typename?: 'TechnologyEntity', attributes?: { __typename?: 'Technology', slug: string, technology: string } | null }> } | null } | null }> } | null };
 
 
 export const PostDocument = gql`
@@ -1712,15 +1716,16 @@ export const ProjectsDocument = gql`
         priority
         size
         description
-        url
         years_active
         state
         state_description
+        date_started
         date_ended
         featured
         category
         employed
         role
+        salary
         links {
           url
           title
