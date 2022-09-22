@@ -40,7 +40,7 @@ const ProjectTimeline = ({ project }: { project: Project }) => {
           </ProjectStateTag>
         </p>
         <div className="block mt-1 mb-2 text-sm font-normal leading-none text-gray-500">
-          <ul className="list-comma">
+          <ul className="list-comma leading-5">
             <li>
               <b>Active:</b> {project.years_active}
             </li>
@@ -54,7 +54,7 @@ const ProjectTimeline = ({ project }: { project: Project }) => {
             )}
             {project.salary && (
               <li>
-                <b>Salary:</b> {project.salary}
+                <b>Compensation:</b> {project.salary}
               </li>
             )}
           </ul>
