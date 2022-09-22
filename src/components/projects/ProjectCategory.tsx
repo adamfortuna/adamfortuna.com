@@ -1,5 +1,7 @@
+import { Enum_Project_Category } from '@/lib/graphql/output'
+
 export interface ProjectCategoryProps {
-  category: 'app' | 'job' | 'course' | 'library' | 'experience' | 'template'
+  category: Enum_Project_Category
 }
 
 const CateogryMap = {

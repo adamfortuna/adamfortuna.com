@@ -1,7 +1,7 @@
 /* eslint-disable no-nested-ternary, react/jsx-no-useless-fragment */
 import clsx from 'clsx'
 
-import { Project, ComponentSharedLinkInput } from '@/lib/graphql/output'
+import { Project, ComponentSharedLinkInput, Enum_Project_Category } from '@/lib/graphql/output'
 import { ProjectIcon } from '@/components/projects/ProjectIcon'
 import { ProjectCategory } from '@/components/projects/ProjectCategory'
 import { ProjectStateTag } from '@/components/projects/ProjectStateTag'
@@ -45,7 +45,7 @@ const ProjectTimeline = ({ project }: { project: Project }) => {
               <b>Active:</b> {project.years_active}
             </li>
             <li>
-              <ProjectCategory category={project.category || 'app'} />
+              <ProjectCategory category={project.category as Enum_Project_Category} />
             </li>
             {project.employed && (
               <li>
@@ -60,7 +60,7 @@ const ProjectTimeline = ({ project }: { project: Project }) => {
           </ul>
         </div>
         <p className="mb-2 text-base font-normal text-gray-600">{project.description}</p>
-        <TechnologyTags technologies={project.technologies?.data || []} size="xs" />
+        <TechnologyTags technologies={project.technologies?.data || []} />
         <div className="mt-2">
           <ProjectLinks links={project.links as ComponentSharedLinkInput[]} size="sm" />
         </div>

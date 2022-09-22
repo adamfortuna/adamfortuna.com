@@ -55,9 +55,7 @@ export const PostTimeline = ({ post }: { post: Post }) => {
           </ul>
         </div>
         {post.size === 'lg' && <p className="mb-2 text-base font-normal text-gray-600">{post.excerpt}</p>}
-        {(post.size === 'lg' || post.size === 'md') && (
-          <TechnologyTags technologies={post.technologies?.data || []} size="xs" />
-        )}
+        {(post.size === 'lg' || post.size === 'md') && <TechnologyTags technologies={post.technologies?.data || []} />}
       </div>
     </li>
   )
