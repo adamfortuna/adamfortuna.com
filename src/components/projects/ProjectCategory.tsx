@@ -1,44 +1,22 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 import { Enum_Project_Category } from '@/lib/graphql/output'
 
 export interface ProjectCategoryProps {
-  category: Enum_Project_Category
+  category?: Enum_Project_Category
 }
 
-const CateogryMap = {
-  app: {
-    name: 'App',
-    icon: 'A',
-  },
-  job: {
-    name: 'Job',
-    icon: 'A',
-  },
-  course: {
-    name: 'Course',
-    icon: 'A',
-  },
-  library: {
-    name: 'Library',
-    icon: 'A',
-  },
-  experience: {
-    name: 'Experience',
-    icon: 'A',
-  },
-  template: {
-    name: 'Template',
-    icon: 'A',
-  },
-  blog: {
-    name: 'Blog',
-    icon: 'A',
-  },
+function capitalizeFirstLetter(string: string) {
+  return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
 export const ProjectCategory = ({ category }: ProjectCategoryProps) => {
+  if (!category) {
+    return <></>
+  }
+
   return (
     <span>
-      <b>Category:</b> {CateogryMap[category].name}
+      <b>Category:</b> {capitalizeFirstLetter(category)}
     </span>
   )
 }
