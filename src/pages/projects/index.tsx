@@ -1,8 +1,8 @@
 /* eslint-disable no-nested-ternary, sonarjs/no-duplicate-string */
 import { useState } from 'react'
+import clsx from 'clsx'
 import { NextPage } from 'next'
 import sortBy from 'lodash/sortBy'
-import filter from 'lodash/filter'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck } from '@fortawesome/pro-regular-svg-icons'
 
@@ -11,71 +11,48 @@ import { ProjectsQuery, ProjectsDocument, Project } from '@/lib/graphql/output'
 
 import { Container } from '@/components/layout/Container'
 import { ProjectsTimeline } from '@/components/projects/ProjectsTimeline'
-import clsx from 'clsx'
+import { ProjectsTechnologies } from '@/components/projects/ProjectsTechnologies'
 
 export interface ProjectProps {
   projects: Project[]
 }
 
-interface Filters {
+type SortType = 'date_started' | 'date_ended' | 'technology' | 'project'
+interface Sorters {
   name: string
-  condition: 'job' | 'app' | 'experience' | 'blog' | null
+  sortBy: SortType
 }
 
-type FilterType = 'job' | 'app' | 'experience' | 'blog' | null
-type SortType = 'date_started' | 'date_ended'
-
-const filters = [
+const sortButtons = [
   {
-    name: 'All',
-    condition: null,
+    name: 'Project end date',
+    sortBy: 'date_ended',
   },
   {
-    name: 'Blogs',
-    condition: 'blog',
+    name: 'Project start date',
+    sortBy: 'date_started',
   },
   {
-    name: 'Apps',
-    condition: 'app',
+    name: 'Technology',
+    sortBy: 'technology',
   },
-  {
-    name: 'Experiences',
-    condition: 'experience',
-  },
-  {
-    name: 'Jobs',
-    condition: 'job',
-  },
-] as Filters[]
+] as Sorters[]
 
 const Projects: NextPage<ProjectProps> = ({ projects }) => {
   const [sortedProjects, setSortedProjects] = useState(projects)
   const [sortedBy, setSortedBy] = useState<SortType>('date_ended')
-  const [filterBy, setFilteredBy] = useState<FilterType>(null)
 
   const sortProjects = (allProjects: Project[], sortByField: SortType) => {
     return sortBy(allProjects, [sortByField, 'priority']).reverse()
   }
 
-  const updateResults = (filterByField: FilterType, sortByField: SortType) => {
-    const filteredProjects = filterByField
-      ? filter(projects, (project) => project.category === filterByField)
-      : projects
-    setSortedProjects(sortProjects(filteredProjects, sortByField))
+  const updateResults = (sortByField: SortType) => {
+    setSortedProjects(sortProjects(projects, sortByField))
   }
 
   const setSortBy = (sortByField: SortType) => {
     setSortedBy(sortByField)
-    updateResults(filterBy, sortByField)
-  }
-
-  const setFilterBy = (filterByField: FilterType) => {
-    setFilteredBy(filterByField)
-    updateResults(filterByField, sortedBy)
-  }
-
-  const filterByStyle = (currentFilter: FilterType) => {
-    return filterBy === currentFilter ? ' bg-white' : 'hover:bg-gray-50 bg-white'
+    updateResults(sortByField)
   }
 
   return (
@@ -102,57 +79,35 @@ const Projects: NextPage<ProjectProps> = ({ projects }) => {
 
         <div className="flex items-start md:justify-between md:items-center mt-8 flex-col md:flex-row space-y-4 md:space-y-0">
           <div className="flex flex-col gap-1">
-            <span className="text-xs font-semibold">Only show</span>
+            <span className="text-xs font-semibold">Group by</span>
+
             <span className="isolate inline-flex rounded-md shadow-sm">
-              {filters.map((currentFilter, index) => (
+              {sortButtons.map((sortButton, index) => (
                 <button
                   type="button"
-                  key={`filter-${currentFilter.name}`}
-                  onClick={() => setFilterBy(currentFilter.condition)}
+                  onClick={() => setSortBy(sortButton.sortBy)}
                   className={clsx(
-                    'space-x-1 relative inline-flex items-center border border-gray-300 bg-white px-2 py-1 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500',
-                    filterByStyle(null),
+                    'space-x-1 relative -ml-px inline-flex items-center border border-gray-300 bg-white px-2 py-1 text-sm font-medium text-gray-700  focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500',
+                    sortedBy === sortButton.sortBy ? 'bg-white' : 'hover:bg-gray-50 bg-white',
                     index === 0 ? 'rounded-l-md' : '',
-                    index === filters.length - 1 ? 'rounded-r-md' : '',
+                    index === sortButtons.length - 1 ? 'rounded-r-md' : '',
                   )}
                 >
-                  {filterBy === currentFilter.condition && (
+                  {sortedBy === sortButton.sortBy && (
                     <FontAwesomeIcon icon={faCheck} className="h-4 w-4 text-green-500" />
                   )}
-                  <span>{currentFilter.name}</span>
+                  <span>{sortButton.name}</span>
                 </button>
               ))}
             </span>
           </div>
-
-          <div className="flex flex-col gap-1">
-            <span className="text-xs font-semibold">Sort reverse by</span>
-
-            <span className="isolate inline-flex rounded-md shadow-sm">
-              <button
-                type="button"
-                onClick={() => setSortBy('date_started')}
-                className={`space-x-1 relative inline-flex items-center rounded-l-md border border-gray-300 bg-white px-2 py-1 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 ${
-                  sortedBy === 'date_started' ? ' bg-white' : 'hover:bg-gray-50 bg-white'
-                }`}
-              >
-                {sortedBy === 'date_started' && <FontAwesomeIcon icon={faCheck} className="h-4 w-4 text-green-500" />}
-                <span>Project start date</span>
-              </button>
-              <button
-                type="button"
-                onClick={() => setSortBy('date_ended')}
-                className={`space-x-1 relative -ml-px inline-flex items-center rounded-r-md border border-gray-300 bg-white px-2 py-1 text-sm font-medium text-gray-700  focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 ${
-                  sortedBy === 'date_ended' ? ' bg-white' : 'hover:bg-gray-50 bg-white'
-                }`}
-              >
-                {sortedBy === 'date_ended' && <FontAwesomeIcon icon={faCheck} className="h-4 w-4 text-green-500" />}
-                <span>Project end date</span>
-              </button>
-            </span>
-          </div>
         </div>
-        <ProjectsTimeline projects={sortedProjects} sortField={sortedBy} />
+
+        {(sortedBy === 'date_started' || sortedBy === 'date_ended') && (
+          <ProjectsTimeline projects={sortedProjects} sortField={sortedBy} />
+        )}
+
+        {sortedBy === 'technology' && <ProjectsTechnologies projects={projects} />}
       </Container>
     </main>
   )

@@ -8,7 +8,7 @@ import { ProjectStateTag } from '@/components/projects/ProjectStateTag'
 import { TechnologyTags } from '@/components/technologies/TechnologyTags'
 import { ProjectLinks } from '@/components/projects/ProjectLinks'
 
-const ProductTimelineIcon = ({ project }: { project: Project }) => {
+export const ProductTimelineIcon = ({ project }: { project: Project }) => {
   return (
     <span
       className={clsx(
