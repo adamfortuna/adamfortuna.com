@@ -32,7 +32,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }: GetStaticPropsContext) {
-  console.log("params?.slug", params?.slug)
   const slug = (params?.slug as string),
         article = await getArticleBySlug(slug)
 

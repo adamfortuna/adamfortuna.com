@@ -74,18 +74,18 @@ export const getArticleBySlug = async (slug:string) => {
 
   const article = parseArticle(articles.results[0])
 
-  let content = {} as ArticleType
+  let content = ''
   if(article.content_path) {
-    content.contentMarkdown = (await promises.readFile(`content/${article.content_path}`)).toString()
+    const contentMarkdown = (await promises.readFile(`content/${article.content_path}`)).toString()
     const result = await bundleMDX({
-      source: content.contentMarkdown,
-      cwd: '/Users/adamfortuna/code/adamfortuna/adamfortuna.com/src',
+      source: contentMarkdown,
+      cwd: '/Users/adamfortuna/code/adamfortuna/adamfortuna.com/src/components/',
     })
-    content.content = result.code
+    content = result.code
   }
 
   return {
     ...article,
-    ...content
+    ...{ content }
   }
 }

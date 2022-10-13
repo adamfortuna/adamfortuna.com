@@ -10,7 +10,7 @@ export interface ArticleContentProps {
 export const ArticleContent = ({ article }: ArticleContentProps) => {
   return (
     <article className="prose mx-auto">
-      <MarkdownParser markdown={article.content} />
+      <MarkdownParser content={article.content} />
     </article>
   )
 }
