@@ -1,6 +1,7 @@
 /* eslint-disable sonarjs/no-duplicate-string, import/no-extraneous-dependencies */
 const defaultTheme = require('tailwindcss/defaultTheme')
 
+// Look into 'ff-tisa-web-pro',serif  https://ashfurrow.com/blog/mastodon-technology-shutdown/
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {

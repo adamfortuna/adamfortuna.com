@@ -1,0 +1,3 @@
+[submodule "content"]
+	path = content
+	url = git@github.com:adamfortuna/content.git

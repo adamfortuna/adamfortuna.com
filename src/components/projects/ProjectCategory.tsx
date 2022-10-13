@@ -10,7 +10,7 @@ function capitalizeFirstLetter(string: string) {
 }
 
 export const ProjectCategory = ({ category }: ProjectCategoryProps) => {
-  if (!category) {
+  if (!category || category.length === 0 || !category.charAt) {
     return <></>
   }
 

@@ -1,22 +1,22 @@
 /* eslint-disable react/no-danger */
 import { GetStaticPropsContext, NextPage } from 'next'
 
-import { Post, PostsQuery, PostsDocument, PostQuery, PostDocument } from '@/lib/graphql/output'
-
-import { initializeApollo } from '@/lib/apolloClient'
+import { getArticleBySlug } from '@/lib/notion'
 import { Container } from '@/components/layout/Container'
-import { PostContent } from '@/components/posts/PostContent'
+import { ArticleContent } from '@/components/articles/ArticleContent'
+import ArticleType from '@/types/ArticleType'
 
 export interface ArticleProps {
-  post: Post
+  article: ArticleType
 }
 
-const ArticlePage: NextPage<ArticleProps> = ({ post }) => {
+const ArticlePage: NextPage<ArticleProps> = ({ article }) => {
+  console.log("article", article)
   return (
     <div className="mt-[100px]">
       <Container className="">
-        <h1 className="text-center font-serif font-bold text-4xl mb-4">{post.title}</h1>
-        <PostContent post={post} />
+        <h1 className="text-center font-serif font-bold text-4xl mb-4">{article.title}</h1>
+        <ArticleContent article={article} />
       </Container>
     </div>
   )
@@ -25,32 +25,19 @@ const ArticlePage: NextPage<ArticleProps> = ({ post }) => {
 export default ArticlePage
 
 export async function getStaticPaths() {
-  const apolloClient = initializeApollo()
-
-  const { data } = await apolloClient.query<PostsQuery>({
-    query: PostsDocument,
-  })
-
   return {
-    paths: data.posts?.data.map((p) => ({
-      params: {
-        slug: p.attributes?.slug,
-      },
-    })),
-    fallback: false,
+    paths: [],
+    fallback: 'blocking',
   }
 }
 
 export async function getStaticProps({ params }: GetStaticPropsContext) {
-  const apolloClient = initializeApollo()
-
-  const { data } = await apolloClient.query<PostQuery>({
-    query: PostDocument,
-    variables: { slug: params?.slug },
-  })
+  console.log("params?.slug", params?.slug)
+  const slug = (params?.slug as string),
+        article = await getArticleBySlug(slug)
 
   return {
-    props: { post: data.posts?.data[0].attributes },
-    revalidate: 60 * 60,
-  }
+    props: { article },
+    revalidate: 60 * 60
+  } 
 }

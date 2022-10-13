@@ -119,6 +119,7 @@ interface ProjectsTimelineProps {
 }
 
 export const ProjectsTimeline = ({ projects, sortField }: ProjectsTimelineProps) => {
+  console.log("projects", projects)
   return (
     <div className="ml-8 md:ml-0 mt-12 relative border-l border-gray-400">
       {projects.map((project, index) => (
