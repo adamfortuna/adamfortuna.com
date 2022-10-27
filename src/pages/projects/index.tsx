@@ -6,12 +6,12 @@ import sortBy from 'lodash/sortBy'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck } from '@fortawesome/pro-regular-svg-icons'
 
-import { initializeApollo } from '@/lib/apolloClient'
-import { ProjectsQuery, ProjectsDocument, Project } from '@/lib/graphql/output'
+import { Project } from '@/types'
 
 import { Container } from '@/components/layout/Container'
 import { ProjectsTimeline } from '@/components/projects/ProjectsTimeline'
 import { ProjectsTechnologies } from '@/components/projects/ProjectsTechnologies'
+import { getProjects } from '@/lib/fileService'
 
 export interface ProjectProps {
   projects: Project[]
@@ -116,17 +116,9 @@ const Projects: NextPage<ProjectProps> = ({ projects }) => {
 export default Projects
 
 export async function getStaticProps() {
-  const apolloClient = initializeApollo()
-
-  const { data } = await apolloClient.query<ProjectsQuery>({
-    query: ProjectsDocument,
-    variables: {
-      sort: ['date_ended:desc', 'priority:desc'],
-    },
-  })
-
+  const projects = await getProjects()
   return {
-    props: { projects: data.projects?.data.map((projectData) => projectData.attributes) },
+    props: { projects },
     revalidate: 60 * 60,
   }
 }

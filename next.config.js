@@ -4,7 +4,7 @@ module.exports = withPlaiceholder({
   images: {
     loader: 'cloudinary',
     domains: ['res.cloudinary.com'],
-    path: 'https://res.cloudinary.com/dsx6cqi6e/image/upload',
+    path: 'https://res.cloudinary.com/dyogenez/image/upload',
   },
   webpack(config) {
     config.module.rules.push({

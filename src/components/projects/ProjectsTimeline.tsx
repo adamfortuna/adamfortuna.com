@@ -19,7 +19,7 @@ export const ProductTimelineIcon = ({ project }: { project: Project }) => {
         project.size === 'sm' ? '-left-4 w-8 h-8' : '',
       )}
     >
-      <ProjectIcon icon={project.icon} size={project.size === 'lg' ? 64 : project.size === 'md' ? 48 : 32} />
+      <ProjectIcon icon_url={project.icon_url} size={project.size === 'lg' ? 64 : project.size === 'md' ? 48 : 32} />
     </span>
   )
 }
