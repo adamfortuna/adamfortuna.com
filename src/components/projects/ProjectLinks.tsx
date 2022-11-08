@@ -1,32 +1,20 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 import { useMemo } from 'react'
-import { ComponentSharedLinkInput } from '@/lib/graphql/output'
-import sortBy from 'lodash/sortBy'
-import { Link, LinkThemeProps } from '@/components/layout/Link'
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons'
-import { faLink, faMusic, faVideo, faHardDrive } from '@fortawesome/pro-regular-svg-icons'
+import { faLink, faHardDrive } from '@fortawesome/pro-regular-svg-icons'
+import sortBy from 'lodash/sortBy'
+
+import { Link, LinkThemeProps } from '@/components/layout/Link'
+import { Link as LinkType } from '@/types'
 
 export interface ProjectLinksProps {
-  links?: ComponentSharedLinkInput[]
+  links?: LinkType[]
   size?: LinkThemeProps['size']
 }
 
-const lookupIcon = (link: ComponentSharedLinkInput) => {
-  if (link.category === 'github') {
-    return faGithub
-  }
-  if (link.category === 'music') {
-    return faMusic
-  }
-  if (link.category === 'video') {
-    return faVideo
-  }
-  if (link.category === 'archive') {
-    return faHardDrive
-  }
-  if (link.url?.indexOf('https://twitter.com') !== -1) {
+const lookupIcon = (link: LinkType) => {
+  if (link.url.indexOf('https://twitter.com') !== -1) {
     return faTwitter
   }
   if (link.url.indexOf('https://github.com') !== -1) {
@@ -38,7 +26,7 @@ const lookupIcon = (link: ComponentSharedLinkInput) => {
   return faLink
 }
 
-const ProjectLink = ({ link, size }: { link: ComponentSharedLinkInput; size: LinkThemeProps['size'] }) => {
+const ProjectLink = ({ link, size }: { link: LinkType; size: LinkThemeProps['size'] }) => {
   const icon = useMemo(() => {
     return lookupIcon(link)
   }, [link])

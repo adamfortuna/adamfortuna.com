@@ -8,10 +8,5 @@ type Props = {
 
 export const MarkdownParser = ({ content }: Props) => {
   const Component = useMemo(() => getMDXComponent(content), [content])
-
-  if(Component) {
-    return <Component/>
-  } else {
-    return <></>
-  }
+  return <Component />
 }

@@ -1,8 +1,11 @@
 import { NextPage } from 'next'
 import { Container } from '@/components/layout/Container'
 import { ArticleLink } from '@/components/articles/ArticleLink'
-import { getArticles } from '@/lib/notion'
 import ArticleType from '@/types/ArticleType'
+
+const getArticles = async () => {
+  return []
+}
 
 export interface ArticleProps {
   articles: ArticleType[]
@@ -13,9 +16,7 @@ const ArticlesPage: NextPage<ArticleProps> = ({ articles }) => {
     <main className="mt-[80px] md:mt-[100px]">
       <Container className="my-8 max-w-2xl">
         <h1 className="font-black text-3xl text-black">Articles</h1>
-        <p>
-          Here's everything I've ever written.
-        </p>
+        <p>Here's everything I've ever written.</p>
 
         <div className="mt-8">
           {articles.map((article) => (

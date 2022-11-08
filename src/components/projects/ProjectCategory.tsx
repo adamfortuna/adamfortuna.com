@@ -1,8 +1,6 @@
-/* eslint-disable react/jsx-no-useless-fragment */
-import { Enum_Project_Category } from '@/lib/graphql/output'
-
+/* eslint-disable react/jsx-no-useless-fragment, @typescript-eslint/no-unnecessary-condition */
 export interface ProjectCategoryProps {
-  category?: Enum_Project_Category
+  category?: string
 }
 
 function capitalizeFirstLetter(string: string) {
@@ -10,7 +8,7 @@ function capitalizeFirstLetter(string: string) {
 }
 
 export const ProjectCategory = ({ category }: ProjectCategoryProps) => {
-  if (!category || category.length === 0 || !category.charAt) {
+  if (!category || category?.length === 0 || !category.charAt) {
     return <></>
   }
 

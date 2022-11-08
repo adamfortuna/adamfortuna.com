@@ -8,15 +8,20 @@ export interface ProjectIconProps {
 }
 
 export const ProjectIcon = ({ icon_url, size = 64 }: ProjectIconProps) => {
+  const url = useMemo(() => {
+    if (!icon_url) {
+      return ''
+    }
+    return icon_url
+      .replace('https://res.cloudinary.com/dsx6cqi6e/image/upload/v1662311966/', '')
+      .replace('https://res.cloudinary.com/dyogenez/image/upload/v1662311966/', '')
+  }, [icon_url])
+
   if (!icon_url) {
     return <></>
   }
 
-  const url = useMemo(() => {
-    return icon_url.replace("https://res.cloudinary.com/dsx6cqi6e/image/upload/v1662311966/", "").replace("https://res.cloudinary.com/dyogenez/image/upload/v1662311966/", "")
-  }, [icon_url])
-
-  if (url.endsWith('.svg')) {
+  if (url && url.endsWith('.svg')) {
     return (
       <span
         className={`rounded-full overflow-hidden flex items-center ${

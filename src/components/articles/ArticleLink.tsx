@@ -8,11 +8,13 @@ export interface ArticleLinkProps {
 export const ArticleLink = ({ article }: ArticleLinkProps) => {
   return (
     <div>
-     <p>
-      <Link href={article.href}>{article.title}</Link>
-     </p>
+      <p>
+        <Link href={article.href}>{article.title}</Link>
+      </p>
       <div>
-        {article.tags.map((tag) => <p>{tag}</p>)}
+        {article.tags.map((tag) => (
+          <p>{tag}</p>
+        ))}
       </div>
     </div>
   )

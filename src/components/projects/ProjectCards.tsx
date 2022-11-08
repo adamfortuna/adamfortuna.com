@@ -1,6 +1,6 @@
-import { Project } from '@/lib/graphql/output'
 import { Container } from '@/components/layout/Container'
 import { Link } from '@/components/layout/Link'
+import { Project } from '@/types'
 import { ProjectCard } from './ProjectCard'
 
 export interface ProjectCardsProps {

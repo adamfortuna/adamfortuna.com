@@ -1,12 +1,12 @@
 /* eslint-disable no-nested-ternary, react/jsx-no-useless-fragment */
 import clsx from 'clsx'
 
-import { Project, ComponentSharedLinkInput, Enum_Project_Category } from '@/lib/graphql/output'
 import { ProjectIcon } from '@/components/projects/ProjectIcon'
 import { ProjectCategory } from '@/components/projects/ProjectCategory'
 import { ProjectStateTag } from '@/components/projects/ProjectStateTag'
 import { TechnologyTags } from '@/components/technologies/TechnologyTags'
 import { ProjectLinks } from '@/components/projects/ProjectLinks'
+import { Project } from '@/types'
 
 export const ProductTimelineIcon = ({ project }: { project: Project }) => {
   return (
@@ -45,7 +45,7 @@ const ProjectTimeline = ({ project }: { project: Project }) => {
               <b>Active:</b> {project.years_active}
             </li>
             <li>
-              <ProjectCategory category={project.category as Enum_Project_Category} />
+              <ProjectCategory category={project.category} />
             </li>
             {project.employed && (
               <li>
@@ -60,9 +60,9 @@ const ProjectTimeline = ({ project }: { project: Project }) => {
           </ul>
         </div>
         <p className="mb-2 text-base font-normal text-gray-600">{project.description}</p>
-        <TechnologyTags technologies={project.technologies?.data || []} />
+        <TechnologyTags tags={project.tags} />
         <div className="mt-2">
-          <ProjectLinks links={project.links as ComponentSharedLinkInput[]} size="sm" />
+          <ProjectLinks links={project.links} size="sm" />
         </div>
       </div>
     </div>
@@ -99,7 +99,7 @@ export const ProjectTimelineSeparator = ({
     )
   }
 
-  if (currentProjectYear !== previousProjectYear) {
+  if (!Number.isNaN(currentProjectYear) && currentProjectYear !== previousProjectYear) {
     return (
       <div className="mt-24 lg:mt-0 mb-4 relative ml-12 lg:ml-0">
         <span className="md:ml-0 lg:absolute lg:-left-[150px] w-24 h-24 text-black font-black text-2xl lg:text-right">
@@ -119,7 +119,6 @@ interface ProjectsTimelineProps {
 }
 
 export const ProjectsTimeline = ({ projects, sortField }: ProjectsTimelineProps) => {
-  console.log("projects", projects)
   return (
     <div className="ml-8 md:ml-0 mt-12 relative border-l border-gray-400">
       {projects.map((project, index) => (

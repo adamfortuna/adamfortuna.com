@@ -2,13 +2,13 @@
 import clsx from 'clsx'
 import { useMemo } from 'react'
 import flatten from 'lodash/flatten'
-import uniqBy from 'lodash/uniqBy'
+import uniq from 'lodash/uniq'
 import sortBy from 'lodash/sortBy'
-import { Project, ComponentSharedLinkInput, Enum_Project_Category, Technology } from '@/lib/graphql/output'
 import { ProjectIcon } from '@/components/projects/ProjectIcon'
 import { ProjectCategory } from '@/components/projects/ProjectCategory'
 import { ProjectStateTag } from '@/components/projects/ProjectStateTag'
 import { ProjectLinks } from '@/components/projects/ProjectLinks'
+import { Project } from '@/types'
 
 export const ProductTechnoloyIcon = ({ project }: { project: Project }) => {
   return (
@@ -19,7 +19,7 @@ export const ProductTechnoloyIcon = ({ project }: { project: Project }) => {
         '-left-12 w-8 h-8',
       )}
     >
-      <ProjectIcon icon={project.icon} size={32} />
+      <ProjectIcon icon_url={project.icon_url} size={32} />
     </span>
   )
 }
@@ -47,7 +47,7 @@ const ProjectTimeline = ({ project }: { project: Project }) => {
                   <b>Active:</b> {project.years_active}
                 </li>
                 <li>
-                  <ProjectCategory category={project.category as Enum_Project_Category} />
+                  <ProjectCategory category={project.category} />
                 </li>
                 {project.employed && (
                   <li>
@@ -63,14 +63,14 @@ const ProjectTimeline = ({ project }: { project: Project }) => {
             </div>
             <p className="mb-2 text-base font-normal text-gray-600">{project.description}</p>
             <div className="mt-2">
-              <ProjectLinks links={project.links as ComponentSharedLinkInput[]} size="sm" />
+              <ProjectLinks links={project.links} size="sm" />
             </div>
           </>
         ) : (
           <>
             <p className="mb-2 text-base font-normal text-gray-600">{project.description}</p>
             <div className="mt-2">
-              <ProjectLinks links={project.links as ComponentSharedLinkInput[]} size="sm" />
+              <ProjectLinks links={project.links} size="sm" />
             </div>
           </>
         )}
@@ -79,23 +79,19 @@ const ProjectTimeline = ({ project }: { project: Project }) => {
   )
 }
 
-interface ProjectsTechnologyProps {
+interface ProjectsTagProps {
   projects: Project[]
-  technology: Technology
+  tag: string
 }
-export const ProjectsTechnology = ({ projects, technology }: ProjectsTechnologyProps) => {
-  const filteredProjects = sortBy(
-    projects.filter((project) => {
-      return project.technologies?.data.find(
-        (projectsTechnology) => projectsTechnology.attributes?.slug === technology.slug,
-      )
-    }),
-    'title',
-  )
+export const ProjectsTag = ({ projects, tag }: ProjectsTagProps) => {
+  const filteredProjects = useMemo(() => {
+    const pr = projects.filter((p) => (p.tags || []).indexOf(tag) !== -1)
+    return sortBy(pr, 'title')
+  }, [projects, tag])
 
   return (
     <div>
-      <h3 className="text-2xl font-bold mb-4">{technology.technology}</h3>
+      <h3 className="text-2xl font-bold mb-4">{tag}</h3>
       {filteredProjects.map((project) => (
         <ProjectTimeline key={project.slug} project={project} />
       ))}
@@ -103,21 +99,20 @@ export const ProjectsTechnology = ({ projects, technology }: ProjectsTechnologyP
   )
 }
 
-interface ProjectsTimelineProps {
+interface ProjectsTagsProps {
   projects: Project[]
 }
-export const ProjectsTechnologies = ({ projects }: ProjectsTimelineProps) => {
-  const technologies = useMemo(() => {
-    const a = projects.map((project) => project.technologies?.data.map((technology) => technology.attributes))
+export const ProjectTags = ({ projects }: ProjectsTagsProps) => {
+  const tags = useMemo(() => {
+    const a = projects.map((project) => project.tags)
     const b = flatten(a)
-    const c = uniqBy(b, 'technology')
-    return sortBy(c, 'technology')
+    return uniq(b).sort()
   }, [projects])
 
   return (
     <div className="ml-8 md:ml-0 mt-12 relative space-y-16">
-      {technologies.map((technology) => (
-        <ProjectsTechnology technology={technology as Technology} projects={projects} />
+      {tags.map((tag) => (
+        <ProjectsTag tag={tag} projects={projects} />
       ))}
     </div>
   )

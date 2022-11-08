@@ -1,17 +1,21 @@
 /* eslint-disable react/no-danger */
 import { GetStaticPropsContext, NextPage } from 'next'
 
-import { getArticleBySlug } from '@/lib/notion'
 import { Container } from '@/components/layout/Container'
 import { ArticleContent } from '@/components/articles/ArticleContent'
-import ArticleType from '@/types/ArticleType'
+import { Article } from '@/types'
+
+const getArticleBySlug = async (slug: string) => {
+  return {
+    slug,
+  } as Article
+}
 
 export interface ArticleProps {
-  article: ArticleType
+  article: Article
 }
 
 const ArticlePage: NextPage<ArticleProps> = ({ article }) => {
-  console.log("article", article)
   return (
     <div className="mt-[100px]">
       <Container className="">
@@ -32,11 +36,11 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }: GetStaticPropsContext) {
-  const slug = (params?.slug as string),
-        article = await getArticleBySlug(slug)
+  const slug = params?.slug as string
+  const article = await getArticleBySlug(slug)
 
   return {
     props: { article },
-    revalidate: 60 * 60
-  } 
+    revalidate: 60 * 60,
+  }
 }
