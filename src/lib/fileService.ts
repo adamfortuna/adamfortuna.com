@@ -1,6 +1,7 @@
 import glob from 'glob'
-import { readFile } from 'fs'
+import { promises } from 'fs'
 import frontmatter from 'front-matter'
+import {bundleMDX} from 'mdx-bundler'
 
 const getDirectories = async (src: string) => {
   return new Promise((resolve, reject) => {
@@ -16,24 +17,18 @@ const getDirectories = async (src: string) => {
 
 export const getProjects = async () => {
   const files = (await getDirectories('content/articles/projects')) as string[]
+  const fileLoaders = files.map((file) => getArticleByPath(file))
+  return Promise.all(fileLoaders)
+}
 
-  const fileLoader = files.map(async (file) => {
-    return new Promise((resolve, reject) => {
-      readFile(file, (err, data) => {
-        if (err) {
-          return reject(err)
-        }
+export const getArticleByPath = async(path:string) => {
+  const contentsMarkdown = (await promises.readFile(path)).toString()
+  const content = frontmatter(contentsMarkdown)
 
-        const contentsMarkdown = data.toString()
-        const content = frontmatter(contentsMarkdown)
+  const result = await bundleMDX({  source: content.body })
 
-        return resolve({
-          ...(content.attributes as Object),
-          ...{ body: content.body },
-        })
-      })
-    })
-  })
-
-  return Promise.all(fileLoader)
+  return {
+    ...(content.attributes as Object),
+    ...{ content: result.code },
+  }
 }

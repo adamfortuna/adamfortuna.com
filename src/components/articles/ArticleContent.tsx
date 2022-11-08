@@ -1,10 +1,10 @@
 /* eslint-disable react/no-danger */
 import React from 'react'
-import ArticleType from '@/types/ArticleType'
+import { Article } from '@/types'
 import { MarkdownParser } from '@/components/markdown/MarkdownParser'
 
 export interface ArticleContentProps {
-  article: ArticleType
+  article: Article
 }
 
 export const ArticleContent = ({ article }: ArticleContentProps) => {

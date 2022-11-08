@@ -26,6 +26,16 @@ module.exports = {
       animation: {
         'waving-hand': 'wave 2s linear infinite',
       },
+
+      typography: {
+        DEFAULT: {
+          css: {
+            p: {
+              lineHeight: "1.5rem"
+            }
+          },
+        },
+      },
     },
   },
   plugins: [
