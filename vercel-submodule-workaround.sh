@@ -1,8 +1,8 @@
 # github submodule repo address without https:// prefix
-SUBMODULE_GITHUB=github.com/adamfortuna/content.git
+SUBMODULE_GITHUB="github.com/adamfortuna/content.git"
 
 # .gitmodules submodule path
-SUBMODULE_PATH=content
+SUBMODULE_PATH="content"
 
 # github access token is necessary
 # add it to Environment Variables on Vercel
