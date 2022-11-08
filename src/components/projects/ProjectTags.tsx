@@ -4,6 +4,7 @@ import { useMemo } from 'react'
 import flatten from 'lodash/flatten'
 import uniq from 'lodash/uniq'
 import sortBy from 'lodash/sortBy'
+import compact from 'lodash/compact'
 import { ProjectIcon } from '@/components/projects/ProjectIcon'
 import { ProjectCategory } from '@/components/projects/ProjectCategory'
 import { ProjectStateTag } from '@/components/projects/ProjectStateTag'
@@ -105,7 +106,7 @@ interface ProjectsTagsProps {
 export const ProjectTags = ({ projects }: ProjectsTagsProps) => {
   const tags = useMemo(() => {
     const a = projects.map((project) => project.tags)
-    const b = flatten(a)
+    const b = compact(flatten(a))
     return uniq(b).sort()
   }, [projects])
 
