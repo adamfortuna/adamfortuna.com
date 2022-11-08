@@ -13,7 +13,8 @@
     "format": "eslint './{src,pages}/**/*' --ext .js,.jsx,.tsx,.ts --fix",
     "typecheck": "tsc --noEmit",
     "clean": "rimraf out/",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "vercel-install": "./vercel-submodule-workaround.sh && yarn --ignore-scripts --production=false"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.2",
