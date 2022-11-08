@@ -3,6 +3,7 @@ SUBMODULE_GITHUB="github.com/adamfortuna/content.git"
 
 # .gitmodules submodule path
 SUBMODULE_PATH="content"
+GITHUB_USERNAME="adamfortuna"
 
 # github access token is necessary
 # add it to Environment Variables on Vercel
@@ -27,7 +28,7 @@ cd tmp # go into the tmp folder
 # checkout the current submodule commit
 git config --global init.defaultBranch main
 git init -q # initialise empty repo
-git remote add origin https://$GITHUB_ACCESS_TOKEN@$SUBMODULE_GITHUB # add origin of the submodule
+git remote add origin https://$GITHUB_USERNAME:$GITHUB_ACCESS_TOKEN@$SUBMODULE_GITHUB # add origin of the submodule
 git fetch --depth=1 origin $COMMIT # fetch only the required version
 git checkout $COMMIT # checkout on the right commit
 
