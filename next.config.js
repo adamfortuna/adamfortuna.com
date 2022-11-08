@@ -1,6 +1,4 @@
-const { withPlaiceholder } = require('@plaiceholder/next');
-
-module.exports = withPlaiceholder({
+module.exports = {
   images: {
     loader: 'cloudinary',
     domains: ['res.cloudinary.com'],
@@ -14,4 +12,4 @@ module.exports = withPlaiceholder({
 
     return config
   },
-})
+}
