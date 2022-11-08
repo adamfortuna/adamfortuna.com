@@ -85,6 +85,7 @@ const Projects: NextPage<ProjectProps> = ({ projects }) => {
               {sortButtons.map((sortButton, index) => (
                 <button
                   type="button"
+                  key={`button-${sortButton.sortBy}`}
                   onClick={() => setSortBy(sortButton.sortBy)}
                   className={clsx(
                     'space-x-1 relative -ml-px inline-flex items-center border border-gray-300 bg-white px-2 py-1 text-sm font-medium text-gray-700  focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500',

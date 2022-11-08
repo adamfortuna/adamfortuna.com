@@ -113,7 +113,7 @@ export const ProjectTags = ({ projects }: ProjectsTagsProps) => {
   return (
     <div className="ml-8 md:ml-0 mt-12 relative space-y-16">
       {tags.map((tag) => (
-        <ProjectsTag tag={tag} projects={projects} />
+        <ProjectsTag key={`tag-${tag}`} tag={tag} projects={projects} />
       ))}
     </div>
   )

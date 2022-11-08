@@ -37,7 +37,8 @@ export const getArticleByPath = async (path: string, includeContent: boolean = t
 }
 
 export const getProjects = async () => {
-  const files = (await getDirectories('content/articles/projects')) as string[]
+  const path = `${__dirname}/../../../content/articles/projects/`
+  const files = (await getDirectories(path)) as string[]
   const fileLoaders = files.map((file) => getArticleByPath(file, false))
   return Promise.all(fileLoaders)
 }
