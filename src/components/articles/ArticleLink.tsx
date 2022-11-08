@@ -1,8 +1,8 @@
-import ArticleType from '@/types/ArticleType'
 import { Link } from '@/components/layout/Link'
+import { Article } from '@/types'
 
 export interface ArticleLinkProps {
-  article: ArticleType
+  article: Article
 }
 
 export const ArticleLink = ({ article }: ArticleLinkProps) => {

@@ -1,7 +1,7 @@
 import glob from 'glob'
 import { promises } from 'fs'
 import frontmatter from 'front-matter'
-import {bundleMDX} from 'mdx-bundler'
+import { bundleMDX } from 'mdx-bundler'
 
 const getDirectories = async (src: string) => {
   return new Promise((resolve, reject) => {
@@ -15,20 +15,29 @@ const getDirectories = async (src: string) => {
   })
 }
 
-export const getProjects = async () => {
-  const files = (await getDirectories('content/articles/projects')) as string[]
-  const fileLoaders = files.map((file) => getArticleByPath(file))
-  return Promise.all(fileLoaders)
-}
-
-export const getArticleByPath = async(path:string) => {
+export const getArticleByPath = async (path: string, includeContent: boolean = true) => {
   const contentsMarkdown = (await promises.readFile(path)).toString()
   const content = frontmatter(contentsMarkdown)
 
-  const result = await bundleMDX({  source: content.body })
+  let result = null
+  const body = content.body.trim()
+  if (includeContent && body.length > 0) {
+    result = (
+      await bundleMDX({
+        cwd: `${__dirname}/../../../src/`,
+        source: body,
+      })
+    ).code
+  }
 
   return {
     ...(content.attributes as Object),
-    ...{ content: result.code },
+    ...{ content: result },
   }
+}
+
+export const getProjects = async () => {
+  const files = (await getDirectories('content/articles/projects')) as string[]
+  const fileLoaders = files.map((file) => getArticleByPath(file, false))
+  return Promise.all(fileLoaders)
 }

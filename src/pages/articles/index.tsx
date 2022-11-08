@@ -1,14 +1,14 @@
 import { NextPage } from 'next'
 import { Container } from '@/components/layout/Container'
 import { ArticleLink } from '@/components/articles/ArticleLink'
-import ArticleType from '@/types/ArticleType'
+import { Article } from '@/types'
 
 const getArticles = async () => {
   return []
 }
 
 export interface ArticleProps {
-  articles: ArticleType[]
+  articles: Article[]
 }
 
 const ArticlesPage: NextPage<ArticleProps> = ({ articles }) => {

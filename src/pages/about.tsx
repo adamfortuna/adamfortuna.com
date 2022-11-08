@@ -8,7 +8,15 @@ import { Link } from '@/components/layout/Link'
 import { getArticleByPath } from '@/lib/fileService'
 import { Article } from '@/types'
 
-import { TwitterIcon, HardcoverIcon, InstagramIcon, GitHubIcon, LinkedInIcon, MailIcon } from '@/components/SocialIcons'
+import {
+  TwitterIcon,
+  HardcoverIcon,
+  InstagramIcon,
+  GitHubIcon,
+  LinkedInIcon,
+  MailIcon,
+  AllTrailsIcon,
+} from '@/components/SocialIcons'
 
 const images = [
   {
@@ -26,6 +34,34 @@ const images = [
   {
     src: 'barcamp_45da62a4ee.jpg',
     alt: 'Presenting at Barcamp',
+  },
+  {
+    src: 'angels_landing_jsg0oh.jpg',
+    alt: 'Angels Landing',
+  },
+  {
+    src: 'bryce_canyon_s9poaa.jpg',
+    alt: 'Bryce Canyon',
+  },
+  {
+    src: 'hiking-big-cottonwood_gzc9ni.jpg',
+    alt: 'Hiking in Big Cottonwood Canyon',
+  },
+  {
+    src: 'adam-marilyn-wedding_ouwlmp.jpg',
+    alt: 'Adam and Marilyn getting married',
+  },
+  {
+    src: 'adam_boat_vlyo0j.jpg',
+    alt: 'Hakone on a boat',
+  },
+  {
+    src: 'disney_qq4qtn.jpg',
+    alt: 'Adam & Marilyn at Disney',
+  },
+  {
+    src: 'adam_spookys_canyon_uz9j5f.jpg',
+    alt: "Adam at Spooky's Canyon",
   },
 ]
 
@@ -54,59 +90,60 @@ const About: NextPage<AboutProps> = ({ article }) => {
   return (
     <Container className="mt-16 sm:mt-32">
       <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
-        <div className="lg:order-first lg:row-span-2 prose">
+        <div className="lg:order-first lg:row-span-2 prose mx-auto">
           <h1 className="text-left font-serif font-bold text-4xl mb-4">{article.title}</h1>
           <ArticleContent article={article} />
         </div>
-        <div className="lg:pl-20">
-          <div className="max-w-xs px-2.5 lg:max-w-none">
-            <div className="mb-20">
+        <div className="lg:pl-20 mx-auto px-2.5 w-full max-w-2xl">
+          <div className="mb-20">
+            <Image
+              src="adam_megacon_432c592c3d.jpg"
+              alt="Adam at Megacon in Orlando, FL"
+              width="400px"
+              height="300px"
+              sizes="(min-width: 1024px) 32rem, 20rem"
+              className="rounded-2xl bg-zinc-100 object-cover"
+            />
+
+            <div className="my-8">
+              <ul>
+                <SocialLink href="https://hardcover.app/@adam" icon={HardcoverIcon}>
+                  Follow on Hardcover
+                </SocialLink>
+                <SocialLink href="https://twitter.com/adamfortuna" icon={TwitterIcon}>
+                  Follow on Twitter
+                </SocialLink>
+                <SocialLink href="https://www.instagram.com/adamfortuna/" icon={InstagramIcon}>
+                  Follow on Instagram
+                </SocialLink>
+                <SocialLink href="https://github.com/adamfortuna" icon={GitHubIcon}>
+                  Follow on GitHub
+                </SocialLink>
+                <SocialLink href="https://www.linkedin.com/in/adamfortuna/" icon={LinkedInIcon}>
+                  Follow on LinkedIn
+                </SocialLink>
+                <SocialLink href="https://www.alltrails.com/members/adam-fortuna" icon={AllTrailsIcon}>
+                  Follow on AllTrails
+                </SocialLink>
+                <SocialLink href="mailto:contact@adamfortuna.com" icon={MailIcon}>
+                  contact@adamfortuna.com
+                </SocialLink>
+              </ul>
+            </div>
+          </div>
+
+          {images.map((image) => (
+            <div className="my-4" key={image.src}>
               <Image
-                src="adam_megacon_432c592c3d.jpg"
-                alt="Adam at Megacon in Orlando, FL"
+                src={image.src}
+                alt={image.alt}
                 width="400px"
                 height="300px"
                 sizes="(min-width: 1024px) 32rem, 20rem"
-                className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover"
+                className="md:aspect-square rounded-2xl bg-zinc-100 object-cover"
               />
-
-              <div className="my-8">
-                <ul>
-                  <SocialLink href="https://hardcover.app/@adam" icon={HardcoverIcon}>
-                    Follow on Hardcover
-                  </SocialLink>
-                  <SocialLink href="https://twitter.com/adamfortuna" icon={TwitterIcon}>
-                    Follow on Twitter
-                  </SocialLink>
-                  <SocialLink href="https://www.instagram.com/adamfortuna/" icon={InstagramIcon}>
-                    Follow on Instagram
-                  </SocialLink>
-                  <SocialLink href="https://github.com/adamfortuna" icon={GitHubIcon}>
-                    Follow on GitHub
-                  </SocialLink>
-                  <SocialLink href="https://www.linkedin.com/in/adamfortuna/" icon={LinkedInIcon}>
-                    Follow on LinkedIn
-                  </SocialLink>
-                  <SocialLink href="mailto:contact@adamfortuna.com" icon={MailIcon}>
-                    contact@adamfortuna.com
-                  </SocialLink>
-                </ul>
-              </div>
             </div>
-
-            {images.map((image, index) => (
-              <div className="my-4" key={image.src}>
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  width="400px"
-                  height="300px"
-                  sizes="(min-width: 1024px) 32rem, 20rem"
-                  className={`aspect-square ${index % 2 === 0 ? '-' : ''}rotate-3 rounded-2xl bg-zinc-100 object-cover`}
-                />
-              </div>
-            ))}
-          </div>
+          ))}
         </div>
       </div>
     </Container>

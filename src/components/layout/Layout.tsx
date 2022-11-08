@@ -1,11 +1,11 @@
 import Head from 'next/head'
-import { useMemo } from 'react'
+import { useRouter } from 'next/router'
 
 import { Footer } from '@/components/layout/Footer'
 import { Header } from '@/components/layout/Header'
 
 export const Layout = ({ children }: any) => {
-  const showFooter = useMemo(() => (typeof window === 'undefined' ? true : window.location.pathname !== '/'), [])
+  const isHomePage = useRouter().pathname === '/'
 
   return (
     <>
@@ -19,7 +19,7 @@ export const Layout = ({ children }: any) => {
       <Header />
       <main>{children}</main>
 
-      {showFooter && <Footer />}
+      {!isHomePage && <Footer />}
     </>
   )
 }

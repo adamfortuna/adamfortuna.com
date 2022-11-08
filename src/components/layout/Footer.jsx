@@ -18,7 +18,7 @@ export const FooterLink = ({ href, children }) => {
 
 export const Footer = () => {
   return (
-    <footer>
+    <footer className="mt-12">
       <Container>
         <div className="flex flex-col items-center border-t border-slate-400/10 py-10 sm:flex-row-reverse sm:justify-between">
           <div className="flex gap-x-6">

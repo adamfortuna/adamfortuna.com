@@ -28,6 +28,7 @@
         "specialLink": [ "hrefLeft", "hrefRight" ],
         "aspects": [ "invalidHref", "preferButton" ]
         }],
+        "react/jsx-props-no-spreading": "off",
         "import/prefer-default-export": "off",
         "react/prop-types": "off",
         "import/no-cycle": "off",

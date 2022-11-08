@@ -43,7 +43,7 @@ const iconClassMap = {
 export const ProjectStateTag = ({ state, className = '', children }: ProjectStateTagProps) => {
   return (
     <span className={`px-1 py-0.5 rounded font-semibold ${className} ${classMap[state]}`}>
-      <FontAwesomeIcon icon={iconMap[state]} className={`hidden sm:inline-block mr-2 ${iconClassMap[state]}`} />
+      <FontAwesomeIcon icon={iconMap[state]} className={`w-4 h-4 hidden sm:inline-block mr-2 ${iconClassMap[state]}`} />
       {children}
     </span>
   )

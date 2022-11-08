@@ -39,12 +39,12 @@ const sortButtons = [
 ] as Sorters[]
 
 const Projects: NextPage<ProjectProps> = ({ projects }) => {
-  const [sortedProjects, setSortedProjects] = useState(projects)
-  const [sortedBy, setSortedBy] = useState<SortType>('date_ended')
-
   const sortProjects = (allProjects: Project[], sortByField: SortType) => {
     return sortBy(allProjects, [sortByField, 'priority']).reverse()
   }
+
+  const [sortedBy, setSortedBy] = useState<SortType>('date_ended')
+  const [sortedProjects, setSortedProjects] = useState(sortProjects(projects, 'date_ended'))
 
   const updateResults = (sortByField: SortType) => {
     setSortedProjects(sortProjects(projects, sortByField))
@@ -58,13 +58,13 @@ const Projects: NextPage<ProjectProps> = ({ projects }) => {
   return (
     <main className="mt-[80px] md:mt-[100px]">
       <Container className="my-8 max-w-3xl">
+        <h1 className="text-left font-serif font-bold text-4xl mb-4">Projects</h1>
         <div className="prose">
-          <h1>Projects</h1>
           <p>
-            I <b>love</b> building websites. Here are all the noteworthy things I've worked on. Many were{' '}
-            <span className="font-bold bg-blue-200 text-blue-900 px-1 py-0.5 rounded">solo projects</span>, while a
-            bunch were on a <span className="font-bold bg-green-200 text-green-900 px-1 py-0.5 rounded">team</span> -
-            some employed.
+            I <b>love</b> building websites. Here are all the noteworthy (and not so noteworthy) things I've worked on.
+            Many were <span className="font-bold bg-blue-200 text-blue-900 px-1 py-0.5 rounded">solo projects</span>,
+            while a bunch were on a{' '}
+            <span className="font-bold bg-green-200 text-green-900 px-1 py-0.5 rounded">team</span> - some employed.
           </p>
           <p>
             Scroll down to the bottom to see the most embarrassing projects I made in high school. 🙈 We all have to
@@ -79,7 +79,7 @@ const Projects: NextPage<ProjectProps> = ({ projects }) => {
 
         <div className="flex items-start md:justify-between md:items-center mt-8 flex-col md:flex-row space-y-4 md:space-y-0">
           <div className="flex flex-col gap-1">
-            <span className="text-xs font-semibold">Group by</span>
+            <span className="text-xs font-semibold">Organize by</span>
 
             <span className="isolate inline-flex rounded-md shadow-sm">
               {sortButtons.map((sortButton, index) => (
