@@ -29,6 +29,7 @@
         "aspects": [ "invalidHref", "preferButton" ]
         }],
         "react/jsx-props-no-spreading": "off",
+        "react/jsx-no-useless-fragment": "off",
         "import/prefer-default-export": "off",
         "react/prop-types": "off",
         "import/no-cycle": "off",

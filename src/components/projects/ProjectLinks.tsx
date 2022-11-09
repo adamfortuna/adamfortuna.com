@@ -53,7 +53,7 @@ export const ProjectLinks = ({ links, size = 'sm' }: ProjectLinksProps) => {
   const sortedLinks = sortBy(links, (t) => t.title)
 
   return (
-    <ul className="flex flex-wrap font-semibold leading-9">
+    <ul className="flex flex-wrap font-semibold leading-10">
       {sortedLinks.map((link) => (
         <ProjectLink key={link.url} link={link} size={size} />
       ))}

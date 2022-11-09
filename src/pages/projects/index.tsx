@@ -25,11 +25,11 @@ interface Sorters {
 
 const sortButtons = [
   {
-    name: 'Project end date',
+    name: 'End date',
     sortBy: 'date_ended',
   },
   {
-    name: 'Project start date',
+    name: 'Start date',
     sortBy: 'date_started',
   },
   {

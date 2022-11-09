@@ -1,9 +1,9 @@
 /* eslint-disable react/jsx-no-useless-fragment */
-export interface TechnologyTagsProps {
+export interface TagsProps {
   tags?: string[]
 }
 
-export const TechnologyTags = ({ tags }: TechnologyTagsProps) => {
+export const Tags = ({ tags }: TagsProps) => {
   if (!tags) {
     return <></>
   }

@@ -3,13 +3,8 @@ import { GetStaticPropsContext, NextPage } from 'next'
 
 import { Container } from '@/components/layout/Container'
 import { ArticleContent } from '@/components/articles/ArticleContent'
+import { getArticles, getArticleBySlug } from '@/lib/fileService'
 import { Article } from '@/types'
-
-const getArticleBySlug = async (slug: string) => {
-  return {
-    slug,
-  } as Article
-}
 
 export interface ArticleProps {
   article: Article
@@ -29,8 +24,17 @@ const ArticlePage: NextPage<ArticleProps> = ({ article }) => {
 export default ArticlePage
 
 export async function getStaticPaths() {
+  const articles = await getArticles()
+  const withSlug = articles.filter((a) => a.slug)
+
   return {
-    paths: [],
+    paths: withSlug.map((article) => {
+      return {
+        params: {
+          slug: article.slug,
+        },
+      }
+    }),
     fallback: 'blocking',
   }
 }
@@ -41,6 +45,5 @@ export async function getStaticProps({ params }: GetStaticPropsContext) {
 
   return {
     props: { article },
-    revalidate: 60 * 60,
   }
 }

@@ -4,7 +4,7 @@ import clsx from 'clsx'
 import { ProjectIcon } from '@/components/projects/ProjectIcon'
 import { ProjectCategory } from '@/components/projects/ProjectCategory'
 import { ProjectStateTag } from '@/components/projects/ProjectStateTag'
-import { TechnologyTags } from '@/components/technologies/TechnologyTags'
+import { Tags } from '@/components/tags/Tags'
 import { ProjectLinks } from '@/components/projects/ProjectLinks'
 import { Project } from '@/types'
 
@@ -60,7 +60,7 @@ const ProjectTimeline = ({ project }: { project: Project }) => {
           </ul>
         </div>
         <p className="mb-2 text-base font-normal text-gray-600">{project.description}</p>
-        <TechnologyTags tags={project.tags} />
+        <Tags tags={project.tags} />
         <div className="mt-2">
           <ProjectLinks links={project.links} size="sm" />
         </div>
@@ -122,7 +122,7 @@ export const ProjectsTimeline = ({ projects, sortField }: ProjectsTimelineProps)
   return (
     <div className="ml-8 md:ml-0 mt-12 relative border-l border-gray-400">
       {projects.map((project, index) => (
-        <div key={`${project.slug}-${sortField}`}>
+        <div key={`${project.title}-${sortField}`}>
           <ProjectTimelineSeparator
             currentProject={project}
             previousProject={index > 0 ? projects[index - 1] : null}

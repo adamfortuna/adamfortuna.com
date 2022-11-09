@@ -29,6 +29,25 @@ export interface Article {
   tags: string[]
   visible: boolean
   href: string
-  content: string
+  content: string | null
   contentMarkdown: string
+  date: string
+  project?: string
+  path: string
+}
+
+export interface ArticleFrontmatter {
+  title: string
+  date: string
+
+  href?: string
+  url?: string
+
+  // Todo: Normalize these to be the same
+  slug?: string
+  permalink?: string
+  id?: string
+
+  categories?: string[]
+  tags?: string[]
 }

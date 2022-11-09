@@ -77,7 +77,7 @@ export type LinkProps = {
 export const Link = React.forwardRef<HTMLAnchorElement, React.PropsWithChildren<LinkProps>>(
   ({ variant = 'default', size = 'md', className = '', showExternal = true, href, ...props }, ref) => {
     const newClassName = clsx(linkTheme.variant[variant], linkTheme.size[size], variantSizes[variant][size], className)
-    const externalLink = href.indexOf('http') === 0
+    const externalLink = href ? href.indexOf('http') === 0 : false
 
     if (externalLink) {
       if (showExternal) {

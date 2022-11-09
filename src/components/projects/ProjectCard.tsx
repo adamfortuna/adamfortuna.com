@@ -3,7 +3,7 @@ import clsx from 'clsx'
 import { Link } from '@/components/layout/Link'
 import { Image } from '@/components/layout/Image'
 import { ProjectStateTag } from '@/components/projects/ProjectStateTag'
-import { TechnologyTags } from '@/components/technologies/TechnologyTags'
+import { Tags } from '@/components/tags/Tags'
 import { ProjectIcon } from '@/components/projects/ProjectIcon'
 import { ProjectLinks } from '@/components/projects/ProjectLinks'
 import { Project } from '@/types'
@@ -42,7 +42,7 @@ export const ProjectCard = ({ classsName = '', project }: ProjectCardProps) => {
           <p>{project.description}</p>
           {project.tags && project.tags.length > 0 && (
             <p className="mt-4">
-              <TechnologyTags tags={project.tags} />
+              <Tags tags={project.tags} />
             </p>
           )}
           <div className="mt-2">
