@@ -115,7 +115,7 @@ export const getArticleByPath = async (filePath: string, includeContent: boolean
     if (includeContent && body.length > 0) {
       result = (
         await bundleMDX({
-          cwd: `${__dirname}/../../../src/`,
+          cwd: `${process.env.ROOT_PATH}/src/`,
           source: body,
         })
       ).code

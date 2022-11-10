@@ -40,13 +40,22 @@ export async function getStaticProps() {
   const dated = articles.filter((a) => a.date)
   const sorted = sortBy(dated, 'date').reverse()
   const hrefed = sorted.filter((a) => a.href)
+  const light = hrefed.map((a) => {
+    return {
+      title: a.title,
+      slug: a.slug,
+      tags: a.tags,
+      href: a.href,
+      date: a.date,
+      project: a.project,
+    }
+  })
 
   return {
     props: {
-      articles: hrefed,
+      articles: light,
       articlesCount: articles.length,
       firstArticleDate: sorted[sorted.length - 1].date,
     },
-    revalidate: 60 * 60,
   }
 }
