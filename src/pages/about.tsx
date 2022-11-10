@@ -153,7 +153,7 @@ const About: NextPage<AboutProps> = ({ article }) => {
 export default About
 
 export async function getStaticProps() {
-  const article = await getArticleByPath('content/articles/adamfortuna/pages/about.md')
+  const article = await getArticleByPath('content/articles/adamfortuna/pages/about.md', true)
 
   return {
     props: { article },
