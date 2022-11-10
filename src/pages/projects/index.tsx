@@ -119,6 +119,6 @@ export default Projects
 export async function getStaticProps() {
   const projects = await getProjects()
   return {
-    props: { projects }
+    props: { projects },
   }
 }
