@@ -1,8 +1,6 @@
 import { Container } from '@/components/layout/Container'
 import { InteractiveMountain } from '@/components/fun/InteractiveMountain'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons'
-import { Link } from '@/components/layout/Link'
+import { GitHubIcon, TwitterIcon, HardcoverIcon } from '@/components/SocialIcons'
 
 export const Hero = () => {
   return (
@@ -21,14 +19,23 @@ export const Hero = () => {
           I love <span className="font-bold">enlivening experiences</span>,{' '}
           <span className="font-bold">quantifying data</span> and{' '}
           <span className="font-bold">making playful websites</span>.
-          <span className="ml-4 space-x-2">
-            <Link href="https://twitter.com/adamfortuna" className="group" showExternal={false}>
-              <FontAwesomeIcon icon={faTwitter} className="h-6 w-6 text-sky-800 group-hover:text-black" />
-            </Link>
-            <Link href="https://github.com/adamfortuna" className="group" showExternal={false}>
-              <FontAwesomeIcon icon={faGithub} className="h-6 w-6 text-sky-800 group-hover:text-black" />
-            </Link>
-          </span>
+          <ul className="ml-4 space-x-2 inline-block">
+            <li className="inline">
+              <a href="https://hardcover.app/@adam" className="group" target="_blank" rel="noreferrer">
+                <HardcoverIcon className="inline h-6 w-6 fill-sky-800 group-hover:fill-indigo-600" />
+              </a>
+            </li>
+            <li className="inline">
+              <a href="https://twitter.com/adamfortuna" className="group" target="_blank" rel="noreferrer">
+                <TwitterIcon className="inline h-6 w-6 fill-sky-800 group-hover:fill-blue-700" />
+              </a>
+            </li>
+            <li className="inline">
+              <a href="https://github.com/adamfortuna" className="group" target="_blank" rel="noreferrer">
+                <GitHubIcon className="inline h-6 w-6 fill-sky-800 group-hover:fill-black" />
+              </a>
+            </li>
+          </ul>
         </p>
       </Container>
     </div>
