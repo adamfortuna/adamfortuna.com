@@ -82,9 +82,7 @@ export const Header = () => {
               <span className="hidden sm:inline-block absolute -left-8 text-2xl opacity-0 group-hover:opacity-100 duration-400 transition-opacity group-hover:animate-waving-hand">
                 👋
               </span>
-
               <Af className="w-10 h-8 text-sky-800 dark:text-yellow-400 group-hover:text-white md:hidden" />
-
               <span className="font-bold text-2xl font-handwriting hidden md:inline-block">Adam Fortuna</span>
             </NavLink>
           </div>

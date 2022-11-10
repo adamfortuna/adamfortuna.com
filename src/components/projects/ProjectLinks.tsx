@@ -39,7 +39,7 @@ const ProjectLink = ({ link, size }: { link: LinkType; size: LinkThemeProps['siz
         variant="button"
         className="flex space-x-2 items-center"
       >
-        <FontAwesomeIcon icon={icon} className="h-4 w-4 text-sky-800 group-hover:text-black" />
+        <FontAwesomeIcon icon={icon} className="h-4 w-4 text-sky-800 dark:text-sky-100 group-hover:text-black" />
         <span>{link.title}</span>
       </Link>
     </li>

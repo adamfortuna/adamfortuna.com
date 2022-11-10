@@ -31,7 +31,9 @@ const ProjectTimeline = ({ project }: { project: Project }) => {
       <div className="ml-4 flex flex-col">
         <p className="leading-7">
           <span
-            className={`mr-4 ${project.size === 'lg' ? 'text-2xl' : project.size === 'md' ? 'text-xl' : 'text-lg'}`}
+            className={`dark:text-white mr-4 ${
+              project.size === 'lg' ? 'text-2xl' : project.size === 'md' ? 'text-xl' : 'text-lg'
+            }`}
           >
             {project.title}
           </span>
@@ -39,7 +41,7 @@ const ProjectTimeline = ({ project }: { project: Project }) => {
             {project.state_description}
           </ProjectStateTag>
         </p>
-        <div className="block mt-1 mb-2 text-sm font-normal leading-none text-gray-500">
+        <div className="block mt-1 mb-2 text-sm font-normal leading-none text-gray-500 dark:text-gray-300">
           <ul className="list-comma leading-5">
             <li>
               <b>Active:</b> {project.years_active}
@@ -59,7 +61,7 @@ const ProjectTimeline = ({ project }: { project: Project }) => {
             )}
           </ul>
         </div>
-        <p className="mb-2 text-base font-normal text-gray-600">{project.description}</p>
+        <p className="mb-2 text-base font-normal text-gray-600 dark:text-gray-400">{project.description}</p>
         <Tags tags={project.tags} />
         <div className="mt-2">
           <ProjectLinks links={project.links} size="sm" />
@@ -89,9 +91,9 @@ export const ProjectTimelineSeparator = ({
   if (sortField === 'date_ended' && !previousProject) {
     return (
       <div className="mb-10 relative ml-12 lg:ml-0">
-        <span className="md:ml-0 lg:absolute lg:-left-[150px] w-24 h-24 text-black font-black text-2xl lg:text-right">
+        <span className="md:ml-0 lg:absolute lg:-left-[150px] w-24 h-24 text-black dark:text-white font-black text-2xl lg:text-right">
           Now
-          <span className="text-sm font-semibold text-gray-400 block">
+          <span className="text-sm font-semibold text-gray-400 dark:text-gray-300 block">
             {Number(new Date().getFullYear()) - 1982} years old
           </span>
         </span>
@@ -102,9 +104,11 @@ export const ProjectTimelineSeparator = ({
   if (!Number.isNaN(currentProjectYear) && currentProjectYear !== previousProjectYear) {
     return (
       <div className="mt-24 lg:mt-0 mb-4 relative ml-12 lg:ml-0">
-        <span className="md:ml-0 lg:absolute lg:-left-[150px] w-24 h-24 text-black font-black text-2xl lg:text-right">
+        <span className="md:ml-0 lg:absolute lg:-left-[150px] w-24 h-24 text-black dark:text-white font-black text-2xl lg:text-right">
           {currentProjectYear}
-          <span className="text-sm font-semibold text-gray-400 block">{currentProjectYear - 1982} years old</span>
+          <span className="text-sm font-semibold text-gray-400 dark:text-gray-300 block">
+            {currentProjectYear - 1982} years old
+          </span>
         </span>
       </div>
     )

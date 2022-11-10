@@ -19,10 +19,10 @@ const ArticlesPage: NextPage<ArticleProps> = ({ articles, articlesCount, firstAr
   return (
     <main className="mt-[80px] md:mt-[100px]">
       <Container className="my-8 max-w-2xl">
-        <h1 className="font-black text-3xl text-black">Articles</h1>
-        <p>
+        <h1 className="font-black text-3xl dark:text-white">Articles</h1>
+        <p className="dark:text-white">
           <b>{articlesCount.toLocaleString()}</b> articles written since <b>{firstDate}</b>{' '}
-          <span className="text-gray-700 text-sm">({articles.length.toLocaleString()} public)</span>.
+          <span className="text-gray-700 dark:text-gray-300 text-sm">({articles.length.toLocaleString()} public)</span>.
         </p>
 
         <div className="mt-8">

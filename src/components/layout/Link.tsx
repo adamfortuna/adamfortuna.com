@@ -21,13 +21,13 @@ type LinkTheme = {
 
 export const linkTheme: LinkTheme = {
   variant: {
-    default: 'shadow-link',
+    default: 'text-blue-600 dark:text-blue-200 underline hover:no-underline',
     none: '',
-    header: 'shadow-link',
+    header: 'text-blue-600 dark:text-blue-200 underline hover:no-underline',
     info: 'link text-slate-400 text-sm hover:underline',
     tag: 'bg-sky-100 px-1 py-0.5 rounded-sm hover:bg-gray-300 hover:text-black',
     button:
-      'inline-flex items-center border border-gray-300 bg-white font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2',
+      'inline-flex items-center border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 font-medium text-gray-700 dark:text-sky-100 shadow-sm hover:bg-gray-50 dark:hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2',
   },
   size: {
     xs: 'text-xs',
@@ -84,7 +84,10 @@ export const Link = React.forwardRef<HTMLAnchorElement, React.PropsWithChildren<
         return (
           <a ref={ref} href={href} className={newClassName} {...props}>
             {props.children}
-            <FontAwesomeIcon icon={faSquareUpRight} className="ml-2 hidden sm:inline-block text-blue-600" />
+            <FontAwesomeIcon
+              icon={faSquareUpRight}
+              className="ml-2 hidden sm:inline-block text-blue-600 dark:text-sky-100"
+            />
           </a>
         )
       }

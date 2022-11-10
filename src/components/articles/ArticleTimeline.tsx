@@ -12,7 +12,7 @@ export const ArticlesCount = ({ articles, year }: ArticlesCountProps) => {
   }, [articles, year])
 
   return (
-    <span className="text-sm font-semibold text-gray-400 block">
+    <span className="text-sm font-semibold text-gray-400 dark:text-gray-200 block">
       {count} article{count === 1 ? '' : 's'}
     </span>
   )
@@ -38,7 +38,7 @@ export const ArticleTimelineSeparator = ({
   if (!Number.isNaN(currentArticleYear) && currentArticleYear !== previousProjectYear) {
     return (
       <div className="mt-24">
-        <span className="text-black font-black text-2xl">
+        <span className="text-black dark:text-gray-100 font-black text-2xl">
           {currentArticleYear}
           <ArticlesCount articles={articles} year={currentArticleYear} />
         </span>

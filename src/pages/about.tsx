@@ -91,7 +91,7 @@ const About: NextPage<AboutProps> = ({ article }) => {
     <Container className="mt-16 sm:mt-32">
       <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
         <div className="lg:order-first lg:row-span-2 prose mx-auto">
-          <h1 className="text-left font-serif font-bold text-4xl mb-4">{article.title}</h1>
+          <h1 className="text-left font-bold text-4xl mb-4 dark:text-white">{article.title}</h1>
           <ArticleContent article={article} />
         </div>
         <div className="lg:pl-20 mx-auto px-2.5 w-full max-w-2xl">

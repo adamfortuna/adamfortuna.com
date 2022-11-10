@@ -22,8 +22,8 @@ export const ArticleLink = ({ article }: ArticleLinkProps) => {
           <li>
             <span className="text-xs font-semibold bg-blue-200 px-1 py-0.5 rounded">{article.project}</span>
           </li>
-          <li>{publishDate}</li>
-          {tags.length > 0 && <li>{tags}</li>}
+          <li className="dark:text-white">{publishDate}</li>
+          {tags.length > 0 && <li className="dark:text-white">{tags}</li>}
         </ul>
       </div>
     </div>
