@@ -1,6 +1,8 @@
+/* eslint-disable react/no-invalid-html-attribute, react/jsx-no-target-blank */
+
 import { Container } from '@/components/layout/Container'
 import { InteractiveMountain } from '@/components/fun/InteractiveMountain'
-import { GitHubIcon, TwitterIcon, HardcoverIcon } from '@/components/SocialIcons'
+import { GitHubIcon, MastodonIcon, HardcoverIcon } from '@/components/SocialIcons'
 
 export const Hero = () => {
   return (
@@ -26,8 +28,8 @@ export const Hero = () => {
               </a>
             </li>
             <li className="inline">
-              <a href="https://twitter.com/adamfortuna" className="group" target="_blank" rel="noreferrer">
-                <TwitterIcon className="inline h-6 w-6 fill-sky-800 group-hover:fill-blue-700" />
+              <a href="https://ruby.social/@adam" className="group" target="_blank" rel="me">
+                <MastodonIcon className="inline h-6 w-6 fill-sky-800 group-hover:fill-indigo-700" />
               </a>
             </li>
             <li className="inline">
