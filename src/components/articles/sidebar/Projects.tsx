@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Af from '@/images/af.svg'
 import Minafi from '@/images/minafi.svg'
-import Hardcover from '@/images/Hardcover.svg'
+import Hardcover from '@/images/hardcover.svg'
 
 const Projects = () => (
   <div>

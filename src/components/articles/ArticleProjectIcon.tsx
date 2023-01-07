@@ -1,7 +1,7 @@
 import { Article, ArticleCategory } from '@/types'
 import Af from '@/images/af.svg'
 import Minafi from '@/images/minafi.svg'
-import Hardcover from '@/images/Hardcover.svg'
+import Hardcover from '@/images/hardcover.svg'
 
 export interface ArticleLinkProps {
   article: Article
