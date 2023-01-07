@@ -3,7 +3,7 @@ import { promises } from 'fs'
 import path from 'path'
 import frontmatter from 'front-matter'
 import { bundleMDX } from 'mdx-bundler'
-import { Article, ArticleFrontmatter } from '@/types'
+import { Article } from '@/types'
 import flatten from 'lodash/flatten'
 import isArray from 'lodash/isArray'
 import isDate from 'lodash/isDate'
@@ -43,7 +43,7 @@ const parseAllTags = (tags: any): string[] => {
   return []
 }
 
-const parseTags = (fontmatter: ArticleFrontmatter): string[] => {
+const parseTags = (fontmatter: any): string[] => {
   return uniq(compact(flatten([parseAllTags(fontmatter.categories), parseAllTags(fontmatter.tags)])))
 }
 
@@ -77,7 +77,7 @@ const parseProject = (file: string) => {
   return null
 }
 
-const parseSlug = (fontmatter: ArticleFrontmatter, filePath: string) => {
+const parseSlug = (fontmatter: any, filePath: string) => {
   if (fontmatter.url) {
     return null
   }
@@ -93,7 +93,7 @@ const parseSlug = (fontmatter: ArticleFrontmatter, filePath: string) => {
   return null
 }
 
-const parseHref = (fontmatter: ArticleFrontmatter, filePath: string) => {
+const parseHref = (fontmatter: any, filePath: string) => {
   if (fontmatter.url) {
     return fontmatter.url
   }
@@ -121,7 +121,7 @@ export const getArticleByPath = async (filePath: string, includeContent: boolean
       ).code
     }
 
-    const contentAttributes = content.attributes as ArticleFrontmatter
+    const contentAttributes = content.attributes as any
 
     const front = {
       ...contentAttributes,
