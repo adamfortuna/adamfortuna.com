@@ -23,10 +23,16 @@ export interface Project {
   poster_url: string
 }
 
+export interface ArticleCategory {
+  slug: string
+  name: string
+}
+
 export interface Article {
   slug: string
   title: string
-  tags: string[]
+  tags: Tag[]
+  excerpt: string
   visible: boolean
   href: string
   content: string | null
@@ -34,20 +40,48 @@ export interface Article {
   date: string
   project?: string
   path: string
+  categories: ArticleCategory[]
+  readingTime: number
 }
 
-export interface ArticleFrontmatter {
+export interface ArticlesListType {
+  articles: Article[]
+}
+export interface Category {
+  count: number
+  description: string
+  name: string
+  slug: string
+}
+
+export interface Tag {
+  name: string
+  slug: string
+  description: string
+  count: number
+}
+
+interface WordpressCategories {
+  nodes: ArticleCategory[]
+}
+
+interface WordpressTags {
+  nodes: Tag[]
+}
+interface WordpressImage {
+  sourceUrl: string
+}
+interface WordpressImageNode {
+  node: WordpressImage
+}
+
+export interface WordpressPost {
+  slug: string
   title: string
+  categories: WordpressCategories | null
+  tags: WordpressTags | null
   date: string
-
-  href?: string
-  url?: string
-
-  // Todo: Normalize these to be the same
-  slug?: string
-  permalink?: string
-  id?: string
-
-  categories?: string[]
-  tags?: string[]
+  featuredImage?: WordpressImageNode
+  content: string
+  excerpt: string
 }

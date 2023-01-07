@@ -1,0 +1,44 @@
+import Link from 'next/link'
+
+const Tag = ({ tag }: { tag: string }) => (
+  <p>
+    <Link href={`/blog/tags/${tag}`} passHref>
+      <a className="link--blue"># {tag}</a>
+    </Link>
+  </p>
+)
+
+const groups = [
+  {
+    name: 'Development',
+    tags: ['dev', 'design', 'css', 'javascript', 'product', 'ruby'].sort(),
+  },
+  {
+    name: 'Personal',
+    tags: ['journal', 'travel', 'year-in-review'].sort(),
+  },
+  {
+    name: 'Misc',
+    tags: ['personal-finance', 'fire', 'books', 'mindfulness', 'minimalism', 'interactive'].sort(),
+  },
+]
+const Tags = () => (
+  <div>
+    <p className="font-handwriting text-4xl text-blue-700 mb-4 underline underline-offset-4 decoration-yellow-300">
+      Tags
+    </p>
+
+    {groups.map((group) => (
+      <div key={group.name} className="mb-3">
+        <p className="font-semibold text-gray-600">{group.name}</p>
+        <div className="space-y-1 ml-2">
+          {group.tags.map((t) => (
+            <Tag tag={t} />
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+)
+
+export default Tags

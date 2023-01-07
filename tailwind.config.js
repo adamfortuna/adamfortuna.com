@@ -1,6 +1,23 @@
 /* eslint-disable sonarjs/no-duplicate-string, import/no-extraneous-dependencies */
 const defaultTheme = require('tailwindcss/defaultTheme')
 
+const blogWidth = (theme, width="3") => {
+  // const t = "leading.loose"
+  // console.log("t", theme(t))
+  return {
+    marginLeft: "auto",
+    marginRight: "auto",
+    paddingLeft: theme('spacing.4'),
+    paddingRight: theme('spacing.4'),
+
+    '@screen md': {
+      textAlign: theme(`text.left`),
+      width: theme(`maxWidth.${width}xl`),
+      paddingLeft: theme('spacing.0'),
+      paddingLeft: theme('spacing.0'),
+    },
+  }
+}
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
@@ -12,6 +29,18 @@ module.exports = {
         handwriting: ['Pacifico', 'cursive'],
         // sans: ['Noto Sans', ...defaultTheme.fontFamily.sans],
         header: ['Quicksand', ...defaultTheme.fontFamily.sans],
+      },
+      colors: {
+        blue: {
+          "200": "#5F94C2",
+          "300": "#0088FF",
+          "500": "#5585AF",
+          "600": "#0059A7",
+          "700": "#0068C3"
+        },
+        yellow: {
+          "300": "#FCE1A8"
+        }
       },
       keyframes: {
         wave: {
@@ -113,6 +142,10 @@ module.exports = {
 
           // Base
           color: 'var(--tw-prose-body)',
+          fontSize: theme('fontSize.lg')[0],
+          '@screen md': {
+            fontSize: theme('fontSize.xl')[0],
+          },
           lineHeight: theme('lineHeight.7'),
           '> *': {
             marginTop: theme('spacing.10'),
@@ -121,21 +154,24 @@ module.exports = {
           p: {
             marginTop: theme('spacing.7'),
             marginBottom: theme('spacing.7'),
+            textAlign: "justify",
+            ...blogWidth(theme),
           },
 
           // Headings
           'h2, h3': {
             color: 'var(--tw-prose-headings)',
             fontWeight: theme('fontWeight.semibold'),
+            ...blogWidth(theme)
           },
           h2: {
-            fontSize: theme('fontSize.xl')[0],
+            fontSize: theme('fontSize.3xl')[0],
             lineHeight: theme('lineHeight.7'),
             marginTop: theme('spacing.20'),
             marginBottom: theme('spacing.4'),
           },
           h3: {
-            fontSize: theme('fontSize.base')[0],
+            fontSize: theme('fontSize.xl')[0],
             lineHeight: theme('lineHeight.7'),
             marginTop: theme('spacing.16'),
             marginBottom: theme('spacing.4'),
@@ -147,6 +183,7 @@ module.exports = {
           // Images
           img: {
             borderRadius: theme('borderRadius.3xl'),
+            ...blogWidth(theme, 5)
           },
 
           // Inline elements
@@ -193,6 +230,10 @@ module.exports = {
           },
 
           // Figures
+          figure: {
+            ...blogWidth(theme),
+            textAlign: "center"
+          },
           figcaption: {
             color: 'var(--tw-prose-captions)',
             fontSize: theme('fontSize.sm')[0],
@@ -212,10 +253,11 @@ module.exports = {
           },
           'ul, ol': {
             paddingLeft: theme('spacing.6'),
+            ...blogWidth(theme),
           },
           li: {
-            marginTop: theme('spacing.6'),
-            marginBottom: theme('spacing.6'),
+            marginTop: theme('spacing.2'),
+            marginBottom: theme('spacing.2'),
             paddingLeft: theme('spacing[3.5]'),
           },
           'li::marker': {

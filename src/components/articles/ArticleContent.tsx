@@ -14,3 +14,12 @@ export const ArticleContent = ({ article }: ArticleContentProps) => {
     </article>
   )
 }
+
+export const ArticleContentHtml = ({ article }: ArticleContentProps) => {
+  return (
+    <article
+      className="prose dark:prose-invert mx-auto container"
+      dangerouslySetInnerHTML={{ __html: article.content || '' }}
+    />
+  )
+}

@@ -3,6 +3,7 @@ import { useMemo } from 'react'
 import { dateFormatLong } from '@/lib/dateService'
 import { Link } from '@/components/layout/Link'
 import { Article } from '@/types'
+import ArticleProjectIcon from './ArticleProjectIcon'
 
 export interface ArticleLinkProps {
   article: Article
@@ -10,22 +11,16 @@ export interface ArticleLinkProps {
 
 export const ArticleLink = ({ article }: ArticleLinkProps) => {
   const publishDate = useMemo(() => dateFormatLong(article.date), [article.date])
-  const tags = useMemo(() => (article.tags.length > 0 ? article.tags.sort().join(', ') : ''), [article.tags])
 
   return (
-    <div className="my-2">
-      <Link href={article.href} className="text-lg">
-        {article.title}
-      </Link>
-      <div>
-        <ul className="list-bullet">
-          <li>
-            <span className="text-xs font-semibold bg-blue-200 px-1 py-0.5 rounded">{article.project}</span>
-          </li>
-          <li className="dark:text-white">{publishDate}</li>
-          {tags.length > 0 && <li className="dark:text-white">{tags}</li>}
-        </ul>
+    <div className="my-2 flex justify-between">
+      <div className="flex flex-row items-center space-x-4">
+        <ArticleProjectIcon categories={article.categories} />
+        <Link href={`/${article.slug}`} className="text-lg link--blue font-semibold">
+          {article.title}
+        </Link>
       </div>
+      <p className="hidden md:block text-blue-500 text-sm w-[140px] text-right">{publishDate}</p>
     </div>
   )
 }

@@ -1,8 +1,10 @@
 import { faHammer, faPencil } from '@fortawesome/pro-regular-svg-icons'
 // import { faHammer, faMountain, faPencil } from '@fortawesome/pro-regular-svg-icons'
+import Cloud from '@/images/cloud.svg'
 
 import Af from '@/images/af.svg'
 import { NavLink } from '@/components/layout/NavLink'
+import clsx from 'clsx'
 import { Container } from './Container'
 
 const SunIcon = (props: any) => {
@@ -72,11 +74,11 @@ const ModeToggle = () => {
   )
 }
 
-export const Header = () => {
+export const Header = ({ isHomePage }: { isHomePage: boolean }) => {
   return (
-    <header className="absolute top-0 inset-x-0">
+    <header className={clsx('inset-x-0', isHomePage ? 'absolute' : 'bg-[#B6E0EF]')}>
       <Container className="py-2 md:py-6">
-        <nav className="relative z-50 flex justify-between">
+        <nav className="relative z-50 flex justify-between pr-2">
           <div className="flex items-center md:gap-x-12 justify-between text-black dark:text-yellow-400">
             <NavLink href="/">
               <span className="hidden sm:inline-block absolute -left-8 text-2xl opacity-0 group-hover:opacity-100 duration-400 transition-opacity group-hover:animate-waving-hand">
@@ -91,8 +93,8 @@ export const Header = () => {
             <NavLink href="/projects" icon={faHammer}>
               <span>Projects</span>
             </NavLink>
-            <NavLink href="/articles" icon={faPencil}>
-              <span>Articles</span>
+            <NavLink href="/blog" icon={faPencil}>
+              <span>Blog</span>
             </NavLink>
             <ModeToggle />
             {/* <NavLink href="/adventures" icon={faMountain}>
@@ -101,6 +103,12 @@ export const Header = () => {
           </div>
         </nav>
       </Container>
+      {!isHomePage && (
+        <div className="h-16 lg:h-32 overflow-hidden md:-mt-[60px] relative">
+          <Cloud className="w-full xl:bg-cover" />
+          <div className="md:hidden bg-white absolute bottom-0 h-8 w-full" />
+        </div>
+      )}
     </header>
   )
 }

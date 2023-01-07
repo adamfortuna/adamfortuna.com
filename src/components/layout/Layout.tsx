@@ -16,7 +16,7 @@ export const Layout = ({ children }: any) => {
           content="Hey hey! I'm a Adam Fortuna, a full-stack product developer living in Salt Lake City, UT."
         />
       </Head>
-      <Header />
+      <Header isHomePage={isHomePage} />
       <main>{children}</main>
 
       {!isHomePage && <Footer />}

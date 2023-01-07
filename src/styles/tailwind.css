@@ -36,3 +36,10 @@
     filter: blur(0);
   }
 }
+
+.link--blue {
+  @apply text-blue-600 underline-offset-4 font-semibold underline;
+}
+.link--blue:hover {
+  @apply no-underline;
+}

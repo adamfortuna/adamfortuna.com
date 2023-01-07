@@ -1,7 +1,4 @@
 import Link from 'next/link'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons'
-
 import { Container } from '@/components/layout/Container'
 
 export const FooterLink = ({ href, children }) => {
@@ -24,17 +21,6 @@ export const Footer = () => {
           <div className="flex gap-x-6">
             <FooterLink href="/now">Now</FooterLink>
             <FooterLink href="/tools">Tools</FooterLink>
-
-            <Link href="https://twitter.com/adamfortuna" passHref>
-              <a className="group hover:bg-sky-600 px-1 py-0.5 rounded flex items-center" aria-label="Adam on Twitter">
-                <FontAwesomeIcon icon={faTwitter} className="h-6 w-6 text-sky-800 group-hover:text-white" />
-              </a>
-            </Link>
-            <Link href="https://github.com/adamfortuna" passHref>
-              <a className="group hover:bg-sky-600 px-1 py-0.5 rounded flex items-center" aria-label="Adam on GitHub">
-                <FontAwesomeIcon icon={faGithub} className="h-6 w-6 text-sky-800 group-hover:text-white" />
-              </a>
-            </Link>
           </div>
           <p className="mt-6 text-xs text-slate-500 sm:mt-0">
             Copyright &copy; {new Date().getFullYear()} Adam Fortuna. All rights reserved.
