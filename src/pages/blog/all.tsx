@@ -1,4 +1,5 @@
 import { NextPage } from 'next'
+import Link from 'next/link'
 
 import { Container } from '@/components/layout/Container'
 import ArticleSidebar from '@/components/articles/sidebar'
@@ -12,7 +13,16 @@ const ArticlesAllPage: NextPage<ArticlesListType> = ({ articles }) => (
     <ArticleSidebar />
 
     <div className="col-span-12 md:col-span-9 xl:col-span-10 p-2 md:p-0">
-      <p className="font-handwriting text-6xl text-blue-700 mb-2">Blog - Everything</p>
+      <p className="font-handwriting text-3xl md:text-4xl lg:text-6xl text-blue-700 mb-2 flex flex-wrap items-baseline">
+        <span>
+          <Link href="/blog" passHref>
+            <a className="underline hover:no-underline">Blog</a>
+          </Link>
+        </span>
+        <span className="text-2xl mx-2">/</span>
+        <span>Everything</span>
+      </p>
+
       <BlogAboutCallout />
       <ArticlesList articles={articles} />
     </div>
