@@ -1,4 +1,4 @@
-import { faRss } from '@fortawesome/pro-duotone-svg-icons'
+import { faRss, faHighlighter } from '@fortawesome/pro-duotone-svg-icons'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Af from '@/images/af.svg'
@@ -37,15 +37,22 @@ const BlogAboutCallout = () => (
         I write articles that users (of the startup I'm working on) would want to hear about.
       </p>
       <p>
-        To stay in touch, follow me on{' '}
+        Check out some
+        <Link href="/blog/tags/highlights" passHref>
+          <a className="bg-yellow-400 hover:bg-yellow-500 rounded px-1 py-0.5 mx-1 text-blue-800 space-x-2">
+            <FontAwesomeIcon icon={faHighlighter} className="text-blue-700" size="1x" />
+            <span>highlights</span>
+          </a>
+        </Link>
+        and stay in touch by following me on{' '}
         <a href="https://ruby.social/@adam" className="link--blue" target="_blank" rel="noreferrer">
           Mastodon
         </a>
-        , subscribe to my{' '}
+        , subscribing to my{' '}
         <Link href="/newsletter" passHref>
           <a className="link--blue">newsletter</a>
         </Link>{' '}
-        or{' '}
+        or subscribing to my{' '}
         <a href="/feed.xml" target="_blank" className="link--blue">
           RSS feed
         </a>
