@@ -18,7 +18,7 @@ export const ArticleHeader = ({ article }: ArticleHeaderProps) => {
         </h1>
       </div>
       <div className="mx-auto text-center max-w-4xl">
-        {article.excerpt.length > 0 && (
+        {article.excerpt?.length && (
           <div className="text-grey-800 italic leading-normal mb-4 md:mb-6">Ex: {article.excerpt}</div>
         )}
 

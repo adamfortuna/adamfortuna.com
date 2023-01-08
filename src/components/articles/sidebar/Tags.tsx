@@ -11,11 +11,11 @@ const Tag = ({ tag }: { tag: string }) => (
 const groups = [
   {
     name: 'Development',
-    tags: ['dev', 'design', 'css', 'javascript', 'product', 'ruby'].sort(),
+    tags: ['code', 'design', 'javascript', 'product', 'ruby', 'tech'].sort(),
   },
   {
     name: 'Personal',
-    tags: ['journal', 'travel', 'year-in-review'].sort(),
+    tags: ['betterment', 'journal', 'photos', 'travel', 'year-in-review'].sort(),
   },
   {
     name: 'Misc',

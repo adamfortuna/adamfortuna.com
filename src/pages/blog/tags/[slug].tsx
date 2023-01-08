@@ -25,7 +25,7 @@ const ArticlesProjectsPage: NextPage<ArticlesProjectsPageType> = ({ tag, article
       </p>
       <BlogAboutCallout />
 
-      {tag.description.length > 0 && (
+      {tag.description?.length && (
         <div className="mt-4 lg:mt-8">
           <h2 className="font-handwriting text-xl md:text-2xl text-blue-700 mb-2">About this Tag</h2>
           <p className="text-gray-600 max-w-3xl">{tag.description}</p>

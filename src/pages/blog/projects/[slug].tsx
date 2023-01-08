@@ -25,7 +25,7 @@ const ArticlesProjectsPage: NextPage<ArticlesProjectsPageType> = ({ category, ar
       </p>
       <BlogAboutCallout />
 
-      {category.description.length > 0 && (
+      {category.description?.length && (
         <div className="mt-4 lg:mt-8">
           <h2 className="font-handwriting text-xl md:text-2xl text-blue-700 mb-2">About the Project</h2>
           <p className="text-gray-600 max-w-3xl">{category.description}</p>

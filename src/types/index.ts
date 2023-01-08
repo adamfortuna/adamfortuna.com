@@ -32,7 +32,7 @@ export interface Article {
   slug: string
   title: string
   tags: Tag[]
-  excerpt: string
+  excerpt: string | null
   visible: boolean
   href: string
   content: string | null
@@ -49,7 +49,7 @@ export interface ArticlesListType {
 }
 export interface Category {
   count: number
-  description: string
+  description: string | null
   name: string
   slug: string
 }
@@ -57,7 +57,7 @@ export interface Category {
 export interface Tag {
   name: string
   slug: string
-  description: string
+  description: string | null
   count: number
 }
 
