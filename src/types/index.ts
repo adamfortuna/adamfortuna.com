@@ -2,6 +2,7 @@ export interface Link {
   url: string
   title: string
 }
+export type WordpressClientIdentifier = 'adamfortuna' | 'hardcover' | 'minafi'
 
 export interface Project {
   slug: string
@@ -38,10 +39,13 @@ export interface Article {
   content: string | null
   contentMarkdown: string
   date: string
-  project?: string
+  project: WordpressClientIdentifier
   path: string
   categories: ArticleCategory[]
   readingTime: number
+  external: boolean
+  url: string
+  featuredImageUrl: string
 }
 
 export interface ArticlesListType {
@@ -84,4 +88,6 @@ export interface WordpressPost {
   featuredImage?: WordpressImageNode
   content: string
   excerpt: string
+  guid: string
+  project?: string
 }

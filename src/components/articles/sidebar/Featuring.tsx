@@ -19,7 +19,7 @@ const Featuring = () => (
     </p>
 
     <div className="space-y-1">
-      <Link href="/blog">
+      <Link href="/blog/tags/highlights">
         <a className="flex flex-row items-center hover:bg-blue-300/20 rounded space-x-4 p-2">
           <FontAwesomeIcon icon={faHighlighter} className="text-blue-700 w-[32px] md:w-[48px]" size="3x" />
           <div className="flex flex-col">
@@ -29,7 +29,7 @@ const Featuring = () => (
         </a>
       </Link>
 
-      <Link href="/blog/popular">
+      <Link href="/blog/tags/popular">
         <a className="flex flex-row items-center hover:bg-blue-300/20 rounded space-x-4 p-2">
           <FontAwesomeIcon icon={faFire} className="text-blue-700 w-[32px] md:w-[48px]" size="3x" />
           <div className="flex flex-col">

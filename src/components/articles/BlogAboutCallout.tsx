@@ -21,7 +21,7 @@ const BlogAboutCallout = () => (
         <span className="bg-yellow-400 rounded px-1 py-0.5 mx-1 text-blue-800">
           <Minafi className="w-4 h-4 inline mb-0.5" /> <span>Minafi</span>
         </span>
-        I write about financial indepenence, investing and my journy to retire early.
+        I write about financial indepenence, investing and my journy to retire early (36 ✔️).
       </p>
       <p className="mb-4">
         Under

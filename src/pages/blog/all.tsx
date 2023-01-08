@@ -3,9 +3,8 @@ import { NextPage } from 'next'
 import { Container } from '@/components/layout/Container'
 import ArticleSidebar from '@/components/articles/sidebar'
 import { getRecentPosts } from '@/queries/wordpress/getRecentPosts'
-import { ArticlesListType, WordpressPost } from '@/types'
+import { ArticlesListType } from '@/types'
 import { ArticlesList } from '@/components/articles/ArticlesList'
-import { parsePost } from '@/lib/wordpressClient'
 import BlogAboutCallout from '@/components/articles/BlogAboutCallout'
 
 const ArticlesAllPage: NextPage<ArticlesListType> = ({ articles }) => (
@@ -23,12 +22,9 @@ const ArticlesAllPage: NextPage<ArticlesListType> = ({ articles }) => (
 export default ArticlesAllPage
 
 export async function getStaticProps() {
-  const result = await getRecentPosts({ count: 1000 })
-  const articles = result.data.posts.nodes.map((post: WordpressPost) => parsePost(post))
-
   return {
     props: {
-      articles,
+      articles: await getRecentPosts({ count: 1000 }),
     },
     revalidate: 60 * 60, // In seconds
   }

@@ -1,12 +1,12 @@
 import { GetStaticPropsContext, NextPage } from 'next'
+import Link from 'next/link'
 
 import ArticleSidebar from '@/components/articles/sidebar'
 import { ArticlesList } from '@/components/articles/ArticlesList'
 import BlogAboutCallout from '@/components/articles/BlogAboutCallout'
 import { Container } from '@/components/layout/Container'
-import { parsePost } from '@/lib/wordpressClient'
 import { getRecentPostsByTag } from '@/queries/wordpress/getRecentPostsByTag'
-import { Tag, ArticlesListType, WordpressPost } from '@/types'
+import { Tag, ArticlesListType } from '@/types'
 
 interface ArticlesProjectsPageType extends ArticlesListType {
   tag: Tag
@@ -17,7 +17,11 @@ const ArticlesProjectsPage: NextPage<ArticlesProjectsPageType> = ({ tag, article
 
     <div className="col-span-12 md:col-span-9 xl:col-span-10 p-2 md:p-0">
       <p className="font-handwriting text-3xl md:text-4xl lg:text-6xl text-blue-700 mb-2 flex flex-wrap items-baseline">
-        <span>Blog</span>
+        <span>
+          <Link href="/blog" passHref>
+            <a className="underline hover:no-underline">Blog</a>
+          </Link>
+        </span>
         <span className="text-2xl mx-2">/</span>
         <span>Tags</span>
         <span className="text-2xl mx-2">/</span>
@@ -48,24 +52,17 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }: GetStaticPropsContext) {
   const slug = params?.slug as string
 
-  const result = await getRecentPostsByTag({ count: 1000, tag: slug })
-  if (!result.data.tag) {
+  const { articles, tag } = await getRecentPostsByTag({ count: 1000, tag: slug })
+  if (!tag) {
     return {
       notFound: true,
     }
   }
 
-  const articles = result.data.tag.posts.nodes.map((post: WordpressPost) => parsePost(post))
-
   return {
     props: {
       articles,
-      tag: {
-        count: result.data.tag.count,
-        description: result.data.tag.description,
-        name: result.data.tag.name,
-        slug: result.data.tag.slug,
-      },
+      tag,
     },
     revalidate: 60 * 60, // In seconds
   }

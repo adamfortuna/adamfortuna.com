@@ -3,6 +3,8 @@ import { useMemo } from 'react'
 import { dateFormatLong } from '@/lib/dateService'
 import { Link } from '@/components/layout/Link'
 import { Article } from '@/types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSquareUpRight } from '@fortawesome/pro-regular-svg-icons'
 import ArticleProjectIcon from './ArticleProjectIcon'
 
 export interface ArticleLinkProps {
@@ -15,10 +17,17 @@ export const ArticleLink = ({ article }: ArticleLinkProps) => {
   return (
     <div className="my-2 flex justify-between">
       <div className="flex flex-row items-center space-x-4">
-        <ArticleProjectIcon categories={article.categories} />
-        <Link href={`/${article.slug}`} className="text-lg link--blue font-semibold">
-          {article.title}
-        </Link>
+        <ArticleProjectIcon project={article.project} />
+        {article.external ? (
+          <a href={article.url} className="text-lg link--blue font-semibold" target="_blank" rel="noreferrer">
+            {article.title}
+            <FontAwesomeIcon size="1x" icon={faSquareUpRight} className="ml-2" />
+          </a>
+        ) : (
+          <Link href={`/${article.slug}`} className="text-lg link--blue font-semibold">
+            {article.title}
+          </Link>
+        )}
       </div>
       <p className="hidden md:block text-blue-500 text-sm w-[140px] text-right">{publishDate}</p>
     </div>

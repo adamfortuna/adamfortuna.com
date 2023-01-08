@@ -1,6 +1,5 @@
 import { GetStaticPropsContext } from 'next'
 import { Article } from '@/types'
-import { parsePost } from '@/lib/wordpressClient'
 import { getPostBySlug } from '@/queries/wordpress/getPostBySlug'
 import { ArticleContentHtml } from '@/components/articles/ArticleContent'
 import { ArticleHeader } from '@/components/articles/ArticleHeader'
@@ -40,8 +39,7 @@ export async function getStaticProps({ params }: GetStaticPropsContext) {
   }
 
   const article = await getPostBySlug(slug)
-
-  if (!article.data?.post) {
+  if (!article) {
     return {
       notFound: true,
     }
@@ -49,7 +47,7 @@ export async function getStaticProps({ params }: GetStaticPropsContext) {
 
   return {
     props: {
-      article: article.data.post ? parsePost(article.data.post) : null,
+      article,
     },
     revalidate: 60 * 10, // In seconds
   }
