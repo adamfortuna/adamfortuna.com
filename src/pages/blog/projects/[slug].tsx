@@ -49,7 +49,7 @@ export async function getStaticProps({ params }: GetStaticPropsContext) {
   const slug = params?.slug as string
 
   const result = await getRecentPostsByCategory({ count: 1000, category: slug })
-  if (!result.data.tag) {
+  if (!result.data.category) {
     return {
       notFound: true,
     }
