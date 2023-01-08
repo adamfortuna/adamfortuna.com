@@ -11,23 +11,29 @@ const BlogAboutCallout = () => (
     <div className="text-blue-500">
       <p className="mb-4">
         Under
-        <span className="bg-yellow-400 rounded px-1 py-0.5 mx-1 text-blue-800">
-          <Af className="w-4 h-4 text-blue-700 inline mb-0.5" /> <span>this blog</span>
-        </span>
+        <Link href="/blog/projects/adamfortuna" passHref>
+          <a className="bg-yellow-400 hover:bg-yellow-500 rounded px-1 py-0.5 mx-1 text-blue-800">
+            <Af className="w-4 h-4 text-blue-700 inline mb-0.5" /> <span>this blog</span>
+          </a>
+        </Link>
         I write about code, building products, minimalism, mindfulness, personal growth and journal about my life.
       </p>
       <p className="mb-4">
         Under
-        <span className="bg-yellow-400 rounded px-1 py-0.5 mx-1 text-blue-800">
-          <Minafi className="w-4 h-4 inline mb-0.5" /> <span>Minafi</span>
-        </span>
+        <Link href="/blog/projects/minafi" passHref>
+          <a className="bg-yellow-400 hover:bg-yellow-500 rounded px-1 py-0.5 mx-1 text-blue-800">
+            <Minafi className="w-4 h-4 inline mb-0.5" /> <span>Minafi</span>
+          </a>
+        </Link>
         I write about financial indepenence, investing and my journy to retire early (36 ✔️).
       </p>
       <p className="mb-4">
         Under
-        <span className="bg-yellow-400 rounded px-1 py-0.5 mx-1 text-blue-800">
-          <Hardcover className="w-4 h-4 inline mb-0.5" /> <span>Hardcover</span>
-        </span>
+        <Link href="/blog/projects/hardcover" passHref>
+          <a className="bg-yellow-400 hover:bg-yellow-500 rounded px-1 py-0.5 mx-1 text-blue-800">
+            <Hardcover className="w-4 h-4 inline mb-0.5" /> <span>Hardcover</span>
+          </a>
+        </Link>
         I write articles that users (of the startup I'm working on) would want to hear about.
       </p>
       <p>
