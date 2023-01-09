@@ -10,6 +10,14 @@ export const findWordPressRecentPosts = gql`
         title
         slug
         date
+        excerpt
+
+        tags {
+          nodes {
+            name
+            slug
+          }
+        }
       }
     }
   }

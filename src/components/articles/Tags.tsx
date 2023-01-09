@@ -3,16 +3,16 @@ import { Tag as TagType } from '@/types'
 
 const Tag = ({ tag }: { tag: TagType }) => (
   <Link href={`/blog/tags/${tag.slug}`} passHref>
-    <a>#{tag.name}</a>
+    <a className="link--blue text-sm mr-2">#{tag.name}</a>
   </Link>
 )
 
 const Tags = ({ tags }: { tags: TagType[] }) => (
-  <ul className="max-w-3xl space-x-2 list-comma">
+  <div className="max-w-3xl flex flex-wrap md:justify-center mx-auto">
     {tags.map((tag) => (
       <Tag key={tag.slug} tag={tag} />
     ))}
-  </ul>
+  </div>
 )
 
 export default Tags

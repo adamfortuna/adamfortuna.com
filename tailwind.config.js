@@ -7,8 +7,8 @@ const blogWidth = (theme, width="3") => {
   return {
     marginLeft: "auto",
     marginRight: "auto",
-    paddingLeft: theme('spacing.4'),
-    paddingRight: theme('spacing.4'),
+    paddingLeft: theme('spacing.3'),
+    paddingRight: theme('spacing.3'),
 
     '@screen md': {
       textAlign: theme(`text.left`),
@@ -108,7 +108,7 @@ module.exports = {
           '--tw-prose-bullets': theme('colors.slate.900'),
           '--tw-prose-hr': theme('colors.slate.100'),
           '--tw-prose-quote-borders': theme('colors.slate.200'),
-          '--tw-prose-captions': theme('colors.slate.400'),
+          '--tw-prose-captions': theme('colors.slate.500'),
           '--tw-prose-code': theme('colors.slate.700'),
           '--tw-prose-code-bg': theme('colors.slate.300 / 0.2'),
           '--tw-prose-pre-code': theme('colors.slate.100'),
@@ -151,7 +151,6 @@ module.exports = {
           p: {
             marginTop: theme('spacing.7'),
             marginBottom: theme('spacing.7'),
-            textAlign: "justify",
             ...blogWidth(theme),
           },
 
@@ -164,14 +163,22 @@ module.exports = {
           h2: {
             fontSize: theme('fontSize.3xl')[0],
             lineHeight: theme('lineHeight.7'),
-            marginTop: theme('spacing.20'),
+            marginTop: theme('spacing.12'),
             marginBottom: theme('spacing.4'),
+            '@screen md': {
+              marginTop: theme('spacing.16'),
+              marginBottom: theme('spacing.4'),
+            },
           },
           h3: {
             fontSize: theme('fontSize.xl')[0],
             lineHeight: theme('lineHeight.7'),
-            marginTop: theme('spacing.16'),
+            marginTop: theme('spacing.10'),
             marginBottom: theme('spacing.4'),
+            '@screen md': {
+              marginTop: theme('spacing.12'),
+              marginBottom: theme('spacing.4'),
+            },
           },
           ':is(h2, h3) + *': {
             marginTop: 0,
@@ -179,8 +186,14 @@ module.exports = {
 
           // Images
           img: {
-            borderRadius: theme('borderRadius.3xl'),
-            ...blogWidth(theme, 5)
+            marginLeft: "auto",
+            marginRight: "auto",
+            '@screen md': {
+              textAlign: theme(`text.left`),
+              width: theme(`maxWidth.5xl`),
+              paddingLeft: theme('spacing.0'),
+              paddingLeft: theme('spacing.0'),
+            },
           },
 
           // Inline elements
@@ -228,14 +241,34 @@ module.exports = {
 
           // Figures
           figure: {
-            ...blogWidth(theme),
-            textAlign: "center"
+            marginLeft: "auto",
+            marginRight: "auto",
+            marginTop: theme('spacing.2'),
+            marginBottom: theme('spacing.2'),
+            '@screen md': {
+              textAlign: theme(`text.left`),
+              width: theme(`maxWidth.5xl`),
+              paddingLeft: theme('spacing.0'),
+              paddingLeft: theme('spacing.0'),
+            },
+            textAlign: "center",
+
+            ".wp-block-embed__wrapper iframe": {
+              marginLeft: "auto",
+              marginRight: "auto",
+              width: "100%",
+              '@screen md': {
+                maxWidth: theme(`maxWidth.5xl`)
+              },
+            }
           },
           figcaption: {
             color: 'var(--tw-prose-captions)',
             fontSize: theme('fontSize.sm')[0],
             lineHeight: theme('lineHeight.6'),
             marginTop: theme('spacing.3'),
+            paddingLeft: theme('spacing.2'),
+            paddingLeft: theme('spacing.2'),
           },
           'figcaption > p': {
             margin: 0,
@@ -249,13 +282,22 @@ module.exports = {
             listStyleType: 'decimal',
           },
           'ul, ol': {
+            marginLeft: "auto",
+            marginRight: "auto",
             paddingLeft: theme('spacing.6'),
-            ...blogWidth(theme),
+            paddingRight: theme('spacing.1'),
+
+            '@screen md': {
+              textAlign: theme(`text.left`),
+              width: theme(`maxWidth.3xl`),
+              paddingLeft: theme('spacing.0'),
+              paddingLeft: theme('spacing.0'),
+            }
           },
           li: {
-            marginTop: theme('spacing.2'),
-            marginBottom: theme('spacing.2'),
-            paddingLeft: theme('spacing[3.5]'),
+            marginTop: theme('spacing.1'),
+            marginBottom: theme('spacing.1'),
+            // paddingLeft: theme('spacing[3.5]'),
           },
           'li::marker': {
             fontSize: theme('fontSize.sm')[0],
@@ -268,12 +310,14 @@ module.exports = {
             color: 'var(--tw-prose-bullets)',
           },
           'li :is(ol, ul)': {
-            marginTop: theme('spacing.4'),
-            marginBottom: theme('spacing.4'),
+            marginTop: theme('spacing.1'),
+            marginBottom: theme('spacing.1'),
+            paddingLeft: theme('spacing.4'),
+            paddingRight: theme('spacing.0'),
           },
           'li :is(li, p)': {
-            marginTop: theme('spacing.3'),
-            marginBottom: theme('spacing.3'),
+            marginTop: theme('spacing.1'),
+            marginBottom: theme('spacing.1'),
           },
 
           // Code blocks

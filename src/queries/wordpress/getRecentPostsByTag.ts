@@ -21,6 +21,14 @@ export const findRecentPostsByTag = gql`
         title
         slug
         date
+        excerpt
+
+        tags {
+          nodes {
+            name
+            slug
+          }
+        }
       }
     }
   }
