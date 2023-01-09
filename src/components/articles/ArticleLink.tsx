@@ -20,8 +20,8 @@ export const ArticleLink = ({ article }: ArticleLinkProps) => {
         <ArticleProjectIcon project={article.project} />
         {article.external ? (
           <a href={article.url} className="text-lg link--blue font-semibold" target="_blank" rel="noreferrer">
-            {article.title}
-            <FontAwesomeIcon size="1x" icon={faSquareUpRight} className="ml-2" />
+            <span>{article.title}</span>
+            <FontAwesomeIcon size="1x" icon={faSquareUpRight} className="inline ml-2 max-w-[24px]" />
           </a>
         ) : (
           <Link href={`/${article.slug}`} className="text-lg link--blue font-semibold">

@@ -1,5 +1,4 @@
 import { faHammer, faPencil } from '@fortawesome/pro-regular-svg-icons'
-// import { faHammer, faMountain, faPencil } from '@fortawesome/pro-regular-svg-icons'
 import Cloud from '@/images/cloud.svg'
 
 import Af from '@/images/af.svg'
@@ -7,6 +6,7 @@ import { NavLink } from '@/components/layout/NavLink'
 import clsx from 'clsx'
 import { Container } from './Container'
 
+/*
 const SunIcon = (props: any) => {
   return (
     <svg
@@ -73,6 +73,7 @@ const ModeToggle = () => {
     </button>
   )
 }
+*/
 
 export const Header = ({ isHomePage }: { isHomePage: boolean }) => {
   return (
@@ -96,8 +97,10 @@ export const Header = ({ isHomePage }: { isHomePage: boolean }) => {
             <NavLink href="/blog" icon={faPencil}>
               <span>Blog</span>
             </NavLink>
+
+            {/*
             <ModeToggle />
-            {/* <NavLink href="/adventures" icon={faMountain}>
+             <NavLink href="/adventures" icon={faMountain}>
               <span>Adventures</span>
             </NavLink> */}
           </div>

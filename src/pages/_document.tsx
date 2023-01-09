@@ -1,6 +1,7 @@
 /* eslint-disable react/no-danger, react/function-component-definition */
 import { Head, Html, Main, NextScript } from 'next/document'
 
+/*
 const modeScript = `
   let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
 
@@ -35,12 +36,13 @@ const modeScript = `
     updateMode()
   }
 `
+*/
 
 export default function Document() {
   return (
     <Html className="h-full antialiased" lang="en">
       <Head>
-        <script dangerouslySetInnerHTML={{ __html: modeScript }} />
+        {/* <script dangerouslySetInnerHTML={{ __html: modeScript }} /> */}
         <link
           href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&family=Pacifico&family=Quicksand:wght@400;700&display=swap"
           rel="stylesheet"
@@ -48,7 +50,7 @@ export default function Document() {
         <link rel="alternate" type="application/rss+xml" href={`${process.env.NEXT_PUBLIC_SITE_URL}/rss/feed.xml`} />
         <link rel="alternate" type="application/feed+json" href={`${process.env.NEXT_PUBLIC_SITE_URL}/rss/feed.json`} />
       </Head>
-      <body className="flex h-full flex-col bg-white dark:bg-black">
+      <body className="flex h-full flex-col bg-white">
         <Main />
         <NextScript />
       </body>

@@ -12,7 +12,7 @@ const ExpandedKey = 'blog-about-expanded'
 
 const BlogAboutCallout = () => {
   const currentExpanded = typeof localStorage !== 'undefined' ? localStorage.getItem(ExpandedKey) : true
-  const [expanded, setExpanded] = useState(!currentExpanded || currentExpanded === '1')
+  const [expanded, setExpanded] = useState(currentExpanded === null || currentExpanded === '1')
 
   const toggleExpanded = () => {
     if (typeof localStorage !== 'undefined') {
@@ -34,7 +34,7 @@ const BlogAboutCallout = () => {
         onClick={toggleExpanded}
       >
         <span>About this blog</span>
-        <FontAwesomeIcon icon={expanded ? faChevronDown : faChevronRight} />
+        <FontAwesomeIcon icon={expanded ? faChevronDown : faChevronRight} className="max-w-[23px]" />
       </button>
       <div className={clsx('p-4 flex flex-row md:space-x-4 items-center', expanded ? '' : 'hidden')}>
         <FontAwesomeIcon icon={faRss} className="hidden md:block text-blue-700 w-[48px]" size="3x" />
