@@ -33,7 +33,7 @@ const Tags = () => (
         <p className="font-semibold text-gray-600">{group.name}</p>
         <div className="space-y-1 ml-2">
           {group.tags.map((t) => (
-            <Tag tag={t} />
+            <Tag key={t} tag={t} />
           ))}
         </div>
       </div>

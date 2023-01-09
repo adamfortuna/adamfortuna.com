@@ -35,7 +35,11 @@ const ArticlesProjectsPage: NextPage<ArticlesProjectsPageType> = ({ category, ar
           </Link>
         </span>
         <span className="text-2xl mx-2">/</span>
-        <span>Projects</span>
+        <span>
+          <Link href="/blog/projects" passHref>
+            <a className="underline hover:no-underline">Projects</a>
+          </Link>
+        </span>
         <span className="text-2xl mx-2">/</span>
         <span>{titleize(category)}</span>
       </p>
@@ -50,7 +54,7 @@ export default ArticlesProjectsPage
 
 export async function getStaticPaths() {
   return {
-    paths: [],
+    paths: [{ params: { slug: 'adamfortuna' } }, { params: { slug: 'hardcover' } }, { params: { slug: 'minafi' } }],
     fallback: 'blocking', // false or 'blocking'
   }
 }
