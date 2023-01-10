@@ -114,6 +114,8 @@ const parseCategories = (categories: Category[]) => {
 
 export const parsePost = (post: WordpressPost) => {
   const url = parseUrl(post)
+  const tags = post.tags?.nodes ? parseTags(post.tags.nodes) : undefined
+  const isHighlighted = tags?.length && tags.length > 0 ? tags.map((t) => t.slug).indexOf('highlights') !== -1 : false
 
   const article = {
     title: post.title,
@@ -122,9 +124,9 @@ export const parsePost = (post: WordpressPost) => {
     featuredImageUrl: post.featuredImage?.node.sourceUrl || null,
     categories: post.categories?.nodes ? parseCategories(post.categories.nodes) : undefined,
     content: post.content || null,
-    excerpt: post.excerpt || null,
+    excerpt: post.excerpt?.length > 0 && isHighlighted ? post.excerpt : null,
     readingTime: post.content ? Math.round(post.content.split(' ').length / 300) + 1 : null,
-    tags: post.tags?.nodes ? parseTags(post.tags.nodes) : undefined,
+    tags,
     url,
     external: !!url,
     project: post.project,

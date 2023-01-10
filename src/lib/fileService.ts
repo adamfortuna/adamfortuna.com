@@ -162,5 +162,5 @@ export const getArticles = async (includeContent: boolean = false): Promise<Arti
 export const getArticleBySlug = async (slug: string) => {
   const articles = await getArticles(false)
   const article = articles.filter((a) => a.slug === slug)[0]
-  return getArticleByPath(article.path, true)
+  return getArticleByPath(article.slug, true)
 }
