@@ -268,6 +268,7 @@ module.exports = {
               marginLeft: "auto",
               marginRight: "auto",
               marginBottom: theme('spacing.4'),
+              marginTop: theme('spacing.2'),
               padding: 0,
               fontSize: theme('fontSize.2xl')[0],
               fontWeight: theme('fontWeight.semibold'),
@@ -276,6 +277,7 @@ module.exports = {
               lineHeight: theme('lineHeight.8'),
 
               '@screen md': {
+                marginTop: theme('spacing.0'),
                 width: theme(`maxWidth.3xl`),
               }
 
