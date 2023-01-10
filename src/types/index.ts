@@ -32,7 +32,7 @@ export interface Article {
   content?: string
   date: string
   project: WordpressClientIdentifier
-  categories: Category[]
+  categories?: Category[]
   readingTime?: number
   external: boolean
   url: string
@@ -71,15 +71,20 @@ interface WordpressImageNode {
   node: WordpressImage
 }
 
-export interface WordpressPost {
+export interface WordpressContent {
   slug: string
   title: string
-  categories: WordpressCategories | null
-  tags: WordpressTags | null
   date: string
   featuredImage?: WordpressImageNode
   content: string
-  excerpt: string
-  guid: string
   project?: string
+  guid: string
 }
+
+export interface WordpressPost extends WordpressContent {
+  categories: WordpressCategories | null
+  tags: WordpressTags | null
+  excerpt: string
+}
+
+export interface WordpressPage extends WordpressContent {}

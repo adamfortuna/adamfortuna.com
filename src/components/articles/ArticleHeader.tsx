@@ -25,9 +25,11 @@ export const ArticleHeader = ({ article }: ArticleHeaderProps) => {
           {article.title}
         </h1>
       </div>
-      <div className="mx-auto md:text-center max-w-4xl">
-        <Tags tags={article.tags} />
-      </div>
+      {article.tags && article.tags.length > 0 && (
+        <div className="mx-auto md:text-center max-w-4xl">
+          <Tags tags={article.tags} />
+        </div>
+      )}
     </div>
   )
 }

@@ -78,15 +78,15 @@ const ModeToggle = () => {
 export const Header = ({ isHomePage }: { isHomePage: boolean }) => {
   return (
     <header className={clsx('inset-x-0', isHomePage ? 'absolute' : 'bg-[#B6E0EF]')}>
-      <Container className="py-2 md:py-6">
+      <Container className="py-2 md:py-6 px-2 md:px-0">
         <nav className="relative z-50 flex justify-between pr-2">
-          <div className="flex items-center md:gap-x-12 justify-between text-black dark:text-yellow-400">
+          <div className="flex items-center md:gap-x-12 justify-between text-black dark:text-yellow-400 relative">
             <NavLink href="/">
-              <span className="hidden sm:inline-block absolute -left-8 text-2xl opacity-0 group-hover:opacity-100 duration-400 transition-opacity group-hover:animate-waving-hand">
-                👋
-              </span>
               <Af className="w-10 h-8 text-sky-800 dark:text-yellow-400 group-hover:text-white md:hidden" />
               <span className="font-bold text-2xl font-handwriting hidden md:inline-block">Adam Fortuna</span>
+              <span className="hidden sm:inline-block absolute -right-8 text-2xl opacity-0 group-hover:opacity-100 duration-400 transition-opacity group-hover:animate-waving-hand">
+                👋
+              </span>
             </NavLink>
           </div>
           <div className="flex md:gap-x-6 items-end md:items-center">

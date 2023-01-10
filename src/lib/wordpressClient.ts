@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unnecessary-condition */
 import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
-import { Article, Tag, WordpressPost, WordpressClientIdentifier, Category } from '@/types'
+import { Article, Tag, WordpressPost, WordpressPage, WordpressClientIdentifier, Category } from '@/types'
 import omitBy from 'lodash/omitBy'
 
 // GraphQL client for:
@@ -88,7 +88,7 @@ export const sortByDateDesc = (a1: Article, a2: Article) => {
   return a1d < a2d ? 1 : -1
 }
 
-const parseTags = (tags: Tag[]) => {
+export const parseTags = (tags: Tag[]) => {
   return tags.map((t) => {
     const tag = {
       name: t.name,
@@ -128,6 +128,19 @@ export const parsePost = (post: WordpressPost) => {
     url,
     external: !!url,
     project: post.project,
+  } as Article
+
+  return omitBy(article, (v) => v === null || v === undefined) as Article
+}
+
+export const parsePage = (page: WordpressPage) => {
+  const article = {
+    title: page.title,
+    slug: page.slug,
+    date: page.date,
+    featuredImageUrl: page.featuredImage?.node.sourceUrl || null,
+    content: page.content || null,
+    project: page.project,
   } as Article
 
   return omitBy(article, (v) => v === null || v === undefined) as Article

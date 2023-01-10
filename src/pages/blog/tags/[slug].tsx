@@ -6,6 +6,7 @@ import { ArticlesList } from '@/components/articles/ArticlesList'
 import BlogAboutCallout from '@/components/articles/BlogAboutCallout'
 import { Container } from '@/components/layout/Container'
 import { getRecentPostsByTag } from '@/queries/wordpress/getRecentPostsByTag'
+import { getTags } from '@/queries/wordpress/getTags'
 import { Tag, ArticlesListType } from '@/types'
 
 interface ArticlesProjectsPageType extends ArticlesListType {
@@ -47,8 +48,10 @@ const ArticlesProjectsPage: NextPage<ArticlesProjectsPageType> = ({ tag, article
 export default ArticlesProjectsPage
 
 export async function getStaticPaths() {
+  const tags = await getTags()
+
   return {
-    paths: [],
+    paths: tags.map((t) => ({ params: { slug: t.slug } })),
     fallback: 'blocking', // false or 'blocking'
   }
 }

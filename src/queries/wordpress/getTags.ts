@@ -1,4 +1,4 @@
-import WordpressClient from '@/lib/wordpressClient'
+import WordpressClient, { parseTags } from '@/lib/wordpressClient'
 import { gql } from '@apollo/client'
 
 export const findWordPressTags = gql`
@@ -15,5 +15,5 @@ export const findWordPressTags = gql`
 
 export const getTags = async () => {
   const result = await WordpressClient.query({ query: findWordPressTags })
-  return result.data.tags ? result.data.tags.nodes : []
+  return result.data.tags ? parseTags(result.data.tags.nodes) : []
 }

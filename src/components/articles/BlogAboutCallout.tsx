@@ -40,14 +40,14 @@ const BlogAboutCallout = () => {
         <FontAwesomeIcon icon={faRss} className="hidden md:block text-ablue-700 w-[48px]" size="3x" />
         <div className="text-ablue-500">
           <p className="mb-4">
-            Welcome to my blog! I've writen about various topics since 2001. Here you'll find (almost)
+            Welcome to my blog! I've writen about various topics since 2001.Tou'll find (almost)
             <Link href="/blog/all" passHref>
               <a className="bg-yellow-400 hover:bg-yellow-500 rounded px-1 py-0.5 mx-1 text-blue-800 space-x-2">
                 <FontAwesomeIcon icon={faTypewriter} className="text-blue-800" size="1x" />
                 <span>everything</span>
               </a>
             </Link>
-            I've ever written. Browse by active project:
+            I've ever written, some are external links. Browse by active project:
           </p>
           <p className="mb-4">
             <Link href="/blog/projects/adamfortuna" passHref>

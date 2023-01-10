@@ -20,7 +20,6 @@ export const Footer = () => {
         <div className="flex flex-col items-center border-t border-slate-400/10 py-10 sm:flex-row-reverse sm:justify-between">
           <div className="flex gap-x-6">
             <FooterLink href="/now">Now</FooterLink>
-            <FooterLink href="/tools">Tools</FooterLink>
           </div>
           <p className="mt-6 text-xs text-slate-500 sm:mt-0">
             Copyright &copy; {new Date().getFullYear()} Adam Fortuna. All rights reserved.
