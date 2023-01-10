@@ -24,7 +24,7 @@ module.exports = {
   darkMode: 'class',
   plugins: [
     require('@tailwindcss/typography'),
-    require('@tailwindcss/forms'),
+    require('@tailwindcss/forms')
   ],
   theme: {
     extend: {
@@ -191,7 +191,7 @@ module.exports = {
           img: {
             marginLeft: "auto",
             marginRight: "auto",
-            '@screen md': {
+            '@screen lg': {
               textAlign: theme(`text.left`),
               width: theme(`maxWidth.5xl`),
               paddingLeft: theme('spacing.0'),
@@ -236,10 +236,62 @@ module.exports = {
 
           // Quotes
           blockquote: {
+            // @apply px-24 border-blue-500 py-8 relative mx-auto
             paddingLeft: theme('spacing.6'),
-            borderLeftWidth: theme('borderWidth.2'),
-            borderLeftColor: 'var(--tw-prose-quote-borders)',
-            fontStyle: 'italic',
+            paddingRight: theme('spacing.6'),
+
+            width: "100%",
+            
+            paddingTop: theme('spacing.2'),
+            paddingBottom: theme('spacing.4'),
+            position: 'relative',
+            marginLeft: "auto",
+            marginRight: "auto",
+            
+            borderColor: theme('colors.blue.500'),
+            borderTopWidth: "8px",
+            borderBottomWidth: "8px",
+            borderRadius: theme('borderRadius.md'),
+
+            '@screen sm': {
+              paddingTop: theme('spacing.4'),
+              paddingBottom: theme('spacing.4'),
+              borderTopWidth: "0px",
+              borderBottomWidth: "0px",
+              borderLeftWidth: "8px",
+              borderRightWidth: "0px",
+              width: theme(`maxWidth.4xl`)
+            },
+
+            p: {
+              // @apply text-2xl leading-normal font-semibold text-grey-800 text-justify mb-4
+              marginLeft: "auto",
+              marginRight: "auto",
+              marginBottom: theme('spacing.4'),
+              padding: 0,
+              fontSize: theme('fontSize.2xl')[0],
+              fontWeight: theme('fontWeight.semibold'),
+              color: theme('colors.gray.800'),
+              textAlign: 'justify',
+              lineHeight: theme('lineHeight.8'),
+
+              '@screen md': {
+                width: theme(`maxWidth.3xl`),
+              }
+
+
+              // leading-normal
+              // text-justify
+            },
+            cite: {
+              marginLeft: "auto",
+              marginRight: "auto",
+              display: "block",
+              '@screen md': {
+                width: theme(`maxWidth.3xl`)
+              }
+            }
+
           },
 
           // Figures
@@ -248,7 +300,7 @@ module.exports = {
             marginRight: "auto",
             marginTop: theme('spacing.2'),
             marginBottom: theme('spacing.2'),
-            '@screen md': {
+            '@screen lg': {
               textAlign: theme(`text.left`),
               width: theme(`maxWidth.5xl`),
               paddingLeft: theme('spacing.0'),

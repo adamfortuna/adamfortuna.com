@@ -8,7 +8,7 @@ const Tag = ({ tag }: { tag: TagType }) => (
 )
 
 const Tags = ({ tags }: { tags: TagType[] }) => (
-  <div className="max-w-3xl flex flex-wrap md:justify-center mx-auto">
+  <div className="max-w-3xl flex flex-wrap sm:justify-center mx-auto">
     {tags.map((tag) => (
       <Tag key={tag.slug} tag={tag} />
     ))}
