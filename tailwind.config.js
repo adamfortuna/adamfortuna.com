@@ -255,7 +255,7 @@ module.exports = {
 
             '@screen sm': {
               paddingTop: theme('spacing.4'),
-              paddingBottom: theme('spacing.4'),
+              paddingBottom: theme('spacing.1'),
               borderTopWidth: "0px",
               borderBottomWidth: "0px",
               borderLeftWidth: "8px",
@@ -279,6 +279,7 @@ module.exports = {
               '@screen md': {
                 marginTop: theme('spacing.0'),
                 width: theme(`maxWidth.3xl`),
+                lineHeight: theme('lineHeight.9'),
               }
 
 
@@ -290,7 +291,8 @@ module.exports = {
               marginRight: "auto",
               display: "block",
               '@screen md': {
-                width: theme(`maxWidth.3xl`)
+                width: theme(`maxWidth.3xl`),
+                marginBottom: theme('spacing.2'),
               }
             }
 

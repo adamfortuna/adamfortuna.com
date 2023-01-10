@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { faRss, faStar, faTypewriter } from '@fortawesome/pro-duotone-svg-icons'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -10,9 +10,11 @@ import clsx from 'clsx'
 
 const ExpandedKey = 'blog-about-expanded'
 
+const getExpandedFromLocalStorage = (): string | null => {
+  return typeof localStorage !== 'undefined' ? localStorage.getItem(ExpandedKey) : '1'
+}
 const BlogAboutCallout = () => {
-  const currentExpanded = typeof localStorage !== 'undefined' ? localStorage.getItem(ExpandedKey) : true
-  const [expanded, setExpanded] = useState(currentExpanded === null || currentExpanded === '1')
+  const [expanded, setExpanded] = useState(true)
 
   const toggleExpanded = () => {
     if (typeof localStorage !== 'undefined') {
@@ -22,6 +24,11 @@ const BlogAboutCallout = () => {
       return !e
     })
   }
+
+  useEffect(() => {
+    const e = getExpandedFromLocalStorage()
+    setExpanded(e === null || e === '1')
+  }, [])
 
   return (
     <div className="bg-yellow-200 rounded leading-5">
@@ -43,7 +50,7 @@ const BlogAboutCallout = () => {
             Welcome to my blog! I've writen about various topics since 2001.Tou'll find (almost)
             <Link href="/blog/all" passHref>
               <a className="bg-yellow-400 hover:bg-yellow-500 rounded px-1 py-0.5 mx-1 text-blue-800 space-x-2">
-                <FontAwesomeIcon icon={faTypewriter} className="text-blue-800" size="1x" />
+                <FontAwesomeIcon icon={faTypewriter} className="text-blue-800 w-4 h-4 inline" size="1x" />
                 <span>everything</span>
               </a>
             </Link>
@@ -77,7 +84,7 @@ const BlogAboutCallout = () => {
             Check out some
             <Link href="/blog/tags/highlights" passHref>
               <a className="bg-yellow-400 hover:bg-yellow-500 rounded px-1 py-0.5 mx-1 text-blue-800 space-x-2">
-                <FontAwesomeIcon icon={faStar} className="text-blue-800" size="1x" />
+                <FontAwesomeIcon icon={faStar} className="text-blue-800 inline w-4 h-4" size="1x" />
                 <span>highlights</span>
               </a>
             </Link>
