@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { faRss, faHighlighter } from '@fortawesome/pro-duotone-svg-icons'
+import { faRss, faStar, faTypewriter } from '@fortawesome/pro-duotone-svg-icons'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Af from '@/images/af.svg'
@@ -28,7 +28,7 @@ const BlogAboutCallout = () => {
       <button
         type="button"
         className={clsx(
-          'p-2 w-full rounded text-blue-700 font-bold text-xl flex items-center justify-between space-x-2 hover:bg-yellow-400 bg-yellow-300',
+          'p-2 w-full rounded text-ablue-700 font-bold text-xl flex items-center justify-between space-x-2 hover:bg-yellow-400 bg-yellow-300',
           expanded ? 'border-b border-yellow-400 rounded-b-none' : '',
         )}
         onClick={toggleExpanded}
@@ -37,22 +37,25 @@ const BlogAboutCallout = () => {
         <FontAwesomeIcon icon={expanded ? faChevronDown : faChevronRight} className="max-w-[23px]" />
       </button>
       <div className={clsx('p-4 flex flex-row md:space-x-4 items-center', expanded ? '' : 'hidden')}>
-        <FontAwesomeIcon icon={faRss} className="hidden md:block text-blue-700 w-[48px]" size="3x" />
-        <div className="text-blue-500">
+        <FontAwesomeIcon icon={faRss} className="hidden md:block text-ablue-700 w-[48px]" size="3x" />
+        <div className="text-ablue-500">
           <p className="mb-4">
             Welcome to my blog! I've writen about various topics since 2001. Here you'll find (almost)
             <Link href="/blog/all" passHref>
-              <a className="bg-yellow-400 hover:bg-yellow-500 rounded px-1 py-0.5 mx-1 text-blue-800">everything</a>
+              <a className="bg-yellow-400 hover:bg-yellow-500 rounded px-1 py-0.5 mx-1 text-blue-800 space-x-2">
+                <FontAwesomeIcon icon={faTypewriter} className="text-blue-800" size="1x" />
+                <span>everything</span>
+              </a>
             </Link>
             I've ever written. Browse by active project:
           </p>
           <p className="mb-4">
             <Link href="/blog/projects/adamfortuna" passHref>
               <a className="bg-yellow-400 hover:bg-yellow-500 rounded px-1 py-0.5 mx-1 text-blue-800">
-                <Af className="w-4 h-4 text-blue-700 inline mb-0.5" /> <span>This blog</span>
+                <Af className="w-4 h-4 text-ablue-700 inline mb-0.5" /> <span>This blog</span>
               </a>
             </Link>{' '}
-            Mindfulness, tech, minimalism, code, personal growth and my life.
+            Exploring the intersection of minimalism, mindfulness and technology + my journal.
           </p>
           <p className="mb-4">
             <Link href="/blog/projects/minafi" passHref>
@@ -74,7 +77,7 @@ const BlogAboutCallout = () => {
             Check out some
             <Link href="/blog/tags/highlights" passHref>
               <a className="bg-yellow-400 hover:bg-yellow-500 rounded px-1 py-0.5 mx-1 text-blue-800 space-x-2">
-                <FontAwesomeIcon icon={faHighlighter} className="text-blue-700" size="1x" />
+                <FontAwesomeIcon icon={faStar} className="text-blue-800" size="1x" />
                 <span>highlights</span>
               </a>
             </Link>

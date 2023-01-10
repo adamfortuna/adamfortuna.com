@@ -1,4 +1,3 @@
-/* eslint-disable react/no-danger */
 import { useMemo } from 'react'
 
 import { dateFormatLong } from '@/lib/dateService'
@@ -6,6 +5,7 @@ import { Link } from '@/components/layout/Link'
 import { Article } from '@/types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSquareUpRight } from '@fortawesome/pro-regular-svg-icons'
+import { faStar } from '@fortawesome/pro-solid-svg-icons'
 import clsx from 'clsx'
 import ArticleProjectIcon from './ArticleProjectIcon'
 
@@ -16,7 +16,9 @@ export interface ArticleLinkProps {
 export const ArticleLink = ({ article }: ArticleLinkProps) => {
   const publishDate = useMemo(() => dateFormatLong(article.date), [article.date])
   const isHighlighted = useMemo(() => {
-    return article.tags.length > 0 ? article.tags.map((t) => t.slug).indexOf('highlights') !== -1 : false
+    return article.tags?.length && article.tags.length > 0
+      ? article.tags.map((t) => t.slug).indexOf('highlights') !== -1
+      : false
   }, [article.tags])
 
   return (
@@ -25,21 +27,28 @@ export const ArticleLink = ({ article }: ArticleLinkProps) => {
         <div className="flex flex-row items-center space-x-4">
           <ArticleProjectIcon project={article.project} />
           {article.external ? (
-            <a href={article.url} className="text-lg link--blue font-semibold" target="_blank" rel="noreferrer">
+            <a
+              href={article.url}
+              className="text-lg link--blue font-semibold flex-grow"
+              target="_blank"
+              rel="noreferrer"
+            >
               <span>{article.title}</span>
               <FontAwesomeIcon size="1x" icon={faSquareUpRight} className="inline ml-2 max-w-[24px]" />
+              {isHighlighted && <FontAwesomeIcon size="1x" icon={faStar} className="inline ml-2 max-w-[24px]" />}
             </a>
           ) : (
-            <Link href={`/${article.slug}`} className="text-lg link--blue font-semibold">
-              {article.title}
+            <Link href={`/${article.slug}`} className="text-lg link--blue font-semibold flex-grow">
+              <span>{article.title}</span>
+              {isHighlighted && <FontAwesomeIcon size="sm" icon={faStar} className="inline ml-2 max-w-[18px]" />}
             </Link>
           )}
         </div>
-        {isHighlighted && (
-          <p className="text-gray-600 ml-[48px]" dangerouslySetInnerHTML={{ __html: article.excerpt || '' }} />
+        {isHighlighted && (article.excerpt?.length || 0) > 0 && (
+          <p className="text-gray-600 ml-[48px]">{article.excerpt}</p>
         )}
       </div>
-      <p className="hidden md:block text-blue-500 text-sm w-[140px] text-right">{publishDate}</p>
+      <p className="hidden md:block text-ablue-500 text-sm text-right whitespace-nowrap">{publishDate}</p>
     </div>
   )
 }

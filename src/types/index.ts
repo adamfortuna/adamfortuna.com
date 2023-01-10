@@ -24,25 +24,16 @@ export interface Project {
   poster_url: string
 }
 
-export interface ArticleCategory {
-  slug: string
-  name: string
-}
-
 export interface Article {
   slug: string
   title: string
-  tags: Tag[]
-  excerpt: string | null
-  visible: boolean
-  href: string
-  content: string | null
-  contentMarkdown: string
+  tags?: Tag[]
+  excerpt?: string
+  content?: string
   date: string
   project: WordpressClientIdentifier
-  path: string
-  categories: ArticleCategory[]
-  readingTime: number
+  categories: Category[]
+  readingTime?: number
   external: boolean
   url: string
   featuredImageUrl: string
@@ -52,8 +43,8 @@ export interface ArticlesListType {
   articles: Article[]
 }
 export interface Category {
-  count: number
-  description: string | null
+  count?: number
+  description?: string
   name: string
   slug: string
 }
@@ -61,12 +52,13 @@ export interface Category {
 export interface Tag {
   name: string
   slug: string
-  description: string | null
-  count: number
+  description?: string
+  count?: number
+  __typename?: string
 }
 
 interface WordpressCategories {
-  nodes: ArticleCategory[]
+  nodes: Category[]
 }
 
 interface WordpressTags {

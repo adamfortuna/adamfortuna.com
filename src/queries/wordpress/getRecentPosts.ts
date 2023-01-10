@@ -10,7 +10,7 @@ export const findWordPressRecentPosts = gql`
         title
         slug
         date
-        excerpt
+        excerpt(format: RAW)
 
         tags {
           nodes {

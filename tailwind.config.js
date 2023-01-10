@@ -31,7 +31,7 @@ module.exports = {
         header: ['Quicksand', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        blue: {
+        ablue: {
           "200": "#5F94C2",
           "300": "#0088FF",
           "500": "#5585AF",
