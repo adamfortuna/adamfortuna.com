@@ -90,7 +90,7 @@ const BlogAboutCallout = () => {
               <a className="link--blue">newsletter</a>
             </Link>{' '}
             or subscribing to my{' '}
-            <a href="/feed.xml" target="_blank" className="link--blue">
+            <a href="/api/feed" target="_blank" className="link--blue">
               RSS feed
             </a>
             .

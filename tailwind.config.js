@@ -22,7 +22,10 @@ const blogWidth = (theme, width="3") => {
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   darkMode: 'class',
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/forms'),
+  ],
   theme: {
     extend: {
       fontFamily: {
