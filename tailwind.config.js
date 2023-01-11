@@ -285,10 +285,11 @@ module.exports = {
               color: theme('colors.gray.800'),
               textAlign: 'justify',
               lineHeight: theme('lineHeight.8'),
+              width: "100%",
 
               '@screen md': {
                 marginTop: theme('spacing.0'),
-                width: theme(`maxWidth.3xl`),
+                maxWidth: theme(`maxWidth.3xl`),
                 lineHeight: theme('lineHeight.9'),
               }
 
