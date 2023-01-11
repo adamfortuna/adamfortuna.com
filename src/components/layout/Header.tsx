@@ -75,7 +75,7 @@ const ModeToggle = () => {
 }
 */
 
-export const Header = ({ isHomePage }: { isHomePage: boolean }) => {
+export const Header = ({ isHomePage = false }: { isHomePage?: boolean }) => {
   return (
     <header className={clsx('inset-x-0', isHomePage ? 'absolute' : 'bg-[#B6E0EF]')}>
       <Container className="py-2 md:py-6 px-2 md:px-0">
@@ -93,10 +93,10 @@ export const Header = ({ isHomePage }: { isHomePage: boolean }) => {
           <div className="flex md:gap-x-6 items-end md:items-center">
             <NavLink href="/about">About</NavLink>
             <NavLink href="/projects" icon={faHammer}>
-              <span>Projects</span>
+              Projects
             </NavLink>
             <NavLink href="/blog" icon={faPencil}>
-              <span>Blog</span>
+              Blog
             </NavLink>
 
             {/*

@@ -43,10 +43,6 @@ export default function Document() {
     <Html className="h-full antialiased" lang="en">
       <Head>
         {/* <script dangerouslySetInnerHTML={{ __html: modeScript }} /> */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&family=Pacifico&family=Quicksand:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
         <link rel="alternate" type="application/rss+xml" href={`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/feed`} />
       </Head>
       <body className="flex h-full flex-col bg-white">

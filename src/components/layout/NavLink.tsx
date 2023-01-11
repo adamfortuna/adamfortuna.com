@@ -16,7 +16,8 @@ export const NavLink = ({ href, icon, children }: NavLinkProps) => {
       {icon && (
         <FontAwesomeIcon
           icon={icon}
-          className="hidden sm:inline-block sm:mr-2 text-sky-800 group-hover:text-white dark:text-sky-400 dark:group-hover:text-sky-900"
+          size="sm"
+          className="hidden sm:inline-block sm:mr-2 text-sky-800 group-hover:text-white dark:text-sky-400 dark:group-hover:text-sky-900 w-[16px] h-[16px]"
         />
       )}
       <span className="text-sm md:text-base">{children}</span>

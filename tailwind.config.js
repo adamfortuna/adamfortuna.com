@@ -29,9 +29,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        handwriting: ['Pacifico', 'cursive'],
-        // sans: ['Noto Sans', ...defaultTheme.fontFamily.sans],
-        header: ['Quicksand', ...defaultTheme.fontFamily.sans],
+        handwriting: ['var(--font-handwriting)', 'Pacifico', 'cursive']
       },
       colors: {
         ablue: {
