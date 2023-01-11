@@ -8,7 +8,7 @@ export const Hero = () => {
   return (
     <div className="relative h-screen">
       <InteractiveMountain />
-      <Container className="relative pt-20 pb-16 lg:pt-48 text-black max-w-7xl px-4 md:px-0">
+      <Container className="relative pt-20 pb-16 md:pt-32 lg:pt-48 text-black max-w-4xl lg:max-w-6xl px-4 lg:px-0 lg:mx-auto">
         <p className="font-display text-5xl font-medium tracking-tight sm:text-7xl relative space-x-4">
           <span className="font-handwriting">Hey hey!</span>
           <span className="animate-waving-hand inline-block">👋</span>
@@ -17,11 +17,13 @@ export const Hero = () => {
           I'm <span className="font-bold">Adam Fortuna,</span> a full-stack product developer living in Salt Lake City,
           UT.
         </p>
-        <p className="mt-4 max-w-xl text-2xl leading-10">
-          I love <span className="font-bold">enlivening experiences</span>,{' '}
-          <span className="font-bold">quantifying data</span> and{' '}
-          <span className="font-bold">making playful websites</span>.
-          <ul className="ml-4 space-x-2 inline-block">
+        <div className="mt-4 max-w-xl text-2xl leading-10">
+          <p>
+            I love <span className="font-bold">enlivening experiences</span>,{' '}
+            <span className="font-bold">quantifying data</span> and{' '}
+            <span className="font-bold">making playful websites</span>.
+          </p>
+          <ul className="space-x-2 inline-block">
             <li className="inline">
               <a href="https://hardcover.app/@adam" className="group" target="_blank" rel="noreferrer">
                 <HardcoverIcon className="inline h-6 w-6 fill-sky-800 group-hover:fill-indigo-600" />
@@ -38,7 +40,7 @@ export const Hero = () => {
               </a>
             </li>
           </ul>
-        </p>
+        </div>
       </Container>
     </div>
   )
