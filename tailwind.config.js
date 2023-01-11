@@ -158,7 +158,7 @@ module.exports = {
           },
 
           // Headings
-          'h2, h3': {
+          'h2, h3, h4': {
             color: 'var(--tw-prose-headings)',
             fontWeight: theme('fontWeight.semibold'),
             ...blogWidth(theme)
@@ -183,6 +183,16 @@ module.exports = {
               marginBottom: theme('spacing.4'),
             },
           },
+          h4: {
+            fontSize: theme('fontSize.lg')[0],
+            lineHeight: theme('lineHeight.6'),
+            marginTop: theme('spacing.8'),
+            marginBottom: theme('spacing.4'),
+            '@screen md': {
+              marginTop: theme('spacing.10'),
+              marginBottom: theme('spacing.2'),
+            },
+          },
           ':is(h2, h3) + *': {
             marginTop: 0,
           },
@@ -193,7 +203,7 @@ module.exports = {
             marginRight: "auto",
             '@screen lg': {
               textAlign: theme(`text.left`),
-              width: theme(`maxWidth.5xl`),
+              maxWidth: theme(`maxWidth.5xl`),
               paddingLeft: theme('spacing.0'),
               paddingLeft: theme('spacing.0'),
             },
@@ -304,9 +314,15 @@ module.exports = {
             marginRight: "auto",
             marginTop: theme('spacing.2'),
             marginBottom: theme('spacing.2'),
+            '@screen sm': {
+              '&.alignright': {
+                float: 'right',
+                marginLeft: '1rem'
+              },
+            },
             '@screen lg': {
               textAlign: theme(`text.left`),
-              width: theme(`maxWidth.5xl`),
+              maxWidth: theme(`maxWidth.5xl`),
               paddingLeft: theme('spacing.0'),
               paddingLeft: theme('spacing.0'),
             },
@@ -349,8 +365,8 @@ module.exports = {
             '@screen md': {
               textAlign: theme(`text.left`),
               width: theme(`maxWidth.3xl`),
-              paddingLeft: theme('spacing.0'),
-              paddingLeft: theme('spacing.0'),
+              paddingLeft: theme('spacing.4'),
+              paddingRight: theme('spacing.0'),
             }
           },
           li: {

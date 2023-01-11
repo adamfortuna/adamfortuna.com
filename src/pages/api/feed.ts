@@ -18,7 +18,7 @@ const handler = nc()
  */
 handler.get(async (req: NextApiRequest, res: NextApiResponse) => {
   try {
-    const articles = await getRecentFeed({ count: 1, projects: ['adamfortuna'] })
+    const articles = await getRecentFeed({ count: 20, projects: ['adamfortuna'] })
 
     const postItems = articles
       .map((article) => {
