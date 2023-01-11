@@ -6,11 +6,13 @@ export interface NavLinkProps {
   href: string
   icon?: IconDefinition
   children: any
+  prefetch?: boolean
 }
-export const NavLink = ({ href, icon, children }: NavLinkProps) => {
+export const NavLink = ({ href, icon, prefetch = true, children }: NavLinkProps) => {
   return (
     <Link
       href={href}
+      prefetch={prefetch}
       className="group rounded py-1 sm:py-2 px-2 sm:px-3 text-sky-800 hover:bg-sky-600 dark:text-sky-400 dark:hover:bg-sky-400 dark:hover:text-sky-900 hover:text-white flex items-center font-semibold"
     >
       {icon && (

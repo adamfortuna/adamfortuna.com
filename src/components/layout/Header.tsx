@@ -81,7 +81,7 @@ export const Header = ({ isHomePage = false }: { isHomePage?: boolean }) => {
       <Container className="py-2 md:py-6 px-2 md:px-0">
         <nav className="relative z-50 flex justify-between pr-2">
           <div className="flex items-center md:gap-x-12 justify-between text-black dark:text-yellow-400 relative">
-            <NavLink href="/">
+            <NavLink href="/" prefetch={false}>
               <span className="sr-only">Adam Fortuna</span>
               <Af className="w-10 h-8 text-sky-800 dark:text-yellow-400 group-hover:text-white md:hidden" />
               <span className="font-bold text-2xl font-handwriting hidden md:inline-block">Adam Fortuna</span>
