@@ -78,40 +78,42 @@ const Projects: NextPage<ProjectProps> = ({ projects }) => {
         </p>
       </div>
 
-      <div className="flex items-start md:justify-between md:items-center mt-8 flex-col md:flex-row space-y-4 md:space-y-0">
-        <div className="flex flex-col gap-1">
-          <span className="text-xs font-semibold">Organize by</span>
+      <div className="px-2 md:px-0">
+        <div className="flex items-center sm:justify-between sm:items-center mt-8 flex-col md:flex-row space-y-4 md:space-y-0">
+          <div className="flex flex-col gap-1">
+            <span className="text-xs font-semibold text-center md:text-left">Organize by</span>
 
-          <span className="isolate inline-flex rounded-md shadow-sm">
-            {sortButtons.map((sortButton, index) => (
-              <button
-                type="button"
-                key={`button-${sortButton.sortBy}`}
-                onClick={() => setSortBy(sortButton.sortBy)}
-                className={clsx(
-                  'space-x-1 relative -ml-px inline-flex items-center border border-gray-300 dark:border-sky-600 bg-white px-2 py-1 text-sm font-medium text-gray-700  focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500',
-                  sortedBy === sortButton.sortBy
-                    ? 'bg-gray-50 dark:bg-sky-500'
-                    : 'hover:bg-gray-50 bg-white dark:hover:bg-sky-500 dark:bg-sky-400',
-                  index === 0 ? 'rounded-l-md' : '',
-                  index === sortButtons.length - 1 ? 'rounded-r-md' : '',
-                )}
-              >
-                {sortedBy === sortButton.sortBy && (
-                  <FontAwesomeIcon icon={faCheck} className="h-4 w-4 text-green-500 dark:text-sky-900" />
-                )}
-                <span>{sortButton.name}</span>
-              </button>
-            ))}
-          </span>
+            <span className="isolate inline-flex rounded-md shadow-sm">
+              {sortButtons.map((sortButton, index) => (
+                <button
+                  type="button"
+                  key={`button-${sortButton.sortBy}`}
+                  onClick={() => setSortBy(sortButton.sortBy)}
+                  className={clsx(
+                    'space-x-1 relative -ml-px inline-flex items-center border border-gray-300 dark:border-sky-600 bg-white px-2 py-1 text-sm font-medium text-gray-700  focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500',
+                    sortedBy === sortButton.sortBy
+                      ? 'bg-gray-50 dark:bg-sky-500'
+                      : 'hover:bg-gray-50 bg-white dark:hover:bg-sky-500 dark:bg-sky-400',
+                    index === 0 ? 'rounded-l-md' : '',
+                    index === sortButtons.length - 1 ? 'rounded-r-md' : '',
+                  )}
+                >
+                  {sortedBy === sortButton.sortBy && (
+                    <FontAwesomeIcon icon={faCheck} className="h-4 w-4 text-green-500 dark:text-sky-900" />
+                  )}
+                  <span>{sortButton.name}</span>
+                </button>
+              ))}
+            </span>
+          </div>
         </div>
+
+        {(sortedBy === 'date_started' || sortedBy === 'date_ended') && (
+          <ProjectsTimeline projects={sortedProjects} sortField={sortedBy} />
+        )}
+
+        {sortedBy === 'technology' && <ProjectTags projects={projects} />}
       </div>
-
-      {(sortedBy === 'date_started' || sortedBy === 'date_ended') && (
-        <ProjectsTimeline projects={sortedProjects} sortField={sortedBy} />
-      )}
-
-      {sortedBy === 'technology' && <ProjectTags projects={projects} />}
     </Container>
   )
 }
