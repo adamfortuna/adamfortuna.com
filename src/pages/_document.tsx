@@ -43,6 +43,7 @@ export default function Document() {
     <Html className="h-full antialiased" lang="en">
       <Head>
         {/* <script dangerouslySetInnerHTML={{ __html: modeScript }} /> */}
+        <meta name="viewport" content="width=device-width" />
         <link rel="alternate" type="application/rss+xml" href={`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/feed`} />
       </Head>
       <body className="flex h-full flex-col bg-white">
