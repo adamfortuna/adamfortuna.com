@@ -27,6 +27,7 @@
     "@fortawesome/pro-thin-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@headlessui/react": "^1.6.6",
+    "@next/bundle-analyzer": "^13.1.1",
     "@tailwindcss/forms": "^0.5.3",
     "cloudinary-build-url": "^0.2.4",
     "clsx": "^1.2.1",
