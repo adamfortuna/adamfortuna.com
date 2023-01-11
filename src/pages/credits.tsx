@@ -9,9 +9,7 @@ const Credits: NextPage = () => {
         <ul>
           <li>
             The interactive visualization on the
-            <Link href="/">
-              <a>homepage</a>
-            </Link>
+            <Link href="/">homepage</Link>
             is inspired by{' '}
             <a href="https://www.cassie.codes/" target="_blank" rel="noreferrer">
               Cassie Evans

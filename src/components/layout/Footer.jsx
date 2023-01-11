@@ -3,10 +3,11 @@ import { Container } from '@/components/layout/Container'
 
 export const FooterLink = ({ href, children }) => {
   return (
-    <Link href={href}>
-      <a className="text-sky-800 hover:bg-sky-600 px-1 py-0.5 rounded hover:text-white font-semibold flex items-center">
-        {children}
-      </a>
+    <Link
+      href={href}
+      className="text-sky-800 hover:bg-sky-600 px-1 py-0.5 rounded hover:text-white font-semibold flex items-center"
+    >
+      {children}
     </Link>
   )
 }

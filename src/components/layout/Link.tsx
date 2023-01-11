@@ -93,10 +93,6 @@ export const Link = React.forwardRef<HTMLAnchorElement, React.PropsWithChildren<
       }
       return <a ref={ref} href={href} className={newClassName} {...props} />
     }
-    return (
-      <NextLink ref={ref} href={href} passHref>
-        <a className={newClassName} {...props} />
-      </NextLink>
-    )
+    return <NextLink ref={ref} href={href} className={newClassName} {...props} />
   },
 )

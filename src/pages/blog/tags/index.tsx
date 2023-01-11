@@ -17,8 +17,8 @@ const ArticlesProjectsPage: NextPage<ArticlesTagsType> = ({ tags }) => (
     <div className="col-span-12 md:col-span-9 xl:col-span-10 p-2 md:p-0">
       <p className="font-handwriting text-3xl md:text-4xl lg:text-6xl text-blue-700 mb-2 flex flex-wrap items-baseline">
         <span>
-          <Link href="/blog" passHref>
-            <a className="underline hover:no-underline">Blog</a>
+          <Link href="/blog" className="underline hover:no-underline">
+            Blog
           </Link>
         </span>
         <span className="text-2xl mx-2">/</span>
@@ -31,10 +31,8 @@ const ArticlesProjectsPage: NextPage<ArticlesTagsType> = ({ tags }) => (
         {tags.map((tag) => (
           <div key={tag.name} className="p-2">
             <p>
-              <Link href={`/blog/tags/${tag.slug}`} passHref>
-                <a className="link--blue">
-                  {tag.name} ({tag.count})
-                </a>
+              <Link href={`/blog/tags/${tag.slug}`} className="link--blue">
+                {tag.name} ({tag.count})
               </Link>
             </p>
           </div>

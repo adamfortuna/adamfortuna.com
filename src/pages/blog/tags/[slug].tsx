@@ -19,14 +19,14 @@ const ArticlesProjectsPage: NextPage<ArticlesProjectsPageType> = ({ tag, article
     <div className="col-span-12 md:col-span-9 xl:col-span-10 p-2 md:p-0">
       <p className="font-handwriting text-2xl md:text-4xl lg:text-6xl text-blue-700 mb-2 flex flex-wrap items-baseline">
         <span>
-          <Link href="/blog" passHref>
-            <a className="underline hover:no-underline">Blog</a>
+          <Link href="/blog" className="underline hover:no-underline">
+            Blog
           </Link>
         </span>
         <span className="text-2xl mx-2">/</span>
         <span>
-          <Link href="/blog/tags" passHref>
-            <a className="underline hover:no-underline">Tags</a>
+          <Link href="/blog/tags" className="underline hover:no-underline">
+            Tags
           </Link>
         </span>
         <span className="text-2xl mx-2">/</span>

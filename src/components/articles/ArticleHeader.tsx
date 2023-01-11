@@ -17,11 +17,9 @@ export const ArticleHeader = ({ article }: ArticleHeaderProps) => {
     <div className="mb-6 px-2">
       <div className="max-w-5xl mx-auto mb-2">
         <p className="sm:justify-center flex flex-row items-center">
-          <Link href="/blog" passHref>
-            <a className="link--blue text-sm flex items-center">
-              <FontAwesomeIcon icon={faArrowLeft} size="sm" className="w-4 h-4 inline" />
-              <span className="pl-1">Blog</span>
-            </a>
+          <Link href="/blog" className="link--blue text-sm flex items-center">
+            <FontAwesomeIcon icon={faArrowLeft} size="sm" className="w-4 h-4 inline" />
+            <span className="pl-1">Blog</span>
           </Link>
           <span className="text-sm ml-2 text-gray-500 font-semibold">{publishDate}</span>
         </p>

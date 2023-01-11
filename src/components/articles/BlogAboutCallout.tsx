@@ -48,53 +48,58 @@ const BlogAboutCallout = () => {
         <div className="text-ablue-500">
           <p className="mb-4">
             Welcome to my blog! I've writen about various topics since 2001.Tou'll find (almost)
-            <Link href="/blog/all" passHref>
-              <a className="bg-yellow-400 hover:bg-yellow-500 rounded px-1 py-0.5 mx-1 text-blue-800 space-x-2">
-                <FontAwesomeIcon icon={faTypewriter} className="text-blue-800 w-4 h-4 inline" size="1x" />
-                <span>everything</span>
-              </a>
+            <Link
+              href="/blog/all"
+              className="bg-yellow-400 hover:bg-yellow-500 rounded px-1 py-0.5 mx-1 text-blue-800 space-x-2"
+            >
+              <FontAwesomeIcon icon={faTypewriter} className="text-blue-800 w-4 h-4 inline" size="1x" />
+              <span>everything</span>
             </Link>
             I've ever written, some are external links. Browse by active project:
           </p>
           <p className="mb-4">
-            <Link href="/blog/projects/adamfortuna" passHref>
-              <a className="bg-yellow-400 hover:bg-yellow-500 rounded px-1 py-0.5 mx-1 text-blue-800">
-                <Af className="w-4 h-4 text-ablue-700 inline mb-0.5" /> <span>This blog</span>
-              </a>
+            <Link
+              href="/blog/projects/adamfortuna"
+              className="bg-yellow-400 hover:bg-yellow-500 rounded px-1 py-0.5 mx-1 text-blue-800"
+            >
+              <Af className="w-4 h-4 text-ablue-700 inline mb-0.5" /> <span>This blog</span>
             </Link>{' '}
             Exploring the intersection of minimalism, mindfulness and technology + my journal.
           </p>
           <p className="mb-4">
-            <Link href="/blog/projects/minafi" passHref>
-              <a className="bg-yellow-400 hover:bg-yellow-500 rounded px-1 py-0.5 mx-1 text-blue-800">
-                <Minafi className="w-4 h-4 inline mb-0.5" /> <span>Minafi</span>
-              </a>
+            <Link
+              href="/blog/projects/minafi"
+              className="bg-yellow-400 hover:bg-yellow-500 rounded px-1 py-0.5 mx-1 text-blue-800"
+            >
+              <Minafi className="w-4 h-4 inline mb-0.5" /> <span>Minafi</span>
             </Link>{' '}
             Financial indepenence, investing and my journy to retire early (36 ✔️).
           </p>
           <p className="mb-4">
-            <Link href="/blog/projects/hardcover" passHref>
-              <a className="bg-yellow-400 hover:bg-yellow-500 rounded px-1 py-0.5 mx-1 text-blue-800">
-                <Hardcover className="w-4 h-4 inline mb-0.5" /> <span>Hardcover</span>
-              </a>
+            <Link
+              href="/blog/projects/hardcover"
+              className="bg-yellow-400 hover:bg-yellow-500 rounded px-1 py-0.5 mx-1 text-blue-800"
+            >
+              <Hardcover className="w-4 h-4 inline mb-0.5" /> <span>Hardcover</span>
             </Link>{' '}
             Building Hardcover in public.
           </p>
           <p>
             Check out some
-            <Link href="/blog/tags/highlights" passHref>
-              <a className="bg-yellow-400 hover:bg-yellow-500 rounded px-1 py-0.5 mx-1 text-blue-800 space-x-2">
-                <FontAwesomeIcon icon={faStar} className="text-blue-800 inline w-4 h-4" size="1x" />
-                <span>highlights</span>
-              </a>
+            <Link
+              href="/blog/tags/highlights"
+              className="bg-yellow-400 hover:bg-yellow-500 rounded px-1 py-0.5 mx-1 text-blue-800 space-x-2"
+            >
+              <FontAwesomeIcon icon={faStar} className="text-blue-800 inline w-4 h-4" size="1x" />
+              <span>highlights</span>
             </Link>
             and stay in touch by following me on{' '}
             <a href="https://ruby.social/@adam" className="link--blue" target="_blank" rel="noreferrer">
               Mastodon
             </a>
             , subscribing to my{' '}
-            <Link href="/newsletter" passHref>
-              <a className="link--blue">newsletter</a>
+            <Link href="/newsletter" className="link--blue">
+              newsletter
             </Link>{' '}
             or subscribing to my{' '}
             <a href="/api/feed" target="_blank" className="link--blue">

@@ -28,9 +28,7 @@ export const Button = ({ variant = 'solid', color = 'slate', className = '', hre
   const newClassName = clsx(baseStyles[variant], variantStyles[variant][color], className)
 
   return href ? (
-    <Link href={href} passHref>
-      <a className={newClassName} {...props} />
-    </Link>
+    <Link href={href} className={newClassName} {...props} />
   ) : (
     <button type="button" className={newClassName} {...props} />
   )

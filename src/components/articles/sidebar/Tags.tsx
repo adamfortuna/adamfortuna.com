@@ -2,8 +2,8 @@ import Link from 'next/link'
 
 const Tag = ({ tag }: { tag: string }) => (
   <p>
-    <Link href={`/blog/tags/${tag}`} passHref>
-      <a className="link--blue"># {tag}</a>
+    <Link href={`/blog/tags/${tag}`} className="link--blue">
+      # {tag}
     </Link>
   </p>
 )
@@ -25,8 +25,8 @@ const groups = [
 const Tags = () => (
   <div>
     <p className="font-handwriting text-4xl text-blue-700 mb-4">
-      <Link href="/blog/tags" passHref>
-        <a className="decoration-yellow-300 underline underline-offset-4 hover:no-underline">Tags</a>
+      <Link href="/blog/tags" className="decoration-yellow-300 underline underline-offset-4 hover:no-underline">
+        Tags
       </Link>
     </p>
 
