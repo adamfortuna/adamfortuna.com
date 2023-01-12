@@ -5,6 +5,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 module.exports = withBundleAnalyzer({
   // reactStrictMode: true, // Recommended for the `pages` directory, default in `app`.
   // swcMinify: true,
+  compress: true,
   experimental: {
     appDir: true,
     fontLoaders: [
@@ -13,6 +14,7 @@ module.exports = withBundleAnalyzer({
   },
   images: {
     loader: 'cloudinary',
+    formats: ['image/avif', 'image/webp'],
     domains: ['res.cloudinary.com'],
     path: 'https://res.cloudinary.com/dyogenez/image/upload',
   },
