@@ -112,7 +112,7 @@ const parseCategories = (categories: Category[]) => {
   })
 }
 
-export const parsePost = (post: WordpressPost) => {
+export const parsePost = (post: WordpressPost, full: boolean = false) => {
   const url = parseUrl(post)
   const tags = post.tags?.nodes ? parseTags(post.tags.nodes) : undefined
   const isHighlighted = tags?.length && tags.length > 0 ? tags.map((t) => t.slug).indexOf('highlights') !== -1 : false
@@ -121,10 +121,10 @@ export const parsePost = (post: WordpressPost) => {
     title: post.title,
     slug: post.slug,
     date: post.date,
-    featuredImageUrl: post.featuredImage?.node.sourceUrl || null,
+    featuredImage: post.featuredImage?.node ? post.featuredImage?.node : null,
     categories: post.categories?.nodes ? parseCategories(post.categories.nodes) : undefined,
     content: post.content || null,
-    excerpt: post.excerpt?.length > 0 && isHighlighted ? post.excerpt : null,
+    excerpt: post.excerpt?.length > 0 && (full || isHighlighted) ? post.excerpt : null,
     readingTime: post.content ? Math.round(post.content.split(' ').length / 300) + 1 : null,
     tags,
     url,
@@ -140,7 +140,7 @@ export const parsePage = (page: WordpressPage) => {
     title: page.title,
     slug: page.slug,
     date: page.date,
-    featuredImageUrl: page.featuredImage?.node.sourceUrl || null,
+    featuredImage: page.featuredImage?.node ? page.featuredImage?.node : null,
     content: page.content || null,
     project: page.project,
   } as Article

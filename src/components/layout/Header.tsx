@@ -108,9 +108,9 @@ export const Header = ({ isHomePage = false }: { isHomePage?: boolean }) => {
         </nav>
       </Container>
       {!isHomePage && (
-        <div className="h-16 lg:h-32 overflow-hidden md:-mt-[60px] relative">
-          <Cloud className="w-full xl:bg-cover" />
-          <div className="md:hidden bg-white absolute bottom-0 h-8 w-full" />
+        <div className="h-16 md:h-24 lg:h-32 overflow-hidden md:-mt-[40px] relative">
+          <Cloud className="w-full xl:bg-cover relative" />
+          <div className="md:hidden bg-white absolute bottom-0 h-8 md:h-2 w-full" />
         </div>
       )}
     </header>

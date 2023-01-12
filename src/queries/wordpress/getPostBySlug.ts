@@ -11,7 +11,11 @@ export const findWordpressPost = gql`
       slug
       featuredImage {
         node {
-          sourceUrl(size: THUMBNAIL)
+          sourceUrl
+          mediaDetails {
+            width
+            height
+          }
         }
       }
       categories {
@@ -43,9 +47,12 @@ export const getPostBySlug = (slug: string) => {
       if (!result.data.post) {
         return null
       }
-      return parsePost({
-        ...result.data.post,
-        project: 'adamfortuna',
-      })
+      return parsePost(
+        {
+          ...result.data.post,
+          project: 'adamfortuna',
+        },
+        true,
+      )
     })
 }

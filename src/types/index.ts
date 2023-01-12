@@ -36,7 +36,7 @@ export interface Article {
   readingTime?: number
   external: boolean
   url: string
-  featuredImageUrl: string
+  featuredImage: WordpressImage
 }
 
 export interface ArticlesListType {
@@ -61,11 +61,16 @@ interface WordpressCategories {
   nodes: Category[]
 }
 
+interface WordpressMedia {
+  width: number
+  height: number
+}
 interface WordpressTags {
   nodes: Tag[]
 }
 interface WordpressImage {
   sourceUrl: string
+  mediaDetails?: WordpressMedia
 }
 interface WordpressImageNode {
   node: WordpressImage

@@ -10,7 +10,11 @@ export const findWordpressPage = gql`
       slug
       featuredImage {
         node {
-          sourceUrl(size: THUMBNAIL)
+          sourceUrl
+          mediaDetails {
+            width
+            height
+          }
         }
       }
     }

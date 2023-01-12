@@ -268,7 +268,7 @@ module.exports = {
               borderBottomWidth: "0px",
               borderLeftWidth: "8px",
               borderRightWidth: "0px",
-              width: theme(`maxWidth.4xl`)
+              maxWidth: theme(`maxWidth.4xl`)
             },
 
             p: {
