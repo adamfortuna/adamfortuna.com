@@ -6,7 +6,7 @@ interface PageProps {
   params: any
   children?: React.ReactNode
 }
-export const revalidate = 60 * 60 // 60 minutes
+
 export default async function Page({ params }: PageProps) {
   const article = await getPostOrPageBySlug(params.slug)
   if (!article) return null

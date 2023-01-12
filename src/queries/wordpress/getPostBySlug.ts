@@ -1,7 +1,6 @@
-import wordpressClient, { parsePost } from '@/lib/wordpressClient'
-import { gql } from '@apollo/client'
+import { adamfortunaClient, parsePost } from '@/lib/wordpressClient'
 
-export const findWordpressPost = gql`
+export const findWordpressPost = `
   query GetWordPressPost($slug: String!) {
     post: postBy(slug: $slug) {
       title
@@ -36,23 +35,21 @@ export const findWordpressPost = gql`
 `
 
 export const getPostBySlug = (slug: string) => {
-  return wordpressClient
-    .query({
-      query: findWordpressPost,
-      variables: {
-        slug,
+  return adamfortunaClient({
+    query: findWordpressPost,
+    variables: {
+      slug,
+    },
+  }).then((result) => {
+    if (!result.data.post) {
+      return null
+    }
+    return parsePost(
+      {
+        ...result.data.post,
+        project: 'adamfortuna',
       },
-    })
-    .then((result) => {
-      if (!result.data.post) {
-        return null
-      }
-      return parsePost(
-        {
-          ...result.data.post,
-          project: 'adamfortuna',
-        },
-        true,
-      )
-    })
+      true,
+    )
+  })
 }

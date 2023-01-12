@@ -1,7 +1,6 @@
-import wordpressClient, { parsePage } from '@/lib/wordpressClient'
-import { gql } from '@apollo/client'
+import { adamfortunaClient, parsePage } from '@/lib/wordpressClient'
 
-export const findWordpressPage = gql`
+export const findWordpressPage = `
   query GetWordPressPage($slug: String!) {
     page: pageBy(uri: $slug) {
       title
@@ -22,20 +21,18 @@ export const findWordpressPage = gql`
 `
 
 export const getPageBySlug = (slug: string) => {
-  return wordpressClient
-    .query({
-      query: findWordpressPage,
-      variables: {
-        slug,
-      },
+  return adamfortunaClient({
+    query: findWordpressPage,
+    variables: {
+      slug,
+    },
+  }).then((result) => {
+    if (!result.data.page) {
+      return null
+    }
+    return parsePage({
+      ...result.data.page,
+      project: 'adamfortuna',
     })
-    .then((result) => {
-      if (!result.data.page) {
-        return null
-      }
-      return parsePage({
-        ...result.data.page,
-        project: 'adamfortuna',
-      })
-    })
+  })
 }

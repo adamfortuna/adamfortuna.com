@@ -1,9 +1,8 @@
 import { getClientForProject, parseTags } from '@/lib/wordpressClient'
-import { gql } from '@apollo/client'
 import { Tag, WordpressClientIdentifier } from '@/types'
 import { flatten } from 'lodash'
 
-export const findWordPressTags = gql`
+export const findWordPressTags = `
   query GetTags {
     tags(first: 100) {
       nodes {
@@ -16,9 +15,7 @@ export const findWordPressTags = gql`
 `
 
 export const getTagsByProject = async (project: WordpressClientIdentifier) => {
-  return getClientForProject(project)
-    .query({ query: findWordPressTags })
-    .then((result) => parseTags(result.data.tags.nodes))
+  return getClientForProject(project)({ query: findWordPressTags }).then((result) => parseTags(result.data.tags.nodes))
 }
 
 export const getTags = async () => {

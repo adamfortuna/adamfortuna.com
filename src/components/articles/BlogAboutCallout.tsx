@@ -49,15 +49,16 @@ const BlogAboutCallout = () => {
         <FontAwesomeIcon icon={faRss} className="hidden md:block text-ablue-700 w-[48px]" size="3x" />
         <div className="text-ablue-500">
           <p className="mb-4">
-            Welcome to my blog! I've writen about various topics since 2001.Tou'll find (almost)
+            Welcome to my blog! Since 2001 I've written
             <Link
               href="/blog/all"
               className="bg-yellow-400 hover:bg-yellow-500 rounded px-1 py-0.5 mx-1 text-blue-800 space-x-2"
             >
               <FontAwesomeIcon icon={faTypewriter} className="text-blue-800 w-4 h-4 inline" size="1x" />
-              <span>everything</span>
+              <span>1,234 posts</span>
             </Link>
-            I've ever written, some are external links. Browse by active project:
+            about software/personal development, technology, minimalism, FIRE, movies, startups and my life. These span{' '}
+            <b>three separate blogs</b>, with all articles linked from here.
           </p>
           <p className="mb-4">
             <Link
@@ -66,7 +67,7 @@ const BlogAboutCallout = () => {
             >
               <Af className="w-4 h-4 text-ablue-700 inline mb-0.5" /> <span>This blog</span>
             </Link>{' '}
-            Exploring the intersection of minimalism, mindfulness and technology + my journal.
+            Focuses on exploring the intersection of minimalism, mindfulness and technology + my journal.
           </p>
           <p className="mb-4">
             <Link

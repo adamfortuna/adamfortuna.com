@@ -1,9 +1,8 @@
-import { getClientForProject, parsePost, sortByDateDesc } from '@/lib/wordpressClient'
-import { gql } from '@apollo/client'
+import { getClientForProject, adamfortunaClient, parsePost, sortByDateDesc } from '@/lib/wordpressClient'
 import { Article, WordpressPost, WordpressClientIdentifier } from '@/types'
 import flatten from 'lodash/flatten'
 
-export const findTagInfo = gql`
+export const findTagInfo = `
   query GetTagInfo($tag: ID!) {
     tag(idType: SLUG, id: $tag) {
       count
@@ -14,7 +13,7 @@ export const findTagInfo = gql`
   }
 `
 
-export const findRecentPostsByTag = gql`
+export const findRecentPostsByTag = `
   query GetWordPressRecentPostsByTag($count: Int!, $where: RootQueryToPostConnectionWhereArgs) {
     posts(first: $count, where: $where) {
       nodes {
@@ -35,38 +34,34 @@ export const findRecentPostsByTag = gql`
 `
 
 export const getRecentPostsByProjectAndTag = async (project: WordpressClientIdentifier, tag: string, count: number) => {
-  return getClientForProject(project)
-    .query({
-      query: findRecentPostsByTag,
-      variables: {
-        count,
-        where: {
-          authorName: 'adamfortuna',
-          tagSlugIn: [tag],
-          categoryName: 'Canonical',
-        },
+  return getClientForProject(project)({
+    query: findRecentPostsByTag,
+    variables: {
+      count,
+      where: {
+        authorName: 'adamfortuna',
+        tagSlugIn: [tag],
+        categoryName: 'Canonical',
       },
-    })
-    .then((result) => {
-      if (!result.data.posts?.nodes) {
-        return []
+    },
+  }).then((result) => {
+    if (!result.data.posts?.nodes) {
+      return []
+    }
+    return result.data.posts.nodes.map((p: WordpressPost) => {
+      return {
+        ...p,
+        project,
       }
-      return result.data.posts.nodes.map((p: WordpressPost) => {
-        return {
-          ...p,
-          project,
-        }
-      }) as WordpressPost[]
-    })
+    }) as WordpressPost[]
+  })
 }
 
 const getTag = async (tag: string) => {
-  return getClientForProject('adamfortuna')
-    .query({
-      query: findTagInfo,
-      variables: { tag },
-    })
-    .then((r) => r.data.tag)
+  return adamfortunaClient({
+    query: findTagInfo,
+    variables: { tag },
+  }).then((r) => r.data.tag)
 }
 export const getRecentPostsByTag = async ({
   count,

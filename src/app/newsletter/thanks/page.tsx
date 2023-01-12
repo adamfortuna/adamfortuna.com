@@ -1,7 +1,6 @@
-import { NextPage } from 'next'
 import { Container } from '@/components/layout/Container'
 
-const ThanksYou: NextPage = () => {
+export default async function NewsletterPage() {
   return (
     <Container className="max-w-5xl">
       <h1 className="md:text-center text-3xl md:text-5xl font-hardwriting font-bold text-grey-800 leading-tight">
@@ -12,5 +11,3 @@ const ThanksYou: NextPage = () => {
     </Container>
   )
 }
-
-export default ThanksYou

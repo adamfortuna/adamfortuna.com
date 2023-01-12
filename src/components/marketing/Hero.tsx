@@ -25,17 +25,29 @@ export const Hero = () => {
           </p>
           <ul className="space-x-2 inline-block">
             <li className="inline">
-              <a href="https://hardcover.app/@adam" className="group" target="_blank" rel="noreferrer">
+              <a
+                href="https://hardcover.app/@adam"
+                className="group"
+                target="_blank"
+                rel="noreferrer"
+                title="Hardcover"
+              >
                 <HardcoverIcon className="inline h-6 w-6 fill-sky-800 group-hover:fill-indigo-600" />
               </a>
             </li>
             <li className="inline">
-              <a href="https://ruby.social/@adam" className="group" target="_blank" rel="me">
+              <a href="https://ruby.social/@adam" className="group" target="_blank" rel="me" title="Mastodon">
                 <MastodonIcon className="inline h-6 w-6 fill-sky-800 group-hover:fill-indigo-700" />
               </a>
             </li>
             <li className="inline">
-              <a href="https://github.com/adamfortuna" className="group" target="_blank" rel="noreferrer">
+              <a
+                href="https://github.com/adamfortuna"
+                className="group"
+                target="_blank"
+                rel="noreferrer"
+                title="GitHub"
+              >
                 <GitHubIcon className="inline h-6 w-6 fill-sky-800 group-hover:fill-black" />
               </a>
             </li>

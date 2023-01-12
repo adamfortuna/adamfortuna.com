@@ -1,9 +1,8 @@
 import { getClientForProject, parsePost, sortByDateDesc } from '@/lib/wordpressClient'
-import { gql } from '@apollo/client'
 import flatten from 'lodash/flatten'
 import { Article, WordpressPost, WordpressClientIdentifier } from '@/types'
 
-export const findWordPressRecentPosts = gql`
+export const findWordPressRecentPosts = `
   query GetWordPressRecentPosts($count: Int, $where: RootQueryToPostConnectionWhereArgs) {
     posts(first: $count, where: $where) {
       nodes {
@@ -24,25 +23,23 @@ export const findWordPressRecentPosts = gql`
 `
 
 export const getRecentPostsByProject = async (project: WordpressClientIdentifier, count: number) => {
-  return getClientForProject(project)
-    .query({
-      query: findWordPressRecentPosts,
-      variables: {
-        count,
-        where: {
-          authorName: 'adamfortuna',
-          categoryName: 'Canonical',
-        },
+  return getClientForProject(project)({
+    query: findWordPressRecentPosts,
+    variables: {
+      count,
+      where: {
+        authorName: 'adamfortuna',
+        categoryName: 'Canonical',
       },
-    })
-    .then((result) => {
-      return result.data.posts.nodes.map((p: WordpressPost) => {
-        return {
-          ...p,
-          project,
-        }
-      }) as WordpressPost[]
-    })
+    },
+  }).then((result) => {
+    return result.data.posts.nodes.map((p: WordpressPost) => {
+      return {
+        ...p,
+        project,
+      }
+    }) as WordpressPost[]
+  })
 }
 
 export const getRecentPosts = async ({

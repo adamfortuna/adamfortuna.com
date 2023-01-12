@@ -13,11 +13,9 @@
     "format": "eslint './{src,pages}/**/*' --ext .js,.jsx,.tsx,.ts --fix",
     "typecheck": "tsc --noEmit",
     "clean": "rimraf out/",
-    "prepare": "husky install",
-    "vercel-install": "./vercel-submodule-workaround.sh && yarn --ignore-scripts --production=false"
+    "prepare": "husky install"
   },
   "dependencies": {
-    "@apollo/client": "^3.7.3",
     "@fortawesome/fontawesome-svg-core": "^6.1.2",
     "@fortawesome/free-brands-svg-icons": "^6.1.2",
     "@fortawesome/pro-duotone-svg-icons": "^6.1.2",

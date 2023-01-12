@@ -1,73 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unnecessary-condition */
-import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client'
-import { setContext } from '@apollo/client/link/context'
 import { Article, Page, Post, Tag, WordpressPost, WordpressPage, WordpressClientIdentifier, Category } from '@/types'
 import omitBy from 'lodash/omitBy'
-
-// GraphQL client for:
-// https://wp.adamfortuna.com/graphql
-const clientHttpLink = createHttpLink({
-  uri: 'https://wp.adamfortuna.com/graphql',
-})
-const clientAuthLink = setContext((_, { headers }) => {
-  return {
-    headers: {
-      ...headers,
-      authorization: `Basic ${process.env.WP_ADAMFORTUNA_TOKEN}`,
-    },
-  }
-})
-const client = new ApolloClient({
-  link: clientAuthLink.concat(clientHttpLink),
-  cache: new InMemoryCache(),
-})
-export default client
-
-// GraphQL client for:
-// https://wp.hardcover.app/graphql
-const hardcoverHttpLink = createHttpLink({
-  uri: 'https://wp.hardcover.app/graphql',
-})
-const hardcoverAuthLink = setContext((_, { headers }) => {
-  return {
-    headers: {
-      ...headers,
-      authorization: `Basic ${process.env.WP_HARDCOVER_TOKEN}`,
-    },
-  }
-})
-export const hardcoverClient = new ApolloClient({
-  link: hardcoverAuthLink.concat(hardcoverHttpLink),
-  cache: new InMemoryCache(),
-})
-
-// GraphQL client for:
-// https://wp.minafi.com/graphql
-const minafiHttpLink = createHttpLink({
-  uri: 'https://wp.minafi.com/graphql',
-})
-const minafiAuthLink = setContext((_, { headers }) => {
-  return {
-    headers: {
-      ...headers,
-      authorization: `Basic ${process.env.WP_MINAFI_TOKEN}`,
-    },
-  }
-})
-export const minafiClient = new ApolloClient({
-  link: minafiAuthLink.concat(minafiHttpLink),
-  cache: new InMemoryCache(),
-})
-
-export const getClientForProject = (project: WordpressClientIdentifier) => {
-  if (project === 'hardcover') {
-    return hardcoverClient
-  }
-  if (project === 'minafi') {
-    return minafiClient
-  }
-  return client
-}
 
 const parseUrl = (post: WordpressPost) => {
   if (post.project === 'minafi') {
@@ -146,4 +79,68 @@ export const parsePage = (page: WordpressPage) => {
   } as Page
 
   return omitBy(article, (v) => v === null || v === undefined) as Page
+}
+
+export const fetchClient = ({
+  url,
+  key,
+  query,
+  variables = {},
+}: {
+  url: string
+  key: string
+  query: string
+  variables?: any
+}) => {
+  return fetch(url, {
+    method: 'POST',
+    next: {
+      revalidate: 60 * 60, // 1 hour
+    },
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Basic ${key}`,
+    },
+    body: JSON.stringify({
+      query,
+      variables,
+    }),
+  }).then((res) => res.json())
+}
+
+export const adamfortunaClient = ({ query, variables = {} }: { query: string; variables?: any }) => {
+  return fetchClient({
+    url: 'https://wp.adamfortuna.com/graphql',
+    key: String(process.env.WP_ADAMFORTUNA_TOKEN),
+    query,
+    variables,
+  })
+}
+
+export const hardcoverClient = ({ query, variables = {} }: { query: string; variables?: any }) => {
+  return fetchClient({
+    url: 'https://wp.hardcover.app/graphql',
+    key: String(process.env.WP_HARDCOVER_TOKEN),
+    query,
+    variables,
+  })
+}
+
+export const minafiClient = ({ query, variables = {} }: { query: string; variables?: any }) => {
+  return fetchClient({
+    url: 'https://wp.minafi.com/graphql',
+    key: String(process.env.WP_MINAFI_TOKEN),
+    query,
+    variables,
+  })
+}
+
+export const getClientForProject = (project: WordpressClientIdentifier) => {
+  if (project === 'hardcover') {
+    return hardcoverClient
+  }
+  if (project === 'minafi') {
+    return minafiClient
+  }
+  return adamfortunaClient
 }

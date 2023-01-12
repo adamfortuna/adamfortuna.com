@@ -1,8 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import { NextPage } from 'next'
 import { Container } from '@/components/layout/Container'
 
-const Newsletter: NextPage = () => {
+export default async function NewsletterPage() {
   return (
     <Container className="max-w-5xl">
       <h1 className="md:text-center text-3xl md:text-5xl font-hardwriting font-bold text-grey-800 leading-tight">
@@ -78,5 +77,3 @@ const Newsletter: NextPage = () => {
     </Container>
   )
 }
-
-export default Newsletter
