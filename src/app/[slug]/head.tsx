@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unnecessary-condition */
 import { getPostBySlug } from '@/queries/wordpress/getPostBySlug'
 
+export const revalidate = 60 * 60 // 60 minutes
 const Head = async ({ params }: { params: { slug: string } }) => {
   const article = await getPostBySlug(params.slug)
   if (!article) return null
@@ -26,6 +27,7 @@ const Head = async ({ params }: { params: { slug: string } }) => {
         </>
       )}
       <meta property="og:description" content={article.excerpt} />
+      <meta name="description" content={article.excerpt} />
 
       <meta property="article:published_time" content={article.date} />
       <meta property="article:author" content="Adam Fortuna" />
