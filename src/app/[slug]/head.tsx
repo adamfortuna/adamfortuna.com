@@ -8,6 +8,7 @@ const Head = async ({ params }: { params: { slug: string } }) => {
   return (
     <>
       <title>{article.title}</title>
+      <meta name="viewport" content="width=device-width" />
       <link rel="alternate" type="application/rss+xml" href={`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/feed`} />
       <meta property="og:title" content={article.title} />
       <meta property="og:type" content="article" />

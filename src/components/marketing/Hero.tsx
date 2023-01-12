@@ -8,7 +8,7 @@ export const Hero = () => {
   return (
     <div className="relative h-screen">
       <InteractiveMountain />
-      <Container className="relative pt-20 pb-16 md:pt-32 lg:pt-48 text-black max-w-4xl lg:max-w-6xl px-4 lg:px-0 lg:mx-auto">
+      <Container className="relative pt-20 pb-16 md:pt-32 lg:pt-48 text-black max-w-4xl lg:max-w-5xl xl:max-w-6xl px-4 lg:px-0 lg:mx-auto">
         <p className="font-display text-5xl font-medium tracking-tight sm:text-7xl relative space-x-4">
           <span className="font-handwriting">Hey hey!</span>
           <span className="animate-waving-hand inline-block">👋</span>
