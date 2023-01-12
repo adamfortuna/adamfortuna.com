@@ -94,6 +94,7 @@ export const fetchClient = ({
 }) => {
   return fetch(url, {
     method: 'POST',
+    cache: 'force-cache',
     next: {
       revalidate: 60 * 60, // 1 hour
     },
