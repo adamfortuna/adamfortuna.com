@@ -1,4 +1,3 @@
-import { useMemo } from 'react'
 import Link from 'next/link'
 import { Page, Post } from '@/types'
 import { dateFormatLong } from '@/lib/dateService'
@@ -11,8 +10,6 @@ export interface ArticleHeaderProps {
 }
 
 export const ArticleHeader = ({ article }: ArticleHeaderProps) => {
-  const publishDate = useMemo(() => dateFormatLong(article.date), [article.date])
-
   return (
     <div className="mb-6 px-2">
       <div className="max-w-5xl mx-auto mb-2">
@@ -21,7 +18,7 @@ export const ArticleHeader = ({ article }: ArticleHeaderProps) => {
             <FontAwesomeIcon icon={faArrowLeft} size="sm" className="w-4 h-4 inline" />
             <span className="pl-1">Blog</span>
           </Link>
-          <span className="text-sm ml-2 text-gray-500 font-semibold">{publishDate}</span>
+          <span className="text-sm ml-2 text-gray-500 font-semibold">{dateFormatLong(article.date)}</span>
         </p>
         <h1 className="sm:text-center text-3xl md:text-5xl font-sans font-bold text-grey-800 leading-tight">
           {article.title}

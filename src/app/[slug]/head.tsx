@@ -1,17 +1,17 @@
-import { getPostOrPageBySlug } from '@/queries/wordpress/getPostOrPageBySlug'
-import ArticleMetadata from '@/components/articles/ArticleMetadata'
+// import { getPostOrPageBySlug } from '@/queries/wordpress/getPostOrPageBySlug'
+// import ArticleMetadata from '@/components/articles/ArticleMetadata'
 import GlobalHead from '../globalHead'
 
-export const revalidate = 60 * 60 // 60 minutes
+// export const revalidate = 60 * 60 // 60 minutes
 const Head = async ({ params }: { params: { slug: string } }) => {
-  const article = await getPostOrPageBySlug(params.slug)
-  if (!article) return null
+  // const article = await getPostOrPageBySlug(params.slug)
+  // if (!article) return null
 
   return (
     <>
-      <title>{article.title}</title>
+      <title>{params.slug}</title>
       <GlobalHead />
-      <ArticleMetadata article={article} />
+      {/* <ArticleMetadata article={article} /> */}
     </>
   )
 }
