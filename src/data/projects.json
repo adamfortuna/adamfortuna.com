@@ -1,0 +1,2770 @@
+[
+  {
+    "title":"AnimeMovies on Geocities",
+    "slug":null,
+    "description":"An anime fansite to share what I was watching. It had alTerNatinG cAsE, frames, a JavaScript-side quiz, and a lot of gradients from blue to black.",
+    "priority":0,
+    "size":"sm",
+    "years_active":"1999",
+    "state":"transferred",
+    "state_description":"Migrated to Dymension.org [v1]",
+    "date_started":"1999-08-01",
+    "date_ended":"1999-11-01",
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/film_regular_d24711c833.svg",
+    "tags":[
+      "JavaScript",
+      "HTML"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/1999/animemovies.md",
+    "content":null
+  },
+  {
+    "title":"Dymension.org [v1]",
+    "slug":null,
+    "description":"My first domain! Another anime site to share my thoughts. This time with actual thought-out information architecture and a less eye-piercing black & blue theme.",
+    "priority":0,
+    "size":"sm",
+    "years_active":"1999-2001",
+    "state":"transferred",
+    "state_description":"Switched to be a blog/personal site",
+    "date_started":"1999-11-01",
+    "date_ended":"2001-06-30",
+    "category":"app",
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/film_regular_d24711c833.svg",
+    "tags":[
+      "CSS",
+      "HTML"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/1999/dymension-v1.md",
+    "content":null
+  },
+  {
+    "title":"PC Show and Tell",
+    "slug":null,
+    "description":"My first ever job! Creating how-to videos for common PC applications (MS Word, Excel, Access, etc). Pivoted to also creating guides in Flash for consumer electronics – mostly video cameras.",
+    "priority":0,
+    "size":"lg",
+    "years_active":"1999-2001",
+    "state":"left",
+    "state_description":"Left in 2001",
+    "date_started":"1999-06-01",
+    "date_ended":"2001-08-31",
+    "category":"job",
+    "employed":true,
+    "role":"Flash developer",
+    "salary":"$7.50/hr -> $12/hr",
+    "links":[
+      {
+        "url":"https://web.archive.org/web/20010629183925/http://www.pcshowandtell.com/",
+        "title":"Archived Site"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/frog_regular_17da2b8c15.svg",
+    "tags":[
+      "Adobe Flash"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/1999/pc-show-and-tell.md",
+    "content":null
+  },
+  {
+    "title":"Dance Dance Revolution East Invasion",
+    "slug":null,
+    "description":"A fan site and community for the game Dance Dance Revolution.",
+    "priority":50,
+    "size":"lg",
+    "years_active":"2000–2007",
+    "state":"transferred",
+    "state_description":"Pivoted to ArcadeFly",
+    "date_started":"2000-12-01",
+    "date_ended":"2007-12-31",
+    "category":"app",
+    "links":[
+      {
+        "url":"https://web.archive.org/web/20071005134109/http://www.ddrei.com/",
+        "title":"Archived Site"
+      },
+      {
+        "url":"https://github.com/adamfortuna/ddrei.com",
+        "title":"Code"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/shoe_prints_regular_c3d9f8156b.svg",
+    "poster_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/ddrei_2dbbd987f8",
+    "tags":[
+      "PHP",
+      "MySQL"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2000/ddrei.md",
+    "content":null
+  },
+  {
+    "title":"Dymension.org",
+    "slug":null,
+    "description":"A personal site for writing, photos, movies, quotes, and more to share with friends.",
+    "priority":10,
+    "size":"md",
+    "years_active":"2001-2005",
+    "state":"transferred",
+    "state_description":"Migrated to adamfortuna.com",
+    "date_started":"2001-08-01",
+    "date_ended":"2005-12-31",
+    "category":"blog",
+    "links":[
+      {
+        "url":"https://web.archive.org/web/20041020050839/http://www.dymension.org/",
+        "title":"Archived Site"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/pencil_regular_52771159a8.svg",
+    "poster_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/dymension_0044687dff",
+    "tags":[
+      "PHP",
+      "MySQL"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2001/dymension.md",
+    "content":null
+  },
+  {
+    "title":"#animevivo IRC Channel Site",
+    "slug":null,
+    "description":"A fansite for the #animevivo IRC channel on DALnet. It had a side frame with flash buttons that made noises when you hovered over them. 😅",
+    "priority":0,
+    "size":"sm",
+    "years_active":"2002",
+    "state":"retired",
+    "state_description":"Retired in 2002",
+    "date_started":"2002-01-01",
+    "date_ended":"2002-06-30",
+    "category":"app",
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/file_video_regular_ba93b397f0.svg",
+    "tags":[
+      "Adobe Flash"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2002/animevivo.md",
+    "content":null
+  },
+  {
+    "title":"Adam's LiveJournal",
+    "slug":null,
+    "description":"My blog on LiveJournal. This was THE social network of its day to connect with friends and share what you're up to.",
+    "priority":0,
+    "size":"lg",
+    "years_active":"2002-2006",
+    "state":"transferred",
+    "state_description":"Migrated to adamfortuna.com",
+    "date_started":"2002-02-05",
+    "date_ended":"2006-12-31",
+    "category":"blog",
+    "links":[
+      {
+        "url":"https://dyogenez.livejournal.com/",
+        "title":"Journal (Now private)"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/livejournal_23ccef0c02.png",
+    "tags":[
+      "CSS"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2002/livejournal.md",
+    "content":null
+  },
+  {
+    "title":"One Business Place",
+    "slug":null,
+    "description":"A coupon site for local businesses. These were all free coupons – not Groupon-style coupons.",
+    "priority":0,
+    "size":"sm",
+    "years_active":"2002-2003",
+    "state":"left",
+    "state_description":"Left in 2003",
+    "date_started":"2002-10-01",
+    "date_ended":"2003-02-28",
+    "category":"job",
+    "employed":true,
+    "role":"Web development",
+    "salary":"$15/hr",
+    "links":[
+      {
+        "url":"https://web.archive.org/web/20030214082812/http://obp.com/",
+        "title":"Archived site"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/money_from_bracket_regular_b8c919813e.svg",
+    "tags":[
+      "Adobe ColdFusion",
+      "Microsoft SQL Server"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2002/obp.md",
+    "content":null
+  },
+  {
+    "title":"Tunak.org",
+    "slug":null,
+    "description":"I loved the Daler Mehndi song \"Tunak Tunak Tun\" and grabbed this domain for fun. It was a spot to try out new things on, including the v1 of a Settlers of Catan league.",
+    "priority":0,
+    "size":"sm",
+    "years_active":"2002",
+    "state":"transferred",
+    "state_description":"Iterated to Settlers League",
+    "date_started":"2002-10-01",
+    "date_ended":"2002-12-31",
+    "category":"app",
+    "links":[
+      {
+        "url":"https://web.archive.org/web/20030407071210/http://www.tunak.org/",
+        "title":"Archived site"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/sheep_regular_81d3170fd3.svg",
+    "tags":[
+      "PHP",
+      "MySQL",
+      "CSS",
+      "HTML"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2002/tunak.md",
+    "content":null
+  },
+  {
+    "title":"UCF: Film Department Portfolio Review",
+    "slug":null,
+    "description":"A review system used by UCF Film Professors to review portfolios.",
+    "priority":10,
+    "size":"md",
+    "years_active":"2003-2004",
+    "state":"retired",
+    "state_description":"Retired in 2004",
+    "date_started":"2003-03-01",
+    "date_ended":"2004-05-31",
+    "category":"job",
+    "employed":true,
+    "role":"Sole developer",
+    "salary":"$500 flat fee",
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/film_regular_d24711c833.svg",
+    "tags":[
+      "PHP",
+      "MySQL"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2003/ucf-film-review.md",
+    "content":null
+  },
+  {
+    "title":"Bank of Ireland",
+    "slug":null,
+    "description":"An application for banks to exchange foreign currency at the point of sale.",
+    "priority":0,
+    "size":"lg",
+    "years_active":"2004-2007",
+    "state":"left",
+    "state_description":"Left in 2007",
+    "date_started":"2004-06-01",
+    "date_ended":"2007-01-05",
+    "category":"job",
+    "employed":true,
+    "role":"Senior developer",
+    "salary":"$37k -> $52k",
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/money_bill_transfer_regular_93c3e0e785.svg",
+    "tags":[
+      "JavaScript",
+      "Adobe ColdFusion",
+      "Microsoft SQL Server"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2004/fce.md",
+    "content":null
+  },
+  {
+    "title":"UCF: Experiential Learning Department Website",
+    "slug":null,
+    "description":"The public website for the UCF Experiential Learning Department (coops, internships).",
+    "priority":10,
+    "size":"sm",
+    "years_active":"2004",
+    "state":"left",
+    "state_description":"Left in 2004",
+    "date_started":"2004-05-01",
+    "date_ended":"2004-12-31",
+    "category":"job",
+    "employed":true,
+    "role":"Sole developer",
+    "salary":"$11/hr",
+    "links":[
+      {
+        "url":"https://web.archive.org/web/20050305021319/https://coop.ucf.edu/",
+        "title":"Archived Site"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/graduation_cap_regular_469b04e3c6.svg",
+    "tags":[
+      "ASP",
+      "Microsoft Access"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2004/ucf-experiential-learning.md",
+    "content":null
+  },
+  {
+    "title":"AdamFortuna.com",
+    "slug":null,
+    "description":"My personal website for exploring new tech and sharing what I learn along the way.",
+    "priority":10,
+    "size":"md",
+    "years_active":"2005-now",
+    "state":"development",
+    "state_description":"Rebuilding",
+    "date_started":"2005-01-01",
+    "featured":true,
+    "category":"app",
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/af_blue_4446868a78.svg",
+    "poster_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/adamfortuna_poster_1e9a5d54c4",
+    "tags":[
+      "Next.js",
+      "TypeScript",
+      "React",
+      "Tailwind.css",
+      "Markdown"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2005/adamfortuna.md",
+    "content":null
+  },
+  {
+    "title":"Arcade Fly",
+    "slug":null,
+    "description":"A community-supported way to find which arcades have which games.",
+    "priority":25,
+    "size":"md",
+    "years_active":"2005-2014",
+    "state":"retired",
+    "state_description":"Retired in 2008",
+    "date_started":"2005-01-01",
+    "date_ended":"2008-12-31",
+    "category":"app",
+    "role":"Sole developer.",
+    "links":[
+      {
+        "url":"https://github.com/adamfortuna/arcadefly",
+        "title":"Code"
+      },
+      {
+        "url":"https://web.archive.org/web/20141120015521/http://www.arcadefly.com/",
+        "title":"Archived Site"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/joystick_regular_a58e670287.svg",
+    "poster_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/arcadefly_355c5200a8",
+    "tags":[
+      "Ruby on Rails",
+      "MySQL",
+      "Google Maps API",
+      "JavaScript",
+      "Ruby"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2005/arcade-fly.md",
+    "content":null
+  },
+  {
+    "title":"DyoIt.com",
+    "slug":null,
+    "description":"A short-lived programming blog.",
+    "priority":0,
+    "size":"sm",
+    "years_active":"2006",
+    "state":"retired",
+    "state_description":"Shut down in 2006",
+    "date_started":"2005-07-01",
+    "date_ended":"2006-01-31",
+    "category":"blog",
+    "links":[
+      {
+        "url":"https://web.archive.org/web/20060110164537/http://www.dyoit.com/",
+        "title":"Archived Site"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/pencil_regular_52771159a8.svg",
+    "tags":[
+      "WordPress"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2005/dyoit.md",
+    "content":null
+  },
+  {
+    "title":"Settles of Catan League",
+    "slug":null,
+    "description":"A Settlers of Catan league for my friends with graphs, analytics, and player stats.",
+    "priority":0,
+    "size":"sm",
+    "years_active":"2005",
+    "state":"retired",
+    "state_description":"Retired in 2005",
+    "date_started":"2005-05-01",
+    "date_ended":"2005-11-30",
+    "category":"app",
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/sheep_regular_81d3170fd3.svg",
+    "tags":[
+      "Adobe ColdFusion",
+      "Microsoft SQL Server"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2005/settlers-of-catan-league.md",
+    "content":null
+  },
+  {
+    "title":"Untitled Social Network",
+    "slug":null,
+    "description":"A social network intended to be a better Facebook. 😂",
+    "priority":0,
+    "size":"sm",
+    "years_active":"2005-2006",
+    "state":"retired",
+    "state_description":"Never launched",
+    "date_started":"2005-10-01",
+    "date_ended":"2006-02-25",
+    "category":"app",
+    "role":"A social network replacement for Facebook.",
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/people_roof_solid_630d5b6da9.svg",
+    "tags":[
+      "Ruby on Rails"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2005/untitled-social-network.md",
+    "content":null
+  },
+  {
+    "title":"AdamFortuna.com v1",
+    "slug":null,
+    "description":"Programming blog focused on ColdFusion, Ruby, and Ruby on Rails.",
+    "priority":0,
+    "size":"md",
+    "years_active":"2006-2010",
+    "state":"transferred",
+    "state_description":"Converted to Jekyll",
+    "date_started":"2006-08-01",
+    "date_ended":"2010-12-31",
+    "category":"blog",
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/af_blue_4446868a78.svg",
+    "parent_project":"adamfortuna",
+    "tags":[
+      "WordPress"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2006/adamfortuna-v1.md",
+    "content":null
+  },
+  {
+    "title":"Floridiots",
+    "slug":null,
+    "description":"A blog sharing links to stupid things Florida people do (by a Floridian).",
+    "priority":0,
+    "size":"sm",
+    "years_active":"2006-2007",
+    "state":"retired",
+    "state_description":"Retired in 2007",
+    "date_started":"2006-08-01",
+    "date_ended":"2007-08-31",
+    "category":"blog",
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/890553_ec76572750.png",
+    "tags":[
+      "WordPress"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2006/floridiots.md",
+    "content":null
+  },
+  {
+    "title":"Adobe Developers of Greater Orlando User Group",
+    "slug":null,
+    "description":"A user group for Adobe technologies (ColdFusion, ActionScript, Flex) based in Orlando, FL.",
+    "priority":0,
+    "size":"sm",
+    "years_active":"2007-2009",
+    "state":"retired",
+    "state_description":"Retired in 2009",
+    "date_started":"2007-06-19",
+    "date_ended":"2009-10-31",
+    "category":"experience",
+    "employed":true,
+    "role":"Started and ran the group",
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/user_group_regular_6fe795b5ca.svg",
+    "tags":[
+      "WordPress",
+      "Adobe ColdFusion",
+      "ActionScript",
+      "Apache Flex"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2007/adogo.md",
+    "content":null
+  },
+  {
+    "title":"ColdCourse",
+    "slug":null,
+    "description":"A tiny library for pretty URLs.",
+    "priority":0,
+    "size":"sm",
+    "years_active":"2007",
+    "state":"retired",
+    "state_description":"Unmaintained",
+    "date_started":"2007-02-01",
+    "date_ended":"2007-03-31",
+    "category":"library",
+    "links":[
+      {
+        "url":"https://github.com/adamfortuna/coldcourse",
+        "title":"Code"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/route_regular_19dda63138.svg",
+    "tags":[
+      "Adobe ColdFusion"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2007/coldcourse.md",
+    "content":null
+  },
+  {
+    "title":"Westgate Resorts",
+    "slug":null,
+    "description":"A portal for customers to manage their timeshares.",
+    "priority":0,
+    "size":"lg",
+    "years_active":"2007-2008",
+    "state":"left",
+    "state_description":"Left in 2008",
+    "date_started":"2007-02-19",
+    "date_ended":"2008-05-09",
+    "category":"job",
+    "employed":true,
+    "role":"Software Developer II",
+    "salary":"$59k -> $62k",
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/hotel_regular_06027a116c.svg",
+    "tags":[
+      "ActionScript",
+      "Apache Flex",
+      "Oracle Database"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2007/westgate-resorts.md",
+    "content":null
+  },
+  {
+    "title":"CloudShout",
+    "slug":null,
+    "description":"A WordPress widget to turn your blog into a realtime hub.",
+    "priority":50,
+    "size":"md",
+    "years_active":"2008-2009",
+    "state":"retired",
+    "state_description":"Retired in 2009.",
+    "date_started":"2008-03-01",
+    "date_ended":"2009-12-31",
+    "category":"app",
+    "employed":true,
+    "role":"Full-stack development",
+    "links":[
+      {
+        "url":"https://web.archive.org/web/20090327091933/http://cloudshout.com/",
+        "title":"Archived Site"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/cloudshout_logo_ec7885e364.png",
+    "poster_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/Screen_Shot_2022_08_29_at_9_27_49_PM_62c02d0c22",
+    "parent_project":"izea",
+    "tags":[
+      "Ruby on Rails",
+      "MySQL",
+      "WordPress",
+      "Ruby",
+      "jQuery"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2008/cloudshout.md",
+    "content":null
+  },
+  {
+    "title":"Izea",
+    "slug":null,
+    "description":"A social media advertising agency.",
+    "priority":50,
+    "size":"lg",
+    "years_active":"2008-2011",
+    "state":"left",
+    "state_description":"Left in 2011",
+    "date_started":"2008-05-01",
+    "date_ended":"2011-03-01",
+    "category":"job",
+    "employed":true,
+    "role":"Senior Developer",
+    "salary":"$66k -> $72k",
+    "links":[
+      {
+        "url":"https://web.archive.org/web/20100501062359/http://izea.com/",
+        "title":"Archived Site"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/izea_logo_d65ef49691.png",
+    "date":null,
+    "tags":[
+      
+    ],
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2008/izea.md",
+    "content":null
+  },
+  {
+    "title":"SocialSpark",
+    "slug":null,
+    "description":"A blog marketing network that connects advertisers with bloggers through an online marketplace.",
+    "priority":25,
+    "size":"sm",
+    "years_active":"2008-2011",
+    "state":"left",
+    "state_description":"Left in 2011",
+    "date_started":"2008-05-01",
+    "date_ended":"2011-03-01",
+    "category":"app",
+    "employed":true,
+    "role":"Full-stack development",
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/socialspark_logo_f563ff7d3a.png",
+    "poster_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/Screen_Shot_2022_08_29_at_9_35_54_PM_ec2c1de72a",
+    "parent_project":"izea",
+    "tags":[
+      "Ruby on Rails",
+      "MySQL",
+      "Ruby",
+      "jQuery"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2008/socialspark.md",
+    "content":null
+  },
+  {
+    "title":"Dolphin Bubbles Blog",
+    "slug":null,
+    "description":"A playful WordPress blog created in partnership with SeaWorld. I remember getting this thing working and then hearing \"does it work in IE 6?\"  🤦",
+    "priority":10,
+    "size":"sm",
+    "years_active":"2009",
+    "state":"left",
+    "state_description":"Left in 2011",
+    "date_started":"2009-03-06",
+    "date_ended":"2009-08-01",
+    "category":"blog",
+    "employed":true,
+    "role":"Developer",
+    "links":[
+      {
+        "url":"https://web.archive.org/web/20100201225815/http://www.dolphinbubbles.com/",
+        "title":"Archived Site"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/dolphin_regular_55cf9aa411.svg",
+    "poster_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/Screen_Shot_2022_08_29_at_9_46_19_PM_c3979b4578",
+    "parent_project":"izea",
+    "tags":[
+      "WordPress",
+      "jQuery"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2009/dolphin-bubbles.md",
+    "content":null
+  },
+  {
+    "title":"Izea Blog Wordpress Theme",
+    "slug":null,
+    "description":"A public marketing website and blog for Izea.",
+    "priority":10,
+    "size":"sm",
+    "years_active":"2009-2011",
+    "state":"left",
+    "state_description":"Left in 2011",
+    "date_started":"2009-03-01",
+    "date_ended":"2011-03-01",
+    "category":"blog",
+    "employed":true,
+    "role":"Development",
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/izea_logo_d65ef49691.png",
+    "poster_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/Screen_Shot_2022_08_29_at_9_43_10_PM_50a699498f",
+    "parent_project":"izea",
+    "tags":[
+      "WordPress",
+      "jQuery"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2009/izea-blog.md",
+    "content":null
+  },
+  {
+    "title":"Sponsored Tweets",
+    "slug":null,
+    "description":"A marketplace for advertisers to find and pay Twitter users for sponsored content.",
+    "priority":75,
+    "size":"lg",
+    "years_active":"2009-2011",
+    "state":"left",
+    "state_description":"Left in 2011",
+    "date_started":"2009-05-01",
+    "date_ended":"2011-03-01",
+    "category":"app",
+    "employed":true,
+    "role":"Product owner & developer",
+    "links":[
+      {
+        "url":"https://web.archive.org/web/20110304163951/http://sponsoredtweets.com/",
+        "title":"Archived Site"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/sponsoered_tweets_1d6f026a80.png",
+    "poster_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/Screen_Shot_2022_08_29_at_9_19_32_PM_15c5d17a40",
+    "parent_project":"izea",
+    "tags":[
+      "Ruby on Rails",
+      "MySQL",
+      "Ruby",
+      "jQuery"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2009/sponsored-tweets.md",
+    "content":null
+  },
+  {
+    "title":"Code School",
+    "slug":null,
+    "description":"Enlivening code education in the browser.",
+    "priority":100,
+    "size":"lg",
+    "years_active":"2011-2018",
+    "state":"transferred",
+    "state_description":"Sold to Pluralsight for $36m",
+    "date_started":"2011-04-13",
+    "date_ended":"2018-06-01",
+    "featured":true,
+    "category":"job",
+    "employed":true,
+    "role":"Full-Stack Dev, Course Director, Product Director",
+    "salary":"$90k -> $110k + 2% of Code School",
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/codeschool_icon_80625e9717.png",
+    "poster_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/code_school_ccc0137724",
+    "tags":[
+      "Ruby on Rails",
+      "WordPress",
+      "PostgreSQL",
+      "Heroku",
+      "Angular",
+      "Sass",
+      "JavaScript",
+      "Ruby"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2011/codeschool.md",
+    "content":null
+  },
+  {
+    "title":"Envy Labs",
+    "slug":null,
+    "description":"The consultancy focused on building applications for clients that also started Code School as an internal project.",
+    "priority":0,
+    "size":"lg",
+    "years_active":"2011-2012",
+    "state":"transferred",
+    "state_description":"I transferred to Code School",
+    "date_started":"2011-03-14",
+    "date_ended":"2012-06-01",
+    "category":"job",
+    "employed":true,
+    "role":"Developer",
+    "salary":"$55/hr -> $60/hr",
+    "links":[
+      {
+        "url":"https://envylabs.com/",
+        "title":"Envy Labs"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/envylabs_logo_c5f64baf41.png",
+    "date":null,
+    "tags":[
+      
+    ],
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2011/envylabs.md",
+    "content":null
+  },
+  {
+    "title":"EPCOT Food & Wine App",
+    "slug":null,
+    "description":"An iOS app to browse what's available at EPCOT's Food & Wine Festival.",
+    "priority":0,
+    "size":"sm",
+    "years_active":"2011-2012",
+    "state":"retired",
+    "state_description":"Never launched",
+    "date_started":"2011-09-24",
+    "date_ended":"2012-10-31",
+    "category":"app",
+    "links":[
+      {
+        "url":"https://github.com/adamfortuna/epcot-api",
+        "title":"API Code"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/globe_regular_72d8a80d35.svg",
+    "tags":[
+      "Ruby on Rails",
+      "Objective-C"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2011/epcot-food-wine.md",
+    "content":null
+  },
+  {
+    "title":"Line of Thought [v1]",
+    "slug":null,
+    "description":"A look inside what technologies companies are using.",
+    "priority":25,
+    "size":"md",
+    "years_active":"2011",
+    "state":"retired",
+    "state_description":"Shut down in 2011",
+    "date_started":"2011-01-01",
+    "date_ended":"2011-12-31",
+    "category":"app",
+    "links":[
+      {
+        "url":"https://github.com/adamfortuna/lineofthought-original",
+        "title":"Code"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/lineofthought_icon_5f2bcc39dd.ico",
+    "poster_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/lineofthought_v1_71db543f01",
+    "tags":[
+      "Ruby on Rails",
+      "MySQL",
+      "Heroku",
+      "Ruby",
+      "Solr"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2011/line-of-thought-v1.md",
+    "content":null
+  },
+  {
+    "title":"Movie Fly",
+    "slug":null,
+    "description":"A social network for movie lovers.",
+    "priority":25,
+    "size":"sm",
+    "years_active":"2011",
+    "state":"retired",
+    "state_description":"Shut down in 2011",
+    "date_started":"2011-01-01",
+    "date_ended":"2011-12-31",
+    "category":"app",
+    "role":"Founder",
+    "links":[
+      {
+        "url":"https://github.com/adamfortuna/moviefly",
+        "title":"Code"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/film_regular_d24711c833.svg",
+    "poster_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/moviefly_76b6d8a137",
+    "tags":[
+      "Ruby on Rails",
+      "MySQL",
+      "Ruby"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2011/moviefly.md",
+    "content":null
+  },
+  {
+    "title":"Shop Goodwill",
+    "slug":null,
+    "description":"A rewrite of the site from ASP to Ruby on Rails.",
+    "priority":0,
+    "size":"sm",
+    "years_active":"2011-2012",
+    "state":"retired",
+    "state_description":"Failed to launch",
+    "date_started":"2011-11-01",
+    "date_ended":"2012-07-15",
+    "category":"app",
+    "employed":true,
+    "role":"Full-stack development",
+    "links":[
+      {
+        "url":"https://shopgoodwill.com/",
+        "title":"Shop Goodwill (I didn't work on anything that's live)"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/cart_shopping_regular_75f4f0579b.svg",
+    "tags":[
+      "Ruby on Rails",
+      "PostgreSQL",
+      "Ruby"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2011/shop-goodwill.md",
+    "content":null
+  },
+  {
+    "title":"Ticket Evolution",
+    "slug":null,
+    "description":"A ticketing website run by ticket brokers to go against TicketMaster.",
+    "priority":0,
+    "size":"sm",
+    "years_active":"2011",
+    "state":"left",
+    "state_description":"I switched to a different client project",
+    "date_started":"2011-04-20",
+    "date_ended":"2011-11-01",
+    "category":"app",
+    "employed":true,
+    "role":"Ruby on Rails development",
+    "links":[
+      {
+        "url":"https://www.ticketevolution.com/",
+        "title":"Ticket Evolution"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/ticket_regular_d7a73624d0.svg",
+    "tags":[
+      "Ruby on Rails",
+      "PostgreSQL",
+      "Ruby"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2011/ticket-evolution.md",
+    "content":null
+  },
+  {
+    "title":"Avalara Ruby Gem",
+    "slug":null,
+    "description":"An open source Ruby gem to manage taxes using the Avalara service.",
+    "priority":0,
+    "size":"sm",
+    "years_active":"2012",
+    "state":"retired",
+    "state_description":"Unmaintained",
+    "date_started":"2012-01-31",
+    "date_ended":"2012-05-31",
+    "category":"library",
+    "employed":true,
+    "role":"Developer",
+    "links":[
+      {
+        "url":"https://github.com/adamfortuna/avalara",
+        "title":"Code"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/hand_holding_dollar_regular_6e336c19ae.svg",
+    "tags":[
+      "Ruby"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2012/avalara.md",
+    "content":null
+  },
+  {
+    "title":"Code School Course: Ruby Bits",
+    "slug":null,
+    "description":"An interactive course to learn Ruby in the browser.",
+    "priority":0,
+    "size":"lg",
+    "years_active":"2012",
+    "state":"transferred",
+    "state_description":"Sold with Code School",
+    "date_started":"2012-06-01",
+    "date_ended":"2012-09-30",
+    "category":"course",
+    "employed":true,
+    "role":"Challenge implementation",
+    "links":[
+      {
+        "url":"https://www.youtube.com/watch?v=Af66lbGnBBQ&list=PLA57A0401B1F54273&index=24",
+        "title":"Course Jingle"
+      },
+      {
+        "url":"https://twitter.com/adamfortuna/status/979792642849427457",
+        "title":"Demo"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/ruby_bits_3f683db13f.png",
+    "parent_project":"codeschool",
+    "tags":[
+      "Ruby"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2012/codeschool-ruby-bits.md",
+    "content":null
+  },
+  {
+    "title":"Code School Course: Try iOS",
+    "slug":null,
+    "description":"An interactive course to learn iOS in the browser.",
+    "priority":0,
+    "size":"sm",
+    "years_active":"2012",
+    "state":"transferred",
+    "state_description":"Sold with Code School",
+    "date_started":"2012-09-01",
+    "date_ended":"2012-11-30",
+    "category":"course",
+    "employed":true,
+    "role":"Front-end development",
+    "links":[
+      {
+        "url":"https://www.youtube.com/watch?v=PKSiBYdl9g4",
+        "title":"Making of (1/2)"
+      },
+      {
+        "url":"https://www.youtube.com/watch?v=e50KfDprbUg",
+        "title":"Making of (2/2)"
+      },
+      {
+        "url":"https://twitter.com/adamfortuna/status/979792652764770306",
+        "title":"Demo"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/try_ios_be15cc4604.png",
+    "parent_project":"codeschool",
+    "tags":[
+      "JavaScript",
+      "Backbone.js"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2012/codeschool-try-ios.md",
+    "content":null
+  },
+  {
+    "title":"Code School Course: Try jQuery",
+    "slug":null,
+    "description":"An interactive course to learn the jQuery JavaScript framework.",
+    "priority":50,
+    "size":"lg",
+    "years_active":"2012-2013",
+    "state":"transferred",
+    "state_description":"Sold with Code School",
+    "date_started":"2012-10-01",
+    "date_ended":"2013-04-01",
+    "category":"course",
+    "employed":true,
+    "role":"Instructor",
+    "links":[
+      {
+        "url":"https://www.youtube.com/watch?v=1zlCUde4KJQ",
+        "title":"Course Jingle"
+      },
+      {
+        "url":"https://twitter.com/adamfortuna/status/979792714832097286",
+        "title":"Demo"
+      },
+      {
+        "url":"https://www.pluralsight.com/courses/code-school-try-jquery",
+        "title":"Pluralsight Course"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/try_jquery_7b19bfa72f.png",
+    "parent_project":"codeschool",
+    "tags":[
+      "Ruby on Rails",
+      "Ruby",
+      "jQuery",
+      "Backbone.js",
+      "Mocha"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2012/codeschool-try-jquery.md",
+    "content":null
+  },
+  {
+    "title":"Code School Course: Try R",
+    "slug":null,
+    "description":"An interactive course to learn the R programming language.",
+    "priority":25,
+    "size":"md",
+    "years_active":"2012-2013",
+    "state":"transferred",
+    "state_description":"Sold with Code School",
+    "date_started":"2012-10-01",
+    "date_ended":"2013-01-31",
+    "category":"course",
+    "employed":true,
+    "role":"Front-end & challenges",
+    "links":[
+      {
+        "url":"https://twitter.com/adamfortuna/status/979792677871824896",
+        "title":"Demo"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/try_r_22b85f81f5.png",
+    "parent_project":"codeschool",
+    "tags":[
+      "Ruby on Rails",
+      "JavaScript",
+      "Ruby",
+      "Backbone.js"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2012/codeschool-try-r.md",
+    "content":null
+  },
+  {
+    "title":"Let's Go Green",
+    "slug":null,
+    "description":"A simple budget tracker.",
+    "priority":0,
+    "size":"sm",
+    "years_active":"2012",
+    "state":"retired",
+    "state_description":"Never launched",
+    "date_started":"2012-05-01",
+    "date_ended":"2012-07-31",
+    "category":"app",
+    "links":[
+      {
+        "url":"https://github.com/adamfortuna/letsgogreen",
+        "title":"Code"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/wallet_regular_4baab1acc9.svg",
+    "tags":[
+      "Ruby on Rails",
+      "Ruby"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2012/lets-go-green.md",
+    "content":null
+  },
+  {
+    "title":"Standing Offer",
+    "slug":null,
+    "description":"An easy way to share your calendar and let others book time.",
+    "priority":0,
+    "size":"sm",
+    "years_active":"2012",
+    "state":"retired",
+    "state_description":"Never launched",
+    "date_started":"2012-03-25",
+    "date_ended":"2012-04-01",
+    "category":"app",
+    "role":"Founder",
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/SO_logo_small_a09554e811.png",
+    "tags":[
+      "Ruby on Rails",
+      "PostgreSQL",
+      "Ruby"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2012/standing-offer.md",
+    "content":null
+  },
+  {
+    "title":"AdamFortuna.com v3",
+    "slug":null,
+    "description":"Personal blog for Adam Fortuna focused on whatever.",
+    "priority":0,
+    "size":"sm",
+    "years_active":"2013-2015",
+    "state":"transferred",
+    "state_description":"Converted to Middleman",
+    "date_started":"2013-10-01",
+    "date_ended":"2015-06-30",
+    "category":"blog",
+    "links":[
+      {
+        "url":"https://github.com/adamfortuna/adamfortuna.com-v3/tree/master",
+        "title":"Code"
+      },
+      {
+        "url":"https://v3.adamfortuna.com",
+        "title":"View V3"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/af_blue_4446868a78.svg",
+    "parent_project":"adamfortuna",
+    "tags":[
+      "Jekyll",
+      "Markdown"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2013/adamfortuna-v3.md",
+    "content":null
+  },
+  {
+    "title":"Code School Course: Core iOS 7",
+    "slug":null,
+    "description":"An interactive course to learn iOS 7 on your local computer.",
+    "priority":0,
+    "size":"lg",
+    "years_active":"2013",
+    "state":"transferred",
+    "state_description":"Sold with Code School",
+    "date_started":"2013-09-01",
+    "date_ended":"2013-11-30",
+    "category":"course",
+    "employed":true,
+    "role":"Back-end development",
+    "links":[
+      {
+        "url":"https://www.youtube.com/watch?v=WkNABB2Ly90",
+        "title":"Level 1"
+      },
+      {
+        "url":"https://twitter.com/adamfortuna/status/979792695659962368",
+        "title":"Demo"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/core_ios_7_1837046b15d2ea8e0634bf5b035c0ef8_d3c802f2e6.png",
+    "parent_project":"codeschool",
+    "tags":[
+      "Ruby on Rails",
+      "Ruby"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2013/codeschool-core-ios-7.md",
+    "content":null
+  },
+  {
+    "title":"Code School Course: JavaScript Roadtrip series",
+    "slug":null,
+    "description":"A 3-course series of interactive course to learn the basics of JavaScript.",
+    "priority":0,
+    "size":"lg",
+    "years_active":"2013",
+    "state":"transferred",
+    "state_description":"Sold with Code School",
+    "date_started":"2013-06-01",
+    "date_ended":"2013-09-30",
+    "category":"course",
+    "employed":true,
+    "role":"Front-end & challenges",
+    "links":[
+      {
+        "url":"https://www.youtube.com/watch?v=4Vv1S2RP3co",
+        "title":"Course Jingle"
+      },
+      {
+        "url":"https://www.pluralsight.com/courses/code-school-javascript-road-trip-part-1",
+        "title":"JS Road Trip Part 1"
+      },
+      {
+        "url":"https://www.pluralsight.com/courses/code-school-javascript-road-trip-part-2",
+        "title":"JS Road Trip Part 2"
+      },
+      {
+        "url":"https://www.pluralsight.com/courses/code-school-javascript-road-trip-part-3",
+        "title":"JS Road Trip Part 3"
+      },
+      {
+        "url":"https://twitter.com/adamfortuna/status/979792647354134528",
+        "title":"Demo"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/javascript_road_trip_part_1_c21de31eec.png",
+    "parent_project":"codeschool",
+    "tags":[
+      "Ruby on Rails",
+      "Sass",
+      "JavaScript",
+      "Ruby",
+      "Backbone.js"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2013/codeschool-javascript-roadtrip.md",
+    "content":null
+  },
+  {
+    "title":"Code School Course: Rails 4: Zombie Outlaws",
+    "slug":null,
+    "description":"An interactive course to learn Ruby on Rails 4.",
+    "priority":0,
+    "size":"lg",
+    "years_active":"2013",
+    "state":"transferred",
+    "state_description":"Sold with Code School",
+    "date_started":"2013-01-01",
+    "date_ended":"2013-05-31",
+    "category":"course",
+    "employed":true,
+    "role":"Front-end & challenges",
+    "links":[
+      {
+        "url":"https://www.youtube.com/watch?v=SfirH6_9SmU",
+        "title":"Course Jingle"
+      },
+      {
+        "url":"https://twitter.com/adamfortuna/status/979792691008434176",
+        "title":"Demo"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/rails_4_zombie_outlaws_5dedc88e03.png",
+    "parent_project":"codeschool",
+    "tags":[
+      "Ruby on Rails",
+      "Sass",
+      "JavaScript",
+      "Ruby",
+      "Backbone.js"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2013/codeschool-rails4.md",
+    "content":null
+  },
+  {
+    "title":"Code School Course: Warming Up with Ember.js",
+    "slug":null,
+    "description":"A Code School course to learn the Ember.js JavaScript framework.",
+    "priority":50,
+    "size":"lg",
+    "years_active":"2013-2014",
+    "state":"transferred",
+    "state_description":"Sold with Code School",
+    "date_started":"2013-10-01",
+    "date_ended":"2014-03-01",
+    "employed":true,
+    "role":"Instructor",
+    "links":[
+      {
+        "url":"https://web.archive.org/web/20140708211352/https://www.codeschool.com/courses/warming-up-with-ember-js",
+        "title":"Archived Landing Page"
+      },
+      {
+        "url":"https://www.youtube.com/watch?v=9IhdvwsAUMo&list=PLA57A0401B1F54273&index=42",
+        "title":"Course Jingle"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/warming_up_with_emberjs_e38e9a9fd2.png",
+    "parent_project":"codeschool",
+    "tags":[
+      "Ruby on Rails",
+      "Ruby",
+      "Backbone.js",
+      "Ember.js",
+      "Mocha"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2013/codeschool-warming-up-with-ember-js.md",
+    "content":null
+  },
+  {
+    "title":"Eval Everything",
+    "slug":null,
+    "description":"A programming blog focused on JavaScript (and various other tech).",
+    "priority":25,
+    "size":"md",
+    "years_active":"2013–2014",
+    "state":"transferred",
+    "state_description":"Migrated into adamfortuna.com",
+    "date_started":"2013-01-01",
+    "date_ended":"2014-01-01",
+    "category":"blog",
+    "links":[
+      {
+        "url":"https://github.com/adamfortuna/evaleverything.com",
+        "title":"Code"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/evaleverything_favicon_48c1d8ef51.png",
+    "poster_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/evaleverything_fdb765bcac",
+    "tags":[
+      "Jekyll",
+      "Sass",
+      "Markdown",
+      "Bootstrap"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2013/eval-everything.md",
+    "content":null
+  },
+  {
+    "title":"Code School Course: Try Objective C",
+    "slug":null,
+    "description":"A free interactive course to learn Objective C in the browser.",
+    "priority":0,
+    "size":"lg",
+    "years_active":"2013",
+    "state":"transferred",
+    "state_description":"Sold with Code School",
+    "date_started":"2013-01-01",
+    "date_ended":"2013-04-30",
+    "category":"course",
+    "employed":true,
+    "role":"Front-end development",
+    "links":[
+      {
+        "url":"https://github.com/codeschool/try-objectivec-book",
+        "title":"Course Book"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/try_objective_c_51368501db.png",
+    "parent_project":"codeschool",
+    "tags":[
+      "Ruby on Rails",
+      "JavaScript",
+      "Ruby",
+      "Backbone.js"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2013/try-objective-c.md",
+    "content":null
+  },
+  {
+    "title":"Abecedary",
+    "slug":null,
+    "description":"A client-side checker for code challenges.",
+    "priority":0,
+    "size":"sm",
+    "years_active":"2014-2015",
+    "state":"transferred",
+    "state_description":"Sold with Code School",
+    "date_started":"2014-01-01",
+    "date_ended":"2014-01-31",
+    "category":"library",
+    "employed":true,
+    "role":"Creator, lead dev",
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/codeschool_icon_80625e9717.png",
+    "parent_project":"codeschool",
+    "tags":[
+      "JavaScript",
+      "Mocha"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2014/abecedary.md",
+    "content":null
+  },
+  {
+    "title":"Guidance",
+    "slug":null,
+    "description":"Data platform for Code School.",
+    "priority":0,
+    "size":"md",
+    "years_active":"2014-2016",
+    "state":"transferred",
+    "state_description":"Sold with Code School",
+    "date_started":"2014-09-01",
+    "date_ended":"2016-12-31",
+    "category":"app",
+    "employed":true,
+    "role":"Creator, lead dev",
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/codeschool_icon_80625e9717.png",
+    "parent_project":"codeschool",
+    "tags":[
+      "Ruby on Rails",
+      "PostgreSQL",
+      "Ruby"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2014/codeschool-guidance.md",
+    "content":null
+  },
+  {
+    "title":"Code School Course: JavaScript Best Practices",
+    "slug":null,
+    "description":"An interactive course to learn how to write better JavaScript.",
+    "priority":0,
+    "size":"lg",
+    "years_active":"2014",
+    "state":"transferred",
+    "state_description":"Sold with Code School",
+    "date_started":"2014-02-01",
+    "date_ended":"2014-07-31",
+    "category":"course",
+    "employed":true,
+    "role":"Challenge implementation",
+    "links":[
+      {
+        "url":"https://www.pluralsight.com/courses/code-school-javascript-best-practices",
+        "title":"Pluralsight Course"
+      },
+      {
+        "url":"https://www.youtube.com/watch?v=ND24s-zd5JM&list=PLA57A0401B1F54273&index=54",
+        "title":"Course Jingle"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/javascript_best_practices_58025ba25b.png",
+    "parent_project":"codeschool",
+    "tags":[
+      "JavaScript",
+      "Mocha"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2014/codeschool-javascript-best-practices.md",
+    "content":null
+  },
+  {
+    "title":"Code School Course: Mastering GitHub",
+    "slug":null,
+    "description":"A Code School course on how to collaborate on GitHub.",
+    "priority":25,
+    "size":"md",
+    "years_active":"2014",
+    "state":"transferred",
+    "state_description":"Sold with Code School",
+    "date_started":"2014-05-01",
+    "date_ended":"2014-10-01",
+    "category":"course",
+    "employed":true,
+    "role":"Challenge implementation",
+    "links":[
+      {
+        "url":"https://www.pluralsight.com/courses/code-school-mastering-github",
+        "title":"Pluralsight Course"
+      },
+      {
+        "url":"https://www.youtube.com/watch?v=Q1RJWMsPKBs",
+        "title":"Course Jingle"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/mastering_github_07d7979b6a.png",
+    "parent_project":"codeschool",
+    "tags":[
+      "JavaScript",
+      "Ruby",
+      "Node.js"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2014/codeschool-mastering-github.md",
+    "content":null
+  },
+  {
+    "title":"Projector",
+    "slug":null,
+    "description":"A load balancer for instant switching to different video hosts.",
+    "priority":0,
+    "size":"md",
+    "years_active":"2014",
+    "state":"transferred",
+    "state_description":"Sold with Code School",
+    "date_started":"2014-05-01",
+    "date_ended":"2014-12-31",
+    "category":"app",
+    "employed":true,
+    "role":"Creator, lead dev",
+    "links":[
+      {
+        "url":"https://www.pluralsight.com/blog/software-development/how-a-bug-in-my-ruby-code-cost-code-school-13000-",
+        "title":"Blog post on a major bug"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/codeschool_icon_80625e9717.png",
+    "parent_project":"codeschool",
+    "tags":[
+      "Ruby on Rails",
+      "Ruby"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2014/codeschool-projector.md",
+    "content":null
+  },
+  {
+    "title":"Code School Course: Shaping up with Angular.js",
+    "slug":null,
+    "description":"An interactive course to learn the Angular.js JavaScript framework.",
+    "priority":25,
+    "size":"md",
+    "years_active":"2014",
+    "state":"transferred",
+    "state_description":"Sold with Code School",
+    "date_started":"2014-03-01",
+    "date_ended":"2014-07-01",
+    "category":"course",
+    "employed":true,
+    "role":"Challenge implementation",
+    "links":[
+      {
+        "url":"https://www.youtube.com/watch?v=PF3qr7mMmgA",
+        "title":"Course Jingle"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/shaping_up_with_angular_58b55ab2e3.png",
+    "parent_project":"codeschool",
+    "tags":[
+      "Angular",
+      "Mocha"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2014/codeschool-shaping-up-with-angular-js.md",
+    "content":null
+  },
+  {
+    "title":"Pluralsight",
+    "slug":null,
+    "description":"Democratizing tech education.",
+    "priority":50,
+    "size":"lg",
+    "years_active":"2014-2018",
+    "state":"transferred",
+    "state_description":"IPO'd in 2018",
+    "date_started":"2014-12-14",
+    "date_ended":"2018-12-14",
+    "featured":true,
+    "category":"job",
+    "employed":true,
+    "role":"Product manager",
+    "salary":"$105k -> $135k + $30k extras",
+    "links":[
+      {
+        "url":"https://pluralsight.com",
+        "title":"Pluralsight"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/pluralsight_logo_aceb8d156e.png",
+    "poster_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/Screen_Shot_2022_09_17_at_2_35_38_PM_8ab691b65b",
+    "date":null,
+    "tags":[
+      
+    ],
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2014/pluralsight.md",
+    "content":null
+  },
+  {
+    "title":"Scribe",
+    "slug":null,
+    "description":"A REST API and client side consumer for your Goodreads data.",
+    "priority":0,
+    "size":"sm",
+    "years_active":"2014-2015",
+    "state":"transferred",
+    "state_description":"Iterated to Hardcover",
+    "date_started":"2014-10-13",
+    "date_ended":"2015-12-13",
+    "category":"library",
+    "links":[
+      {
+        "url":"https://github.com/adamfortuna/scribe-api",
+        "title":"Backend code"
+      },
+      {
+        "url":"https://github.com/adamfortuna/scribe-react",
+        "title":"Front-end (React)"
+      },
+      {
+        "url":"https://github.com/adamfortuna/scribe",
+        "title":"Front-end (Angular 1)"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/book_regular_6a8fd74a8c.svg",
+    "tags":[
+      "Ruby on Rails",
+      "Angular",
+      "Ruby",
+      "Bootstrap",
+      "Ember.js",
+      "React"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2014/scribe.md",
+    "content":null
+  },
+  {
+    "title":"AdamFortuna.com v4",
+    "slug":null,
+    "description":"Blog and photo scrapbook.",
+    "priority":0,
+    "size":"md",
+    "years_active":"2015-2022",
+    "state":"transferred",
+    "state_description":"Converted to Strapi/Next.js",
+    "date_started":"2015-07-01",
+    "date_ended":"2016-12-31",
+    "category":"app",
+    "links":[
+      {
+        "url":"http://adamfortuna.com.s3-website-us-east-1.amazonaws.com/",
+        "title":"View V4"
+      },
+      {
+        "url":"https://github.com/adamfortuna/adamfortuna-v4",
+        "title":"Code"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/af_blue_4446868a78.svg",
+    "parent_project":"adamfortuna",
+    "tags":[
+      "Markdown",
+      "Ruby",
+      "Middleman"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2015/adamfortuna-v4.md",
+    "content":null
+  },
+  {
+    "title":"Cocktail Fly",
+    "slug":null,
+    "description":"Find the best places to get cocktails in your favorite cities.",
+    "priority":10,
+    "size":"sm",
+    "years_active":"2015-2016",
+    "state":"retired",
+    "state_description":"Retired in 2016",
+    "date_started":"2015-01-01",
+    "date_ended":"2015-12-31",
+    "category":"app",
+    "links":[
+      {
+        "url":"https://github.com/adamfortuna/cocktailfly",
+        "title":"Code"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/martini_glass_citrus_regular_b968b37037.svg",
+    "poster_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/cocktailfly_12d727656b",
+    "tags":[
+      "Ruby on Rails",
+      "Heroku",
+      "Google Maps API",
+      "JavaScript",
+      "Ruby",
+      "jQuery",
+      "Bootstrap"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2015/cocktailfly.md",
+    "content":null
+  },
+  {
+    "title":"Code School Course: Blasting Off with Bootstrap",
+    "slug":null,
+    "description":"A Code School teaching how to use the Bootstrap CSS framework.",
+    "priority":50,
+    "size":"lg",
+    "years_active":"2015",
+    "state":"transferred",
+    "state_description":"Migrated to Pluralsight",
+    "date_started":"2015-01-01",
+    "date_ended":"2015-08-04",
+    "featured":true,
+    "category":"course",
+    "employed":true,
+    "role":"Instructor",
+    "links":[
+      {
+        "url":"https://www.pluralsight.com/courses/code-school-blasting-off-with-bootstrap",
+        "title":"Pluralsight Course"
+      },
+      {
+        "url":"https://www.youtube.com/watch?v=gBnhe7JBovI",
+        "title":"Course Jingle"
+      },
+      {
+        "url":"https://twitter.com/adamfortuna/status/979792717902311424",
+        "title":"Demo"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/blasting_off_bootstrap_removebg_preview_fc429ea585.png",
+    "poster_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/Screen_Shot_2022_09_17_at_2_34_52_PM_568b2d0cee",
+    "parent_project":"codeschool",
+    "tags":[
+      "jQuery",
+      "Bootstrap",
+      "Mocha"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2015/codeschool-blasting-off-with-bootstrap.md",
+    "content":null
+  },
+  {
+    "title":"JavaScript.com",
+    "slug":null,
+    "description":"A quick interactive demo to introduce JavaScript syntax.",
+    "priority":0,
+    "size":"md",
+    "years_active":"2015",
+    "state":"transferred",
+    "state_description":"Migrated to Pluralsight",
+    "date_started":"2015-04-01",
+    "date_ended":"2015-06-30",
+    "category":"course",
+    "employed":true,
+    "role":"\"Try JavaScript\" Experience",
+    "links":[
+      {
+        "url":"https://web.archive.org/web/20161212153112/https://www.javascript.com",
+        "title":"Archived Site"
+      },
+      {
+        "url":"https://www.javascript.com/try",
+        "title":"Play Course"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/javascript_icon_080c3b01ff.png",
+    "parent_project":"codeschool",
+    "tags":[
+      "Angular",
+      "JavaScript"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2015/javascript-com.md",
+    "content":null
+  },
+  {
+    "title":"NG Guess",
+    "slug":null,
+    "description":"Take a guess at when Angular 2 will be released.",
+    "priority":10,
+    "size":"sm",
+    "years_active":"2015-2016",
+    "state":"retired",
+    "state_description":"Shut down in 2016",
+    "date_started":"2015-01-01",
+    "date_ended":"2016-01-01",
+    "category":"app",
+    "links":[
+      {
+        "url":"https://github.com/adamfortuna/ng-guess",
+        "title":"Code"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/ngguess_469fe3e976.png",
+    "poster_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/ngguess_76ea57ad04",
+    "tags":[
+      "Angular",
+      "Firebase"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2015/ng-guess.md",
+    "content":null
+  },
+  {
+    "title":"Code School Projects",
+    "slug":null,
+    "description":"Real-world coding projects run on your local computer.",
+    "priority":0,
+    "size":"md",
+    "years_active":"2016",
+    "state":"transferred",
+    "state_description":"Sold with Code School",
+    "date_started":"2016-06-01",
+    "date_ended":"2016-09-30",
+    "category":"experience",
+    "employed":true,
+    "role":"Product manager, back-end dev",
+    "links":[
+      {
+        "url":"https://github.com/codeschool/HTMLPortfolioProject",
+        "title":"HTML Portfolio Project"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/codeschool_icon_80625e9717.png",
+    "parent_project":"codeschool",
+    "date":null,
+    "tags":[
+      
+    ],
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2016/codeschool-projects.md",
+    "content":null
+  },
+  {
+    "title":"Tutor",
+    "slug":null,
+    "description":"A back-end code checker for Code School courses.",
+    "priority":25,
+    "size":"md",
+    "years_active":"2016-2018",
+    "state":"transferred",
+    "state_description":"Sold with Code School",
+    "date_started":"2016-07-01",
+    "date_ended":"2017-01-01",
+    "category":"library",
+    "employed":true,
+    "role":"Creator, lead dev",
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/codeschool_icon_80625e9717.png",
+    "parent_project":"codeschool",
+    "tags":[
+      "Node.js"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2016/codeschool-tutor.md",
+    "content":null
+  },
+  {
+    "title":"Minafi",
+    "slug":null,
+    "description":"A minimalist approach to investing for retirement.",
+    "priority":40,
+    "size":"lg",
+    "years_active":"2016-now",
+    "state":"live",
+    "state_description":"Live since 2016",
+    "date_started":"2016-06-01",
+    "featured":true,
+    "category":"app",
+    "role":"Founder",
+    "links":[
+      {
+        "url":"https://minafi.com",
+        "title":"Minafi.com"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/minafi_logo_11e489e1f3.svg",
+    "poster_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/Screen_Shot_2022_08_29_at_12_00_55_PM_c2265a5919",
+    "tags":[
+      "Ruby on Rails",
+      "WordPress",
+      "PostgreSQL",
+      "D3.js",
+      "Vue.js"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2016/minafi.md",
+    "content":null
+  },
+  {
+    "title":"An Interactive Guide to Early Retirement and Financial Independence",
+    "slug":null,
+    "description":"An interactive article detailing how to invest for retirement.",
+    "priority":25,
+    "size":"lg",
+    "years_active":"2017-2019",
+    "state":"live",
+    "state_description":"Since in 2017",
+    "date_started":"2017-07-01",
+    "date_ended":"2017-09-30",
+    "category":"experience",
+    "role":"Sole creator.",
+    "links":[
+      {
+        "url":"https://minafi.com/interactive-guide-early-retirement-financial-independence",
+        "title":"Read the interactive guide"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/minafi_logo_11e489e1f3.svg",
+    "poster_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/fire_guide_poster_d0cca0f53c",
+    "parent_project":"minafi",
+    "tags":[
+      "WordPress",
+      "JavaScript",
+      "D3.js",
+      "Vue.js",
+      "Tailwind.css"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2017/fire-guide.md",
+    "content":null
+  },
+  {
+    "title":"Carbon",
+    "slug":null,
+    "description":"Data platform for Pluralsight product research.",
+    "priority":0,
+    "size":"md",
+    "years_active":"2017-2018",
+    "state":"left",
+    "state_description":"Left in 2018",
+    "date_started":"2017-01-01",
+    "date_ended":"2018-12-14",
+    "category":"app",
+    "employed":true,
+    "role":"Creator, lead dev",
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/pluralsight_logo_aceb8d156e.png",
+    "parent_project":"pluralsight",
+    "tags":[
+      "Ruby on Rails",
+      "PostgreSQL",
+      "Sass",
+      "Markdown",
+      "JavaScript",
+      "Ruby"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2017/pluralsight-carbon.md",
+    "content":null
+  },
+  {
+    "title":"Pluralsight Projects",
+    "slug":null,
+    "description":"Real-world coding projects run on your local computer.",
+    "priority":25,
+    "size":"md",
+    "years_active":"2017-2018",
+    "state":"left",
+    "state_description":"Left in 2018",
+    "date_started":"2017-06-01",
+    "date_ended":"2018-12-14",
+    "category":"experience",
+    "employed":true,
+    "role":"Product manager",
+    "links":[
+      {
+        "url":"https://github.com/pluralsight/HelloPluralsightProject",
+        "title":"Hello Pluralsight Project"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/pluralsight_logo_aceb8d156e.png",
+    "parent_project":"pluralsight",
+    "date":null,
+    "tags":[
+      
+    ],
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2017/pluralsight-projects.md",
+    "content":null
+  },
+  {
+    "title":"The Minimal Investor",
+    "slug":null,
+    "description":"Learn everything you need to know to invest for the rest of your life.",
+    "priority":0,
+    "size":"lg",
+    "years_active":"2017",
+    "state":"live",
+    "state_description":"Live",
+    "date_started":"2017-09-01",
+    "date_ended":"2017-12-31",
+    "category":"course",
+    "role":"Wrote the content.",
+    "links":[
+      {
+        "url":"https://minafi.com/courses/the-minimal-investor",
+        "title":"Take the free course"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/minafi_logo_11e489e1f3.svg",
+    "parent_project":"minafi",
+    "tags":[
+      "Ruby on Rails",
+      "WordPress",
+      "PostgreSQL",
+      "Heroku",
+      "JavaScript",
+      "D3.js",
+      "Ruby"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2017/the-minimal-investor.md",
+    "content":null
+  },
+  {
+    "title":"Gender Pay Gap Data Exploration",
+    "slug":null,
+    "description":"A data-heavy exploration into the gender pay gap.",
+    "priority":0,
+    "size":"sm",
+    "years_active":"2018",
+    "state":"live",
+    "state_description":"Live",
+    "date_started":"2018-03-01",
+    "date_ended":"2018-05-31",
+    "category":"experience",
+    "links":[
+      {
+        "url":"https://minafi.com/gender-pay-gap",
+        "title":"Gender Pay Gap"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/minafi_logo_11e489e1f3.svg",
+    "parent_project":"minafi",
+    "tags":[
+      "WordPress",
+      "Tableau"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2018/minafi-gender-paygap.md",
+    "content":null
+  },
+  {
+    "title":"An Interactive Guide to Portfolio Diversification",
+    "slug":null,
+    "description":"An interactive visualization and tool to understand the impacts of diversification on portfolio returns.",
+    "priority":0,
+    "size":"md",
+    "years_active":"2019",
+    "state":"live",
+    "state_description":"Live",
+    "date_started":"2019-08-01",
+    "date_ended":"2019-10-01",
+    "category":"experience",
+    "links":[
+      {
+        "url":"https://minafi.com/diversification",
+        "title":"Interactive Guide"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/minafi_logo_11e489e1f3.svg",
+    "poster_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/diversification_poster_2f053e1745",
+    "parent_project":"minafi",
+    "tags":[
+      "WordPress",
+      "JavaScript",
+      "D3.js",
+      "Vue.js"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2019/minafi-diversification.md",
+    "content":null
+  },
+  {
+    "title":"Minafi Fund Directory",
+    "slug":null,
+    "description":"A directory of 10k+ ETFs and mutual funds.",
+    "priority":0,
+    "size":"md",
+    "years_active":"2019-2020",
+    "state":"live",
+    "state_description":"Live",
+    "date_started":"2019-12-29",
+    "date_ended":"2020-06-30",
+    "category":"experience",
+    "links":[
+      {
+        "url":"https://minafi.com/funds",
+        "title":"Investment fund directory"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/minafi_logo_11e489e1f3.svg",
+    "poster_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/fund_poster_671359a482",
+    "parent_project":"minafi",
+    "tags":[
+      "Ruby on Rails",
+      "Heroku",
+      "D3.js",
+      "Ruby",
+      "Vue.js"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2019/minafi-fund-directory.md",
+    "content":null
+  },
+  {
+    "title":"Minafi Investor Bootcamp",
+    "slug":null,
+    "description":"A pay-what-you-want course to learn how to invest on your own using the same techniques Warren Buffet recommends.",
+    "priority":50,
+    "size":"lg",
+    "years_active":"2019-2020",
+    "state":"live",
+    "state_description":"Available",
+    "date_started":"2019-10-01",
+    "date_ended":"2020-02-01",
+    "category":"course",
+    "links":[
+      {
+        "url":"https://minafi.com/bootcamp",
+        "title":"Join the Investor Bootcamp!"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/minafi_logo_11e489e1f3.svg",
+    "poster_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/Screen_Shot_2022_09_02_at_7_05_46_PM_0b7eb66aff",
+    "parent_project":"minafi",
+    "tags":[
+      "Ruby on Rails",
+      "WordPress",
+      "PostgreSQL",
+      "Heroku",
+      "D3.js",
+      "Ruby",
+      "Vue.js"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2019/minafi-investor-bootcamp.md",
+    "content":null
+  },
+  {
+    "title":"The Periodic Table of FIRE",
+    "slug":null,
+    "description":"A fun way to explore the main concepts of the FIRE movement.",
+    "priority":0,
+    "size":"sm",
+    "years_active":"2019",
+    "state":"live",
+    "state_description":"Live",
+    "date_started":"2019-05-01",
+    "date_ended":"2019-08-31",
+    "category":"experience",
+    "links":[
+      {
+        "url":"https://minafi.com/periodic-table-of-fire",
+        "title":"Periodic Table of FIRE"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/minafi_logo_11e489e1f3.svg",
+    "poster_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/periodic_fire_guide_fadf579b96",
+    "parent_project":"minafi",
+    "tags":[
+      "JavaScript",
+      "D3.js",
+      "Vue.js"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2019/minafi-periodic-table-of-fire.md",
+    "content":null
+  },
+  {
+    "title":"YNAB Visual Budgeter",
+    "slug":null,
+    "description":"Turn YNAB Budgets into financial building blocks.",
+    "priority":0,
+    "size":"sm",
+    "years_active":"2019",
+    "state":"retired",
+    "state_description":"Never launched",
+    "date_started":"2019-04-01",
+    "date_ended":"2019-05-31",
+    "category":"app",
+    "links":[
+      {
+        "url":"https://github.com/adamfortuna/ynab-allocations",
+        "title":"Code"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/wallet_regular_4baab1acc9.svg",
+    "tags":[
+      "Ruby on Rails",
+      "jQuery"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2019/ynab-visual-budgeter.md",
+    "content":null
+  },
+  {
+    "title":"Which Accounts Should You Use to Invest for Retirement?",
+    "slug":null,
+    "description":"An interactive tool to understand which accounts you should use for retirement.",
+    "priority":0,
+    "size":"sm",
+    "years_active":"2020",
+    "state":"live",
+    "state_description":"Live",
+    "date_started":"2020-08-01",
+    "date_ended":"2020-09-30",
+    "category":"experience",
+    "links":[
+      {
+        "url":"https://minafi.com/which-accounts-to-invest-for-retirement",
+        "title":"Accounts for Retirement"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/minafi_logo_11e489e1f3.svg",
+    "parent_project":"minafi",
+    "tags":[
+      "WordPress",
+      "JavaScript",
+      "Vue.js",
+      "Tailwind.css"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2020/minafi-accounts-for-retirement.md",
+    "content":null
+  },
+  {
+    "title":"Retirement Monte Carlo Simulator",
+    "slug":null,
+    "description":"A simulator for running retirement scenarios.",
+    "priority":0,
+    "size":"sm",
+    "years_active":"2020",
+    "state":"live",
+    "state_description":"Live",
+    "date_started":"2020-08-01",
+    "date_ended":"2020-10-31",
+    "category":"experience",
+    "links":[
+      {
+        "url":"https://minafi.com/calculators/retirement",
+        "title":"Monte Carlo Simulator"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/minafi_logo_11e489e1f3.svg",
+    "parent_project":"minafi",
+    "tags":[
+      "WordPress",
+      "JavaScript",
+      "Vue.js"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2020/minafi-retirement-simulator.md",
+    "content":null
+  },
+  {
+    "title":"Productist",
+    "slug":null,
+    "description":"A checklist for your productivity.",
+    "priority":0,
+    "size":"sm",
+    "years_active":"2020-2021",
+    "state":"transferred",
+    "state_description":"Pivoted to Line of Thought",
+    "date_started":"2020-07-08",
+    "date_ended":"2021-01-23",
+    "category":"app",
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/check_regular_b1ab7952c6.svg",
+    "tags":[
+      "Ruby on Rails",
+      "PostgreSQL",
+      "D3.js",
+      "GraphQL",
+      "Vue.js",
+      "Tailwind.css"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2020/productist.md",
+    "content":null
+  },
+  {
+    "title":"Ragnarok Online Market Database",
+    "slug":null,
+    "description":"A database of current and historical item prices for the game Ragnarok Online in order to find the best deals in the marketplace.",
+    "priority":0,
+    "size":"sm",
+    "years_active":"2020",
+    "state":"retired",
+    "state_description":"Retired in 2020",
+    "date_started":"2020-03-28",
+    "date_ended":"2020-05-21",
+    "category":"app",
+    "role":"Developer",
+    "links":[
+      {
+        "url":"https://github.com/adamfortuna/ragnarok",
+        "title":"Code"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/hat_wizard_regular_5e4222250a.svg",
+    "tags":[
+      "Ruby on Rails",
+      "PostgreSQL",
+      "Heroku",
+      "Ruby"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2020/ragnarok.md",
+    "content":null
+  },
+  {
+    "title":"Hardcover Social Feed",
+    "slug":null,
+    "description":"A custom feed of a reader's Hardcover book activity, friending options, and friend-based privacy.",
+    "priority":0,
+    "size":"md",
+    "years_active":"2021-2022",
+    "state":"live",
+    "state_description":"Live",
+    "date_started":"2021-10-01",
+    "date_ended":"2022-03-05",
+    "category":"experience",
+    "employed":true,
+    "role":"Developer, researcher",
+    "links":[
+      {
+        "url":"https://hardcover.app/blog/is-hardcover-a-social-network",
+        "title":"Blog post: Is Hardcover a Social Network?"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/hardcover_logo_space_c6c29aabe7.png",
+    "tags":[
+      "Ruby on Rails",
+      "Next.js",
+      "Hasura",
+      "GraphQL",
+      "React",
+      "Tailwind.css"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2021/hardcover-social-feed.md",
+    "content":null
+  },
+  {
+    "title":"Hardcover",
+    "slug":null,
+    "description":"A social network for readers to find life-changing books.",
+    "priority":80,
+    "size":"lg",
+    "years_active":"2021-now",
+    "state":"live",
+    "state_description":"In beta",
+    "date_started":"2021-05-01",
+    "featured":true,
+    "category":"app",
+    "employed":true,
+    "role":"Founder & full-stack developer",
+    "links":[
+      {
+        "url":"https://hardcover.app",
+        "title":"Hardcover.app"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/hardcover_logo_space_c6c29aabe7.png",
+    "tags":[
+      "PostgreSQL",
+      "Next.js",
+      "Hasura",
+      "WordPress",
+      "Tailwind.css",
+      "React",
+      "Ruby",
+      "Heroku",
+      "Ruby on Rails",
+      "GraphQL"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2021/hardcover.md",
+    "content":null
+  },
+  {
+    "title":"FIRE Number With Taxes Calculator",
+    "slug":null,
+    "description":"Calculate your retirement number with taxes included.",
+    "priority":0,
+    "size":"sm",
+    "years_active":"2021",
+    "state":"live",
+    "state_description":"Live",
+    "date_started":"2021-03-01",
+    "date_ended":"2021-04-30",
+    "category":"experience",
+    "links":[
+      {
+        "url":"https://minafi.com/fire-tax",
+        "title":"FIRE Tax Calculator"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/minafi_logo_11e489e1f3.svg",
+    "parent_project":"minafi",
+    "tags":[
+      "WordPress",
+      "JavaScript",
+      "Vue.js"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2021/minafi-fire-tax.md",
+    "content":null
+  },
+  {
+    "title":"Minafi Investment Apps Directory",
+    "slug":null,
+    "description":"A directory of investment platforms reviewed and rated.",
+    "priority":0,
+    "size":"sm",
+    "years_active":"2021",
+    "state":"live",
+    "state_description":"Live",
+    "date_started":"2021-01-02",
+    "date_ended":"2021-02-28",
+    "category":"experience",
+    "links":[
+      {
+        "url":"https://minafi.com/invest",
+        "title":"Investment Apps Directory"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/minafi_logo_11e489e1f3.svg",
+    "parent_project":"minafi",
+    "tags":[
+      "Ruby on Rails",
+      "Ruby"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2021/minafi-investment-apps.md",
+    "content":null
+  },
+  {
+    "title":"Seek Adventures",
+    "slug":null,
+    "description":"Turn AllTrails hikes into beautiful stories.",
+    "priority":5,
+    "size":"sm",
+    "years_active":"2021-now",
+    "state":"idea",
+    "state_description":"Prototyping",
+    "date_started":"2021-08-01",
+    "category":"app",
+    "links":[
+      {
+        "url":"https://seekad.ventures/",
+        "title":"Future site location"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/mountains_regular_1_cb81374393.svg",
+    "date":null,
+    "tags":[
+      
+    ],
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2021/seek-adventures.md",
+    "content":null
+  },
+  {
+    "title":"Hardcover Airlists",
+    "slug":null,
+    "description":"An Airtable-like experience for your books for filtering, and sorting, with multiple views, sizes, and more reused throughout Hardcover.",
+    "priority":0,
+    "size":"md",
+    "years_active":"2022",
+    "state":"live",
+    "state_description":"Live",
+    "date_started":"2022-04-01",
+    "date_ended":"2022-07-15",
+    "category":"experience",
+    "employed":true,
+    "role":"Developer, researcher",
+    "links":[
+      {
+        "url":"https://hardcover.app/blog/airlists",
+        "title":"Blog post about Airlists"
+      },
+      {
+        "url":"https://hardcover.app/@hardcover/lists/npr-top-50-science-fiction-and-fantasy-books-of-the-2010s",
+        "title":"Example Airlist: NPR Top 50 Sci-fi/Fantasy Books"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/hardcover_logo_space_c6c29aabe7.png",
+    "parent_project":"hardcover",
+    "tags":[
+      "Ruby on Rails",
+      "Next.js",
+      "Ruby",
+      "Hasura",
+      "GraphQL",
+      "React",
+      "Tailwind.css"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2022/hardcover-airlists.md",
+    "content":null
+  },
+  {
+    "title":"Hardcover Match Percentage",
+    "slug":null,
+    "description":"A score from 0% to 100% indicating how much Hardcover believes you'll enjoy that book.",
+    "priority":0,
+    "size":"sm",
+    "years_active":"2022",
+    "state":"live",
+    "state_description":"Live",
+    "date_started":"2022-04-01",
+    "date_ended":"2022-05-31",
+    "category":"experience",
+    "employed":true,
+    "role":"Developer",
+    "links":[
+      {
+        "url":"https://hardcover.app/blog/match-percentage",
+        "title":"Blog post: 7 Ways You Can Use Match Percentage To Find Amazing Books Today"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/hardcover_logo_space_c6c29aabe7.png",
+    "tags":[
+      "Next.js",
+      "Ruby",
+      "Hasura",
+      "React"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2022/hardcover-match-percentage.md",
+    "content":null
+  },
+  {
+    "title":"Line of Thought",
+    "slug":null,
+    "description":"A minimalist mood and life tracker.",
+    "priority":20,
+    "size":"md",
+    "years_active":"2022-now",
+    "state":"development",
+    "state_description":"Iterating",
+    "date_started":"2022-08-01",
+    "featured":true,
+    "category":"app",
+    "links":[
+      {
+        "url":"https://lineofthought.com/",
+        "title":"Try the demo"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/lineofthought_icon_db1bb412a0.png",
+    "poster_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/lineofthought_screenshot_79e28dd3d6",
+    "tags":[
+      "Next.js",
+      "PostgreSQL",
+      "Hasura",
+      "GraphQL",
+      "Tailwind.css"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2022/line-of-thought.md",
+    "content":null
+  }
+]

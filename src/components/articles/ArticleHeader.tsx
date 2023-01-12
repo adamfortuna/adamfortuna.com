@@ -1,13 +1,13 @@
 import { useMemo } from 'react'
 import Link from 'next/link'
-import { Article } from '@/types'
+import { Page, Post } from '@/types'
 import { dateFormatLong } from '@/lib/dateService'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/pro-solid-svg-icons'
 import Tags from './Tags'
 
 export interface ArticleHeaderProps {
-  article: Article
+  article: Page | Post
 }
 
 export const ArticleHeader = ({ article }: ArticleHeaderProps) => {
@@ -17,7 +17,7 @@ export const ArticleHeader = ({ article }: ArticleHeaderProps) => {
     <div className="mb-6 px-2">
       <div className="max-w-5xl mx-auto mb-2">
         <p className="sm:justify-center flex flex-row items-center">
-          <Link href="/blog" className="link--blue text-sm flex items-center" prefetch={false}>
+          <Link href="/blog" className="link--blue text-sm flex items-center">
             <FontAwesomeIcon icon={faArrowLeft} size="sm" className="w-4 h-4 inline" />
             <span className="pl-1">Blog</span>
           </Link>

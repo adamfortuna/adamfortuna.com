@@ -7,3 +7,4 @@ out
 src/lib/graphql/output.tsx
 _.png
 *.svg
+*.json

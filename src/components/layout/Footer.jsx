@@ -12,8 +12,6 @@ export const FooterLink = ({ href, children }) => {
   )
 }
 
-// text-sky-800 hover:bg-sky-600 hover:text-white
-
 export const Footer = () => {
   return (
     <footer className="mt-12">

@@ -1,3 +1,5 @@
+'use client'
+
 import Mountains from '@/images/mountains.svg'
 // import { AnimalControls } from './AnimalControls'
 import { MountainProvider } from './useMountain'

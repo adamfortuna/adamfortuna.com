@@ -1,4 +1,4 @@
-import { getPostBySlug } from '@/queries/wordpress/getPostBySlug'
+import { getPostOrPageBySlug } from '@/queries/wordpress/getPostOrPageBySlug'
 import { ArticleContentHtml } from '@/components/articles/ArticleContent'
 import { ArticleHeader } from '@/components/articles/ArticleHeader'
 
@@ -8,7 +8,7 @@ interface PageProps {
 }
 export const revalidate = 60 * 60 // 60 minutes
 export default async function Page({ params }: PageProps) {
-  const article = await getPostBySlug(params.slug)
+  const article = await getPostOrPageBySlug(params.slug)
   if (!article) return null
 
   return (

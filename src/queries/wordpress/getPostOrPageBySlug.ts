@@ -1,0 +1,83 @@
+import wordpressClient, { parsePage, parsePost } from '@/lib/wordpressClient'
+import { gql } from '@apollo/client'
+
+export const findWordpressPost = gql`
+  query GetWordPressPost($slug: String!) {
+    post: postBy(slug: $slug) {
+      title
+      content
+      excerpt(format: RAW)
+      date
+      slug
+      featuredImage {
+        node {
+          sourceUrl
+          mediaDetails {
+            width
+            height
+          }
+        }
+      }
+      categories {
+        nodes {
+          name
+          slug
+        }
+      }
+
+      tags {
+        nodes {
+          name
+          slug
+        }
+      }
+    }
+
+    page: pageBy(uri: $slug) {
+      title
+      content
+      date
+      slug
+      featuredImage {
+        node {
+          sourceUrl
+          mediaDetails {
+            width
+            height
+          }
+        }
+      }
+    }
+  }
+`
+
+export const getPostOrPageBySlug = (slug: string) => {
+  return wordpressClient
+    .query({
+      query: findWordpressPost,
+      variables: {
+        slug,
+      },
+    })
+    .then((result) => {
+      if (!result.data.post && !result.data.page) {
+        return null
+      }
+      if (result.data.post) {
+        return parsePost(
+          {
+            ...result.data.post,
+            project: 'adamfortuna',
+          },
+          true,
+        )
+      }
+      if (result.data.page) {
+        return parsePage({
+          ...result.data.page,
+          project: 'adamfortuna',
+        })
+      }
+      return null
+    })
+}

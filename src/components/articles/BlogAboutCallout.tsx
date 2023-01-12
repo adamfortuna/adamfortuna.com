@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useState } from 'react'
 import { faRss, faStar, faTypewriter } from '@fortawesome/pro-duotone-svg-icons'
 import Link from 'next/link'

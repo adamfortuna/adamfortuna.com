@@ -1,6 +1,4 @@
 import '@/styles/tailwind.css'
-import { Footer } from '@/components/layout/Footer'
-import { Header } from '@/components/layout/Header'
 
 import { Pacifico } from '@next/font/google'
 
@@ -13,11 +11,7 @@ const pacifico = Pacifico({
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html className={`${pacifico.variable} h-full antialiased`} lang="en">
-      <body className="flex h-full flex-col bg-white">
-        <Header />
-        <main>{children}</main>
-        <Footer />
-      </body>
+      <body className="flex h-full flex-col bg-white">{children}</body>
     </html>
   )
 }

@@ -27,17 +27,22 @@ export interface Project {
 export interface Article {
   slug: string
   title: string
-  tags?: Tag[]
-  excerpt?: string
   content?: string
   date: string
   project: WordpressClientIdentifier
-  categories?: Category[]
   readingTime?: number
   external: boolean
   url: string
   featuredImage: WordpressImage
+
+  // Todo: Move these to Post
+  tags?: Tag[]
+  categories?: Category[]
+  excerpt?: string
 }
+
+export interface Post extends Article {}
+export interface Page extends Article {}
 
 export interface ArticlesListType {
   articles: Article[]
