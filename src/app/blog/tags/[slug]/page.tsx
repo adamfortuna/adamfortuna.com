@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { ArticlesList } from '@/components/articles/ArticlesList'
 import BlogAboutCallout from '@/components/articles/BlogAboutCallout'
 import { getRecentPostsByTag } from '@/queries/wordpress/getRecentPostsByTag'
+import { getTags } from '@/queries/wordpress/getTags'
 
 interface PageProps {
   params: any
@@ -38,4 +39,12 @@ export default async function BlogTagPage({ params }: PageProps) {
       <ArticlesList articles={articles} />
     </>
   )
+}
+
+export async function generateStaticParams() {
+  const tags = await getTags()
+
+  return tags.map((tag) => ({
+    slug: tag.slug,
+  }))
 }

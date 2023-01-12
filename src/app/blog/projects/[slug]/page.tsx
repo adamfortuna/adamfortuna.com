@@ -47,3 +47,11 @@ export default async function BlogProjectPage({ params }: PageProps) {
     </>
   )
 }
+
+export async function generateStaticParams() {
+  const projects = ['adamfortuna', 'hardcover', 'minafi']
+
+  return projects.map((project) => ({
+    slug: project,
+  }))
+}
