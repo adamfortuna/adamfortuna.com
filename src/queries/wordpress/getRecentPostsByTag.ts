@@ -73,6 +73,12 @@ export const getRecentPostsByTag = async ({
   projects?: WordpressClientIdentifier[]
 }) => {
   const foundTag = await getTag(tag)
+  if (!foundTag) {
+    return {
+      articles: [],
+      tag: null,
+    }
+  }
 
   const finders = projects.map((p) => getRecentPostsByProjectAndTag(p, tag, count))
   const results = await Promise.all(finders)

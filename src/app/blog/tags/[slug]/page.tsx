@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { ArticlesList } from '@/components/articles/ArticlesList'
 import BlogAboutCallout from '@/components/articles/BlogAboutCallout'
@@ -8,8 +9,11 @@ interface PageProps {
   params: any
   children?: React.ReactNode
 }
-export default async function BlogTagPage({ params }: PageProps) {
+export default async function TagPage({ params }: PageProps) {
   const { articles, tag } = await getRecentPostsByTag({ count: 1000, tag: params.slug })
+  if (!tag) {
+    notFound()
+  }
 
   return (
     <>
