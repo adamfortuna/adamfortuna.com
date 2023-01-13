@@ -18,8 +18,8 @@ const ArticleMetadata = ({ article }: { article: Article }) => (
         )}
       </>
     )}
-    <meta property="og:description" content={article.excerpt} />
-    <meta name="description" content={article.excerpt} />
+    <meta property="og:description" content={article.excerpt || article.title} />
+    <meta name="description" content={article.excerpt || article.title} />
 
     <meta property="article:published_time" content={article.date} />
     <meta property="article:author" content="Adam Fortuna" />
