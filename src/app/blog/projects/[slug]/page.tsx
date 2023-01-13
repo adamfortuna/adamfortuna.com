@@ -6,8 +6,6 @@ import { WordpressClientIdentifier } from '@/types'
 
 const titleize = (category: WordpressClientIdentifier) => {
   switch (category) {
-    case 'adamfortuna':
-      return 'Adam Fortuna'
     case 'minafi':
       return 'Minafi'
     case 'hardcover':
@@ -18,11 +16,13 @@ const titleize = (category: WordpressClientIdentifier) => {
 }
 
 interface PageProps {
-  params: any
+  params: {
+    slug: WordpressClientIdentifier
+  }
   children?: React.ReactNode
 }
-export default async function BlogProjectPage({ params }: PageProps) {
-  const articles = await getRecentPosts({ count: 1000, projects: [params.slug] })
+export default async function BlogProjectPage({ params: { slug } }: PageProps) {
+  const articles = await getRecentPosts({ count: 1000, projects: [slug] })
 
   return (
     <>
@@ -39,7 +39,7 @@ export default async function BlogProjectPage({ params }: PageProps) {
           </Link>
         </span>
         <span className="text-2xl mx-2">/</span>
-        <span>{titleize(params.slug)}</span>
+        <span>{titleize(slug)}</span>
       </p>
       <BlogAboutCallout />
 

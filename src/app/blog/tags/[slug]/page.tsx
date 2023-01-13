@@ -1,3 +1,4 @@
+import 'server-only'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { ArticlesList } from '@/components/articles/ArticlesList'
@@ -6,11 +7,12 @@ import { getRecentPostsByTag } from '@/queries/wordpress/getRecentPostsByTag'
 import { getTags } from '@/queries/wordpress/getTags'
 
 interface PageProps {
-  params: any
-  children?: React.ReactNode
+  params: {
+    slug: string
+  }
 }
-export default async function TagPage({ params }: PageProps) {
-  const { articles, tag } = await getRecentPostsByTag({ count: 1000, tag: params.slug })
+export default async function TagPage({ params: { slug } }: PageProps) {
+  const { articles, tag } = await getRecentPostsByTag({ count: 1000, tag: slug })
   if (!tag) {
     notFound()
   }
@@ -48,7 +50,9 @@ export default async function TagPage({ params }: PageProps) {
 export async function generateStaticParams() {
   const tags = await getTags()
 
-  return tags.map((tag) => ({
-    slug: tag.slug,
-  }))
+  return tags
+    .filter((t) => t.count && t.count > 0)
+    .map((tag) => ({
+      slug: tag.slug,
+    }))
 }

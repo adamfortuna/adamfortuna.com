@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unnecessary-condition */
 import { Article, Page, Post, Tag, WordpressPost, WordpressPage, WordpressClientIdentifier, Category } from '@/types'
 import omitBy from 'lodash/omitBy'
+import { Md5 } from 'ts-md5'
 
 const parseUrl = (post: WordpressPost) => {
   if (post.project === 'minafi') {
@@ -92,7 +93,17 @@ export const fetchClient = ({
   query: string
   variables?: any
 }) => {
-  return fetch(url, {
+  const hash = Md5.hashStr(
+    JSON.stringify({
+      ...{
+        url,
+        query,
+        key,
+      },
+      ...variables,
+    }),
+  )
+  return fetch(`${url}#${hash})}`, {
     method: 'POST',
     cache: 'force-cache',
     next: {

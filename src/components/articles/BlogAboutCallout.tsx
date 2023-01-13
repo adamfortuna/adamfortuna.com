@@ -55,7 +55,7 @@ const BlogAboutCallout = () => {
               className="bg-yellow-400 hover:bg-yellow-500 rounded px-1 py-0.5 mx-1 text-blue-800 space-x-2"
             >
               <FontAwesomeIcon icon={faTypewriter} className="text-blue-800 w-4 h-4 inline" size="1x" />
-              <span>1,234 posts</span>
+              <span>1,000+ posts</span>
             </Link>
             about software/personal development, technology, minimalism, FIRE, movies, startups and my life. These span{' '}
             <b>three separate blogs</b>, with all articles linked from here.

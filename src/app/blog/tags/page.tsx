@@ -16,19 +16,16 @@ export default async function BlogTagsPage() {
         <span className="text-2xl mx-2">/</span>
         <span>Tags</span>
       </p>
+
       <BlogAboutCallout />
 
-      <div className="pt-4" />
-      <div>
+      <div className="pt-4">
         {tags.map((tag) => (
-          <div key={tag.slug} className="p-2">
-            <p>
-              {tag.slug}
-              <Link href={`/blog/tags/${tag.slug}`} className="link--blue">
-                {tag.name} ({tag.count})
-              </Link>
-            </p>
-          </div>
+          <p key={tag.slug} className="p-2">
+            <Link href={`/blog/tags/${tag.slug}`} className="link--blue">
+              {tag.name} ({tag.count})
+            </Link>
+          </p>
         ))}
       </div>
     </>

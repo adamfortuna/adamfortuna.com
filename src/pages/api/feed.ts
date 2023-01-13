@@ -22,7 +22,7 @@ handler.get(async (req: NextApiRequest, res: NextApiResponse) => {
 
     const postItems = articles
       .map((article) => {
-        const url = `${process.env.NEXT_PUBLIC_VERCEL_URL}/articles/${article.slug}`
+        const url = `${process.env.NEXT_PUBLIC_VERCEL_URL}/${article.slug}`
 
         return `<item>
       <title>${article.title}</title>
