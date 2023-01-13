@@ -4,13 +4,16 @@ import { ArticleContentHtml } from '@/components/articles/ArticleContent'
 import { ArticleHeader } from '@/components/articles/ArticleHeader'
 import { getRecentPosts } from '@/queries/wordpress/getRecentPosts'
 
-interface PageProps {
-  params: any
-  children?: React.ReactNode
-}
 export const revalidate = 60 * 60 // 60 minutes
-export default async function Page({ params }: PageProps) {
-  const article = await getPostOrPageBySlug(params.slug)
+
+interface PageProps {
+  params: {
+    slug: string
+  }
+}
+
+export default async function Page({ params: { slug } }: PageProps) {
+  const article = await getPostOrPageBySlug(slug)
   if (!article) {
     notFound()
   }

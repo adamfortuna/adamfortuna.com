@@ -15,7 +15,9 @@ export const findWordPressTags = `
 `
 
 export const getTagsByProject = async (project: WordpressClientIdentifier) => {
-  return getClientForProject(project)({ query: findWordPressTags }).then((result) => parseTags(result.data.tags.nodes))
+  return getClientForProject(project)({ query: findWordPressTags }).then((result) => {
+    return result.data.tags ? parseTags(result.data.tags.nodes) : []
+  })
 }
 
 export const getTags = async () => {
@@ -41,6 +43,7 @@ export const getTags = async () => {
       } as Tag
     }
   })
+
   const unsortedTags: Tag[] = Object.entries(tagHash).map(([_key, val]) => val as Tag)
   return unsortedTags.sort((a, b) => (a.name.toLocaleUpperCase() > b.name.toLocaleUpperCase() ? 1 : -1))
 }

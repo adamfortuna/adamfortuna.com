@@ -31,7 +31,7 @@ const Featuring = () => (
       </Link>
 
       <Link
-        href="/blog/tags/popular"
+        href="/blog/tags/featured"
         className="flex flex-row items-center hover:bg-ablue-300/20 rounded space-x-4 p-2"
       >
         <FontAwesomeIcon icon={faFire} className="text-ablue-700 w-[32px] md:w-[48px]" size="3x" />
