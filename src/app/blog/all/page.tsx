@@ -13,7 +13,7 @@ export const PER_PAGE = Number(process.env.NEXT_PUBLIC_ARTICLES_PER_PAGE)
 
 export default async function BlogAllPage({ params: { page } }: PageProps) {
   const currentPage = page ? Number(page) : 1
-  const { articlesCount, articles, totalPages } = await getRecentPosts({
+  const { articles, totalPages } = await getRecentPosts({
     count: PER_PAGE,
     offset: (currentPage - 1) * PER_PAGE,
   })
@@ -30,7 +30,7 @@ export default async function BlogAllPage({ params: { page } }: PageProps) {
         <span>Everything</span>
       </p>
 
-      <BlogAboutCallout articlesCount={articlesCount} />
+      <BlogAboutCallout />
       <ArticlesList articles={articles} page={1} totalPages={totalPages} url="/blog/all" />
     </>
   )

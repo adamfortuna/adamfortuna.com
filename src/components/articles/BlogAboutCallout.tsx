@@ -15,7 +15,7 @@ const ExpandedKey = 'blog-about-expanded'
 const getExpandedFromLocalStorage = (): string | null => {
   return typeof localStorage !== 'undefined' ? localStorage.getItem(ExpandedKey) : '1'
 }
-const BlogAboutCallout = ({ articlesCount }: { articlesCount?: number }) => {
+const BlogAboutCallout = () => {
   const [expanded, setExpanded] = useState(true)
 
   const toggleExpanded = () => {
@@ -55,7 +55,7 @@ const BlogAboutCallout = ({ articlesCount }: { articlesCount?: number }) => {
               className="bg-yellow-400 hover:bg-yellow-500 rounded px-1 py-0.5 mx-1 text-blue-800 space-x-2"
             >
               <FontAwesomeIcon icon={faTypewriter} className="text-blue-800 w-4 h-4 inline" size="1x" />
-              {articlesCount ? <span>{articlesCount.toLocaleString()} posts</span> : <span>1,000+ posts</span>}
+              <span>1,000+ posts</span>
             </Link>
             about software/personal development, technology, minimalism, FIRE, movies, startups and my life. These span{' '}
             <b>three separate blogs</b>, with all articles linked from here.
