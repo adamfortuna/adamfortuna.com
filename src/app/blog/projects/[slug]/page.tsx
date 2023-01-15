@@ -22,7 +22,7 @@ export interface PageProps {
   }
 }
 
-export const PER_PAGE = Number(process.env.NEXT_PUBLIC_ARTICLES_PER_PAGE)
+const PER_PAGE = Number(process.env.NEXT_PUBLIC_ARTICLES_PER_PAGE)
 
 export default async function BlogProjectPage({ params: { slug, page } }: PageProps) {
   const currentPage = page ? Number(page) : 1
@@ -49,7 +49,7 @@ export default async function BlogProjectPage({ params: { slug, page } }: PagePr
         <span className="text-2xl mx-2">/</span>
         <span>{titleize(slug)}</span>
       </p>
-      <BlogAboutCallout articlesCount={totalPages} />
+      <BlogAboutCallout />
 
       <ArticlesList articles={articles} page={currentPage} totalPages={totalPages} url={`/blog/projects/${slug}`} />
     </>

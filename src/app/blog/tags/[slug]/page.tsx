@@ -13,7 +13,7 @@ export interface PageProps {
   }
 }
 
-export const PER_PAGE = Number(process.env.NEXT_PUBLIC_ARTICLES_PER_PAGE)
+const PER_PAGE = Number(process.env.NEXT_PUBLIC_ARTICLES_PER_PAGE)
 export default async function TagPage({ params: { slug, page } }: PageProps) {
   const currentPage = page ? Number(page) : 1
   const { articles, tag, articlesCount } = await getRecentPostsByTag({
