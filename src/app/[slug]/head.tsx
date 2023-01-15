@@ -11,7 +11,7 @@ const Head = async ({ params }: { params: { slug: string } }) => {
 
   return (
     <>
-      <title>{params.slug}</title>
+      <title>{article.title}</title>
       <GlobalHead />
       <ArticleMetadata article={article} />
     </>
