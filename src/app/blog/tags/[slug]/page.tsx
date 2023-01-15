@@ -6,16 +6,25 @@ import BlogAboutCallout from '@/components/articles/BlogAboutCallout'
 import { getRecentPostsByTag } from '@/queries/wordpress/getRecentPostsByTag'
 import { getTags } from '@/queries/wordpress/getTags'
 
-interface PageProps {
+export interface PageProps {
   params: {
     slug: string
+    page?: string
   }
 }
-export default async function TagPage({ params: { slug } }: PageProps) {
-  const { articles, tag } = await getRecentPostsByTag({ count: 1000, tag: slug })
-  if (!tag) {
+
+export const PER_PAGE = Number(process.env.NEXT_PUBLIC_ARTICLES_PER_PAGE)
+export default async function TagPage({ params: { slug, page } }: PageProps) {
+  const currentPage = page ? Number(page) : 1
+  const { articles, tag, articlesCount } = await getRecentPostsByTag({
+    count: PER_PAGE,
+    offset: (currentPage - 1) * PER_PAGE,
+    tag: slug,
+  })
+  if (!tag || !articlesCount) {
     notFound()
   }
+  const totalPages = Math.ceil(articlesCount / PER_PAGE)
 
   return (
     <>
@@ -42,7 +51,7 @@ export default async function TagPage({ params: { slug } }: PageProps) {
           <p className="text-gray-600 max-w-3xl">{tag.description}</p>
         </div>
       )}
-      <ArticlesList articles={articles} />
+      <ArticlesList articles={articles} page={currentPage} totalPages={totalPages} url={`/blog/tags/${slug}`} />
     </>
   )
 }

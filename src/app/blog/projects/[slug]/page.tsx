@@ -15,14 +15,22 @@ const titleize = (category: WordpressClientIdentifier) => {
   }
 }
 
-interface PageProps {
+export interface PageProps {
   params: {
     slug: WordpressClientIdentifier
+    page?: string
   }
-  children?: React.ReactNode
 }
-export default async function BlogProjectPage({ params: { slug } }: PageProps) {
-  const articles = await getRecentPosts({ count: 1000, projects: [slug] })
+
+export const PER_PAGE = Number(process.env.NEXT_PUBLIC_ARTICLES_PER_PAGE)
+
+export default async function BlogProjectPage({ params: { slug, page } }: PageProps) {
+  const currentPage = page ? Number(page) : 1
+  const { articles, totalPages } = await getRecentPosts({
+    count: PER_PAGE,
+    offset: (currentPage - 1) * PER_PAGE,
+    projects: [slug],
+  })
 
   return (
     <>
@@ -41,9 +49,9 @@ export default async function BlogProjectPage({ params: { slug } }: PageProps) {
         <span className="text-2xl mx-2">/</span>
         <span>{titleize(slug)}</span>
       </p>
-      <BlogAboutCallout />
+      <BlogAboutCallout articlesCount={totalPages} />
 
-      <ArticlesList articles={articles} />
+      <ArticlesList articles={articles} page={currentPage} totalPages={totalPages} url={`/blog/projects/${slug}`} />
     </>
   )
 }

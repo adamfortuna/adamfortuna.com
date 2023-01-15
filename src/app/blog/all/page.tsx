@@ -3,8 +3,20 @@ import { ArticlesList } from '@/components/articles/ArticlesList'
 import BlogAboutCallout from '@/components/articles/BlogAboutCallout'
 import { getRecentPosts } from '@/queries/wordpress/getRecentPosts'
 
-export default async function BlogAllPage() {
-  const articles = await getRecentPosts({ count: 1000 })
+export interface PageProps {
+  params: {
+    page?: string
+  }
+}
+
+export const PER_PAGE = Number(process.env.NEXT_PUBLIC_ARTICLES_PER_PAGE)
+
+export default async function BlogAllPage({ params: { page } }: PageProps) {
+  const currentPage = page ? Number(page) : 1
+  const { articlesCount, articles, totalPages } = await getRecentPosts({
+    count: PER_PAGE,
+    offset: (currentPage - 1) * PER_PAGE,
+  })
 
   return (
     <>
@@ -18,8 +30,8 @@ export default async function BlogAllPage() {
         <span>Everything</span>
       </p>
 
-      <BlogAboutCallout />
-      <ArticlesList articles={articles} />
+      <BlogAboutCallout articlesCount={articlesCount} />
+      <ArticlesList articles={articles} page={1} totalPages={totalPages} url="/blog/all" />
     </>
   )
 }

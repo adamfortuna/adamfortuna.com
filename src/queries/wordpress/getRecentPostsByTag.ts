@@ -14,8 +14,8 @@ export const findTagInfo = `
 `
 
 export const findRecentPostsByTag = `
-  query GetWordPressRecentPostsByTag($count: Int!, $where: RootQueryToPostConnectionWhereArgs) {
-    posts(first: $count, where: $where) {
+  query GetWordPressRecentPostsByTag($where: RootQueryToPostConnectionWhereArgs) {
+    posts(first: 1000, where: $where) {
       nodes {
         title
         slug
@@ -33,11 +33,10 @@ export const findRecentPostsByTag = `
   }
 `
 
-export const getRecentPostsByProjectAndTag = async (project: WordpressClientIdentifier, tag: string, count: number) => {
+export const getRecentPostsByProjectAndTag = async (project: WordpressClientIdentifier, tag: string) => {
   return getClientForProject(project)({
     query: findRecentPostsByTag,
     variables: {
-      count,
       where: {
         authorName: 'adamfortuna',
         tagSlugIn: [tag],
@@ -61,15 +60,19 @@ const getTag = async (tag: string) => {
   return adamfortunaClient({
     query: findTagInfo,
     variables: { tag },
-  }).then((r) => r.data.tag)
+  }).then((r) => {
+    return r.data.tag
+  })
 }
 export const getRecentPostsByTag = async ({
   count,
+  offset = 0,
   tag,
   projects = ['adamfortuna', 'minafi', 'hardcover'],
 }: {
   count: number
   tag: string
+  offset?: number
   projects?: WordpressClientIdentifier[]
 }) => {
   const foundTag = await getTag(tag)
@@ -80,7 +83,7 @@ export const getRecentPostsByTag = async ({
     }
   }
 
-  const finders = projects.map((p) => getRecentPostsByProjectAndTag(p, tag, count))
+  const finders = projects.map((p) => getRecentPostsByProjectAndTag(p, tag))
   const results = await Promise.all(finders)
 
   const allArticles = results.map((wordpressArticles: WordpressPost[]) =>
@@ -89,7 +92,8 @@ export const getRecentPostsByTag = async ({
   const articles = flatten(allArticles).sort(sortByDateDesc) as Article[]
 
   return {
-    articles,
+    articles: [...articles.slice(offset, offset + count)],
+    articlesCount: articles.length,
     tag: foundTag,
   }
 }

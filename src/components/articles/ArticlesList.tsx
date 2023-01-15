@@ -1,5 +1,6 @@
 import { useMemo } from 'react'
 import { Article } from '@/types'
+import Pagination from '@/components/layout/Pagination'
 import { ArticleLink } from './ArticleLink'
 
 interface ArticlesCountProps {
@@ -51,9 +52,12 @@ export const ArticleTimelineSeparator = ({
 
 export interface ArticleTimelineProps {
   articles: Article[]
+  page?: number
+  totalPages?: number
+  url: string
 }
 
-export const ArticlesList = ({ articles }: ArticleTimelineProps) => {
+export const ArticlesList = ({ articles, page, totalPages, url }: ArticleTimelineProps) => {
   return (
     <div>
       {articles.map((article, index) => (
@@ -66,6 +70,8 @@ export const ArticlesList = ({ articles }: ArticleTimelineProps) => {
           <ArticleLink article={article} />
         </div>
       ))}
+
+      {page && totalPages && <Pagination page={page} totalPages={totalPages} url={url} />}
     </div>
   )
 }

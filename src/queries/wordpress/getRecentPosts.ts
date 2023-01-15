@@ -1,10 +1,10 @@
 import { getClientForProject, parsePost, sortByDateDesc } from '@/lib/wordpressClient'
 import flatten from 'lodash/flatten'
-import { Article, WordpressPost, WordpressClientIdentifier } from '@/types'
+import { WordpressPost, WordpressClientIdentifier } from '@/types'
 
 export const findWordPressRecentPosts = `
-  query GetWordPressRecentPosts($count: Int, $where: RootQueryToPostConnectionWhereArgs) {
-    posts(first: $count, where: $where) {
+  query GetWordPressRecentPosts($where: RootQueryToPostConnectionWhereArgs) {
+    posts(first: 1000, where: $where) {
       nodes {
         title
         slug
@@ -22,11 +22,10 @@ export const findWordPressRecentPosts = `
   }
 `
 
-export const getRecentPostsByProject = async (project: WordpressClientIdentifier, count: number) => {
+export const getRecentPostsByProject = async (project: WordpressClientIdentifier) => {
   return getClientForProject(project)({
     query: findWordPressRecentPosts,
     variables: {
-      count,
       where: {
         authorName: 'adamfortuna',
         categoryName: 'Canonical',
@@ -44,17 +43,24 @@ export const getRecentPostsByProject = async (project: WordpressClientIdentifier
 
 export const getRecentPosts = async ({
   count,
+  offset = 0,
   projects = ['adamfortuna', 'minafi', 'hardcover'],
 }: {
   count: number
+  offset?: number
   projects?: WordpressClientIdentifier[]
 }) => {
-  const finders = projects.map((p) => getRecentPostsByProject(p, count))
+  const finders = projects.map((p) => getRecentPostsByProject(p))
   const results = await Promise.all(finders)
 
   const allArticles = results.map((wordpressArticles: WordpressPost[]) =>
     wordpressArticles.map((post: WordpressPost) => parsePost(post)),
   )
-  const flatArticles = flatten(allArticles)
-  return flatArticles.sort(sortByDateDesc) as Article[]
+  const flatArticles = flatten(allArticles).sort(sortByDateDesc)
+
+  return {
+    articlesCount: flatArticles.length,
+    articles: [...flatArticles.slice(offset, offset + count)],
+    totalPages: Math.ceil(flatArticles.length / count),
+  }
 }
