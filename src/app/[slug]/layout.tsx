@@ -1,3 +1,11 @@
-import PageLayout from '../pageLayout'
+import { Header } from '@/components/layout/Header'
 
-export default PageLayout
+const Layout = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <>
+      <Header />
+      <main>{children}</main>
+    </>
+  )
+}
+export default Layout

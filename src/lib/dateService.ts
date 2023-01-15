@@ -16,3 +16,14 @@ export const dateFormatLong = (date: any) => {
     day: 'numeric',
   })
 }
+
+export const dateFullLong = (date: any) => {
+  const d = isDate(date) ? date : new Date(date)
+  return d.toLocaleString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+  })
+}

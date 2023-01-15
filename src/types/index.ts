@@ -34,11 +34,14 @@ export interface Article {
   external: boolean
   url: string
   featuredImage: WordpressImage
+  allowComments?: boolean
+  commentCount: number
 
   // Todo: Move these to Post
   tags?: Tag[]
   categories?: Category[]
   excerpt?: string
+  comments: Comment[]
 }
 
 export interface Post extends Article {}
@@ -80,6 +83,39 @@ interface WordpressImage {
 interface WordpressImageNode {
   node: WordpressImage
 }
+interface Avatar {
+  url: string
+  width: number
+  height: number
+}
+interface WordpressAuthor {
+  url?: string
+  name: string
+  avatar: Avatar
+}
+interface WordpressAuthorNode {
+  node: WordpressAuthor
+}
+export interface Author extends WordpressAuthor {}
+export interface Comment {
+  author: Author
+  content: string
+  replies: Comment[] | []
+  root: boolean
+  id: number
+  date: string
+}
+export interface WordPressComment {
+  author: WordpressAuthorNode
+  content: string
+  databaseId: number
+  replies?: WordpressComments
+  date: string
+  status: 'APPROVE' | 'PENDING'
+}
+interface WordpressComments {
+  nodes: WordPressComment[]
+}
 
 export interface WordpressContent {
   slug: string
@@ -89,6 +125,9 @@ export interface WordpressContent {
   content: string
   project?: string
   guid: string
+  comments?: WordpressComments
+  commentStatus: 'open' | 'closed'
+  commentCount?: number
 }
 
 export interface WordpressPost extends WordpressContent {

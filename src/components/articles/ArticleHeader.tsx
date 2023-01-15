@@ -2,7 +2,8 @@ import Link from 'next/link'
 import { Page, Post } from '@/types'
 import { dateFormatLong } from '@/lib/dateService'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft } from '@fortawesome/pro-solid-svg-icons'
+import { faArrowLeft, faArrowDown } from '@fortawesome/pro-solid-svg-icons'
+import pluralize from '@/lib/pluralize'
 import Tags from './Tags'
 
 export interface ArticleHeaderProps {
@@ -19,6 +20,14 @@ export const ArticleHeader = ({ article }: ArticleHeaderProps) => {
             <span className="pl-1">Blog</span>
           </Link>
           <span className="text-sm ml-2 text-gray-500 font-semibold">{dateFormatLong(article.date)}</span>
+          {article.commentCount > 0 && (
+            <a href="#comments" className="text-sm link--blue ml-2 font-semibold flex items-center">
+              <span>
+                {article.commentCount} {pluralize('comment', article.commentCount)}
+              </span>
+              <FontAwesomeIcon icon={faArrowDown} size="xs" className="w-3 h-3 inline pl-1" />
+            </a>
+          )}
         </p>
         <h1 className="sm:text-center text-3xl md:text-5xl font-sans font-bold text-grey-800 leading-tight">
           {article.title}

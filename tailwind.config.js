@@ -12,7 +12,7 @@ const blogWidth = (theme, width="3") => {
 
     '@screen md': {
       textAlign: theme(`text.left`),
-      width: theme(`maxWidth.${width}xl`),
+      maxWidth: theme(`maxWidth.${width}xl`),
       paddingLeft: theme('spacing.0'),
       paddingLeft: theme('spacing.0'),
     },
@@ -358,7 +358,7 @@ module.exports = {
           'ul, ol': {
             marginLeft: "auto",
             marginRight: "auto",
-            paddingLeft: theme('spacing.6'),
+            paddingLeft: theme('spacing.8'),
             paddingRight: theme('spacing.1'),
 
             '@screen md': {

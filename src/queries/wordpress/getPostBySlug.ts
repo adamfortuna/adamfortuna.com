@@ -1,37 +1,62 @@
 import { adamfortunaClient, parsePost } from '@/lib/wordpressClient'
 
 export const findWordpressPost = `
-  query GetWordPressPost($slug: String!) {
-    post: postBy(slug: $slug) {
-      title
-      content
-      excerpt(format: RAW)
-      date
-      slug
-      featuredImage {
-        node {
-          sourceUrl
-          mediaDetails {
-            width
-            height
-          }
-        }
+fragment NestedComment on Comment {
+  author {
+    node {
+      url
+      name
+      avatar {
+        url
+        width
+        height
       }
-      categories {
-        nodes {
-          name
-          slug
-        }
-      }
+    }
+  }
+  content
+}
+query GetWordPressPost($slug: String!) {
 
-      tags {
-        nodes {
-          name
-          slug
+  post: postBy(slug: $slug) {
+    title
+    content
+    excerpt(format: RAW)
+    date
+    slug
+    commentStatus
+    featuredImage {
+      node {
+        sourceUrl
+        mediaDetails {
+          width
+          height
+        }
+      }
+    }
+    categories {
+      nodes {
+        name
+        slug
+      }
+    }
+    tags {
+      nodes {
+        name
+        slug
+      }
+    }
+    comments {
+      nodes {
+        ...NestedComment
+        replies {
+          nodes {
+            ...NestedComment
+          }
         }
       }
     }
   }
+}
 `
 
 export const getPostBySlug = (slug: string) => {
