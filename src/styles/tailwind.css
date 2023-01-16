@@ -62,3 +62,26 @@ article a[href^="https://adamfortuna.com"]::after, article a[href^="http://local
 {
   display: none !important;
 }
+
+
+.card {
+  @apply rounded-lg leading-snug text-gray-600 text-base p-4 relative shadow-lg mt-8 mx-auto border border-gray-100;
+}
+.adam.card {
+  min-height: 100px;
+}
+.adam.card:before {
+  background: url("https://cdn.minafi.com/wp-content/uploads/2018/10/07134816/face.png") no-repeat left;
+  background-size: 64px;
+  float: left;
+  transition: 0.5s all;
+  min-height: 64px;
+  min-width: 64px;
+  margin-right: 1rem;
+  transform: rotate(-10deg);
+  content: '';
+}
+
+.adam.card:hover:before {
+  transform: rotate(5deg);
+}
