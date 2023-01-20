@@ -45,16 +45,6 @@ query GetWordPressPost($slug: String!) {
         slug
       }
     }
-    comments {
-      nodes {
-        ...NestedComment
-        replies {
-          nodes {
-            ...NestedComment
-          }
-        }
-      }
-    }
   }
 }
 `

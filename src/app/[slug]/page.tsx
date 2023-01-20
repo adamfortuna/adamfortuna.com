@@ -1,13 +1,12 @@
 import { notFound } from 'next/navigation'
 import { getPostOrPageBySlug } from '@/queries/wordpress/getPostOrPageBySlug'
-import { Footer } from '@/components/layout/Footer'
 import { ArticleContentHtml } from '@/components/articles/ArticleContent'
-import { ArticleComments } from '@/components/articles/ArticleComments'
 import { ArticleHeader } from '@/components/articles/ArticleHeader'
 import { ArticleAboutAdamFooter } from '@/components/articles/ArticleAboutAdamFooter'
+import { ReplyViaEmail } from '@/components/articles/ReplyViaEmail'
 import { getRecentPosts } from '@/queries/wordpress/getRecentPosts'
 
-export const revalidate = 60 * 60 // 60 minutes
+export const revalidate = 3600 // 60 minutes
 
 interface PageProps {
   params: {
@@ -26,15 +25,7 @@ export default async function Page({ params: { slug } }: PageProps) {
       <ArticleHeader article={article} />
       <ArticleContentHtml article={article} />
       <ArticleAboutAdamFooter />
-
-      {article.commentCount > 0 || article.allowComments ? (
-        <div className="bg-sky-100 mt-8 border-t border-sky-200 pt-8">
-          <ArticleComments article={article} />
-          <Footer />
-        </div>
-      ) : (
-        <Footer />
-      )}
+      <ReplyViaEmail />
     </>
   )
 }

@@ -1,16 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unnecessary-condition */
-import {
-  Article,
-  Page,
-  Post,
-  Comment,
-  Tag,
-  WordpressPost,
-  WordpressPage,
-  WordPressComment,
-  WordpressClientIdentifier,
-  Category,
-} from '@/types'
+import { Article, Page, Post, Tag, WordpressPost, WordpressPage, WordpressClientIdentifier, Category } from '@/types'
 import omitBy from 'lodash/omitBy'
 import { Md5 } from 'ts-md5'
 
@@ -57,34 +46,10 @@ const parseCategories = (categories: Category[]) => {
   })
 }
 
-const commentDate = (a: Comment, b: Comment) => {
-  const aDate = new Date(a.date).getTime()
-  const bDate = new Date(b.date).getTime()
-
-  return aDate > bDate ? -1 : 1
-}
-const parseComments = (comments: WordPressComment[], root: boolean): Comment[] => {
-  return comments
-    .filter((c) => c.status === 'APPROVE')
-    .map((comment: WordPressComment) => {
-      return {
-        id: comment.databaseId,
-        date: comment.date,
-        content: comment.content,
-        author: comment.author.node,
-        replies: comment.replies && comment.replies.nodes.length > 0 ? parseComments(comment.replies.nodes, false) : [],
-        root,
-      } as Comment
-    })
-    .sort(commentDate)
-}
-
 export const parsePost = (post: WordpressPost, full: boolean = false) => {
   const url = parseUrl(post)
   const tags = post.tags?.nodes ? parseTags(post.tags.nodes) : undefined
   const isHighlighted = tags?.length && tags.length > 0 ? tags.map((t) => t.slug).indexOf('highlights') !== -1 : false
-  const comments = post.comments?.nodes ? parseComments(post.comments?.nodes, true) : null
-  const commentCount = (comments || []).reduce((accumulator, comment) => accumulator + 1 + comment.replies.length, 0)
 
   const article = {
     title: post.title,
@@ -100,8 +65,6 @@ export const parsePost = (post: WordpressPost, full: boolean = false) => {
     external: !!url,
     project: post.project,
     allowComments: post.commentStatus ? post.commentStatus === 'open' : null,
-    comments: comments ? comments?.reverse() : null,
-    commentCount,
   } as Post
 
   return omitBy(article, (v) => v === null || v === undefined) as Post
