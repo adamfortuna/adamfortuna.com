@@ -8,7 +8,7 @@ export const Hero = () => {
   return (
     <div className="relative h-screen">
       <InteractiveMountain />
-      <Container className="relative pt-20 pb-16 md:pt-32 lg:pt-48 text-black max-w-4xl lg:max-w-5xl xl:max-w-6xl px-4 lg:px-0 lg:mx-auto">
+      <Container className="relative pt-20 pb-4 sm:pb-16 md:pt-32 lg:pt-48 text-black max-w-4xl lg:max-w-5xl xl:max-w-6xl px-4 lg:px-0 lg:mx-auto bg-gradient-to-b from-white/0 to-blue-100/60 sm:bg-none">
         <p className="font-display text-5xl font-medium tracking-tight sm:text-7xl relative space-x-4">
           <span className="font-handwriting">Hey hey!</span>
           <span className="animate-waving-hand inline-block">👋</span>
@@ -19,7 +19,7 @@ export const Hero = () => {
         </p>
         <div className="mt-4 max-w-xl text-2xl leading-10">
           <p>
-            I love <span className="font-bold">enlivening experiences</span>,{' '}
+            I enjoy <span className="font-bold">enlivening experiences</span>,{' '}
             <span className="font-bold">quantifying data</span> and{' '}
             <span className="font-bold">making playful websites</span>.
           </p>
