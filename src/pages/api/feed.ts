@@ -8,6 +8,13 @@ const metadata = {
   link: process.env.NEXT_PUBLIC_URL,
 }
 
+const linkify = (text: string | undefined) => {
+  if (!text) {
+    return ''
+  }
+  return text.replaceAll('href="/', `href="${process.env.NEXT_PUBLIC_URL}/`)
+}
+
 const handler = nc()
 
 /**
@@ -25,13 +32,17 @@ handler.get(async (req: NextApiRequest, res: NextApiResponse) => {
         const url = `${process.env.NEXT_PUBLIC_URL}/${article.slug}`
 
         return `<item>
-      <title>${article.title}</title>
+      <title><![CDATA[
+        ${article.title}
+      ]]></title>
       <link>${url}</link>
       <guid>${url}</guid>
-      <pubDate>${article.date}</pubDate>
-      ${article.excerpt && `<description>${article.excerpt.replace('&', '&amp;')}</description>`}
+      <pubDate>${new Date(article.date).toUTCString()}</pubDate>
+      <description><![CDATA[
+        ${article.excerpt ? article.excerpt : article.title}
+      ]]></description>
       <content:encoded><![CDATA[
-        ${article.content}
+        ${linkify(article.content)}
       ]]></content:encoded>
     </item>`
       })
@@ -51,14 +62,15 @@ handler.get(async (req: NextApiRequest, res: NextApiResponse) => {
     <title>${metadata.title}</title>
     <description>${metadata.description}</description>
     <link>${metadata.link}</link>
-    <lastBuildDate>${articles[0].date}</lastBuildDate>
+    <lastBuildDate>${new Date(articles[0].date).toUTCString()}</lastBuildDate>
+    <atom:link href="${process.env.NEXT_PUBLIC_URL}/api/feed" rel="self" type="application/rss+xml" />
     ${postItems}
   </channel>
 </rss>
 `
 
     // set response content header to xml
-    res.setHeader('Content-Type', 'text/xml')
+    res.setHeader('Content-Type', 'text/xml; charset=utf-8')
 
     return res.status(200).send(sitemap)
   } catch (e: unknown) {
