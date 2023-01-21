@@ -5,7 +5,7 @@ import { getRecentFeed } from '@/queries/wordpress/getRecentFeed'
 const metadata = {
   title: 'AdamFortuna.com',
   description: 'Exploring the intersection of minimalism, mindfulness and technology.',
-  link: process.env.NEXT_PUBLIC_VERCEL_URL,
+  link: process.env.NEXT_PUBLIC_URL,
 }
 
 const handler = nc()
@@ -22,7 +22,7 @@ handler.get(async (req: NextApiRequest, res: NextApiResponse) => {
 
     const postItems = articles
       .map((article) => {
-        const url = `${process.env.NEXT_PUBLIC_VERCEL_URL}/${article.slug}`
+        const url = `${process.env.NEXT_PUBLIC_URL}/${article.slug}`
 
         return `<item>
       <title>${article.title}</title>

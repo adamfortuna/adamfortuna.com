@@ -400,13 +400,27 @@ module.exports = {
             fontSize: theme('fontSize.sm')[0],
             fontWeight: theme('fontWeight.medium'),
             backgroundColor: 'var(--tw-prose-pre-bg)',
-            borderRadius: theme('borderRadius.3xl'),
-            padding: theme('spacing.8'),
+            padding: theme('spacing.4'),
             overflowX: 'auto',
-            border: '1px solid',
-            borderColor: 'var(--tw-prose-pre-border)',
+
+            marginLeft: "auto",
+            marginRight: "auto",
+            paddingLeft: theme('spacing.3'),
+            paddingRight: theme('spacing.3'),
+
+            '@screen md': {
+              textAlign: theme(`text.left`),
+              maxWidth: theme(`maxWidth.4xl`),
+              paddingLeft: theme('spacing.16'),
+              paddingRight: theme('spacing.4'),
+              border: '1px solid',
+              borderColor: 'var(--tw-prose-pre-border)',
+              borderRadius: theme('borderRadius.3xl')
+            }
           },
           'pre code': {
+            marginLeft: "auto",
+            marginRight: "auto",
             display: 'inline',
             color: 'inherit',
             fontSize: 'inherit',
