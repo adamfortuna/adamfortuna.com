@@ -25,7 +25,19 @@ export default async function NewsletterPage() {
                   <li>I'll keep your email safe and secret, never sharing it with anyone.</li>
                   <li>Emailing you with a link whenever I publish a new blog post</li>
                 </ul>
-                <p>That's it! My own email is in this same database – and you can believe I make sure it's safe.</p>
+                <p>
+                  That's it! My own email is in this same database – and you can believe I make sure it's safe. Behind
+                  the scenes it uses a{' '}
+                  <a href="https://minafi.com/sendy" target="_blank" rel="noreferrer">
+                    Sendy
+                  </a>{' '}
+                  server that I host myself. Your email won't be stored in any large email provider database (Mailchimp,
+                  ConvertKit, etc).
+                </p>
+                <p className="italic text-sm text-gray-700">
+                  Side note: I'm still setting this up, so you might not get emails for a few weeks until I can figure
+                  out how to wire up my RSS feed to send out emails. 😅
+                </p>
               </div>
 
               <div className="space-y-6 sm:space-y-5">

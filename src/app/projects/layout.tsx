@@ -18,7 +18,7 @@ const ProjectLayout = ({ children }: { children: React.ReactNode }) => {
           <p>
             Scroll down to the bottom to see the most embarrassing projects I made in high school. 🙈 We all have to
             start somewhere! My aim is to be <b>radically honest</b> about my <b>failures</b>, my <b>compensation 💸</b>{' '}
-            and how I got here.
+            (if it was a paid job) and how I got here.
           </p>
           <p>
             Icon size indicates how "important" I thought that project is (or was) in my life at the time and how
