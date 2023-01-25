@@ -85,3 +85,7 @@ article a[href^="https://adamfortuna.com"]::after, article a[href^="http://local
 .adam.card:hover:before {
   transform: rotate(5deg);
 }
+
+.twitter-tweet {
+  @apply mx-auto;
+}
