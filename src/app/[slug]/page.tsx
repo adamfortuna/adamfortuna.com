@@ -1,10 +1,7 @@
 import { notFound } from 'next/navigation'
 import { getPostOrPageBySlug } from '@/queries/wordpress/getPostOrPageBySlug'
-import { ArticleContentHtml } from '@/components/articles/ArticleContent'
-import { ArticleHeader } from '@/components/articles/ArticleHeader'
-import { ArticleAboutAdamFooter } from '@/components/articles/ArticleAboutAdamFooter'
-import { ReplyViaEmail } from '@/components/articles/ReplyViaEmail'
 import { getRecentPosts } from '@/queries/wordpress/getRecentPosts'
+import { Article } from '@/components/articles/Article'
 
 interface PageProps {
   params: {
@@ -18,14 +15,7 @@ export default async function Page({ params: { slug } }: PageProps) {
     notFound()
   }
 
-  return (
-    <>
-      <ArticleHeader article={article} />
-      <ArticleContentHtml article={article} />
-      <ArticleAboutAdamFooter />
-      <ReplyViaEmail />
-    </>
-  )
+  return <Article article={article} />
 }
 
 export async function generateStaticParams() {

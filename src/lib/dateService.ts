@@ -27,3 +27,8 @@ export const dateFullLong = (date: any) => {
     minute: '2-digit',
   })
 }
+
+export const dateFormatMicroformat = (date: any) => {
+  const d = isDate(date) ? date : new Date(date)
+  return d.toISOString()
+}
