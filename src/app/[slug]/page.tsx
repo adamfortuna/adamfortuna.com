@@ -12,7 +12,6 @@ interface PageProps {
   }
 }
 
-export const revalidate = 600 // 10 minutes
 export default async function Page({ params: { slug } }: PageProps) {
   const article = await getPostOrPageBySlug(slug)
   if (!article) {

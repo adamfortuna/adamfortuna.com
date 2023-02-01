@@ -2,8 +2,6 @@ import { ArticlesList } from '@/components/articles/ArticlesList'
 import BlogAboutCallout from '@/components/articles/BlogAboutCallout'
 import { getRecentPosts } from '@/queries/wordpress/getRecentPosts'
 
-export const revalidate = 60 * 60 // 60 minutes
-
 const PER_PAGE = Number(process.env.NEXT_PUBLIC_ARTICLES_PER_PAGE)
 
 export default async function BlogPage() {
