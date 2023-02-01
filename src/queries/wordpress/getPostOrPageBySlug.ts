@@ -1,23 +1,6 @@
 import { adamfortunaClient, parsePage, parsePost } from '@/lib/wordpressClient'
 
 export const findWordpressPost = `
-fragment NestedComment on Comment {
-  databaseId
-  content
-  date
-  status
-  author {
-    node {
-      url
-      name
-      avatar {
-        url
-        width
-        height
-      }
-    }
-  }
-}
 query GetWordPressPost($slug: String!) {
   post: postBy(slug: $slug) {
     title
@@ -39,16 +22,6 @@ query GetWordPressPost($slug: String!) {
       nodes {
         name
         slug
-      }
-    }
-    comments(first: 1000, where: {parentIn: ""}) {
-      nodes {
-        ...NestedComment
-        replies {
-          nodes {
-            ...NestedComment
-          }
-        }
       }
     }
   }

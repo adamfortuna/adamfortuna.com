@@ -6,14 +6,13 @@ import { ArticleAboutAdamFooter } from '@/components/articles/ArticleAboutAdamFo
 import { ReplyViaEmail } from '@/components/articles/ReplyViaEmail'
 import { getRecentPosts } from '@/queries/wordpress/getRecentPosts'
 
-export const revalidate = 3600 // 60 minutes
-
 interface PageProps {
   params: {
     slug: string
   }
 }
 
+export const revalidate = 600 // 10 minutes
 export default async function Page({ params: { slug } }: PageProps) {
   const article = await getPostOrPageBySlug(slug)
   if (!article) {

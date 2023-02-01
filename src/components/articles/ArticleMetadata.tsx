@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unnecessary-condition, react/no-invalid-html-attribute */
+/* eslint-disable @typescript-eslint/no-unnecessary-condition */
 import { Article } from '@/types'
 
 const ArticleMetadata = ({ article }: { article: Article }) => (
@@ -30,9 +30,6 @@ const ArticleMetadata = ({ article }: { article: Article }) => (
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:creator" content="@adamfortuna" />
-
-    <link rel="webmention" href="https://webmention.io/adamfortuna.com/webmention" />
-    <link rel="pingback" href="https://webmention.io/adamfortuna.com/xmlrpc" />
   </>
 )
 
