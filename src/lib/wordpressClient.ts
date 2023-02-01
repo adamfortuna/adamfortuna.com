@@ -106,7 +106,6 @@ export const fetchClient = ({
   )
   return fetch(`${url}#${hash})}`, {
     method: 'POST',
-    cache: 'force-cache',
     next: {
       revalidate: 60, // 1 minute
     },
