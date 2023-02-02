@@ -31,7 +31,7 @@ export default async function BlogAllPage({ params: { page } }: PageProps) {
       </p>
 
       <BlogAboutCallout />
-      <ArticlesList articles={articles} page={1} totalPages={totalPages} url="/blog/all" />
+      <ArticlesList articles={articles} page={currentPage} totalPages={totalPages} url="/blog/all" />
     </>
   )
 }
