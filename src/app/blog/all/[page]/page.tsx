@@ -12,7 +12,7 @@ export async function generateStaticParams() {
     offset: 0,
   })
 
-  return range(1, totalPages).map((page) => ({
+  return range(1, totalPages + 1).map((page) => ({
     page: String(page),
   }))
 }

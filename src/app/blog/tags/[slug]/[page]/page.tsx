@@ -12,7 +12,7 @@ export async function generateStaticParams() {
     const PER_PAGE = Number(process.env.NEXT_PUBLIC_ARTICLES_PER_PAGE)
     const pagesCount = Math.ceil((tag.count || 0) / PER_PAGE)
 
-    return range(1, pagesCount).map((page) => ({
+    return range(1, pagesCount + 1).map((page) => ({
       slug: tag.slug,
       page: String(page),
     }))

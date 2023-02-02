@@ -18,7 +18,7 @@ export async function generateStaticParams() {
       projects: [project],
     })
 
-    return range(1, totalPages).map((page) => ({
+    return range(1, totalPages + 1).map((page) => ({
       slug: project,
       page: String(page),
     }))
