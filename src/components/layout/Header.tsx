@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { faHammer, faPencil } from '@fortawesome/pro-regular-svg-icons'
 import Link from 'next/link'
 import Cloud from '@/images/cloud.svg'
@@ -92,6 +93,20 @@ export const Header = ({ isHomePage = false }: { isHomePage?: boolean }) => {
               <span className="font-bold text-2xl font-handwriting hidden md:inline-block">Adam Fortuna</span>
               <span className="hidden sm:inline-block absolute -right-8 text-2xl opacity-0 group-hover:opacity-100 duration-400 transition-opacity group-hover:animate-waving-hand">
                 👋
+              </span>
+              <span className="hidden">
+                <img
+                  className="u-photo"
+                  alt="Avatar for Adam Fortuna"
+                  loading="lazy"
+                  src="https://res.cloudinary.com/dyogenez/images/w_900/w_100,h_100,c_thumb/v1675280471/wordpress/adam_6761814f5/adam_6761814f5?_i=AA"
+                  width={100}
+                  height={100}
+                />
+                <span className="p-note">
+                  Hey hey! I'm a full-stack product developer in Salt Lake City, UT. I love enlivening experiences,
+                  visualizing data, and making playful websites.
+                </span>
               </span>
             </Link>
           </div>
