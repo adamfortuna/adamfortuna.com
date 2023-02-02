@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { Tag as TagType } from '@/types'
 
 const Tag = ({ tag }: { tag: TagType }) => (
-  <Link href={`/blog/tags/${tag.slug}`} className="link--blue text-sm mr-2">
+  <Link href={`/blog/tags/${tag.slug}`} className="link--blue text-sm mr-2 p-category">
     #{tag.name}
   </Link>
 )

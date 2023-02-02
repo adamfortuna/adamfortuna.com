@@ -10,8 +10,8 @@ const pacifico = Pacifico({
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html className={`${pacifico.variable} h-full antialiased`} lang="en">
-      <body className="flex h-full flex-col bg-white">{children}</body>
+    <html className={`${pacifico.variable} antialiased`} lang="en">
+      <body className="flex flex-col bg-white">{children}</body>
     </html>
   )
 }

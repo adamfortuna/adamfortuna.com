@@ -2,27 +2,37 @@
 import Link from 'next/link'
 
 export const ArticleAboutAdamFooter = () => (
-  <div className="max-w-6xl mx-auto my-8 h-card vcard">
-    <div className="card max-w-4xl mx-auto flex flex-row gap-8">
+  <div className="max-w-6xl mx-auto my-8">
+    <div className="card max-w-4xl mx-auto flex flex-row gap-8 h-card vcard p-author author">
       <img
-        className="u-photo rounded-lg w-[100px] h-[100px]"
+        className="rounded-lg w-[100px] h-[100px]"
         alt="Avatar for Adam Fortuna"
         loading="lazy"
         src="https://res.cloudinary.com/dyogenez/images/w_900/w_100,h_100,c_thumb/v1675280471/wordpress/adam_6761814f5/adam_6761814f5?_i=AA"
         width={100}
         height={100}
       />
+      <img
+        className="u-photo hidden"
+        alt="Avatar for Adam Fortuna"
+        loading="lazy"
+        src="https://res.cloudinary.com/dyogenez/images/w_900/w_100,h_100,c_thumb/v1675280471/wordpress/adam_6761814f5/adam_6761814f5?_i=AA"
+      />
       <div>
         <p className="mb-2">
-          Hi, I'm{' '}
-          <Link className="p-name u-url p-author fn n" href="https://adamfortuna.com">
-            <span className="given-name">Adam</span> <span className="family-name">Fortuna</span>
+          Welcome! I'm{' '}
+          <Link className="p-name fn" href={String(process.env.NEXT_PUBLIC_URL)} rel="author">
+            Adam Fortuna
           </Link>
-          ! I'm a full-stack product developer living in Salt Lake City, UT who loves to share what they work on.
+          .{' '}
+          <span className="p-note">
+            I'm a full-stack product developer in Salt Lake City, UT. I love enlivening experiences, visualizing data,
+            and making playful websites.
+          </span>
         </p>
         <p>
           Let's keep in touch! Follow me on{' '}
-          <a href="https://ruby.social/@adam" target="_blank" className="u-url link--blue" rel="noreferrer">
+          <a href="https://ruby.social/@adam" target="_blank" className="link--blue" rel="noreferrer">
             Mastodon
           </a>
           , subscribe to my{' '}
