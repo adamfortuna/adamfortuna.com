@@ -1,4 +1,5 @@
 import { faHammer, faPencil } from '@fortawesome/pro-regular-svg-icons'
+import Link from 'next/link'
 import Cloud from '@/images/cloud.svg'
 
 import Af from '@/images/af.svg'
@@ -81,14 +82,18 @@ export const Header = ({ isHomePage = false }: { isHomePage?: boolean }) => {
       <Container className="py-2 md:py-6 px-2 md:px-0">
         <nav className="relative z-50 flex justify-between pr-2">
           <div className="flex items-center md:gap-x-12 justify-between text-black dark:text-yellow-400 relative">
-            <NavLink href="/">
-              <span className="sr-only">Adam Fortuna</span>
+            <Link
+              href={String(process.env.NEXT_PUBLIC_URL)}
+              className="group rounded py-1 sm:py-2 px-2 sm:px-3 text-sky-800 hover:bg-sky-600 dark:text-sky-400 dark:hover:bg-sky-400 dark:hover:text-sky-900 hover:text-white flex items-center font-semibold h-card u-url"
+              rel="me"
+            >
+              <span className="sr-only p-name">Adam Fortuna</span>
               <Af className="w-10 h-8 text-sky-800 dark:text-yellow-400 group-hover:text-white md:hidden" />
               <span className="font-bold text-2xl font-handwriting hidden md:inline-block">Adam Fortuna</span>
               <span className="hidden sm:inline-block absolute -right-8 text-2xl opacity-0 group-hover:opacity-100 duration-400 transition-opacity group-hover:animate-waving-hand">
                 👋
               </span>
-            </NavLink>
+            </Link>
           </div>
           <div className="flex md:gap-x-6 items-end md:items-center">
             <NavLink href="/about">About</NavLink>
