@@ -16,12 +16,12 @@ export const ArticleAboutAdamFooter = () => (
         className="u-photo hidden"
         alt="Avatar for Adam Fortuna"
         loading="lazy"
-        src="https://res.cloudinary.com/dyogenez/images/w_900/w_100,h_100,c_thumb/v1675280471/wordpress/adam_6761814f5/adam_6761814f5?_i=AA"
+        src="https://res.cloudinary.com/dyogenez/images/w_900/w_400,h_400,c_thumb/v1675280471/wordpress/adam_6761814f5/adam_6761814f5?_i=AA"
       />
       <div>
         <p className="mb-2">
           Welcome! I'm{' '}
-          <Link className="p-name fn" href={String(process.env.NEXT_PUBLIC_URL)} rel="author">
+          <Link className="p-name fn u-url" href={String(process.env.NEXT_PUBLIC_URL)} rel="author">
             Adam Fortuna
           </Link>
           .{' '}
