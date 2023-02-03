@@ -4,57 +4,7 @@ import { GitHubIcon, MastodonIcon, MinafiIcon, HardcoverIcon } from '@/component
 import { faRss } from '@fortawesome/pro-duotone-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-// export const FooterLink = ({ href, children }) => {
-//   return (
-//     <Link
-//       href={href}
-//       className="text-green-300 hover:bg-green-600 px-1 py-0.5 rounded hover:text-white font-semibold flex items-center"
-//     >
-//       {children}
-//     </Link>
-//   )
-// }
-
-// export const Footer = () => {
-//   return (
-//     <footer className="pt-12 bg-[#78ab5e]">
-//       <Container>
-//         <div className="flex flex-col items-center border-t border-slate-400/10 py-10 sm:flex-row-reverse sm:justify-between">
-
-//           <p className="mt-6 text-xs text-green-300 sm:mt-0">
-//             &copy; 2001-{new Date().getFullYear()} Adam Fortuna
-//           </p>
-//         </div>
-//       </Container>
-//     </footer>
-//   )
-// }
-
 const navigation = {
-  solutions: [
-    { name: 'Marketing', href: '#' },
-    { name: 'Analytics', href: '#' },
-    { name: 'Commerce', href: '#' },
-    { name: 'Insights', href: '#' },
-  ],
-  support: [
-    { name: 'Pricing', href: '#' },
-    { name: 'Documentation', href: '#' },
-    { name: 'Guides', href: '#' },
-    { name: 'API Status', href: '#' },
-  ],
-  company: [
-    { name: 'About', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'Jobs', href: '#' },
-    { name: 'Press', href: '#' },
-    { name: 'Partners', href: '#' },
-  ],
-  legal: [
-    { name: 'Claim', href: '#' },
-    { name: 'Privacy', href: '#' },
-    { name: 'Terms', href: '#' },
-  ],
   social: [
     {
       name: 'Hardcover',
