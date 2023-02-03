@@ -102,7 +102,7 @@ export interface Webmention {
   source_url: string
   target_url: string
 }
-export type CommentType = 'mention' | 'comment'
+export type CommentType = 'mention' | 'comment' | 'like' | 'repost'
 export interface Comment {
   author: Author
   content: string

@@ -1,0 +1,53 @@
+/* eslint-disable @next/next/no-img-element */
+import pluralize from '@/lib/pluralize'
+import { Comment as CommentType } from '@/types'
+
+const WebmentionAvatar = ({ comment }: { comment: CommentType }) => {
+  if (comment.author.url) {
+    return (
+      <a href={comment.author.url} target="_blank" className="group" rel="noreferrer">
+        <img
+          src={comment.author.avatar.url}
+          loading="lazy"
+          width={64}
+          height={64}
+          className="rounded-full w-12 h-12 ring-4 ring-transparent group-hover:ring-blue-500"
+          alt={comment.author.name}
+        />
+      </a>
+    )
+  }
+  return (
+    <img
+      src={comment.author.avatar.url}
+      loading="lazy"
+      width={64}
+      height={64}
+      className="rounded-full w-12 h-12"
+      alt={comment.author.name}
+    />
+  )
+}
+
+export const WebmentionSummary = ({ comments }: { comments: CommentType[] }) => {
+  if (comments.length === 0) {
+    return <></>
+  }
+  const filteredComments = comments.filter((c) => c.type === 'repost' || c.type === 'like')
+  const avatarComments = filteredComments.filter((c) => c.author.avatar.url.length > 0)
+  return (
+    <div className="bg-white relative md:max-w-6xl mx-auto shadow-lg lg:rounded-lg py-2 px-2 my-2 md:my-2 md:p-2 md:pb-4">
+      <div className="mx-auto px-3 md:max-w-3xl md:px-0">
+        <p className="text-gray-600 text-lg mt-2 font-semibold">
+          {filteredComments.length} {pluralize('Like', filteredComments.length)} and{' '}
+          {pluralize('Repost', filteredComments.length)}
+        </p>
+        <div className="flex flex-row -space-x-2">
+          {avatarComments.map((comment) => (
+            <WebmentionAvatar comment={comment} key={`comment-avatar-${comment.id}`} />
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}

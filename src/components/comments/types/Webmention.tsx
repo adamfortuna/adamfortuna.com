@@ -1,12 +1,39 @@
 /* eslint-disable @next/next/no-img-element, react/no-danger */
+import { useMemo } from 'react'
 import { Comment as CommentType } from '@/types'
 import clsx from 'clsx'
 import { stripHtml } from 'string-strip-html'
 import { dateFullLong } from '@/lib/dateService'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 
+const ReadMoreLink = ({ url }: { url: string }) => {
+  if (url.indexOf('brid.gy/comment/twitter') !== -1) {
+    return (
+      <a href={url} target="_blank" rel="nofollow noopener noreferrer" className="not-prose space-x-2">
+        <span>Read at</span>
+        <FontAwesomeIcon icon={faTwitter} size="sm" className="w-3 h-3 inline" />
+      </a>
+    )
+  }
+  return (
+    <>
+      Read more at{' '}
+      <a href={url} target="_blank" rel="nofollow noopener noreferrer">
+        {url.replace(/https?:\/\//, '')}
+      </a>
+    </>
+  )
+}
 export const Webmention = ({ comment }: { comment: CommentType }) => {
-  const commentContent = stripHtml(comment.content).result
-  const content = commentContent.length > 280 ? `${commentContent.substring(0, 280)}...` : commentContent
+  const content = useMemo(() => {
+    const commentContent = comment.type === 'mention' ? stripHtml(comment.content).result : comment.content
+
+    if (comment.type === 'mention') {
+      return commentContent.length > 280 ? `${commentContent.substring(0, 280)}...` : commentContent
+    }
+    return commentContent
+  }, [comment.type, comment.content])
   return (
     <div
       id={`comment-${comment.id}`}
@@ -39,7 +66,17 @@ export const Webmention = ({ comment }: { comment: CommentType }) => {
             ) : (
               <>{comment.author.name}</>
             )}{' '}
-            mentioned this article on{' '}
+            {comment.type === 'mention' ? (
+              <>
+                mentioned <span className="md:hidden">on</span>
+                <span className="hidden md:inline">this article on</span>
+              </>
+            ) : (
+              <>
+                commented on
+                <span className="hidden md:inline"> this article on</span>
+              </>
+            )}{' '}
             <a
               href={`#comment-${comment.id}`}
               className="block md:inline text-gray-700 hover:underline text-sm md:text-base"
@@ -51,13 +88,10 @@ export const Webmention = ({ comment }: { comment: CommentType }) => {
       </div>
 
       <div className="prose dark:prose-invert">
-        <blockquote style={{ marginTop: '10px', paddingTop: '10px' }}>
-          {content}
+        <blockquote style={{ marginTop: '10px', paddingTop: '10px', marginBottom: '0px' }}>
+          <span dangerouslySetInnerHTML={{ __html: content || '' }} />
           <cite className="mt-2 text-base" style={{ width: '100%' }}>
-            Read more at{' '}
-            <a href={comment.webmention.source_url} target="_blank" rel="nofollow noopener noreferrer">
-              {comment.webmention.source_url.replace(/https?:\/\//, '')}
-            </a>
+            <ReadMoreLink url={comment.webmention.source_url} />
           </cite>
         </blockquote>
       </div>

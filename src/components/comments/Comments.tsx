@@ -1,6 +1,7 @@
 import pluralize from '@/lib/pluralize'
 import { Article } from '@/types'
 import { Comment } from './Comment'
+import { WebmentionSummary } from './WebmentionSummary'
 
 export const Comments = ({ article }: { article: Article }) => {
   if (!article.comments || article.comments.length === 0) {
@@ -19,7 +20,7 @@ export const Comments = ({ article }: { article: Article }) => {
                 href="https://indieweb.org/Webmention"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline hover:no-underline text-gray-700 text-sm"
+                className="underline hover:no-underline text-gray-700 text-sm hidden md:inline-block"
               >
                 What's a webmention?
               </a>
@@ -33,10 +34,11 @@ export const Comments = ({ article }: { article: Article }) => {
                 className="underline hover:no-underline"
               >
                 Add it here
-              </a>{' '}
-              and I'll include it!
+              </a>
+              <span className="hidden md:inline"> and I'll include it</span>!
             </p>
 
+            <WebmentionSummary comments={article.comments} />
             <div className="space-y-12 my-8">
               {article.comments.map((comment) => (
                 <Comment comment={comment} key={`comment-${comment.id}`} />

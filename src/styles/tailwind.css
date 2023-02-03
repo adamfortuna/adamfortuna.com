@@ -44,8 +44,8 @@
   @apply no-underline;
 }
 
-.prose a[href^="http"]::after,
-.prose a[href^="https://"]::after
+.prose a[href^="http"]:not(.not-prose)::after,
+.prose a[href^="https://"]:not(.not-prose)::after
 {
   content: "";
   width: 11px;
