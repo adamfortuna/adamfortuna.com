@@ -24,6 +24,29 @@ query GetWordPressPost($slug: String!) {
         slug
       }
     }
+
+    commentCount
+    comments(first: 1000) {
+      nodes {
+        type
+        databaseId
+        date
+        status
+        content(format: RAW)
+        webmention {
+          author_avatar
+          author_url
+          webmention_source_url
+          webmention_target_url
+        }
+        author {
+          node {
+            url
+            name
+          }
+        }
+      }
+    }
   }
 
   page: pageBy(uri: $slug) {

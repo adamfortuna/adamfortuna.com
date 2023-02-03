@@ -1,5 +1,18 @@
 /* eslint-disable @typescript-eslint/no-unnecessary-condition */
-import { Article, Page, Post, Tag, WordpressPost, WordpressPage, WordpressClientIdentifier, Category } from '@/types'
+import {
+  Author,
+  Article,
+  Comment,
+  Page,
+  Post,
+  Tag,
+  Webmention,
+  WordpressPost,
+  WordpressPage,
+  WordpressClientIdentifier,
+  WordPressComment,
+  Category,
+} from '@/types'
 import omitBy from 'lodash/omitBy'
 import { Md5 } from 'ts-md5'
 
@@ -46,10 +59,55 @@ const parseCategories = (categories: Category[]) => {
   })
 }
 
+const parseWebmention = (wpComment: WordPressComment) => {
+  if (!wpComment.webmention) {
+    return null
+  }
+  return {
+    source_url: wpComment.webmention.webmention_source_url,
+    target_url: wpComment.webmention.webmention_target_url,
+  } as Webmention
+}
+
+const parseCommentAuthor = (wpComment: WordPressComment) => {
+  const authorNode = wpComment.author.node
+  const { webmention } = wpComment
+  const author = {
+    url: authorNode.url,
+    name: authorNode.name,
+    avatar: {
+      url: webmention.author_avatar,
+    },
+  } as Author
+
+  return omitBy(author, (v) => v === null || v === undefined) as Author
+}
+
+const parseComment = (wpComment: WordPressComment) => {
+  const webmention = parseWebmention(wpComment)
+  const comment = {
+    author: parseCommentAuthor(wpComment),
+    content: wpComment.content,
+    id: wpComment.databaseId,
+    date: wpComment.date,
+    type: wpComment.type,
+    root: !wpComment.parentId,
+    replies: [],
+    webmention,
+  } as Comment
+  return omitBy(comment, (v) => v === null || v === undefined) as Comment
+}
+
+const parseComments = (comments: WordPressComment[]) => {
+  return comments.filter((c) => c.status === 'APPROVE').map((comment) => parseComment(comment))
+}
+
 export const parsePost = (post: WordpressPost, full: boolean = false) => {
   const url = parseUrl(post)
   const tags = post.tags?.nodes ? parseTags(post.tags.nodes) : undefined
   const isHighlighted = tags?.length && tags.length > 0 ? tags.map((t) => t.slug).indexOf('highlights') !== -1 : false
+  const comments =
+    post.comments && post.comments.nodes && post.comments.nodes.length > 0 ? parseComments(post.comments.nodes) : null
 
   const article = {
     title: post.title,
@@ -64,7 +122,8 @@ export const parsePost = (post: WordpressPost, full: boolean = false) => {
     url,
     external: !!url,
     project: post.project,
-    allowComments: post.commentStatus ? post.commentStatus === 'open' : null,
+    commentCount: comments ? comments.length : null,
+    comments,
   } as Post
 
   return omitBy(article, (v) => v === null || v === undefined) as Post

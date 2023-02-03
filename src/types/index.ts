@@ -41,7 +41,7 @@ export interface Article {
   tags?: Tag[]
   categories?: Category[]
   excerpt?: string
-  comments: Comment[]
+  comments?: Comment[]
 }
 
 export interface Post extends Article {}
@@ -85,8 +85,8 @@ interface WordpressImageNode {
 }
 interface Avatar {
   url: string
-  width: number
-  height: number
+  width?: number
+  height?: number
 }
 interface WordpressAuthor {
   url?: string
@@ -97,13 +97,21 @@ interface WordpressAuthorNode {
   node: WordpressAuthor
 }
 export interface Author extends WordpressAuthor {}
+
+export interface Webmention {
+  source_url: string
+  target_url: string
+}
+export type CommentType = 'mention' | 'comment'
 export interface Comment {
   author: Author
   content: string
-  replies: Comment[] | []
-  root: boolean
   id: number
   date: string
+  type: CommentType
+  webmention: Webmention
+  root: boolean
+  replies: Comment[]
 }
 export interface WordPressComment {
   author: WordpressAuthorNode
@@ -112,6 +120,14 @@ export interface WordPressComment {
   replies?: WordpressComments
   date: string
   status: 'APPROVE' | 'PENDING'
+  type?: CommentType
+  parentId: number | null
+  webmention: {
+    author_avatar?: string
+    author_url?: string
+    webmention_source_url?: string
+    webmention_target_url?: string
+  }
 }
 interface WordpressComments {
   nodes: WordPressComment[]
