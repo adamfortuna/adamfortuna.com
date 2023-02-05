@@ -1,4 +1,5 @@
 import '@/styles/tailwind.css'
+import 'react-tooltip/dist/react-tooltip.css'
 
 import { Pacifico } from '@next/font/google'
 

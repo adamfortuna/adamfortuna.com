@@ -1,33 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
 import pluralize from '@/lib/pluralize'
 import { Comment as CommentType } from '@/types'
-
-const WebmentionAvatar = ({ comment }: { comment: CommentType }) => {
-  if (comment.author.url) {
-    return (
-      <a href={comment.author.url} target="_blank" className="group" rel="noreferrer">
-        <img
-          src={comment.author.avatar.url}
-          loading="lazy"
-          width={64}
-          height={64}
-          className="rounded-full w-12 h-12 ring-4 ring-transparent group-hover:ring-blue-500"
-          alt={comment.author.name}
-        />
-      </a>
-    )
-  }
-  return (
-    <img
-      src={comment.author.avatar.url}
-      loading="lazy"
-      width={64}
-      height={64}
-      className="rounded-full w-12 h-12"
-      alt={comment.author.name}
-    />
-  )
-}
+import { WebmentionAvatar } from './WebmentionAvatar'
 
 export const WebmentionSummary = ({ comments }: { comments: CommentType[] }) => {
   if (comments.length === 0) {
@@ -42,7 +15,7 @@ export const WebmentionSummary = ({ comments }: { comments: CommentType[] }) => 
           {filteredComments.length} {pluralize('Like', filteredComments.length)} and{' '}
           {pluralize('Repost', filteredComments.length)}
         </p>
-        <div className="flex flex-row -space-x-2">
+        <div className="flex flex-row -space-x-2 flex-wrap">
           {avatarComments.map((comment) => (
             <WebmentionAvatar comment={comment} key={`comment-avatar-${comment.id}`} />
           ))}
