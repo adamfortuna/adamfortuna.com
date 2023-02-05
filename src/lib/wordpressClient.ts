@@ -35,6 +35,13 @@ export const sortByDateDesc = (a1: Article, a2: Article) => {
   return a1d < a2d ? 1 : -1
 }
 
+export const sortByCommentsDesc = (a1: Article, a2: Article) => {
+  if (Number(a1.commentCount) === Number(a2.commentCount)) {
+    return 0
+  }
+  return Number(a1.commentCount) < Number(a2.commentCount) ? 1 : -1
+}
+
 export const parseTags = (tags: Tag[]) => {
   return tags.map((t) => {
     const tag = {
@@ -122,7 +129,7 @@ export const parsePost = (post: WordpressPost, full: boolean = false) => {
     url,
     external: !!url,
     project: post.project,
-    commentCount: comments ? comments.length : null,
+    commentCount: comments ? comments.length : post.commentCount || null,
     comments,
   } as Post
 

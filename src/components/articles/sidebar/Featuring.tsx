@@ -30,16 +30,13 @@ const Featuring = () => (
         </div>
       </Link>
 
-      <Link
-        href="/blog/tags/featured"
-        className="flex flex-row items-center hover:bg-ablue-300/20 rounded space-x-4 p-2"
-      >
+      <Link href="/blog/popular" className="flex flex-row items-center hover:bg-ablue-300/20 rounded space-x-4 p-2">
         <FontAwesomeIcon icon={faFire} className="text-ablue-700 w-[32px] md:w-[48px]" size="3x" />
         <div className="flex flex-col">
           <span className="font-bold text-xl text-ablue-700">
             <span className="hidden md:inline">Most </span>Popular
           </span>
-          <span className="text-ablue-200 font-semibold">The top 10%</span>
+          <span className="text-ablue-200 font-semibold">Most comments</span>
         </div>
       </Link>
 

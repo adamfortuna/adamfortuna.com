@@ -55,18 +55,21 @@ export interface ArticleTimelineProps {
   page?: number
   totalPages?: number
   url: string
+  showSeparator?: boolean
 }
 
-export const ArticlesList = ({ articles, page, totalPages, url }: ArticleTimelineProps) => {
+export const ArticlesList = ({ articles, page, totalPages, url, showSeparator = true }: ArticleTimelineProps) => {
   return (
     <div>
       {articles.map((article, index) => (
         <div key={`${article.slug}-${article.title}-${article.date}`}>
-          <ArticleTimelineSeparator
-            articles={articles}
-            currentArticle={article}
-            previousArticle={index > 0 ? articles[index - 1] : null}
-          />
+          {showSeparator && (
+            <ArticleTimelineSeparator
+              articles={articles}
+              currentArticle={article}
+              previousArticle={index > 0 ? articles[index - 1] : null}
+            />
+          )}
           <ArticleLink article={article} />
         </div>
       ))}

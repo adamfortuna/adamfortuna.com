@@ -1,6 +1,6 @@
 import { getClientForProject, parsePost, sortByDateDesc } from '@/lib/wordpressClient'
 import flatten from 'lodash/flatten'
-import { WordpressPost, WordpressClientIdentifier } from '@/types'
+import { WordpressPost, WordpressClientIdentifier, Article } from '@/types'
 
 export const findWordPressRecentPosts = `
   query GetWordPressRecentPosts($where: RootQueryToPostConnectionWhereArgs) {
@@ -10,6 +10,7 @@ export const findWordPressRecentPosts = `
         slug
         date
         excerpt(format: RAW)
+        commentCount
 
         tags {
           nodes {
@@ -45,10 +46,14 @@ export const getRecentPosts = async ({
   count,
   offset = 0,
   projects = ['adamfortuna', 'minafi', 'hardcover'],
+  sortBy = sortByDateDesc,
+  filterBy = (a: Article) => a,
 }: {
   count: number
   offset?: number
   projects?: WordpressClientIdentifier[]
+  filterBy?: any
+  sortBy?: any
 }) => {
   const finders = projects.map((p) => getRecentPostsByProject(p))
   const results = await Promise.all(finders)
@@ -56,11 +61,12 @@ export const getRecentPosts = async ({
   const allArticles = results.map((wordpressArticles: WordpressPost[]) =>
     wordpressArticles.map((post: WordpressPost) => parsePost(post)),
   )
-  const flatArticles = flatten(allArticles).sort(sortByDateDesc)
+  const flatArticles = flatten(allArticles).filter(filterBy).sort(sortBy)
+  const articles = [...flatArticles.slice(offset, offset + count)]
 
   return {
     articlesCount: flatArticles.length,
-    articles: [...flatArticles.slice(offset, offset + count)],
+    articles,
     totalPages: Math.ceil(flatArticles.length / count),
   }
 }
