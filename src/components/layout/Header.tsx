@@ -2,6 +2,7 @@
 import { faHammer, faPencil } from '@fortawesome/pro-regular-svg-icons'
 import Link from 'next/link'
 import Cloud from '@/images/cloud.svg'
+import Sun from '@/images/sun.svg'
 
 import Af from '@/images/af.svg'
 import { NavLink } from '@/components/layout/NavLink'
@@ -108,6 +109,7 @@ export const Header = ({ isHomePage = false }: { isHomePage?: boolean }) => {
               </span>
             </Link>
           </div>
+          {!isHomePage && <Sun className="relative h-12 w-16 md:h-20 md:w-24 lg:h-24 lg:w-32" />}
           <div className="flex md:gap-x-6 items-end md:items-center">
             <NavLink href="/about">About</NavLink>
             <NavLink href="/projects" icon={faHammer}>

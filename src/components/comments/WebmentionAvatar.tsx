@@ -1,11 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-
-'use client'
-
 import { Comment as CommentType } from '@/types'
 import { extractFediverseName } from '@/lib/stringService'
-
-import { Tooltip } from 'react-tooltip'
 
 export const WebmentionAvatar = ({ comment }: { comment: CommentType }) => {
   const id = `comment-avatar-${comment.id}`
@@ -14,15 +9,17 @@ export const WebmentionAvatar = ({ comment }: { comment: CommentType }) => {
   if (comment.author.url) {
     return (
       <>
-        <Tooltip anchorId={id} place="top" />
         <a
           href={comment.author.url}
           target="_blank"
-          className="group"
+          className="group relative"
           rel="noreferrer"
           data-tooltip-content={username}
           id={id}
         >
+          <span className="bg-slate-800 -mt-6 font-semibold px-1 py-0.5 absolute rounded-lg hidden group-hover:block text-white z-10">
+            {username}
+          </span>
           <img
             src={comment.author.avatar.url}
             loading="lazy"
@@ -37,7 +34,6 @@ export const WebmentionAvatar = ({ comment }: { comment: CommentType }) => {
   }
   return (
     <>
-      <Tooltip anchorId={id} place="top" />
       <img
         src={comment.author.avatar.url}
         loading="lazy"
@@ -45,7 +41,6 @@ export const WebmentionAvatar = ({ comment }: { comment: CommentType }) => {
         height={64}
         className="rounded-full w-12 h-12"
         alt={username}
-        data-tooltip-content={username}
         id={id}
       />
     </>

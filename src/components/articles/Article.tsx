@@ -22,7 +22,8 @@ export const Article = ({ article }: ArticleHeaderProps) => {
           <div className="md:hidden bg-white absolute bottom-0 h-8 md:h-2 w-full" />
         </div>
 
-        {article.comments ? <Comments article={article} /> : <ReplyViaEmail />}
+        <Comments article={article} />
+        <ReplyViaEmail />
       </div>
     </article>
   )
