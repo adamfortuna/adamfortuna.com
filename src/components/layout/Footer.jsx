@@ -69,7 +69,7 @@ export const Footer = () => {
                   id="email"
                   autoComplete="email"
                   required
-                  className="w-full min-w-0 appearance-none rounded-md border-[#274928] bg-[#9fca75] px-[calc(theme(spacing.3)-1px)] py-[calc(theme(spacing[1.5])-1px)] text-base leading-7 text-gray-900 placeholder-[#274928] shadow-sm focus:border-green-600 focus:ring-green-600 sm:w-56 sm:text-sm sm:leading-6"
+                  className="w-full min-w-0 appearance-none rounded-md border-transparent bg-[#9fca75] px-[calc(theme(spacing.3)-1px)] py-[calc(theme(spacing[1.5])-1px)] text-base leading-7 text-gray-900 placeholder-[#274928] shadow-sm  sm:w-56 sm:text-sm sm:leading-6"
                   placeholder="Enter your email"
                 />
                 <div className="mt-4 sm:mt-0 sm:ml-4 sm:flex-shrink-0">
