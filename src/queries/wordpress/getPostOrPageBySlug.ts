@@ -74,7 +74,7 @@ export const getPostOrPageBySlug = (slug: string) => {
       slug,
     },
   }).then((result) => {
-    if (!result.data.post && !result.data.page) {
+    if (!result.data?.post && !result.data?.page) {
       return null
     }
     if (result.data.post) {
