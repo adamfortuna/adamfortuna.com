@@ -152,6 +152,7 @@ module.exports = {
           p: {
             marginTop: theme('spacing.7'),
             marginBottom: theme('spacing.7'),
+            overflowX: 'auto',
             ...blogWidth(theme),
           },
 
@@ -415,7 +416,7 @@ module.exports = {
               paddingRight: theme('spacing.4'),
               border: '1px solid',
               borderColor: 'var(--tw-prose-pre-border)',
-              borderRadius: theme('borderRadius.3xl')
+              borderRadius: theme('borderRadius.2xl')
             }
           },
           'pre code': {

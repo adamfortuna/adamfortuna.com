@@ -92,7 +92,7 @@ export const Footer = () => {
                 <span>Subscribe to RSS</span>
               </a>
             </div>
-            <div className="text-right text-xl font-semibold flex flex-row md:flex-col mt-4 md:mt-0 justify-center md:justify-end space-x-12 md:space-x-0">
+            <div className="text-right text-xl font-semibold flex flex-row md:flex-col mt-4 md:mt-0 justify-center md:justify-end space-x-4 md:space-x-0">
               <Link
                 href="/about"
                 className="flex-shrink border-2 border-transparent rounded-lg hover:text-green-900 hover:border-green-900 p-1"
