@@ -340,7 +340,7 @@
   {
     "title":"AdamFortuna.com",
     "slug":null,
-    "description":"My personal website for exploring new tech and sharing what I learn along the way.",
+    "description":"My blog and digital garden for exploring new tech and sharing what I learn along the way.",
     "priority":10,
     "size":"md",
     "years_active":"2005-now",
@@ -356,7 +356,14 @@
       "TypeScript",
       "React",
       "Tailwind.css",
-      "Markdown"
+      "Markdown",
+      "GraphQL"
+    ],
+    "links":[
+      {
+        "url":"https://adamfortuna.com/wordpress-headless-cms-next-js-and-graphql",
+        "title":"Using WordPress as a Headless CMS with Next.js and GraphQL"
+      }
     ],
     "date":null,
     "href":null,
@@ -1789,7 +1796,7 @@
     "size":"md",
     "years_active":"2015-2022",
     "state":"transferred",
-    "state_description":"Converted to Strapi/Next.js",
+    "state_description":"Converted to Next.js/WordPress",
     "date_started":"2015-07-01",
     "date_ended":"2016-12-31",
     "category":"app",
@@ -2765,6 +2772,68 @@
     "href":null,
     "project":"projects",
     "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2022/line-of-thought.md",
+    "content":null
+  },
+  {
+    "title":"AdamFortuna.com Projects Page",
+    "slug":null,
+    "description":"You're here now. A showcase of techy things I've worked on.",
+    "priority":0,
+    "size":"sm",
+    "years_active":"2022",
+    "state":"live",
+    "state_description":"Since 2022",
+    "date_started":"2022-08-27",
+    "date_ended":"2022-12-15",
+    "category":"app",
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/af_blue_4446868a78.svg",
+    "parent_project":"adamfortuna",
+    "tags":[
+      "React.js",
+      "Next.js"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2015/adamfortuna-v4.md",
+    "content":null
+  },
+  {
+    "title":"Hardcover iOS App",
+    "slug":null,
+    "description":"A native iOS app for Hardcover.",
+    "priority":0,
+    "size":"md",
+    "years_active":"2022-2023",
+    "state":"live",
+    "state_description":"Live",
+    "date_started":"2022-10-01",
+    "date_ended":"2023-02-28",
+    "category":"app",
+    "employed":true,
+    "role":"Developer",
+    "links":[
+      {
+        "url":"https://testflight.apple.com/join/oZZgnCTj",
+        "title":"Testflight link"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/hardcover_logo_space_c6c29aabe7.png",
+    "parent_project":"hardcover",
+    "tags":[
+      "Next.js",
+      "Ruby",
+      "Hasura",
+      "GraphQL",
+      "React",
+      "Tailwind.css",
+      "Capacitor",
+      "Cordova"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2022/hardcover-airlists.md",
     "content":null
   }
 ]
