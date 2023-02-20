@@ -2,6 +2,7 @@
 node*modules
 out
 *.css
+*.scss
 .\_.js
 *.graphql
 src/lib/graphql/output.tsx
