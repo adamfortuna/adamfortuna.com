@@ -27,7 +27,10 @@ const ReadMoreLink = ({ url }: { url: string }) => {
 }
 export const Webmention = ({ comment }: { comment: CommentType }) => {
   const content = useMemo(() => {
-    const commentContent = comment.type === 'mention' ? stripHtml(comment.content).result : comment.content
+    const commentContent =
+      comment.type === 'mention' && comment.content.length > 0
+        ? stripHtml(comment.content).result
+        : comment.content || ''
 
     if (comment.type === 'mention') {
       return commentContent.length > 280 ? `${commentContent.substring(0, 280)}...` : commentContent

@@ -197,7 +197,7 @@ module.exports = {
           },
 
           // Images
-          img: {
+          'img:not(.pic)': {
             marginLeft: "auto",
             marginRight: "auto",
             '@screen lg': {
