@@ -2646,10 +2646,11 @@
     "description":"Turn AllTrails hikes into beautiful stories.",
     "priority":5,
     "size":"sm",
-    "years_active":"2021-now",
-    "state":"idea",
-    "state_description":"Prototyping",
+    "years_active":"2021-2022",
+    "state":"retired",
+    "state_description":"Never launched",
     "date_started":"2021-08-01",
+    "date_ended":"2022-08-01",
     "category":"app",
     "links":[
       {
@@ -2814,8 +2815,12 @@
     "role":"Developer",
     "links":[
       {
-        "url":"https://testflight.apple.com/join/oZZgnCTj",
-        "title":"Testflight link"
+        "url":"https://apps.apple.com/us/app/hardcover-app/id1663379893",
+        "title":"iOS App"
+      },
+      {
+        "url":"https://play.google.com/store/apps/details?id=hardcover.app",
+        "title":"Android App"
       }
     ],
     "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/hardcover_logo_space_c6c29aabe7.png",
@@ -2829,6 +2834,81 @@
       "Tailwind.css",
       "Capacitor",
       "Cordova"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2022/hardcover-airlists.md",
+    "content":null
+  },
+  {
+    "title":"Hardcover Search",
+    "slug":null,
+    "description":"",
+    "priority":0,
+    "size":"lg",
+    "years_active":"2023",
+    "state":"live",
+    "state_description":"Live",
+    "date_started":"2023-05-01",
+    "category":"experience",
+    "employed":true,
+    "role":"Developer",
+    "links":[
+      {
+        "url":"https://hardcover.app/search",
+        "title":"Search page"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/hardcover_logo_space_c6c29aabe7.png",
+    "parent_project":"hardcover",
+    "tags":[
+      "Ruby on Rails",
+      "Next.js",
+      "Ruby",
+      "React",
+      "Tailwind.css",
+      "Algolia"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2022/hardcover-airlists.md",
+    "content":null
+  },
+  {
+    "title":"Hardcover V2 (Next.js 13)",
+    "slug":null,
+    "description":"",
+    "priority":0,
+    "size":"lg",
+    "years_active":"2023",
+    "state":"live",
+    "state_description":"Live",
+    "date_started":"2023-08-01",
+    "category":"experience",
+    "employed":true,
+    "role":"Developer, researcher",
+    "links":[
+      {
+        "url":"https://hardcover.app",
+        "title":"New Hardcover"
+      },
+      {
+        "url":"https://hardcover.app/books/the-way-of-kings",
+        "title":"Example book page: The Way of Kings"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/hardcover_logo_space_c6c29aabe7.png",
+    "parent_project":"hardcover",
+    "tags":[
+      "Ruby on Rails",
+      "Next.js",
+      "Ruby",
+      "React",
+      "Tailwind.css",
+      "Hasura",
+      "GraphQL"
     ],
     "date":null,
     "href":null,
