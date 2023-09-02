@@ -29,7 +29,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        handwriting: ['var(--font-handwriting)', 'Pacifico', 'cursive']
+        handwriting: ['var(--font-handwriting)', 'Pacifico', 'cursive'],
+        digital: ['var(--font-digital)', 'Press Start 2P', 'cursive'],
       },
       colors: {
         ablue: {
