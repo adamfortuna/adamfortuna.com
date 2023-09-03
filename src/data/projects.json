@@ -2749,15 +2749,15 @@
     "priority":20,
     "size":"md",
     "years_active":"2022-now",
-    "state":"development",
-    "state_description":"Iterating",
+    "state":"live",
+    "state_description":"Use it everyday!",
     "date_started":"2022-08-01",
     "featured":true,
     "category":"app",
     "links":[
       {
         "url":"https://lineofthought.com/",
-        "title":"Try the demo"
+        "title":"Check out the Demo"
       }
     ],
     "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/lineofthought_icon_db1bb412a0.png",
@@ -2885,7 +2885,7 @@
     "years_active":"2023",
     "state":"live",
     "state_description":"Live",
-    "date_started":"2023-08-01",
+    "date_started":"2023-06-01",
     "category":"experience",
     "employed":true,
     "role":"Developer, researcher",
@@ -2914,6 +2914,38 @@
     "href":null,
     "project":"projects",
     "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2022/hardcover-airlists.md",
+    "content":null
+  },
+  {
+    "title":"Social Histomap",
+    "slug":null,
+    "description":"",
+    "priority":0,
+    "size":"md",
+    "years_active":"2023-now",
+    "state":"development",
+    "state_description":"Building",
+    "date_started":"2023-08-25",
+    "category":"Data Visualization",
+    "employed":false,
+    "role":"Developer",
+    "links":[
+      {
+        "url":"https://adamfortuna.com/socialhistomap",
+        "title":"Prototype (in development)"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1693781671/map-location-dot-regular_jo1o2u.svg",
+    "tags":[
+      "Next.js",
+      "React",
+      "Tailwind.css",
+      "D3.js"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"",
     "content":null
   }
 ]
