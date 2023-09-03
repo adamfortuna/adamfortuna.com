@@ -56,6 +56,8 @@ export default class SocialHistoMap {
     leftPath.lineTo(0, this.yScale(years[years.length - 1]))
     leftPath.closePath()
 
+    const yearLabelWidth = 60
+    const yearLabelPadding = 8
     this.svg
       .append('g')
       .style('transform', 'translateY(24px)')
@@ -67,12 +69,9 @@ export default class SocialHistoMap {
       )
       .call(() => selectAll('.tick:last-of-type line').attr('stroke-opacity', 0))
       .call(() => selectAll('.tick:first-of-type line').attr('stroke-width', 3))
-      .call(() =>
-        selectAll('.tick text').attr('x', 4).attr('font-size', '18px').attr('font-weight', 'bold').attr('dy', -4),
-      )
       .call(() => selectAll('.domain').style('stroke-width', 3))
       .append('path')
-      .style('transform', 'translateX(70px)')
+      .style('transform', `translateX(${yearLabelWidth}px)`)
       .attr('stroke', 'currentColor')
       .attr('d', leftPath.toString())
       .style('stroke-width', 3)
@@ -84,10 +83,14 @@ export default class SocialHistoMap {
       .tickSize(0)
     this.svg
       .append('g')
-      .style('transform', `translate(${this.config.width - 70}px, 24px)`)
+      .style('transform', `translate(${this.config.width - yearLabelWidth}px, 24px)`)
       .call(yAxisRight)
       .call(() =>
-        selectAll('.tick text').attr('x', 12).attr('font-size', '18px').attr('font-weight', 'bold').attr('dy', -4),
+        selectAll('.tick text')
+          .attr('x', yearLabelPadding)
+          .attr('font-size', '18px')
+          .attr('font-weight', 'bold')
+          .attr('dy', -4),
       )
       .call(() => selectAll('.domain').style('stroke-width', 3))
   }
