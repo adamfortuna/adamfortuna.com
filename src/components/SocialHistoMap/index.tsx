@@ -1,7 +1,7 @@
 /* eslint-disable react/no-danger */
 import jsdom from 'jsdom'
 import { select } from 'd3'
-import genereteHistomap from './run'
+import SocialHistoMap from './SocialHistoMap'
 
 const { JSDOM } = jsdom
 
@@ -13,8 +13,11 @@ const ServerSocialHistoMap = () => {
   const { document } = new JSDOM('').window
   global.document = document
   const virtualBody = select(document).select('body')
-  const svg = genereteHistomap(virtualBody, settings)
-  return <div dangerouslySetInnerHTML={{ __html: svg.node().innerHTML }} />
+  const histomap = new SocialHistoMap(virtualBody, settings)
+  histomap.run()
+
+  const content = virtualBody.node() as HTMLElement
+  return <div dangerouslySetInnerHTML={{ __html: content.innerHTML }} />
 }
 
 export default ServerSocialHistoMap

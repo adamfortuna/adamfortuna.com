@@ -17,7 +17,7 @@ export const metadata = {
 export default async function SocialHistoMapPage({ children }: { children: React.ReactNode }) {
   return (
     <div className="bg-yellow-50 min-h-screen">
-      <div className="container sm:border-[3px] border-black mx-auto m-4 pt-6">
+      <div className="container lg:border-[3px] border-black mx-auto m-4 pt-6">
         <div className="mb-8 mx-4">
           <h1 className="text-3xl lg:text-5xl text-center font-semibold font-digital" style={pressStart.style}>
             The Social Media Histomap

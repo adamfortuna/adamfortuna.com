@@ -3,19 +3,20 @@
 import { useEffect, useRef } from 'react'
 import { select } from 'd3'
 import { useElementSize } from 'usehooks-ts'
-import genereteHistomap from './run'
+import SocialHistoMap from './SocialHistoMap'
 
-const SocialHistoMap = ({ width, height }: { width: number; height: number }) => {
+const SocialHistoMapEl = ({ width, height }: { width: number; height: number }) => {
   const wrapperEl = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (width && wrapperEl.current) {
       wrapperEl.current.innerHTML = ''
       const svgEl = select(wrapperEl.current)
-      genereteHistomap(svgEl, {
+      const histomap = new SocialHistoMap(svgEl, {
         width: width > 1530 ? 1530 : width,
         height,
       })
+      histomap.run()
     }
   }, [width, height, wrapperEl])
 
@@ -27,7 +28,7 @@ const DynamicSocialHistoMap = () => {
 
   return (
     <div ref={wrapperEl}>
-      <SocialHistoMap height={3300} width={width} />
+      <SocialHistoMapEl height={3300} width={width} />
     </div>
   )
 }
