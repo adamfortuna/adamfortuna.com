@@ -1,14 +1,16 @@
 /* eslint-disable @typescript-eslint/lines-between-class-members */
 /* eslint-disable sonarjs/no-duplicate-string */
-import { area, Selection, axisRight, path, select, selectAll, stack, stackOffsetExpand } from 'd3'
+import { area, Selection, axisRight, path, select, selectAll, stack, stackOffsetExpand, Series } from 'd3'
 import { scaleLinear } from 'd3-scale'
 import { extent } from 'd3-array'
+import { maxBy } from 'lodash'
 import data from './dataArray.json'
 import colorsJson from './colors.json'
 import plarformOrder from './order.json'
 
 type SelectionType = Selection<any, any, any, any>
 const colors: { [key: string]: string } = colorsJson
+// const platforms = Object.keys(plarformOrder)
 
 interface HistomapConfig {
   height: number
@@ -18,14 +20,17 @@ interface HistomapConfig {
 const years = data.map((d) => d.year).sort()
 
 export default class SocialHistoMap {
+  [x: string]: any
   svg: SelectionType
   config: HistomapConfig
   ref: SelectionType
-  yDomain: [Number, Number] | undefined
+  yDomain: [Number, Number]
   yScale: any
   mini: boolean
   xScale: any
   yearLabelWidth: number = 60
+  stackAreas: any
+  stackedSeriesData: Series<{ [key: string]: number }, string>[]
 
   constructor(ref: SelectionType, config: HistomapConfig) {
     this.ref = ref
@@ -33,17 +38,20 @@ export default class SocialHistoMap {
     this.config.height *= years.length
     this.svg = this.ref.append('svg')
     this.mini = this.config.width === 1000
-  }
 
+    const platformArea = stack().keys(plarformOrder).offset(stackOffsetExpand)
+    this.stackedSeriesData = platformArea(data)
+    this.yDomain = extent(years) as [Number, Number]
+  }
   run() {
     this.setup()
     this.createSvg()
     this.areaChart()
     this.yAxis()
+    this.labels()
   }
 
   setup() {
-    this.yDomain = extent(years) as [Number, Number]
     this.yScale = scaleLinear().range([0, this.config.height]).domain(this.yDomain)
     this.xScale = scaleLinear()
       .range([0, this.config.width - this.yearLabelWidth - (this.mini ? 0 : this.yearLabelWidth)])
@@ -108,30 +116,53 @@ export default class SocialHistoMap {
   }
 
   areaChart() {
-    const areaGenerator = area()
-      .x0((d) => {
-        return this.xScale(d[0])
-      })
-      .x1((d) => {
-        return this.xScale(d[1])
-      })
-      .y((d, i) => {
-        return this.yScale(data[i].year)
-      })
+    this.areaGenerator = area()
+      .x0((d) => this.xScale(d[0]))
+      .x1((d) => this.xScale(d[1]))
+      .y((d, i) => this.yScale(data[i].year))
 
-    const platformArea = stack().keys(plarformOrder).offset(stackOffsetExpand)
-    const stackedSeries = platformArea(data)
-
-    this.svg
+    this.stackAreas = this.svg
       .append('g')
       .style('transform', `translate(${this.yearLabelWidth}px, 24px)`)
       .attr('width', this.config.width - this.yearLabelWidth - (this.mini ? 0 : this.yearLabelWidth))
       .selectAll('path')
-      .data(stackedSeries)
+      .data(this.stackedSeriesData)
       .join('path')
       .style('fill', (d) => colors[d.key])
       .attr('d', (d) => {
-        return areaGenerator(d as [number, number][])
+        return this.areaGenerator(d as [number, number][])
       })
+  }
+
+  labels() {
+    this.svg
+      .append('g')
+      .style('transform', `translate(${this.yearLabelWidth}px, 24px)`)
+      .attr('class', 'labels')
+      .attr('width', this.config.width - this.yearLabelWidth - (this.mini ? 0 : this.yearLabelWidth))
+      .selectAll('text')
+      .data(this.stackedSeriesData)
+      .enter()
+      .append('text')
+      .attr('x', (d) => {
+        // There really should be a better way to do this?
+        const totals = d.map((yearData, index) => {
+          return { index, x0: yearData[0], x1: yearData[1], total: yearData[1] - yearData[0], year: yearData.data.year }
+        })
+        const topYear = maxBy(totals, (yearData) => yearData.total)
+        return topYear ? this.xScale(topYear.x0 + (topYear.x1 - topYear.x0) / 2) : 0
+      })
+      .attr('y', (d) => {
+        const totals = d.map((yearData) => {
+          return { total: yearData[1] - yearData[0], year: yearData.data.year }
+        })
+        const topYear = maxBy(totals, (yearData) => yearData.total)
+        return topYear ? this.yScale(d.key === 'Usenet' ? 1981.5 : topYear.year) : 0
+      })
+      .attr('font-size', 24)
+      .attr('font-weight', 'bold')
+      .attr('filter', 'url(#whiteOutlineEffect)')
+      .style('text-anchor', 'middle')
+      .text(({ key }) => key)
   }
 }
