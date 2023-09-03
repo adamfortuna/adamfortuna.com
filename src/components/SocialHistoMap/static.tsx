@@ -7,7 +7,7 @@ const { JSDOM } = jsdom
 
 const settings = {
   width: 1530,
-  height: 3300,
+  height: 200,
 }
 const ServerSocialHistoMap = () => {
   const { document } = new JSDOM('').window

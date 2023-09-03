@@ -13,7 +13,7 @@ const SocialHistoMapEl = ({ width, height }: { width: number; height: number }) 
       wrapperEl.current.innerHTML = ''
       const svgEl = select(wrapperEl.current)
       const histomap = new SocialHistoMap(svgEl, {
-        width: width > 1530 ? 1530 : width,
+        width,
         height,
       })
       histomap.run()
@@ -28,7 +28,7 @@ const DynamicSocialHistoMap = () => {
 
   return (
     <div ref={wrapperEl}>
-      <SocialHistoMapEl height={3300} width={width} />
+      <SocialHistoMapEl height={200} width={width} />
     </div>
   )
 }
