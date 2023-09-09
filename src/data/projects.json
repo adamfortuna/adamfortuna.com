@@ -416,8 +416,8 @@
     "priority":0,
     "size":"sm",
     "years_active":"2006",
-    "state":"retired",
-    "state_description":"Shut down in 2006",
+    "state":"transferred",
+    "state_description":"Iterated to Eval Everything",
     "date_started":"2005-07-01",
     "date_ended":"2006-01-31",
     "category":"blog",
@@ -467,8 +467,8 @@
     "priority":0,
     "size":"sm",
     "years_active":"2005-2006",
-    "state":"retired",
-    "state_description":"Never launched",
+    "state":"transferred",
+    "state_description":"Iterated to ArcadeFly",
     "date_started":"2005-10-01",
     "date_ended":"2006-02-25",
     "category":"app",
@@ -1482,7 +1482,8 @@
       "Jekyll",
       "Sass",
       "Markdown",
-      "Bootstrap"
+      "Bootstrap",
+      "Octopress"
     ],
     "date":null,
     "href":null,
@@ -1517,6 +1518,89 @@
       "JavaScript",
       "Ruby",
       "Backbone.js"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2013/try-objective-c.md",
+    "content":null
+  },
+  {
+    "title":"Code School Course: Drawing Data with D3.js",
+    "slug":null,
+    "description":"An interactive course to learn data visualizations with D3.js",
+    "priority":0,
+    "size":"lg",
+    "years_active":"2015-2016",
+    "state":"retired",
+    "state_description":"Never launched",
+    "date_started":"2015-10-01",
+    "date_ended":"2016-5-01",
+    "category":"course",
+    "employed":true,
+    "role":"Instructor",
+    "links":[
+      {
+        "url":"https://youtu.be/_UpodOSBzR4",
+        "title":"Draft Level 1, Section 1"
+      },
+      {
+        "url":"https://youtu.be/Zw3iSfbTEdo",
+        "title":"Draft Level 1, Section 3"
+      },
+      {
+        "url":"https://youtu.be/7A7Kf2C_-LE",
+        "title":"Draft Level 2"
+      },
+      {
+        "url":"https://youtu.be/5-G5zc20Vsc",
+        "title":"Draft Level 3"
+      },
+      {
+        "url":"https://youtu.be/eHWzfkhqSaY",
+        "title":"Draft Level 4"
+      },
+      {
+        "url":"https://youtu.be/kMdMuScut0s",
+        "title":"Draft Level 5"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1694297345/Screenshot_2023-09-09_at_4.07.32_PM_vxqezo.png",
+    "parent_project":"codeschool",
+    "tags":[
+      "D3.js",
+      "JavaScript"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2013/try-objective-c.md",
+    "content":null
+  },
+  {
+    "title":"Whiteboard",
+    "slug":null,
+    "description":"A front-end framework to build slides for Code School Courses in HTML.",
+    "priority":0,
+    "size":"md",
+    "years_active":"2015-2016",
+    "state":"retired",
+    "state_description":"Never launched",
+    "date_started":"2015-10-01",
+    "date_ended":"2016-5-01",
+    "category":"library",
+    "employed":true,
+    "role":"Creator",
+    "links":[
+      {
+        "url":"https://youtu.be/riIQFHy1kw8",
+        "title":"Proof of concept video"
+      }
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1694297616/chalkboard-regular_ec6k3d.svg",
+    "parent_project":"codeschool",
+    "tags":[
+      "JavaScript"
     ],
     "date":null,
     "href":null,
@@ -2641,6 +2725,32 @@
     "content":null
   },
   {
+    "title":"Interactive S&P 500 Visualization",
+    "slug":null,
+    "description":"A scroll-driven data viz explaining why the S&P 500 is a great beginner investment.",
+    "priority":0,
+    "size":"sm",
+    "years_active":"2021",
+    "state":"retired",
+    "state_description":"Never launched",
+    "date_started":"2021-04-02",
+    "date_ended":"2021-05-01",
+    "category":"experience",
+    "links":[
+    ],
+    "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1662311966/minafi_logo_11e489e1f3.svg",
+    "parent_project":"minafi",
+    "tags":[
+      "D3.js",
+      "Scrollama.js"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"/Users/adamfortuna/code/adamfortuna/adamfortuna.com/content/articles/projects/2021/minafi-investment-apps.md",
+    "content":null
+  },
+  {
     "title":"Seek Adventures",
     "slug":null,
     "description":"Turn AllTrails hikes into beautiful stories.",
@@ -2844,7 +2954,7 @@
   {
     "title":"Hardcover Search",
     "slug":null,
-    "description":"",
+    "description":"Algolia & React based book search.",
     "priority":0,
     "size":"lg",
     "years_active":"2023",
@@ -2879,7 +2989,7 @@
   {
     "title":"Hardcover V2 (Next.js 13)",
     "slug":null,
-    "description":"",
+    "description":"Upgraded from the pages router to the app router w/SSR.",
     "priority":0,
     "size":"lg",
     "years_active":"2023",
@@ -2919,7 +3029,7 @@
   {
     "title":"Social Histomap",
     "slug":null,
-    "description":"",
+    "description":"A visualization of social media since the beginning of time.",
     "priority":0,
     "size":"md",
     "years_active":"2023-now",
@@ -2937,9 +3047,7 @@
     ],
     "icon_url":"https://res.cloudinary.com/dyogenez/image/upload/v1693781671/map-location-dot-regular_jo1o2u.svg",
     "tags":[
-      "Next.js",
-      "React",
-      "Tailwind.css",
+      "Svelte",
       "D3.js"
     ],
     "date":null,

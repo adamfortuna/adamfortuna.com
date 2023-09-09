@@ -11,7 +11,7 @@ export interface ArticleHeaderProps {
   article: Page | Post
 }
 
-const ABOUT_SLUGS = ['about', 'goals', 'beliefs']
+const ABOUT_SLUGS = ['about', 'goals', 'beliefs', 'now']
 
 export const Article = ({ article }: ArticleHeaderProps) => {
   const useAbout = ABOUT_SLUGS.indexOf(article.slug) !== -1
