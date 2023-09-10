@@ -153,3 +153,36 @@ export interface WordpressPost extends WordpressContent {
 }
 
 export interface WordpressPage extends WordpressContent {}
+
+interface HardcoverImageType {
+  url: string
+  height: number
+  width: number
+}
+interface HardcoverAuthor {
+  name: string
+}
+interface HardcoverContributionType {
+  contribution: string
+  author: HardcoverAuthor
+}
+interface BookType {
+  title: string
+  slug: string
+  cachedImage: HardcoverImageType
+  contributions: HardcoverContributionType[]
+}
+interface BookReviewType {
+  id: number
+  rating: number
+  book: BookType
+  reviewedAt: string
+  review?: string
+  likesCount: number
+}
+export interface BookReviewReadType {
+  id: number
+  startedAt?: string
+  finishedAt: string
+  userBook: BookReviewType
+}

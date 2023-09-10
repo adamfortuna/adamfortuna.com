@@ -151,12 +151,12 @@ export const parsePage = (page: WordpressPage) => {
 
 export const fetchClient = ({
   url,
-  key,
+  auth,
   query,
   variables = {},
 }: {
   url: string
-  key: string
+  auth: string
   query: string
   variables?: any
 }) => {
@@ -165,7 +165,7 @@ export const fetchClient = ({
       ...{
         url,
         query,
-        key,
+        auth,
       },
       ...variables,
     }),
@@ -177,7 +177,7 @@ export const fetchClient = ({
     },
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Basic ${key}`,
+      Authorization: auth,
     },
     body: JSON.stringify({
       query,
@@ -189,7 +189,7 @@ export const fetchClient = ({
 export const adamfortunaClient = ({ query, variables = {} }: { query: string; variables?: any }) => {
   return fetchClient({
     url: 'https://wp.adamfortuna.com/graphql',
-    key: String(process.env.WP_ADAMFORTUNA_TOKEN),
+    auth: `Basic ${String(process.env.WP_ADAMFORTUNA_TOKEN)}`,
     query,
     variables,
   })
@@ -198,7 +198,7 @@ export const adamfortunaClient = ({ query, variables = {} }: { query: string; va
 export const hardcoverClient = ({ query, variables = {} }: { query: string; variables?: any }) => {
   return fetchClient({
     url: 'https://wp.hardcover.app/graphql',
-    key: String(process.env.WP_HARDCOVER_TOKEN),
+    auth: `Basic ${String(process.env.WP_HARDCOVER_TOKEN)}`,
     query,
     variables,
   })
@@ -207,7 +207,7 @@ export const hardcoverClient = ({ query, variables = {} }: { query: string; vari
 export const minafiClient = ({ query, variables = {} }: { query: string; variables?: any }) => {
   return fetchClient({
     url: 'https://wp.minafi.com/graphql',
-    key: String(process.env.WP_MINAFI_TOKEN),
+    auth: `Basic ${String(process.env.WP_MINAFI_TOKEN)}`,
     query,
     variables,
   })
