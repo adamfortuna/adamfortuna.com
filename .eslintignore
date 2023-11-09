@@ -4,8 +4,6 @@ out
 *.css
 *.scss
 .\_.js
-*.graphql
-src/lib/graphql/output.tsx
 _.png
 *.svg
 *.json

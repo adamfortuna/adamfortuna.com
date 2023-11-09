@@ -100,7 +100,7 @@ export const Header = ({ isHomePage = false }: { isHomePage?: boolean }) => {
                   className="u-photo"
                   alt="Avatar for Adam Fortuna"
                   loading="lazy"
-                  src="https://res.cloudinary.com/dyogenez/images/w_900/w_400,h_400,c_thumb/v1675280471/wordpress/adam_6761814f5/adam_6761814f5?_i=AA"
+                  src="https://storage.cloud.google.com/adamfortuna/blog/adam_6761814f5.jpeg"
                 />
                 <span className="p-note">
                   Hey hey! I'm a full-stack product developer in Salt Lake City, UT. I love enlivening experiences,

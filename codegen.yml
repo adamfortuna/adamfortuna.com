@@ -1,9 +1,0 @@
-overwrite: true
-schema: "../api.adamfortuna.com/exports/schema.graphql"
-documents: "src/lib/graphql/**/*.graphql"
-generates:
-  src/lib/graphql/output.tsx:
-    plugins:
-      - "typescript"
-      - "typescript-operations"
-      - "typescript-react-apollo"

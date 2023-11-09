@@ -4,18 +4,8 @@ import { Comment as CommentType } from '@/types'
 import clsx from 'clsx'
 import { stripHtml } from 'string-strip-html'
 import { dateFullLong } from '@/lib/dateService'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 
 const ReadMoreLink = ({ url }: { url: string }) => {
-  if (url.indexOf('brid.gy/comment/twitter') !== -1) {
-    return (
-      <a href={url} target="_blank" rel="nofollow noopener noreferrer" className="not-prose space-x-2">
-        <span>Read at</span>
-        <FontAwesomeIcon icon={faTwitter} size="sm" className="w-3 h-3 inline" />
-      </a>
-    )
-  }
   return (
     <>
       Read more at{' '}

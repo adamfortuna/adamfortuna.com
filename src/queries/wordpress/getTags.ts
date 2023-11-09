@@ -1,6 +1,6 @@
 import { getClientForProject, parseTags } from '@/lib/wordpressClient'
 import { Tag, WordpressClientIdentifier } from '@/types'
-import { flatten } from 'lodash'
+import flatten from 'lodash/flatten'
 
 export const findWordPressTags = `
   query GetTags {

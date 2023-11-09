@@ -8,7 +8,7 @@ export const ArticleAboutAdamFooter = () => (
         className="rounded-lg w-[100px] h-[100px]"
         alt="Avatar for Adam Fortuna"
         loading="lazy"
-        src="https://res.cloudinary.com/dyogenez/images/w_900/w_100,h_100,c_thumb/v1675280471/wordpress/adam_6761814f5/adam_6761814f5?_i=AA"
+        src="https://storage.googleapis.com/adamfortuna/blog/adam_6761814f5_small.jpeg"
         width={100}
         height={100}
       />
@@ -16,7 +16,7 @@ export const ArticleAboutAdamFooter = () => (
         className="u-photo hidden"
         alt="Avatar for Adam Fortuna"
         loading="lazy"
-        src="https://res.cloudinary.com/dyogenez/images/w_900/w_400,h_400,c_thumb/v1675280471/wordpress/adam_6761814f5/adam_6761814f5?_i=AA"
+        src="https://storage.googleapis.com/adamfortuna/blog/adam_6761814f5.jpeg"
       />
       <div>
         <p className="mb-2">

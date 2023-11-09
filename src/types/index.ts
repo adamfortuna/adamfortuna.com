@@ -33,7 +33,7 @@ export interface Article {
   readingTime?: number
   external: boolean
   url: string
-  featuredImage: WordpressImage
+  featuredImage?: WordpressImage
   allowComments?: boolean
   commentCount: number
 

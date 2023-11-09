@@ -16,11 +16,15 @@ export const PhotoArticleHeader = ({ article }: PhotoArticleHeaderProps) => {
     <div className="mb-6">
       <div className="-navbar z-0 relative h-screen flex flex-col place-content-center content-wrapper">
         <div className="absolute w-full h-full inset-0 bg-grey-800">
-          <img
-            className="absolute inset-0 w-full h-full object-cover bg-center"
-            alt={`${article.title} title`}
-            src={article.featuredImage.sourceUrl}
-          />
+          {article.featuredImage?.sourceUrl ? (
+            <img
+              className="absolute inset-0 w-full h-full object-cover bg-center"
+              alt={`${article.title} title`}
+              src={article.featuredImage.sourceUrl}
+            />
+          ) : (
+            false
+          )}
           <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-smoke-200 via-smoke-400 to-smoke-500" />
         </div>
         <div className="container z-10 text-center -mt-12">
