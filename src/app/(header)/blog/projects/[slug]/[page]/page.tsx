@@ -1,12 +1,11 @@
-import Page from '../page'
-
-export default Page
-
-/*
 import flatten from 'lodash/flatten'
 import range from 'lodash/range'
 import { getRecentPosts } from '@/queries/wordpress/getRecentPosts'
 import { WordpressClientIdentifier } from '@/types'
+import Page from '../page'
+
+export default Page
+
 const PER_PAGE = Number(process.env.NEXT_PUBLIC_ARTICLES_PER_PAGE)
 
 export async function generateStaticParams() {
@@ -28,4 +27,3 @@ export async function generateStaticParams() {
   const result = await Promise.all(pairs)
   return flatten(result)
 }
-*/

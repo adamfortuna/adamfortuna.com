@@ -3,6 +3,7 @@ import { getPostOrPageBySlug } from '@/queries/wordpress/getPostOrPageBySlug'
 import { Article } from '@/components/articles/Article'
 import { Metadata } from 'next'
 import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types'
+import { getRecentPosts } from '@/queries/wordpress/getRecentPosts'
 
 interface PageProps {
   params: {
@@ -68,4 +69,17 @@ export default async function Page({ params: { slug } }: PageProps) {
   }
 
   return <Article article={article} />
+}
+
+export async function generateStaticParams() {
+  const { articles } = await getRecentPosts({
+    count: 1000,
+    projects: ['adamfortuna'],
+  })
+
+  return articles
+    .map((article) => ({
+      slug: article.slug,
+    }))
+    .concat({ slug: 'about' }, { slug: 'now' })
 }
