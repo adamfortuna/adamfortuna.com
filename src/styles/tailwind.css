@@ -89,3 +89,8 @@ article a[href^="https://adamfortuna.com"]::after, article a[href^="http://local
 .twitter-tweet {
   @apply mx-auto;
 }
+
+input.dropdown-checkbox[type=checkbox]:checked ~ ul {
+  visibility: visible;
+  opacity: 1;
+}

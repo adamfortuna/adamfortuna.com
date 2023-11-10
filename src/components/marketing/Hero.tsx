@@ -39,7 +39,7 @@ export const Hero = () => {
                 rel="noreferrer"
                 title="Hardcover"
               >
-                <HardcoverIcon className="inline h-6 w-5" />
+                <HardcoverIcon className="inline h-8 w-8" />
               </a>
             </li>
             <li className="inline">
@@ -50,7 +50,7 @@ export const Hero = () => {
                 rel="me"
                 title="Mastodon"
               >
-                <MastodonIcon className="inline h-6 w-6 fill-indigo-600 group-hover:fill-indigo-700" />
+                <MastodonIcon className="inline h-88 w-8 fill-indigo-600 group-hover:fill-indigo-700" />
               </a>
             </li>
             <li className="inline">
@@ -61,7 +61,7 @@ export const Hero = () => {
                 rel="me"
                 title="Mastodon"
               >
-                <LetterboxdIcon className="inline h-6 w-6 " />
+                <LetterboxdIcon className="inline h-8 w-8 " />
               </a>
             </li>
             <li className="inline">
@@ -72,7 +72,7 @@ export const Hero = () => {
                 rel="noreferrer"
                 title="GitHub"
               >
-                <GitHubIcon className="inline h-7 w-7 fill-black group-hover:fill-gray-700" />
+                <GitHubIcon className="inline h-8 w-8 fill-black group-hover:fill-gray-700" />
               </a>
             </li>
           </ul>

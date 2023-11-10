@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { faBook, faHammer, faPencil } from '@fortawesome/pro-regular-svg-icons'
+import { faHammer, faPencil } from '@fortawesome/pro-regular-svg-icons'
 import Link from 'next/link'
 import Cloud from '@/images/cloud.svg'
 import Sun from '@/images/sun.svg'
@@ -8,6 +8,7 @@ import Af from '@/images/af.svg'
 import { NavLink } from '@/components/layout/NavLink'
 import clsx from 'clsx'
 import { Container } from './Container'
+import MoreDropdown from './MoreDropdown'
 
 /*
 const SunIcon = (props: any) => {
@@ -115,18 +116,10 @@ export const Header = ({ isHomePage = false }: { isHomePage?: boolean }) => {
             <NavLink href="/projects" icon={faHammer}>
               Projects
             </NavLink>
-            <NavLink href="/reading" icon={faBook}>
-              Reading
-            </NavLink>
             <NavLink href="/blog" icon={faPencil}>
               Blog
             </NavLink>
-
-            {/*
-            <ModeToggle />
-             <NavLink href="/adventures" icon={faMountain}>
-              <span>Adventures</span>
-            </NavLink> */}
+            <MoreDropdown />
           </div>
         </nav>
       </Container>

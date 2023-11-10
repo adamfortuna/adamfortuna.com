@@ -30,12 +30,14 @@ module.exports = {
     extend: {
       fontFamily: {
         handwriting: ['var(--font-handwriting)', 'Pacifico', 'cursive'],
+        sans: ['var(--font-sans)', 'sans-serif'],
         digital: ['var(--font-digital)', 'Press Start 2P', 'cursive'],
       },
       colors: {
         ablue: {
           "200": "#5F94C2",
           "300": "#0088FF",
+          "400": "#A6D7DF",
           "500": "#5585AF",
           "600": "#0059A7",
           "700": "#0068C3"
