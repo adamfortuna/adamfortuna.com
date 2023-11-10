@@ -20,7 +20,12 @@ const MoreDropdown = () => {
           className="ml-2 text-sky-800 group-hover:text-white dark:text-sky-400 dark:group-hover:text-sky-900 w-[16px] h-[16px]"
         />
       </label>
-      <ul className="invisible opacity-0 rounded shadow-lg border-2 border-sky-800 absolute origin-top-left divide-y divide-sky-600 w-24 transisiton-all duration-300 right-0 bg-ablue-400">
+      <ul className="invisible opacity-0 rounded-lg shadow-lg absolute origin-top-left divide-y divide-sky-600 w-24 transisiton-all duration-300 right-0 bg-ablue-400">
+        <li>
+          <a href="/beliefs" className={dropdownClass}>
+            /beliefs
+          </a>{' '}
+        </li>
         <li>
           <a href="/favs" className={dropdownClass}>
             /favs
@@ -39,11 +44,6 @@ const MoreDropdown = () => {
         <li>
           <a href="/reading" className={dropdownClass}>
             /reading
-          </a>
-        </li>
-        <li>
-          <a href="/tools" className={dropdownClass}>
-            /tools
           </a>
         </li>
         <li>
