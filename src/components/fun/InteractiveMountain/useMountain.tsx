@@ -300,17 +300,20 @@ export const MountainProvider = ({ children }: any) => {
     }
 
     return new Promise((resolve) => {
-      setTimeout(() => {
-        setAnimals((currentAnimals) => {
-          const newAnimals = [...currentAnimals]
+      setTimeout(
+        () => {
+          setAnimals((currentAnimals) => {
+            const newAnimals = [...currentAnimals]
 
-          const index = findIndex(newAnimals, (a) => a.name === animal.name)
-          newAnimals[index].animating = false
+            const index = findIndex(newAnimals, (a) => a.name === animal.name)
+            newAnimals[index].animating = false
 
-          resolve(newAnimals[index])
-          return newAnimals
-        })
-      }, 5000 + Math.random() * 5000)
+            resolve(newAnimals[index])
+            return newAnimals
+          })
+        },
+        5000 + Math.random() * 5000,
+      )
     })
   }
 
