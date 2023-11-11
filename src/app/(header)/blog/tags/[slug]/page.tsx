@@ -54,3 +54,25 @@ export default async function TagPage({ params: { slug, page } }: PageProps) {
     </>
   )
 }
+
+export async function generateStaticParams() {
+  return [
+    { slug: 'code' },
+    { slug: 'design' },
+    { slug: 'javascript' },
+    { slug: 'product' },
+    { slug: 'ruby' },
+    { slug: 'tech' },
+    { slug: 'betterment' },
+    { slug: 'journal' },
+    { slug: 'photos' },
+    { slug: 'travel' },
+    { slug: 'year-in-review' },
+    { slug: 'books' },
+    { slug: 'fire' },
+    { slug: 'interactive' },
+    { slug: 'mindfulness' },
+    { slug: 'minimalism' },
+    { slug: 'personal-finance' },
+  ]
+}
