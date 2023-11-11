@@ -78,3 +78,7 @@ input.dropdown-checkbox[type=checkbox]:checked ~ ul {
 .is-layout-constrained {
   @apply max-w-3xl;
 }
+
+.link--footer {
+  @apply flex-shrink border-2 border-transparent rounded-lg hover:text-green-900 hover:border-green-900 p-1
+}

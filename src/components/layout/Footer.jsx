@@ -93,28 +93,16 @@ export const Footer = () => {
               </a>
             </div>
             <div className="text-right text-xl font-semibold flex flex-row md:flex-col mt-4 md:mt-0 justify-center md:justify-end space-x-4 md:space-x-0">
-              <Link
-                href="/about"
-                className="flex-shrink border-2 border-transparent rounded-lg hover:text-green-900 hover:border-green-900 p-1"
-              >
+              <Link href="/about" className="link--footer">
                 About
               </Link>
-              <Link
-                href="/projects"
-                className="flex-shrink border-2 border-transparent rounded-lg hover:text-green-900 hover:border-green-900 p-1"
-              >
+              <Link href="/projects" className="link--footer">
                 Projects
               </Link>
-              <Link
-                href="/blog"
-                className="flex-shrink border-2 border-transparent rounded-lg hover:text-green-900 hover:border-green-900 p-1"
-              >
+              <Link href="/blog" className="link--footer">
                 Blog
               </Link>
-              <Link
-                href="/now"
-                className="flex-shrink border-2 border-transparent rounded-lg hover:text-green-900 hover:border-green-900 p-1"
-              >
+              <Link href="/now" className="link--footer">
                 Now
               </Link>
             </div>
