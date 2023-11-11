@@ -7,6 +7,10 @@
       "esnext"
     ],
     "allowJs": true,
+    "typeRoots": [
+      "src/types",
+      "node_modules/@types"
+    ],
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,

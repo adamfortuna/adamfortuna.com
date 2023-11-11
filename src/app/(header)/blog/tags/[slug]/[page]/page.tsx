@@ -1,10 +1,11 @@
-import flatten from 'lodash/flatten'
-import range from 'lodash/range'
-import { getTags } from '@/queries/wordpress/getTags'
 import Page from '../page'
 
 export default Page
 
+/*
+import flatten from 'lodash/flatten'
+import range from 'lodash/range'
+import { getTags } from '@/queries/wordpress/getTags'
 export async function generateStaticParams() {
   const tags = (await getTags()).filter((t) => t.count && t.count > 0)
 
@@ -20,3 +21,4 @@ export async function generateStaticParams() {
 
   return flatten(pairs)
 }
+*/

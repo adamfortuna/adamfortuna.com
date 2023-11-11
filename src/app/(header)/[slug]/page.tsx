@@ -73,7 +73,7 @@ export default async function Page({ params: { slug } }: PageProps) {
 
 export async function generateStaticParams() {
   const { articles } = await getRecentPosts({
-    count: 1000,
+    count: 10,
     projects: ['adamfortuna'],
   })
 

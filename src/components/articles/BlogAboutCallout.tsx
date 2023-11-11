@@ -23,7 +23,6 @@ const BlogAboutCallout = async () => {
               <FontAwesomeIcon icon={faTypewriter} className="text-blue-800 w-4 h-4 inline" size="1x" />
               <span>
                 <Suspense fallback={<span>1,000+</span>}>
-                  {/* @ts-expect-error Server Component */}
                   <BlogPostsCount />
                 </Suspense>{' '}
                 posts
