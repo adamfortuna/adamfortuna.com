@@ -81,5 +81,12 @@ export async function generateStaticParams() {
     .map((article) => ({
       slug: article.slug,
     }))
-    .concat({ slug: 'about' }, { slug: 'now' })
+    .concat(
+      { slug: 'about' },
+      { slug: 'favs' },
+      { slug: 'goals' },
+      { slug: 'now' },
+      { slug: 'beliefs' },
+      { slug: 'uses' },
+    )
 }
