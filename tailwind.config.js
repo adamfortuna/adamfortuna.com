@@ -1,19 +1,21 @@
 /* eslint-disable sonarjs/no-duplicate-string, import/no-extraneous-dependencies */
-const defaultTheme = require('tailwindcss/defaultTheme')
+// const defaultTheme = require('tailwindcss/defaultTheme')
 
-const blogWidth = (theme, width="3") => {
+const typography = require('@tailwindcss/typography')
+const forms = require('@tailwindcss/forms')
+
+const blogWidth = (theme, width = '3') => {
   // const t = "leading.loose"
   // console.log("t", theme(t))
   return {
-    marginLeft: "auto",
-    marginRight: "auto",
+    marginLeft: 'auto',
+    marginRight: 'auto',
     paddingLeft: theme('spacing.3'),
     paddingRight: theme('spacing.3'),
 
     '@screen md': {
-      textAlign: theme(`text.left`),
+      textAlign: theme('text.left'),
       maxWidth: theme(`maxWidth.${width}xl`),
-      paddingLeft: theme('spacing.0'),
       paddingLeft: theme('spacing.0'),
     },
   }
@@ -22,10 +24,7 @@ const blogWidth = (theme, width="3") => {
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   darkMode: 'class',
-  plugins: [
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/forms')
-  ],
+  plugins: [typography, forms],
   theme: {
     extend: {
       fontFamily: {
@@ -35,13 +34,13 @@ module.exports = {
       },
       colors: {
         ablue: {
-          "200": "#5F94C2",
-          "300": "#0088FF",
-          "400": "#B6E0EF",
-          "500": "#5585AF",
-          "600": "#0059A7",
-          "700": "#0068C3"
-        }
+          200: '#5F94C2',
+          300: '#0088FF',
+          400: '#B6E0EF',
+          500: '#5585AF',
+          600: '#0059A7',
+          700: '#0068C3',
+        },
       },
       keyframes: {
         wave: {
@@ -82,8 +81,7 @@ module.exports = {
           '--tw-prose-links': 'var(--tw-prose-invert-links)',
           '--tw-prose-links-hover': 'var(--tw-prose-invert-links-hover)',
           '--tw-prose-underline': 'var(--tw-prose-invert-underline)',
-          '--tw-prose-underline-hover':
-            'var(--tw-prose-invert-underline-hover)',
+          '--tw-prose-underline-hover': 'var(--tw-prose-invert-underline-hover)',
           '--tw-prose-bold': 'var(--tw-prose-invert-bold)',
           '--tw-prose-counters': 'var(--tw-prose-invert-counters)',
           '--tw-prose-bullets': 'var(--tw-prose-invert-bullets)',
@@ -163,7 +161,7 @@ module.exports = {
           'h2, h3, h4': {
             color: 'var(--tw-prose-headings)',
             fontWeight: theme('fontWeight.semibold'),
-            ...blogWidth(theme)
+            ...blogWidth(theme),
           },
           h2: {
             fontSize: theme('fontSize.3xl')[0],
@@ -201,12 +199,11 @@ module.exports = {
 
           // Images
           'img:not(.pic)': {
-            marginLeft: "auto",
-            marginRight: "auto",
+            marginLeft: 'auto',
+            marginRight: 'auto',
             '@screen lg': {
-              textAlign: theme(`text.left`),
-              maxWidth: theme(`maxWidth.5xl`),
-              paddingLeft: theme('spacing.0'),
+              textAlign: theme('text.left'),
+              maxWidth: theme('maxWidth.5xl'),
               paddingLeft: theme('spacing.0'),
             },
           },
@@ -252,100 +249,89 @@ module.exports = {
             paddingLeft: theme('spacing.6'),
             paddingRight: theme('spacing.6'),
 
-            width: "100%",
-            
+            width: '100%',
             paddingTop: theme('spacing.2'),
             paddingBottom: theme('spacing.4'),
             position: 'relative',
-            marginLeft: "auto",
-            marginRight: "auto",
-            
+            marginLeft: 'auto',
+            marginRight: 'auto',
             borderColor: theme('colors.blue.500'),
-            borderTopWidth: "8px",
-            borderBottomWidth: "8px",
+            borderTopWidth: '8px',
+            borderBottomWidth: '8px',
             borderRadius: theme('borderRadius.md'),
 
             '@screen sm': {
               paddingTop: theme('spacing.4'),
               paddingBottom: theme('spacing.1'),
-              borderTopWidth: "0px",
-              borderBottomWidth: "0px",
-              borderLeftWidth: "8px",
-              borderRightWidth: "0px",
-              maxWidth: theme(`maxWidth.4xl`)
+              borderTopWidth: '0px',
+              borderBottomWidth: '0px',
+              borderLeftWidth: '8px',
+              borderRightWidth: '0px',
+              maxWidth: theme('maxWidth.4xl'),
             },
 
             p: {
               // @apply text-2xl leading-normal font-semibold text-grey-800 text-justify mb-4
-              marginLeft: "auto",
-              marginRight: "auto",
+              marginLeft: 'auto',
+              marginRight: 'auto',
               marginBottom: theme('spacing.4'),
               marginTop: theme('spacing.2'),
               padding: 0,
               fontSize: theme('fontSize.2xl')[0],
-              fontWeight: theme('fontWeight.semibold'),
               color: theme('colors.gray.800'),
-              textAlign: 'justify',
               lineHeight: theme('lineHeight.8'),
-              width: "100%",
+              width: '100%',
 
               '@screen md': {
                 marginTop: theme('spacing.0'),
-                maxWidth: theme(`maxWidth.3xl`),
+                maxWidth: theme('maxWidth.3xl'),
                 lineHeight: theme('lineHeight.9'),
-              }
-
-
-              // leading-normal
-              // text-justify
+              },
             },
             cite: {
-              marginLeft: "auto",
-              marginRight: "auto",
-              display: "block",
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              display: 'block',
               '@screen md': {
-                width: theme(`maxWidth.3xl`),
+                width: theme('maxWidth.3xl'),
                 marginBottom: theme('spacing.2'),
-              }
-            }
-
+              },
+            },
           },
 
           // Figures
           figure: {
-            marginLeft: "auto",
-            marginRight: "auto",
+            marginLeft: 'auto',
+            marginRight: 'auto',
             marginTop: theme('spacing.2'),
             marginBottom: theme('spacing.2'),
             '@screen sm': {
               '&.alignright': {
                 float: 'right',
-                marginLeft: '1rem'
+                marginLeft: '1rem',
               },
             },
             '@screen lg': {
-              textAlign: theme(`text.left`),
-              maxWidth: theme(`maxWidth.5xl`),
-              paddingLeft: theme('spacing.0'),
+              textAlign: theme('text.left'),
+              maxWidth: theme('maxWidth.5xl'),
               paddingLeft: theme('spacing.0'),
             },
-            textAlign: "center",
+            textAlign: 'center',
 
-            ".wp-block-embed__wrapper iframe": {
-              marginLeft: "auto",
-              marginRight: "auto",
-              width: "100%",
+            '.wp-block-embed__wrapper iframe': {
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              width: '100%',
               '@screen md': {
-                maxWidth: theme(`maxWidth.5xl`)
+                maxWidth: theme('maxWidth.5xl'),
               },
-            }
+            },
           },
           figcaption: {
             color: 'var(--tw-prose-captions)',
             fontSize: theme('fontSize.sm')[0],
             lineHeight: theme('lineHeight.6'),
             marginTop: theme('spacing.3'),
-            paddingLeft: theme('spacing.2'),
             paddingLeft: theme('spacing.2'),
           },
           'figcaption > p': {
@@ -360,17 +346,17 @@ module.exports = {
             listStyleType: 'decimal',
           },
           'ul, ol': {
-            marginLeft: "auto",
-            marginRight: "auto",
+            marginLeft: 'auto',
+            marginRight: 'auto',
             paddingLeft: theme('spacing.8'),
             paddingRight: theme('spacing.1'),
 
             '@screen md': {
-              textAlign: theme(`text.left`),
-              width: theme(`maxWidth.3xl`),
+              textAlign: theme('text.left'),
+              width: theme('maxWidth.3xl'),
               paddingLeft: theme('spacing.4'),
               paddingRight: theme('spacing.0'),
-            }
+            },
           },
           li: {
             marginTop: theme('spacing.1'),
@@ -407,24 +393,24 @@ module.exports = {
             padding: theme('spacing.4'),
             overflowX: 'auto',
 
-            marginLeft: "auto",
-            marginRight: "auto",
+            marginLeft: 'auto',
+            marginRight: 'auto',
             paddingLeft: theme('spacing.3'),
             paddingRight: theme('spacing.3'),
 
             '@screen md': {
-              textAlign: theme(`text.left`),
-              maxWidth: theme(`maxWidth.4xl`),
+              textAlign: theme('text.left'),
+              maxWidth: theme('maxWidth.4xl'),
               paddingLeft: theme('spacing.16'),
               paddingRight: theme('spacing.4'),
               border: '1px solid',
               borderColor: 'var(--tw-prose-pre-border)',
-              borderRadius: theme('borderRadius.2xl')
-            }
+              borderRadius: theme('borderRadius.2xl'),
+            },
           },
           'pre code': {
-            marginLeft: "auto",
-            marginRight: "auto",
+            marginLeft: 'auto',
+            marginRight: 'auto',
             display: 'inline',
             color: 'inherit',
             fontSize: 'inherit',
@@ -448,10 +434,10 @@ module.exports = {
 
           // Tables
           table: {
-            width: '100%',
+            ...blogWidth(theme),
             tableLayout: 'auto',
             textAlign: 'left',
-            fontSize: theme('fontSize.sm')[0],
+            fontSize: theme('fontSize.base')[0],
           },
           thead: {
             borderBottomWidth: '1px',
@@ -461,6 +447,7 @@ module.exports = {
             color: 'var(--tw-prose-headings)',
             fontWeight: theme('fontWeight.semibold'),
             verticalAlign: 'bottom',
+            fontSize: theme('fontSize.lg')[0],
             paddingBottom: theme('spacing.2'),
           },
           'thead th:not(:first-child)': {
@@ -485,6 +472,7 @@ module.exports = {
           },
           'tfoot td': {
             verticalAlign: 'top',
+            fontSize: theme('fontSize.lg')[0],
           },
           ':is(tbody, tfoot) td': {
             paddingTop: theme('spacing.2'),

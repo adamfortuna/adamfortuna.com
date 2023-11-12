@@ -22,7 +22,7 @@ const MoreDropdown = () => {
       </label>
       <ul className="invisible opacity-0 rounded-lg shadow-lg absolute origin-top-left divide-y divide-sky-600 w-24 transisiton-all duration-300 right-0 bg-sky-200">
         <li>
-          <a href="/beliefs" className={dropdownClass}>
+          <a href="/beliefs" className={`${dropdownClass} rounded-t-lg`}>
             /beliefs
           </a>{' '}
         </li>
@@ -47,7 +47,7 @@ const MoreDropdown = () => {
           </a>
         </li>
         <li>
-          <a href="/uses" className={dropdownClass}>
+          <a href="/uses" className={`${dropdownClass} rounded-b-lg`}>
             /uses
           </a>
         </li>
