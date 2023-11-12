@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-use-before-define */
 /* eslint-disable @typescript-eslint/no-unnecessary-condition */
 import {
   Author,
@@ -78,35 +79,56 @@ const parseWebmention = (wpComment: WordPressComment) => {
 
 const parseCommentAuthor = (wpComment: WordPressComment) => {
   const authorNode = wpComment.author.node
-  const { webmention } = wpComment
+  let url
+  if (wpComment.type === 'mention') {
+    const { webmention } = wpComment
+    url = webmention.author_avatar
+  } else if (wpComment.type === 'comment') {
+    url = authorNode.avatar.url
+  }
   const author = {
     url: authorNode.url,
     name: authorNode.name,
-    avatar: {
-      url: webmention.author_avatar,
-    },
+    avatar: { url },
   } as Author
 
   return omitBy(author, (v) => v === null || v === undefined) as Author
 }
 
-const parseComment = (wpComment: WordPressComment) => {
+const parseReplies = (parentCommentDatadatabseId: number, comments: WordPressComment[]) => {
+  const replies = comments.filter((c) => c.parentDatabaseId === parentCommentDatadatabseId)
+  return replies
+    .map((comment) => parseComment(comment, comments))
+    .sort((a, b) => {
+      return new Date(a.date).getTime() - new Date(b.date).getTime()
+    })
+}
+
+const parseComment = (wpComment: WordPressComment, comments: WordPressComment[]) => {
+  const hasChildren = comments.filter((c) => c.parentDatabaseId === wpComment.databaseId).length > 0
+
   const webmention = parseWebmention(wpComment)
   const comment = {
+    id: wpComment.databaseId,
     author: parseCommentAuthor(wpComment),
     content: wpComment.content,
-    id: wpComment.databaseId,
     date: wpComment.date,
     type: wpComment.type,
-    root: !wpComment.parentId,
-    replies: [],
+    root: wpComment.parentDatabaseId === 0,
+    replies: hasChildren ? parseReplies(wpComment.databaseId, comments) : [],
     webmention,
   } as Comment
   return omitBy(comment, (v) => v === null || v === undefined) as Comment
 }
 
 const parseComments = (comments: WordPressComment[]) => {
-  return comments.filter((c) => c.status === 'APPROVE').map((comment) => parseComment(comment))
+  return comments
+    .filter((c) => c.status === 'APPROVE')
+    .map((comment) => parseComment(comment, comments))
+    .filter((c) => c.root)
+    .sort((a, b) => {
+      return new Date(a.date).getTime() - new Date(b.date).getTime()
+    })
 }
 
 export const parsePost = (post: WordpressPost, full: boolean = false) => {
@@ -117,6 +139,7 @@ export const parsePost = (post: WordpressPost, full: boolean = false) => {
     post.comments && post.comments.nodes && post.comments.nodes.length > 0 ? parseComments(post.comments.nodes) : null
 
   const article = {
+    id: post.id,
     title: post.title,
     slug: post.slug,
     date: post.date,
@@ -131,6 +154,7 @@ export const parsePost = (post: WordpressPost, full: boolean = false) => {
     project: post.project,
     commentCount: comments ? comments.length : post.commentCount || null,
     comments,
+    allowComments: post.commentStatus === 'open',
   } as Post
 
   return omitBy(article, (v) => v === null || v === undefined) as Post
@@ -144,6 +168,7 @@ export const parsePage = (page: WordpressPage) => {
     featuredImage: page.featuredImage?.node ? page.featuredImage?.node : null,
     content: page.content || null,
     project: page.project,
+    allowComments: page.commentStatus === 'open',
   } as Page
 
   return omitBy(article, (v) => v === null || v === undefined) as Page

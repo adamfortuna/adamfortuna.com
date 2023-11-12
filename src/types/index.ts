@@ -25,6 +25,7 @@ export interface Project {
 }
 
 export interface Article {
+  id: number
   slug: string
   title: string
   content?: string
@@ -111,6 +112,7 @@ export interface Comment {
   type: CommentType
   webmention: Webmention
   root: boolean
+  parentDatabaseId: number
   replies: Comment[]
 }
 export interface WordPressComment {
@@ -121,7 +123,7 @@ export interface WordPressComment {
   date: string
   status: 'APPROVE' | 'PENDING'
   type?: CommentType
-  parentId: number | null
+  parentDatabaseId: number
   webmention: {
     author_avatar?: string
     author_url?: string
@@ -134,6 +136,7 @@ interface WordpressComments {
 }
 
 export interface WordpressContent {
+  id: number
   slug: string
   title: string
   date: string

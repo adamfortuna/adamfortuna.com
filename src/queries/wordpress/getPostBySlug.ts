@@ -18,6 +18,7 @@ fragment NestedComment on Comment {
 query GetWordPressPost($slug: String!) {
 
   post: postBy(slug: $slug) {
+    id: databaseId
     title
     content
     excerpt(format: RAW)

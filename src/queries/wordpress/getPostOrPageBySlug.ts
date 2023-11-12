@@ -3,6 +3,7 @@ import { adamfortunaClient, parsePage, parsePost } from '@/lib/wordpressClient'
 export const findWordpressPost = `
 query GetWordPressPost($slug: String!) {
   post: postBy(slug: $slug) {
+    id: databaseId
     title
     content
     excerpt(format: RAW)
@@ -30,6 +31,7 @@ query GetWordPressPost($slug: String!) {
       nodes {
         type
         databaseId
+        parentDatabaseId
         date
         status
         content(format: RAW)
@@ -43,6 +45,9 @@ query GetWordPressPost($slug: String!) {
           node {
             url
             name
+            avatar {
+              url
+            }
           }
         }
       }
@@ -50,6 +55,7 @@ query GetWordPressPost($slug: String!) {
   }
 
   page: pageBy(uri: $slug) {
+    id: databaseId
     title
     content
     date
