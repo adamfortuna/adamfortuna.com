@@ -57,6 +57,7 @@ export default async function TagPage({ params: { slug, page } }: PageProps) {
 
 export async function generateStaticParams() {
   return [
+    { slug: 'highlights' },
     { slug: 'code' },
     { slug: 'design' },
     { slug: 'javascript' },
