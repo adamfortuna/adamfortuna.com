@@ -36,6 +36,7 @@ export interface Article {
   url: string
   featuredImage?: WordpressImage
   allowComments?: boolean
+  allowPings?: boolean
   commentCount: number
 
   // Todo: Move these to Post
@@ -146,6 +147,7 @@ export interface WordpressContent {
   guid: string
   comments?: WordpressComments
   commentStatus: 'open' | 'closed'
+  pingStatus: 'open' | 'closed'
   commentCount?: number
 }
 

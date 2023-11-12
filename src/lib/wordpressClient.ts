@@ -155,6 +155,7 @@ export const parsePost = (post: WordpressPost, full: boolean = false) => {
     commentCount: comments ? comments.length : post.commentCount || null,
     comments,
     allowComments: post.commentStatus === 'open',
+    allowPings: post.pingStatus === 'open',
   } as Post
 
   return omitBy(article, (v) => v === null || v === undefined) as Post

@@ -15,14 +15,14 @@ export const Comments = ({ article }: { article: Article }) => (
             <h2 className="font-handwriting text-4xl text-blue-700 mb-2">
               <span className="text-5xl">{article.commentCount}</span> {pluralize('Comment', article.commentCount)}
             </h2>
-            {article.allowComments ? (
+            {article.allowPings ? (
               <a
                 href="https://wp.adamfortuna.com/wp-json/webmention/1.0/endpoint"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline hover:no-underline text-gray-700 text-sm hidden md:inline-block"
               >
-                Add a webmention?
+                Add a webmention
               </a>
             ) : (
               false
@@ -41,20 +41,24 @@ export const Comments = ({ article }: { article: Article }) => (
         </div>
       ) : (
         <>
-          <div className="bg-white relative md:max-w-3xl mx-auto shadow-lg lg:rounded-lg py-2 px-2 my-2 md:my-2 md:p-2 md:pb-4 flex flex-row justify-center items-center space-x-6">
-            <p className="mx-auto px-3 md:max-w-3xl md:px-0 pt-1">
-              Did you link to this article?{' '}
-              <a
-                href="https://wp.adamfortuna.com/wp-json/webmention/1.0/endpoint"
-                target="_blank"
-                rel="nofollow noreferrer"
-                className="underline hover:no-underline link--blue font-semibold"
-              >
-                Add it here
-              </a>
-              <span className="hidden md:inline"> and I'll include it</span>
-            </p>
-          </div>
+          {article.allowPings ? (
+            <div className="bg-white relative md:max-w-3xl mx-auto shadow-lg lg:rounded-lg py-2 px-2 my-2 md:my-2 md:p-2 md:pb-4 flex flex-row justify-center items-center space-x-6">
+              <p className="mx-auto px-3 md:max-w-3xl md:px-0 pt-1">
+                Did you link to this article?{' '}
+                <a
+                  href="https://wp.adamfortuna.com/wp-json/webmention/1.0/endpoint"
+                  target="_blank"
+                  rel="nofollow noreferrer"
+                  className="underline hover:no-underline link--blue font-semibold"
+                >
+                  Add it here
+                </a>
+                <span className="hidden md:inline"> and I'll include it</span>
+              </p>
+            </div>
+          ) : (
+            false
+          )}
 
           <Suspense fallback={<span>Loading...</span>}>
             <CommentReply article={article} />

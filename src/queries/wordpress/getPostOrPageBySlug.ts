@@ -10,6 +10,7 @@ query GetWordPressPost($slug: String!) {
     date
     slug
     commentStatus
+    pingStatus
     featuredImage {
       node {
         sourceUrl

@@ -31,7 +31,7 @@ export const ArticleHeader = ({ article }: ArticleHeaderProps) => {
           {article.commentCount > 0 && (
             <a href="#comments" className="text-sm link--blue ml-2 font-semibold flex items-center">
               <span>
-                {article.commentCount} {pluralize('mention', article.commentCount)}
+                {article.commentCount} {pluralize('comment', article.commentCount)}
               </span>
               <FontAwesomeIcon icon={faArrowDown} size="xs" className="w-3 h-3 inline pl-1" />
             </a>

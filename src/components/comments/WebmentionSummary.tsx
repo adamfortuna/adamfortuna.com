@@ -12,8 +12,8 @@ export const WebmentionSummary = ({ comments }: { comments: CommentType[] }) => 
     return <></>
   }
   return (
-    <div className="bg-white relative md:max-w-6xl mx-auto shadow-lg lg:rounded-lg py-2 px-2 my-2 md:my-2 md:p-2 md:pb-4">
-      <div className="mx-auto px-3 md:max-w-3xl md:px-0">
+    <div className="bg-white relative md:max-w-3xl mx-auto shadow-lg lg:rounded-lg py-2 px-2 my-2 md:my-2 md:p-2 md:pb-4">
+      <div className="mx-auto px-3 max-w-3xl md:px-0">
         <p className="text-gray-600 text-lg mt-2 font-semibold">
           {filteredComments.length} {pluralize('Like', filteredComments.length)} and{' '}
           {pluralize('Repost', filteredComments.length)}

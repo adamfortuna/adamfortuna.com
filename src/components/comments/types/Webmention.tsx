@@ -31,7 +31,7 @@ export const Webmention = ({ comment }: { comment: CommentType }) => {
     <div
       id={`comment-${comment.id}`}
       className={clsx(
-        'bg-white relative md:max-w-6xl mx-auto',
+        'bg-white relative md:max-w-3xl mx-auto',
         comment.root ? 'shadow-lg lg:rounded-lg py-4 px-2 my-2 md:my-6 md:p-6' : 'my-2 pb-0 ml-4 md:ml-8',
       )}
     >
