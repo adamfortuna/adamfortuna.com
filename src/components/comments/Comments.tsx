@@ -29,13 +29,13 @@ export const Comments = ({ article }: { article: Article }) => (
             )}
           </div>
 
+          <WebmentionSummary comments={article.comments} />
+
           <div className="space-y-12 my-8">
             {article.comments.map((comment) => (
               <Comment comment={comment} key={`comment-${comment.id}`} article={article} />
             ))}
           </div>
-
-          <WebmentionSummary comments={article.comments} />
 
           <CommentReply article={article} />
         </div>

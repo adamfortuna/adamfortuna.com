@@ -7,7 +7,7 @@ export const WebmentionSummary = ({ comments }: { comments: CommentType[] }) => 
     return <></>
   }
   const filteredComments = comments.filter((c) => c.type === 'repost' || c.type === 'like')
-  const avatarComments = filteredComments.filter((c) => c.author.avatar.url.length > 0)
+  const avatarComments = filteredComments.filter((c) => (c.author.avatar.url ? c.author.avatar.url.length : 0) > 0)
   if (filteredComments.length === 0) {
     return <></>
   }

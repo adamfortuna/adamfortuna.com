@@ -86,7 +86,7 @@ interface WordpressImageNode {
   node: WordpressImage
 }
 interface Avatar {
-  url: string
+  url?: string
   width?: number
   height?: number
 }

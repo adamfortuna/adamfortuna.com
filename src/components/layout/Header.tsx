@@ -12,7 +12,7 @@ import MoreDropdown from './MoreDropdown'
 
 export const Header = ({ isHomePage = false }: { isHomePage?: boolean }) => {
   return (
-    <header className={clsx('inset-x-0', isHomePage ? 'absolute' : 'bg-ablue-400')}>
+    <header className={clsx('inset-x-0', isHomePage ? 'absolute' : 'bg-sky-200')}>
       <Container className="py-2 md:py-6 px-2 md:px-0">
         <nav className="relative z-50 flex justify-between pr-2">
           <div className="flex items-center md:gap-x-12 justify-between text-black dark:text-yellow-400 relative">

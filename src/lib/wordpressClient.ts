@@ -84,7 +84,7 @@ const parseCommentAuthor = (wpComment: WordPressComment) => {
     const { webmention } = wpComment
     url = webmention.author_avatar
   } else if (wpComment.type === 'comment') {
-    url = authorNode.avatar.url
+    url = authorNode?.avatar?.url
   }
   const author = {
     url: authorNode.url,
