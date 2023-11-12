@@ -76,7 +76,7 @@ const BlogAboutCallout = async () => {
               newsletter
             </Link>{' '}
             or subscribing to my{' '}
-            <a href="/api/feed" target="_blank" className="link--blue">
+            <a href="/feed" target="_blank" className="link--blue">
               RSS feed
             </a>
             .

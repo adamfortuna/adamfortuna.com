@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
   alternates: {
     types: {
-      'application/rss+xml': 'https://feeds.feedburner.com/adamfortuna',
+      'application/rss+xml': 'https://adamfortuna.com/feed',
     },
   },
   openGraph: {

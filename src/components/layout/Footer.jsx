@@ -84,7 +84,7 @@ export const Footer = () => {
 
               <a
                 className="mt-8 flex w-full items-center justify-center rounded-md bg-[#f3ce84] py-1.5 px-3 text-base font-semibold leading-7 text-yellow-800 shadow-sm hover:bg-orange-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600 sm:text-sm sm:leading-6 space-x-4"
-                href="https://feeds.feedburner.com/adamfortuna"
+                href="/feed"
                 target="_blank"
                 rel="noreferrer"
               >
