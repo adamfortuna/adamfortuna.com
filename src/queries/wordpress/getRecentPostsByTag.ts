@@ -57,12 +57,15 @@ export const getRecentPostsByProjectAndTag = async (project: WordpressClientIden
 }
 
 const getTag = async (tag: string) => {
-  return adamfortunaClient({
-    query: findTagInfo,
-    variables: { tag },
-  }).then((r) => {
-    return r.data.tag
-  })
+  try {
+    const result = await adamfortunaClient({
+      query: findTagInfo,
+      variables: { tag },
+    })
+    return result.data.tag
+  } catch {
+    return null
+  }
 }
 export const getRecentPostsByTag = async ({
   count,
