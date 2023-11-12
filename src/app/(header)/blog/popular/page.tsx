@@ -5,6 +5,8 @@ import { getRecentPosts } from '@/queries/wordpress/getRecentPosts'
 import { sortByCommentsDesc } from '@/lib/wordpressClient'
 import { Article } from '@/types'
 
+export const revalidate = 3600
+
 export interface PageProps {
   params: {
     page?: string

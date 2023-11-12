@@ -9,6 +9,8 @@ interface PageProps {
   }
 }
 
+export const revalidate = 3600
+
 export default async function Page({ params: { slug } }: PageProps) {
   const article = await getPostOrPageBySlug(['photos', ...slug].join('/'))
   if (!article) {

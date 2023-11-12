@@ -3,6 +3,8 @@ import { ArticlesList } from '@/components/articles/ArticlesList'
 import BlogAboutCallout from '@/components/articles/BlogAboutCallout'
 import { getRecentPosts } from '@/queries/wordpress/getRecentPosts'
 
+export const revalidate = 3600
+
 export interface PageProps {
   params: {
     page?: string

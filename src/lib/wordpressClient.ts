@@ -198,9 +198,6 @@ export const fetchClient = ({
   )
   return fetch(`${url}#${hash})}`, {
     method: 'POST',
-    next: {
-      revalidate: 60, // 1 minute
-    },
     headers: {
       'Content-Type': 'application/json',
       Authorization: auth,

@@ -2,6 +2,8 @@ import Link from 'next/link'
 import BlogAboutCallout from '@/components/articles/BlogAboutCallout'
 import { getTags } from '@/queries/wordpress/getTags'
 
+export const revalidate = 3600
+
 export default async function BlogTagsPage() {
   const tags = await getTags()
 

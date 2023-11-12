@@ -4,6 +4,8 @@ import BlogAboutCallout from '@/components/articles/BlogAboutCallout'
 import { getRecentPosts } from '@/queries/wordpress/getRecentPosts'
 import { WordpressClientIdentifier } from '@/types'
 
+export const revalidate = 3600
+
 const titleize = (category: WordpressClientIdentifier) => {
   switch (category) {
     case 'minafi':

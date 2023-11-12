@@ -2,6 +2,8 @@ import Link from 'next/link'
 import Projects from '@/components/articles/sidebar/Projects'
 import BlogAboutCallout from '@/components/articles/BlogAboutCallout'
 
+export const revalidate = 3600
+
 export default async function BlogProjectsPage() {
   return (
     <>
