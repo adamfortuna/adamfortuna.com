@@ -3,7 +3,7 @@ import { Container } from '@/components/layout/Container'
 
 export default async function NewsletterPage() {
   return (
-    <Container className="max-w-5xl">
+    <Container className="max-w-3xl">
       <h1 className="md:text-center text-3xl md:text-5xl font-hardwriting font-bold text-grey-800 leading-tight">
         Newsletter
       </h1>
@@ -20,15 +20,19 @@ export default async function NewsletterPage() {
           <div className="space-y-8 divide-y divide-gray-200 sm:space-y-5">
             <div className="space-y-6 sm:space-y-5 prose">
               <div>
-                <p className="mt-1">Joining the newsletter means:</p>
+                <p className="mt-1">
+                  This is a very unofficial, unprofessional newsletter. I'm not trying to start a business, there are no
+                  sponsors and I'm just out to have fun with others creating cool stuff online.
+                </p>
+                <p className="mt-1">Here's what you should expect by joining this newsletter:</p>
                 <ul className="mt-2">
+                  <li>I'll email you once a month with any new posts & whatever I'm up to.</li>
                   <li>I'll keep your email safe and secret, never sharing it with anyone.</li>
-                  <li>Emailing you with a link whenever I publish a new blog post</li>
                 </ul>
                 <p>
                   That's it! My own email is in this same database – and you can believe I make sure it's safe. Behind
                   the scenes it uses a{' '}
-                  <a href="https://minafi.com/sendy" target="_blank" rel="noreferrer">
+                  <a href="https://wp.adamfortuna.com/sendy" target="_blank" rel="noreferrer">
                     Sendy
                   </a>{' '}
                   server that I host myself. Your email won't be stored in any large email provider database (Mailchimp,
@@ -40,48 +44,29 @@ export default async function NewsletterPage() {
                 </p>
               </div>
 
-              <div className="space-y-6 sm:space-y-5">
-                <div className="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
-                  <label htmlFor="first-name" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+              <div className="space-y-4">
+                <div>
+                  <label htmlFor="name" className="form-label">
                     First name
+                    <input type="text" name="name" id="name" autoComplete="given-name" className="form-text" />
                   </label>
-                  <div className="mt-1 sm:col-span-2 sm:mt-0">
-                    <input
-                      type="text"
-                      name="name"
-                      id="name"
-                      autoComplete="given-name"
-                      className="block w-full max-w-lg rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:max-w-xs sm:text-sm"
-                    />
-                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="email" className="form-label">
+                    Email address
+                    <input type="email" name="email" id="email" autoComplete="email" className="form-text" />
+                  </label>
+                </div>
+
+                <div>
+                  <span>
+                    <button type="submit" className="button" aria-label="Subscribe">
+                      <span>Subscribe</span>
+                    </button>
+                  </span>
                 </div>
               </div>
-
-              <div className="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-                  Email address
-                </label>
-                <div className="mt-1 sm:col-span-2 sm:mt-0">
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    autoComplete="email"
-                    className="block w-full max-w-lg rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="pt-5">
-            <div className="flex justify-end">
-              <button
-                type="submit"
-                className="ml-3 inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-              >
-                Subscribe
-              </button>
             </div>
           </div>
         </form>

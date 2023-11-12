@@ -45,7 +45,7 @@
 }
 
 .card {
-  @apply rounded-lg leading-snug text-gray-600 text-base p-4 relative shadow-xl mt-8 mx-auto border border-gray-100;
+  @apply md:rounded-lg leading-snug text-gray-600 text-base p-4 relative shadow-xl mt-8 mx-auto border border-gray-100;
 }
 .adam.card {
   min-height: 100px;

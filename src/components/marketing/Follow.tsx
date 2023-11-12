@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
 
 export const Follow = () => (
-  <div className="card max-w-4xl mx-auto gap-8 leading-6">
+  <div className="card bg-white max-w-4xl mx-auto gap-8 leading-6">
     <h2 className="font-semibold text-lg mb-4">Let's keep in touch 🧑‍🤝‍🧑</h2>
     <ul className="space-y-2">
       <li>

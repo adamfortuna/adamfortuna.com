@@ -4,7 +4,7 @@ import { Follow } from './Follow'
 
 export const ArticleAboutAdamFooter = () => (
   <div className="max-w-3xl mx-auto my-8">
-    <div className="card max-w-4xl mx-auto flex flex-row gap-8 h-card vcard p-author author">
+    <div className="card bg-white max-w-4xl mx-auto flex flex-row gap-8 h-card vcard p-author author">
       <img
         className="rounded-lg w-[100px] h-[100px]"
         alt="Avatar for Adam Fortuna"
