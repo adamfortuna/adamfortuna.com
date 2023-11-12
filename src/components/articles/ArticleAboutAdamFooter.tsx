@@ -1,8 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link'
+import { Follow } from './Follow'
 
 export const ArticleAboutAdamFooter = () => (
-  <div className="max-w-6xl mx-auto my-8">
+  <div className="max-w-3xl mx-auto my-8">
     <div className="card max-w-4xl mx-auto flex flex-row gap-8 h-card vcard p-author author">
       <img
         className="rounded-lg w-[100px] h-[100px]"
@@ -19,33 +20,23 @@ export const ArticleAboutAdamFooter = () => (
         src="https://storage.googleapis.com/adamfortuna/blog/adam_6761814f5.jpeg"
       />
       <div>
-        <p className="mb-2">
-          Welcome! I'm{' '}
-          <Link className="p-name fn u-url" href={String(process.env.NEXT_PUBLIC_URL)} rel="author">
-            Adam Fortuna
-          </Link>
-          .{' '}
-          <span className="p-note">
-            I'm a full-stack product developer in Salt Lake City, UT. I love enlivening experiences, visualizing data,
-            and making playful websites.
-          </span>
-        </p>
-        <p>
-          Let's keep in touch! Follow me on{' '}
-          <a href="https://ruby.social/@adam" target="_blank" className="link--blue" rel="noreferrer">
-            Mastodon
-          </a>
-          , subscribe to my{' '}
-          <Link href="/newsletter" className="link--blue">
-            newsletter
-          </Link>{' '}
-          or subscribe to my{' '}
-          <a href="/api/feed" target="_blank" className="link--blue">
-            RSS feed
-          </a>
-          .
-        </p>
+        <div className="mb-2">
+          <p className="font-semibold">Hey hey! 👋</p>
+          <p>
+            I'm{' '}
+            <Link className="p-name fn u-url" href={String(process.env.NEXT_PUBLIC_URL)} rel="author">
+              Adam
+            </Link>
+            ,{' '}
+            <span className="p-note">
+              a full-stack product developer in Salt Lake City, UT. I love enlivening experiences, visualizing data, and
+              making playful websites.
+            </span>
+          </p>
+        </div>
       </div>
     </div>
+
+    <Follow />
   </div>
 )

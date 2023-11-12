@@ -39,7 +39,7 @@ export const Footer = () => {
 
       <Ground className="w-full" />
 
-      <div className="relative z-10 bg-[#78ab5e] ">
+      <div className="relative z-10 bg-[#78ab5e]" style={{ marginTop: '-1px' }}>
         <div className="mx-auto max-w-7xl px-6 pb-8 lg:px-8">
           <div className="md:flex md:items-center md:justify-between">
             <div>
