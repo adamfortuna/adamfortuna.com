@@ -54,7 +54,7 @@ const BlogAboutCallout = async () => {
               href="/blog/projects/hardcover"
               className="bg-yellow-400 hover:bg-yellow-500 rounded px-1 py-0.5 mx-1 text-blue-800"
             >
-              <Hardcover className="w-4 h-4 inline mb-0.5" /> <span>Hardcover</span>
+              <Hardcover className="w-5 h-5 inline mb-0.5" /> <span>Hardcover</span>
             </Link>{' '}
             Building Hardcover in public.
           </p>
@@ -75,7 +75,7 @@ const BlogAboutCallout = async () => {
             <Link href="/newsletter" className="link--blue">
               newsletter
             </Link>{' '}
-            or subscribing to my{' '}
+            or{' '}
             <a href="/feed" target="_blank" className="link--blue">
               RSS feed
             </a>

@@ -17,7 +17,7 @@ export const Follow = () => (
       </li>
       <li>
         <FontAwesomeIcon icon={faMastodon} className="pr-1 text-blue-600" />
-        Follow me on Mastodon at {' '}
+        Follow me on Mastodon at{' '}
         <a href="https://ruby.social/@adam" target="_blank" className="link--blue" rel="noreferrer">
           @adam@ruby.social
         </a>
