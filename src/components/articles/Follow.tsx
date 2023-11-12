@@ -17,9 +17,9 @@ export const Follow = () => (
       </li>
       <li>
         <FontAwesomeIcon icon={faMastodon} className="pr-1 text-blue-600" />
-        Follow me on{' '}
+        Follow me on Mastodon at {' '}
         <a href="https://ruby.social/@adam" target="_blank" className="link--blue" rel="noreferrer">
-          Mastodon (@adam@ruby.social)
+          @adam@ruby.social
         </a>
       </li>
       <li>
@@ -31,7 +31,7 @@ export const Follow = () => (
       </li>
       <li>
         <FontAwesomeIcon icon={faFeed} className="pr-1 text-blue-600" />
-        Subscribe to my[' ']
+        Subscribe to my{' '}
         <a href="/feed" target="_blank" className="link--blue">
           RSS feed
         </a>
