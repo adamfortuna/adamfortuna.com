@@ -48,6 +48,7 @@ export interface Article {
 
 export interface Post extends Article {}
 export interface Page extends Article {}
+export interface PhotoPost extends Article {}
 
 export interface ArticlesListType {
   articles: Article[]
@@ -136,6 +137,7 @@ interface WordpressComments {
   nodes: WordPressComment[]
 }
 
+export type WordpressPostType = 'photos' | 'post' | 'page'
 export interface WordpressContent {
   id: number
   slug: string
@@ -149,6 +151,7 @@ export interface WordpressContent {
   commentStatus: 'open' | 'closed'
   pingStatus: 'open' | 'closed'
   commentCount?: number
+  contentTypeName: WordpressPostType
 }
 
 export interface WordpressPost extends WordpressContent {

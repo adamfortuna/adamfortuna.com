@@ -2,11 +2,11 @@ import { ArticleContentHtml } from '@/components/articles/ArticleContent'
 import { PhotoArticleHeader } from '@/components/photos/PhotoArticleHeader'
 import { ArticleAboutAdamFooter } from '@/components/marketing/ArticleAboutAdamFooter'
 import { Comments } from '@/components/comments/Comments'
-import { Page } from '@/types'
+import { PhotoPost } from '@/types'
 import { PageFooter } from '../layout/PageFooter'
 
 export interface PhotoArticleHeaderProps {
-  article: Page
+  article: PhotoPost
 }
 
 export const PhotoArticle = ({ article }: PhotoArticleHeaderProps) => {

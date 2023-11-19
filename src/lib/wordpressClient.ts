@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/cognitive-complexity */
 /* eslint-disable @typescript-eslint/no-use-before-define */
 /* eslint-disable @typescript-eslint/no-unnecessary-condition */
 import {
@@ -5,6 +6,7 @@ import {
   Article,
   Comment,
   Page,
+  PhotoPost,
   Post,
   Tag,
   Webmention,
@@ -156,9 +158,13 @@ export const parsePost = (post: WordpressPost, full: boolean = false) => {
     comments,
     allowComments: post.commentStatus === 'open',
     allowPings: post.pingStatus === 'open',
-  } as Post
+  } as Article
+  const aritcleWithoutParams = omitBy(article, (v) => v === null || v === undefined)
 
-  return omitBy(article, (v) => v === null || v === undefined) as Post
+  if (post.contentTypeName === 'photos') {
+    return aritcleWithoutParams as PhotoPost
+  }
+  return aritcleWithoutParams as Post
 }
 
 export const parsePage = (page: WordpressPage) => {

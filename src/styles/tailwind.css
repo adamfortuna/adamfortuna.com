@@ -37,12 +37,23 @@
   }
 }
 
+.link {
+  @apply underline-offset-4 font-semibold underline;
+}
 .link--blue {
-  @apply text-blue-600 underline-offset-4 font-semibold underline;
+  @apply link text-blue-600
 }
 .link--blue:hover {
   @apply no-underline;
 }
+
+.link--white {
+  @apply link text-white
+}
+.link--white:hover {
+  @apply no-underline;
+}
+
 
 .card {
   @apply md:rounded-lg leading-snug text-gray-600 text-base p-4 relative shadow-xl mt-8 mx-auto border border-gray-100;

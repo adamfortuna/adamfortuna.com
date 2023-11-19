@@ -30,6 +30,7 @@ module.exports = {
       fontFamily: {
         handwriting: ['var(--font-handwriting)', 'Pacifico', 'cursive'],
         sans: ['var(--font-sans)', 'sans-serif'],
+        serif: ['var(--font-serif)', 'serif'],
         digital: ['var(--font-digital)', 'Press Start 2P', 'cursive'],
       },
       colors: {

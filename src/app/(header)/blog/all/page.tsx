@@ -4,6 +4,7 @@ import BlogAboutCallout from '@/components/articles/BlogAboutCallout'
 import { getRecentPosts } from '@/queries/wordpress/getRecentPosts'
 
 export const revalidate = 3600
+export const dynamic = 'force-static'
 
 export interface PageProps {
   params: {

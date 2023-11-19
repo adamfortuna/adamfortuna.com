@@ -3,7 +3,7 @@ import BlogAboutCallout from '@/components/articles/BlogAboutCallout'
 import { getRecentPosts } from '@/queries/wordpress/getRecentPosts'
 
 const PER_PAGE = Number(process.env.NEXT_PUBLIC_ARTICLES_PER_PAGE)
-
+export const dynamic = 'force-static'
 export const revalidate = 3600
 
 export const metadata = {

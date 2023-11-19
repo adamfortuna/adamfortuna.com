@@ -5,6 +5,7 @@ import { ArticlesList } from '@/components/articles/ArticlesList'
 import BlogAboutCallout from '@/components/articles/BlogAboutCallout'
 import { getRecentPostsByTag } from '@/queries/wordpress/getRecentPostsByTag'
 
+export const dynamic = 'force-static'
 export const revalidate = 3600
 
 export interface PageProps {

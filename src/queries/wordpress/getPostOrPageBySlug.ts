@@ -11,6 +11,7 @@ query GetWordPressPost($slug: String!) {
     slug
     commentStatus
     pingStatus
+    contentTypeName
     featuredImage {
       node {
         sourceUrl
@@ -61,6 +62,7 @@ query GetWordPressPost($slug: String!) {
     content
     date
     slug
+    contentTypeName
     featuredImage {
       node {
         sourceUrl

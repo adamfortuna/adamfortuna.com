@@ -1,7 +1,7 @@
 import '@/styles/tailwind.css'
 import '@/styles/modula.css'
 
-import { Pacifico, Inter } from 'next/font/google'
+import { Pacifico, Inter, EB_Garamond } from 'next/font/google'
 import PlausibleAnalytics from '@/components/PlausibleAnalytics'
 import { Metadata, Viewport } from 'next'
 
@@ -15,9 +15,16 @@ const pacifico = Pacifico({
 
 const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '600', '700'],
+  weight: ['300', '400', '600', '700'],
   display: 'swap',
   variable: '--font-sans',
+})
+
+const serif = EB_Garamond({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+  display: 'swap',
+  variable: '--font-serif',
 })
 
 export const viewport: Viewport = {
@@ -59,7 +66,7 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html className={`${pacifico.variable} ${inter.variable} antialiased`} lang="en">
+    <html className={`${pacifico.variable} ${inter.variable} ${serif.variable} antialiased`} lang="en">
       <body className="flex flex-col bg-white">
         {children}
         <PlausibleAnalytics />

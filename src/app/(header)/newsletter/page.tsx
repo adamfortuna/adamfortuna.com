@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { Container } from '@/components/layout/Container'
 
+export const dynamic = 'force-static'
 export default async function NewsletterPage() {
   return (
     <Container className="max-w-3xl">

@@ -3,6 +3,7 @@ import ProjectListing from '@/components/projects/ProjectListing'
 import { Container } from '@/components/layout/Container'
 import { getProjects } from '@/lib/fileService'
 
+export const dynamic = 'force-static'
 export const revalidate = 3600 // 60 minutes
 
 export const metadata: Metadata = {

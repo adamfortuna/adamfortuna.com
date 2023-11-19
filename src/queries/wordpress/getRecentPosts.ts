@@ -1,6 +1,6 @@
 import { getClientForProject, parsePost, sortByDateDesc } from '@/lib/wordpressClient'
 import flatten from 'lodash/flatten'
-import { WordpressPost, WordpressClientIdentifier, Article } from '@/types'
+import { WordpressPost, WordpressPostType, WordpressClientIdentifier, Article } from '@/types'
 
 export const findWordPressRecentPosts = `
   query GetWordPressRecentPosts($where: RootQueryToPostConnectionWhereArgs) {
@@ -23,28 +23,53 @@ export const findWordPressRecentPosts = `
   }
 `
 
-export const getRecentPostsByProject = async (project: WordpressClientIdentifier) => {
-  return getClientForProject(project)({
-    query: findWordPressRecentPosts,
+export const findWordPressRecentPhotoPosts = `
+  query GetWordPressRecentPosts($where: RootQueryToPhotoblogConnectionWhereArgs) {
+    posts:photoblogs(first: 1000, where: $where) {
+      nodes {
+        title
+        slug
+        date
+        excerpt(format: RAW)
+        commentCount
+
+        tags {
+          nodes {
+            name
+            slug
+          }
+        }
+      }
+    }
+  }
+`
+
+export const getRecentPostsByProject = async (project: WordpressClientIdentifier, type: WordpressPostType) => {
+  const query = type === 'photos' ? findWordPressRecentPhotoPosts : findWordPressRecentPosts
+  // const parent = type === 'photos' ? { parent: 0 } : {}
+
+  const result = await getClientForProject(project)({
+    query,
     variables: {
       where: {
         authorName: 'adamfortuna',
         categoryName: 'Canonical',
       },
     },
-  }).then((result) => {
-    return result.data.posts.nodes.map((p: WordpressPost) => {
-      return {
-        ...p,
-        project,
-      }
-    }) as WordpressPost[]
   })
+
+  return result.data.posts.nodes.map((p: WordpressPost) => {
+    return {
+      ...p,
+      project,
+    }
+  }) as WordpressPost[]
 }
 
 export const getRecentPosts = async ({
   count,
   offset = 0,
+  type = 'post',
   projects = ['adamfortuna', 'minafi', 'hardcover'],
   sortBy = sortByDateDesc,
   filterBy = (a: Article) => a,
@@ -53,9 +78,10 @@ export const getRecentPosts = async ({
   offset?: number
   projects?: WordpressClientIdentifier[]
   filterBy?: any
+  type?: WordpressPostType
   sortBy?: any
 }) => {
-  const finders = projects.map((p) => getRecentPostsByProject(p))
+  const finders = projects.map((p) => getRecentPostsByProject(p, type))
   const results = await Promise.all(finders)
 
   const allArticles = results.map((wordpressArticles: WordpressPost[]) =>

@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/pro-solid-svg-icons'
 
+export const dynamic = 'force-static'
+
 export default async function NewsletterPage() {
   return (
     <Container className="max-w-5xl">
