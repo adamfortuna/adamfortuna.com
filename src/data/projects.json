@@ -332,8 +332,8 @@
     "priority":10,
     "size":"md",
     "years_active":"2005-now",
-    "state":"development",
-    "state_description":"Rebuilding",
+    "state":"live",
+    "state_description":"Live",
     "date_started":"2005-01-01",
     "featured":true,
     "category":"app",
@@ -2551,11 +2551,12 @@
     "size":"lg",
     "years_active":"2021-now",
     "state":"live",
-    "state_description":"In beta",
+    "state_description":"5k+ users",
     "date_started":"2021-05-01",
     "featured":true,
     "category":"app",
     "employed":true,
+    "salary":"Someday",
     "role":"Founder & full-stack developer",
     "links":[
       {
@@ -2772,7 +2773,7 @@
     "size":"md",
     "years_active":"2022-now",
     "state":"live",
-    "state_description":"Use it everyday!",
+    "state_description":"Live",
     "date_started":"2022-08-01",
     "featured":true,
     "category":"app",
@@ -2870,6 +2871,7 @@
     "state":"live",
     "state_description":"Live",
     "date_started":"2023-05-01",
+    "date_ended":"2023-12-15",
     "category":"experience",
     "employed":true,
     "role":"Developer",
@@ -2904,6 +2906,7 @@
     "state":"live",
     "state_description":"Live",
     "date_started":"2023-06-01",
+    "date_ended":"2023-08-14",
     "category":"experience",
     "employed":true,
     "role":"Developer, researcher",
@@ -2934,22 +2937,27 @@
     "content":null
   },
   {
-    "title":"Social Histomap",
+    "title":"The Social Histomap",
     "slug":null,
     "description":"A visualization of social media since the beginning of time.",
     "priority":0,
     "size":"sm",
-    "years_active":"2023-now",
-    "state":"development",
-    "state_description":"Building",
+    "years_active":"2023",
+    "state":"retired",
+    "state_description":"Gave up on (lack of data)",
     "date_started":"2023-08-25",
+    "date_ended":"2023-09-15",
     "category":"Data Visualization",
     "employed":false,
     "role":"Developer",
     "links":[
       {
+        "url":"https://socialhistomap.adamfortuna.com/",
+        "title":"The Social Histomap"
+      },
+      {
         "url":"https://github.com/adamfortuna/socialhistomap",
-        "title":"Prototype (in development)"
+        "title":"Code"
       }
     ],
     "icon_url":"map-location-dot-regular_jo1o2u.svg",
@@ -2966,7 +2974,7 @@
   {
     "title":"Next.js Bits",
     "slug":null,
-    "description":"A blog focused on Next.js.",
+    "description":"An 8-bit blog focused on Next.js that I'm in the process of building.",
     "priority":0,
     "size":"sm",
     "years_active":"2023-now",
@@ -3004,6 +3012,7 @@
     "state":"live",
     "state_description":"Live",
     "date_started":"2023-11-01",
+    "date_ended":"2023-12-25",
     "category":"experience",
     "employed":true,
     "role": "Developer",
@@ -3052,6 +3061,36 @@
       "React.js",
       "Tailwind.css",
       "Riverside"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"",
+    "content":null
+  },
+  {
+    "title":"AI Art of my Wife",
+    "slug":null,
+    "description":"A generative art piece of my wife for Valentines Day.",
+    "priority":0,
+    "size":"sm",
+    "years_active":"2023",
+    "state":"transferred",
+    "state_description":"Given as a gift",
+    "date_started":"2023-02-01",
+    "date_ended":"2023-02-14",
+    "category":"Gift",
+    "employed":false,
+    "role": "Developer",
+    "links":[
+      {
+        "url":"https://adamfortuna.com/valentines-day",
+        "title":"Blog Post: I Gave My Wife AI-Generated Art of Her For Valentines Day"
+      }
+    ],
+    "icon_url":"brush-regular.svg",
+    "tags":[
+      "Stable Diffusion"
     ],
     "date":null,
     "href":null,
