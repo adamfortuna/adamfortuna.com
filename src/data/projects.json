@@ -2820,7 +2820,7 @@
     "content":null
   },
   {
-    "title":"Hardcover iOS App",
+    "title":"Hardcover iOS & Android Apps",
     "slug":null,
     "description":"A native iOS app for Hardcover.",
     "priority":0,
@@ -2863,9 +2863,9 @@
   {
     "title":"Hardcover Search",
     "slug":null,
-    "description":"Algolia & React based book search.",
+    "description":"Typesense & React based book search.",
     "priority":0,
-    "size":"lg",
+    "size":"md",
     "years_active":"2023",
     "state":"live",
     "state_description":"Live",
@@ -2887,7 +2887,7 @@
       "Ruby",
       "React",
       "Tailwind.css",
-      "Algolia"
+      "Typesense"
     ],
     "date":null,
     "href":null,
@@ -2895,7 +2895,7 @@
     "content":null
   },
   {
-    "title":"Hardcover V2 (Next.js 13)",
+    "title":"Hardcover V2",
     "slug":null,
     "description":"Upgraded from the pages router to the app router w/SSR.",
     "priority":0,
@@ -2938,7 +2938,7 @@
     "slug":null,
     "description":"A visualization of social media since the beginning of time.",
     "priority":0,
-    "size":"md",
+    "size":"sm",
     "years_active":"2023-now",
     "state":"development",
     "state_description":"Building",
@@ -2948,7 +2948,7 @@
     "role":"Developer",
     "links":[
       {
-        "url":"https://adamfortuna.com/socialhistomap",
+        "url":"https://github.com/adamfortuna/socialhistomap",
         "title":"Prototype (in development)"
       }
     ],
@@ -2956,6 +2956,102 @@
     "tags":[
       "Svelte",
       "D3.js"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"",
+    "content":null
+  },
+  {
+    "title":"Next.js Bits",
+    "slug":null,
+    "description":"A blog focused on Next.js.",
+    "priority":0,
+    "size":"sm",
+    "years_active":"2023-now",
+    "state":"development",
+    "state_description":"Building",
+    "date_started":"2023-11-14",
+    "category":"blog",
+    "employed":false,
+    "role":"Creator",
+    "links":[
+      {
+        "url":"https://nextjsbits.com",
+        "title":"NextjsBits.com"
+      }
+    ],
+    "icon_url":"joystick_regular_a58e670287.svg",
+    "tags":[
+      "Next.js",
+      "WordPress",
+      "CSS"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"",
+    "content":null
+  },
+  {
+    "title":"The Hardcover 2023 Year in Books",
+    "slug":null,
+    "description":"A visually stunning representation of the most popular books of 2023 on Hardcover.",
+    "priority":0,
+    "size":"lg",
+    "years_active":"2023",
+    "state":"live",
+    "state_description":"Live",
+    "date_started":"2023-11-01",
+    "category":"experience",
+    "employed":true,
+    "role": "Developer",
+    "links":[
+      {
+        "url":"https://hardcover.app/2023",
+        "title":"The Hardcover 2023 Year in Books"
+      }
+    ],
+    "icon_url":"hardcover-logo.svg",
+    "tags":[
+      "Next.js",
+      "React.js",
+      "Tailwind.css",
+      "Midjourney",
+      "Airtable"
+    ],
+    "date":null,
+    "href":null,
+    "project":"projects",
+    "path":"",
+    "content":null
+  },
+  {
+    "title":"Hardcover Live",
+    "slug":null,
+    "description":"A weekly video stream and podcast where Ste & I build Hardcover live.",
+    "priority":0,
+    "size":"md",
+    "years_active":"2023-now",
+    "state":"live",
+    "state_description":"Live",
+    "date_started":"2023-01-30",
+    "category":"Content",
+    "employed":true,
+    "role": "Developer",
+    "links":[
+      {
+        "url":"https://hardcover.app/live",
+        "title":"Hardcover Live"
+      }
+    ],
+    "icon_url":"hardcover-logo.svg",
+    "tags":[
+      "Next.js",
+      "React.js",
+      "Tailwind.css",
+      "Riverside"
     ],
     "date":null,
     "href":null,
