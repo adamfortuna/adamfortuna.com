@@ -12,9 +12,13 @@ import {
   Webmention,
   WordpressPost,
   WordpressPage,
+  WordpressProject,
   WordpressClientIdentifier,
   WordPressComment,
   Category,
+  WordpressProjectAcf,
+  Link,
+  Project,
 } from '@/types'
 import omitBy from 'lodash/omitBy'
 import { Md5 } from 'ts-md5'
@@ -179,6 +183,72 @@ export const parsePage = (page: WordpressPage) => {
   } as Page
 
   return omitBy(article, (v) => v === null || v === undefined) as Page
+}
+
+const parseLinks = (projectInfo: WordpressProjectAcf) => {
+  const links: Link[] = []
+
+  if (projectInfo.link1) {
+    links.push({
+      url: projectInfo.link1,
+      title: projectInfo.link1Text,
+    })
+  }
+  if (projectInfo.link2) {
+    links.push({
+      url: projectInfo.link2,
+      title: projectInfo.link2Text,
+    })
+  }
+  if (projectInfo.link3) {
+    links.push({
+      url: projectInfo.link3,
+      title: projectInfo.link3Text,
+    })
+  }
+  if (projectInfo.link4) {
+    links.push({
+      url: projectInfo.link4,
+      title: projectInfo.link4Text,
+    })
+  }
+  if (projectInfo.link5) {
+    links.push({
+      url: projectInfo.link5,
+      title: projectInfo.link5Text,
+    })
+  }
+  if (projectInfo.link6) {
+    links.push({
+      url: projectInfo.link6,
+      title: projectInfo.link6Text,
+    })
+  }
+
+  return links
+}
+export const parseProject = (project: WordpressProject) => {
+  const { projectInfo } = project
+
+  const tags = project.tags?.nodes ? parseTags(project.tags.nodes) : []
+  return {
+    slug: project.slug,
+    tags: tags.map((t) => t.name),
+    links: parseLinks(projectInfo),
+    description: project.excerpt,
+    salary: projectInfo.compensation,
+    role: projectInfo.role,
+    employed: projectInfo.employed,
+    years_active: projectInfo.yearsActive,
+    category: projectInfo.category,
+    size: projectInfo.size,
+    state: projectInfo.state,
+    state_description: projectInfo.stateDescription,
+    title: project.title,
+    icon_url: projectInfo.icon?.sourceUrl,
+    date_started: projectInfo.dateStarted ? new Date(projectInfo.dateStarted) : null,
+    date_ended: projectInfo.dateEnded ? new Date(projectInfo.dateEnded) : null,
+  } as Project
 }
 
 export const fetchClient = ({

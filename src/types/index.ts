@@ -19,9 +19,8 @@ export interface Project {
   state_description: string
   title: string
   icon_url: string
-  date_started: string
-  date_ended: string
-  poster_url: string
+  date_started: Date
+  date_ended: Date
 }
 
 export interface Article {
@@ -161,6 +160,38 @@ export interface WordpressPost extends WordpressContent {
 }
 
 export interface WordpressPage extends WordpressContent {}
+
+export interface WordpressProjectAcf {
+  category: string
+  compensation: string
+  dateEnded: string
+  dateStarted: string
+  employed: boolean
+  employer: string
+  link1: string
+  link1Text: string
+  link2: string
+  link2Text: string
+  link3: string
+  link3Text: string
+  link4: string
+  link4Text: string
+  link5: string
+  link5Text: string
+  link6: string
+  link6Text: string
+  role: string
+  size: 'sm' | 'md' | 'lg'
+  state: string
+  stateDescription: string
+  yearsActive: string
+  icon: WordpressImage
+}
+export interface WordpressProject extends WordpressContent {
+  tags: WordpressTags | null
+  excerpt: string
+  projectInfo: WordpressProjectAcf
+}
 
 interface HardcoverImageType {
   url: string

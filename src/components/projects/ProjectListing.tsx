@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import clsx from 'clsx'
 import sortBy from 'lodash/sortBy'
 import { Project } from '@/types'
@@ -33,7 +33,7 @@ const sortButtons = [
 
 const ProjectListing = ({ projects }: { projects: Project[] }) => {
   const sortProjects = (allProjects: Project[], sortByField: SortType) => {
-    return sortBy(allProjects, [sortByField, 'priority']).reverse()
+    return sortBy(allProjects, sortByField).reverse()
   }
 
   const [sortedBy, setSortedBy] = useState<SortType>('date_ended')
@@ -47,6 +47,10 @@ const ProjectListing = ({ projects }: { projects: Project[] }) => {
     setSortedBy(sortByField)
     updateResults(sortByField)
   }
+
+  useEffect(() => {
+    updateResults(sortedBy)
+  })
 
   return (
     <div className="px-2 md:px-0">

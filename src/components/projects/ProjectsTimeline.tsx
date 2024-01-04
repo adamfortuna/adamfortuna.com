@@ -12,14 +12,14 @@ export const ProductTimelineIcon = ({ project }: { project: Project }) => {
   return (
     <span
       className={clsx(
-        'drop-shadow-xl flex absolute justify-center items-center rounded-full bg-white ring-4',
+        'drop-shadow-xl flex absolute justify-center items-center rounded-full bg-white ring-4 overflow-hidden',
         project.employed ? 'ring-green-400' : 'ring-blue-400',
         project.size === 'lg' ? '-left-8 w-16 h-16' : '',
-        project.size === 'md' ? '-left-6 w-12 h-12' : '',
-        project.size === 'sm' ? '-left-4 w-8 h-8' : '',
+        project.size === 'md' ? '-left-6 w-12 h-12 p-1' : '',
+        project.size === 'sm' ? '-left-4 w-8 h-8 p-0.5' : '',
       )}
     >
-      <ProjectIcon icon_url={project.icon_url} size={project.size === 'lg' ? 64 : project.size === 'md' ? 48 : 32} />
+      <ProjectIcon icon_url={project.icon_url} size={project.size === 'lg' ? 48 : project.size === 'md' ? 48 : 32} />
     </span>
   )
 }

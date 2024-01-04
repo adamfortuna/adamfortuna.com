@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 import ProjectListing from '@/components/projects/ProjectListing'
 import { Container } from '@/components/layout/Container'
-import { getProjects } from '@/lib/fileService'
 import { PageFooter } from '@/components/layout/PageFooter'
+import { getProjects } from '@/queries/wordpress/getProjects'
 
 export const dynamic = 'force-static'
 export const revalidate = 3600 // 60 minutes
