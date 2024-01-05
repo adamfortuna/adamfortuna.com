@@ -12,7 +12,7 @@ export const ProductTimelineIcon = ({ project }: { project: Project }) => {
   return (
     <span
       className={clsx(
-        'drop-shadow-xl flex absolute justify-center items-center rounded-full bg-white ring-4 overflow-hidden',
+        'flex absolute justify-center items-center rounded-full bg-white ring-4 overflow-hidden',
         project.employed ? 'ring-green-400' : 'ring-blue-400',
         project.size === 'lg' ? '-left-8 w-16 h-16' : '',
         project.size === 'md' ? '-left-6 w-12 h-12 p-1' : '',
@@ -77,6 +77,12 @@ interface ProjectTimelineSeparatorProps {
   sortField: 'date_started' | 'date_ended'
 }
 
+const birthdate = new Date(1982, 4, 18)
+function getAge(d1: Date) {
+  const diff = d1.getTime() - birthdate.getTime()
+  return Math.abs(Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25)))
+}
+
 export const ProjectTimelineSeparator = ({
   currentProject,
   previousProject,
@@ -94,7 +100,7 @@ export const ProjectTimelineSeparator = ({
         <span className="md:ml-0 lg:absolute lg:-left-[150px] w-24 h-24 text-black dark:text-white font-black text-2xl lg:text-right">
           Now
           <span className="text-sm font-semibold text-gray-400 dark:text-gray-300 block">
-            {Number(new Date().getFullYear()) - 1982} years old
+            {getAge(new Date())} years old
           </span>
         </span>
       </div>
