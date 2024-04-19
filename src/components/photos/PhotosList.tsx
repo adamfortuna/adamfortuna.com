@@ -1,5 +1,6 @@
 import { PhotoPost } from '@/types'
 import Pagination from '@/components/layout/Pagination'
+import PhotoCard from './PhotoCard'
 
 export interface ArticleTimelineProps {
   articles: PhotoPost[]
@@ -12,7 +13,7 @@ const PhotosList = ({ articles, page, totalPages, url }: ArticleTimelineProps) =
   return (
     <div>
       {articles.map((article) => (
-        <div>{article.title}</div>
+        <PhotoCard key={article.slug} article={article} />
       ))}
 
       {page && totalPages && <Pagination page={page} totalPages={totalPages} url={url} />}

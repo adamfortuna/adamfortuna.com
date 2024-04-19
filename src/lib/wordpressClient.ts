@@ -149,6 +149,7 @@ export const parsePost = (post: WordpressPost, full: boolean = false) => {
     title: post.title,
     slug: post.slug,
     date: post.date,
+    author: post.author?.node ? post.author.node.name : null,
     featuredImage: post.featuredImage?.node ? post.featuredImage?.node : null,
     categories: post.categories?.nodes ? parseCategories(post.categories.nodes) : undefined,
     content: post.content || null,
@@ -166,7 +167,16 @@ export const parsePost = (post: WordpressPost, full: boolean = false) => {
   const aritcleWithoutParams = omitBy(article, (v) => v === null || v === undefined)
 
   if (post.contentTypeName === 'photos') {
-    return aritcleWithoutParams as PhotoPost
+    return {
+      ...aritcleWithoutParams,
+      ...{
+        root: post.parentId === null,
+        excerpt: post.excerpt,
+      },
+      ...{
+        series: post.series,
+      },
+    } as PhotoPost
   }
   return aritcleWithoutParams as Post
 }

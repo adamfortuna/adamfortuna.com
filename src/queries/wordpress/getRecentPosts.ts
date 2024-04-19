@@ -1,6 +1,6 @@
 import { getClientForProject, parsePost, sortByDateDesc } from '@/lib/wordpressClient'
 import flatten from 'lodash/flatten'
-import { WordpressPost, WordpressPostType, WordpressClientIdentifier, Article } from '@/types'
+import { WordpressPost, WordpressPostType, WordpressClientIdentifier, Article, PhotoPost } from '@/types'
 
 export const findWordPressRecentPosts = `
   query GetWordPressRecentPosts($where: RootQueryToPostConnectionWhereArgs) {
@@ -32,6 +32,18 @@ export const findWordPressRecentPhotoPosts = `
         date
         excerpt(format: RAW)
         commentCount
+        parentId
+        contentTypeName
+
+        featuredImage {
+          node {
+            sourceUrl
+            mediaDetails {
+              width
+              height
+            }
+          }
+        }
 
         tags {
           nodes {
@@ -66,6 +78,12 @@ export const getRecentPostsByProject = async (project: WordpressClientIdentifier
   }) as WordpressPost[]
 }
 
+interface RecentPostType {
+  articlesCount: number
+  totalPages: number
+  articles: Article[] | PhotoPost[]
+}
+
 export const getRecentPosts = async ({
   count,
   offset = 0,
@@ -80,7 +98,7 @@ export const getRecentPosts = async ({
   filterBy?: any
   type?: WordpressPostType
   sortBy?: any
-}) => {
+}): Promise<RecentPostType> => {
   const finders = projects.map((p) => getRecentPostsByProject(p, type))
   const results = await Promise.all(finders)
 

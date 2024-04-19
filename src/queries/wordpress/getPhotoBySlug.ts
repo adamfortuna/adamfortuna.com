@@ -1,9 +1,9 @@
-import { adamfortunaClient, parsePage, parsePost } from '@/lib/wordpressClient'
-import { PhotoPost, Post } from '@/types'
+import { adamfortunaClient, parsePost } from '@/lib/wordpressClient'
+import { PhotoPost } from '@/types'
 
-export const findWordpressPost = `
-query GetWordPressPost($slug: String!) {
-  post: postBy(slug: $slug) {
+export const findWordpressPhoto = `
+query GetWordPressPost($uri: String!) {
+  photo: photoblogBy(uri: $uri) {
     id: databaseId
     title
     content
@@ -60,54 +60,32 @@ query GetWordPressPost($slug: String!) {
         }
       }
     }
-  }
-
-  page: pageBy(uri: $slug) {
-    id: databaseId
-    title
-    content
-    date
-    slug
-    contentTypeName
-    featuredImage {
-      node {
-        sourceUrl
-        mediaDetails {
-          width
-          height
-        }
-      }
+    series {
+      series
+      seriesCount
+      seriesOrder
     }
   }
 }
 `
 
-export const getPostOrPageBySlug = async (slug: string): Promise<null | Post | PhotoPost> => {
+export const getPhotoBySlug = async (slug: string): Promise<null | PhotoPost> => {
   const result = await adamfortunaClient({
-    query: findWordpressPost,
+    query: findWordpressPhoto,
     variables: {
-      slug,
+      uri: slug,
     },
   })
 
-  if (!result.data?.post && !result.data?.page) {
+  if (!result.data?.photo) {
     return null
   }
 
-  if (result.data.post) {
-    return parsePost(
-      {
-        ...result.data.post,
-        project: 'adamfortuna',
-      },
-      true,
-    )
-  }
-  if (result.data.page) {
-    return parsePage({
-      ...result.data.page,
+  return parsePost(
+    {
+      ...result.data.photo,
       project: 'adamfortuna',
-    })
-  }
-  return null
+    },
+    true,
+  ) as PhotoPost
 }

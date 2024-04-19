@@ -37,6 +37,7 @@ export interface Article {
   allowComments?: boolean
   allowPings?: boolean
   commentCount: number
+  author: string
 
   // Todo: Move these to Post
   tags?: Tag[]
@@ -47,7 +48,10 @@ export interface Article {
 
 export interface Post extends Article {}
 export interface Page extends Article {}
-export interface PhotoPost extends Article {}
+export interface PhotoPost extends Article {
+  root: boolean
+  series?: WordpressSeriesType
+}
 
 export interface ArticlesListType {
   articles: Article[]
@@ -151,12 +155,23 @@ export interface WordpressContent {
   pingStatus: 'open' | 'closed'
   commentCount?: number
   contentTypeName: WordpressPostType
+  author: {
+    node: {
+      name: string
+    }
+  }
 }
-
+interface WordpressSeriesType {
+  series: string
+  seriesCount: number
+  seriesOrder: number
+}
 export interface WordpressPost extends WordpressContent {
   categories: WordpressCategories | null
   tags: WordpressTags | null
   excerpt: string
+  parentId?: string
+  series?: WordpressSeriesType
 }
 
 export interface WordpressPage extends WordpressContent {}

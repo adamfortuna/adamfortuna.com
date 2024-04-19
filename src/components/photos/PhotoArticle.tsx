@@ -4,6 +4,7 @@ import { ArticleAboutAdamFooter } from '@/components/marketing/ArticleAboutAdamF
 import { Comments } from '@/components/comments/Comments'
 import { PhotoPost } from '@/types'
 import { PageFooter } from '../layout/PageFooter'
+import { PhotoArticleTitle } from './PhotoArticleTitle'
 
 export interface PhotoArticleHeaderProps {
   article: PhotoPost
@@ -13,6 +14,7 @@ export const PhotoArticle = ({ article }: PhotoArticleHeaderProps) => {
   return (
     <article className="h-entry">
       <PhotoArticleHeader article={article} />
+      <PhotoArticleTitle article={article} />
       <ArticleContentHtml article={article} />
       <PageFooter>
         <>

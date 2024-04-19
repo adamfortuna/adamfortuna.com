@@ -43,14 +43,10 @@
 .link--blue {
   @apply link text-blue-600
 }
-.link--blue:hover {
-  @apply no-underline;
-}
-
 .link--white {
   @apply link text-white
 }
-.link--white:hover {
+.link:hover, .link--blue:hover, .link--white:hover {
   @apply no-underline;
 }
 

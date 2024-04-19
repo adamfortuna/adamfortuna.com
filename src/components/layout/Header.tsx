@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { faHammer, faPencil } from '@fortawesome/pro-regular-svg-icons'
+import { faHammer, faPencil, faCamera } from '@fortawesome/pro-regular-svg-icons'
 import Link from 'next/link'
 import Cloud from '@/images/cloud.svg'
 import Sun from '@/images/sun.svg'
@@ -49,6 +49,9 @@ export const Header = ({ isHomePage = false }: { isHomePage?: boolean }) => {
             </NavLink>
             <NavLink href="/blog" icon={faPencil}>
               Blog
+            </NavLink>
+            <NavLink href="/photos" icon={faCamera}>
+              Photos
             </NavLink>
             <MoreDropdown />
           </div>
