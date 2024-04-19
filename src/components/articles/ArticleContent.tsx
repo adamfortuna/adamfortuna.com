@@ -1,8 +1,8 @@
 /* eslint-disable react/no-danger */
 
-import { PhotoPost } from '@/types'
+import { Page, Post } from '@/types'
 
-export const ArticleContentHtml = ({ article }: { article: PhotoPost }) => {
+export const ArticleContentHtml = ({ article }: { article: Page | Post }) => {
   return (
     <div
       className="e-content prose dark:prose-invert mx-auto"
