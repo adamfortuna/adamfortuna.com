@@ -42,6 +42,7 @@ module.exports = {
           600: '#0059A7',
           700: '#0068C3',
         },
+        bluesky: '#1285fe',
       },
       keyframes: {
         wave: {

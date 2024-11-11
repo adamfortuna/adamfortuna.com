@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { Container } from '@/components/layout/Container'
 import { InteractiveMountain } from '@/components/fun/InteractiveMountain'
-import { GitHubIcon, LetterboxdIcon, MastodonIcon, HardcoverIcon } from '@/components/SocialIcons'
+import { GitHubIcon, LetterboxdIcon, MastodonIcon, HardcoverIcon, BlueskyIcon } from '@/components/SocialIcons'
 
 export const Hero = () => {
   return (
@@ -40,6 +40,17 @@ export const Hero = () => {
                 title="Hardcover"
               >
                 <HardcoverIcon className="inline h-8 w-8" />
+              </a>
+            </li>
+            <li className="inline">
+              <a
+                href="https://bsky.app/profile/adamfortuna.com"
+                className="group p-1 hover:bg-sky-200 rounded-lg"
+                target="_blank"
+                rel="me"
+                title="Mastodon"
+              >
+                <BlueskyIcon className="inline h-88 w-8 fill-bluesky group-hover:fill-indigo-700" />
               </a>
             </li>
             <li className="inline">
